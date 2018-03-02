@@ -1,0 +1,65 @@
+%% header for Messtechnik scripts
+\documentclass[english,ngerman]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{calc}
+\usepackage{units}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{amstext}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{esint}
+\usepackage{grffile}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+% \newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % this default might be overridden by plain title style
+ \newcommand\makebeamertitle{\frame{\maketitle}}%
+ % (ERT) argument for the TOC
+ \AtBeginDocument{%
+   \let\origtableofcontents=\tableofcontents
+   \def\tableofcontents{\@ifnextchar[{\origtableofcontents}{\gobbletableofcontents}}
+   \def\gobbletableofcontents#1{\origtableofcontents}
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usetheme{CambridgeUS}
+% oder ...
+
+\setbeamercovered{transparent}
+% oder auch nicht
+\usepackage{tikz}
+\usepackage{trfsigns}
+\setlength{\intextsep}{0cm plus1cm minus1cm} %for wrapfig
+\usefonttheme[onlymath]{serif}
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\title{Messtechnik }
+
+\author{Prof. Dr. Jianmin CHEN}
+
+\institute{HDBW}
+
+\date{\inst{HDBW}}
+
+\date[SS17]{2017.03.}
+
+\makebeamertitle

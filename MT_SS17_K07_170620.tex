@@ -1,0 +1,369 @@
+% \mode
+% <all>
+\lecture{Kap 07 Rechnerunterstützte Messsysteme}{K07}
+%\setcounter{framenumber}{0}
+\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 07 Rechnerunterstützte Messsysteme}
+
+\begin{frame}{Übersicht}
+
+\textbf{Thema}: Rechnerunterstützte Messsysteme, Automatisierung
+
+\vphantom{}
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Aufbau 
+\item Schnittstelle
+\item Messgeräte
+\item Messsysteme
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+E. Schröder: Elektrische Messtechnik \\
+R. Lerch: Elektrische Messtechnik
+
+\end{frame}
+
+\begin{frame}{Aufgaben}
+	
+	\begin{itemize}
+		\item Erfassung von Messdaten
+		\item Digitalisierung und Archivierung
+		\item Kalibrierung und Auswertung
+		\item Visualisierung und Dokumentation
+	\end{itemize}
+	
+	Messprogramme auf Rechner bestimmen Funktionen der Messgeräte und steuern Ablauf und Kommunikation. \\
+	
+	Digitalrechner als Prozeßleitsysteme zur Steuerung und Regelung von Anlagen. 
+
+\end{frame}
+
+\begin{frame}{Aufbau Rechner}
+
+	
+	\begin{description}
+		\item[Hardware:] \\
+		
+			PC, Industrie-PC, Embedded System 
+		\item[Software:] \\
+		
+			Betriebssystem: Windows, Linux, Realtime OS etc.
+		\item[Anwenderprogramme:] \\
+		
+			LabVIEW, MATLAB etc.
+		\item[Schnittstellen:] \\
+		
+			Hardware, Software 
+	\end{description}
+			
+\end{frame}
+
+\begin{frame}{Schnittstellen / Bussysteme}
+Hardwareschnittstelle: Verbindung zwischen Baugruppen, Geräten und Anlagenteilen. 
+In der Regel als Baugruppe ausgeführt, als eigenständiges Gerät mit eigenem Prozessor und Betriebsprogramm.
+  
+Genormte, herstellerunabhängige Schnittstellen mit Festlegung:\
+\begin{itemize}
+	\scriptsize{
+	\item Bauform des Steckers
+	\item Stiftbelegung
+	\item Verbindungskabel
+	\item elektrische Spannungsniveau 
+	\item Signaleigenschaften
+	\item Datenformat
+	\item Übertragungsprotokoll 
+	}
+\end{itemize}
+
+Softwareschnittstelle: Übergabe von Daten und Steuerungsanweisungen zwischen Anwendungsprogrammen.
+
+\scriptsize{z.B. Dynamic Data Exchange DDE, Object Linking and Embedding OLE}
+\normalsize
+
+Bussystem: Verbindung gleichartiger Schnittstellen über gemeinsame Datenleitungen.		
+\end{frame}
+
+\begin{frame}{Beispiele: drahtgebundene Schnittstellen}
+
+	\centering
+	\begin{table}
+		\centering \tiny
+			\begin{tabular}{|l|c|l|l|l|l|}
+				\hline
+				Schnittstelle & Anzahl 			& Übertrag-		& Pegel						& Datenrate	& Distanz \tabularnewline
+											& der Geräte  & gungsart		&									& in bps		& in m 		\tabularnewline
+				\hline\hline
+				RS-232				& 2						& bitseriell,	& H: -3 bis -27V	& 20k				& 100 \tabularnewline
+											&							& Vollduplex	& L: 3 bis 27V		& (115k)		&	    \tabularnewline
+				\hline
+				RS-422				&	2						& bitseriell,	& H: $\Delta U$: -2 bis -6V	& 20M	& 1 200 \tabularnewline
+											&							& Halbduplex	& L: $\Delta U$: 2 bis 6V		&			&				\tabularnewline
+				\hline
+				RS-485				& 32					& bitseriell,	& H: $\Delta U$: -2 bis -6V	& 10M	& 1 200	\tabularnewline
+											&							& Voll- oder	& L: $\Delta U$: 2 bis 6V		& 		&				\tabularnewline
+											&							& Halbduplex	&														&			&				\tabularnewline
+				\hline
+				USB						& 127					& bitseriell	&	differenziell							&	1,5M	& $\le 5$ \tabularnewline
+											& 						& 						& mit $\pm0,4$ V						&	12M		& 				\tabularnewline
+											&							&							&														& 480M	&					\tabularnewline
+				\hline
+				ICE-Bus				& 15					& 8-Bit-parallel	&	negativer TTL-Pegel	 	& 1M		& 20			\tabularnewline
+				\hline
+				IEEE 1394			& 64					& bitseriell	&														& 800M	&	5				\tabularnewline
+				(Firewire)		&							&							&														& (3,2G)&					\tabularnewline
+				\hline
+				LAN 10Base-		&	256					&	Seriell			&	0,1W											&	10M -	& 50			\tabularnewline
+				LAN 1000Base	&							& Vollduplex	& 													& 1000M	&					\tabularnewline
+				\hline
+			\end{tabular}
+	\end{table}
+
+\end{frame}
+
+\begin{frame}{Beispiele: drahtlose Schnittstellen}
+
+	\centering
+	\begin{table}
+		 \tiny
+			\begin{tabular}{|l|c|l|l|l|l|}
+				\hline
+				Schnittstelle & Anzahl 			& Übertrag-		& Pegel						& Datenrate	& Distanz \tabularnewline
+											& der Geräte  & gungsart		&									& in bps		& in m 		\tabularnewline
+				\hline\hline
+				Bluetooth			& 8						& seriell			& 0,01 bis 0,1W		& 10k				& $\le 100$ \tabularnewline
+											&							& 						& 								& 1M				&				    \tabularnewline
+											&							& 						& 								& 2,11M			&				    \tabularnewline
+											&							& 						& 								& 24M				&				    \tabularnewline
+				\hline
+				ZigBee				&	255					& seriell			& 0,01W						& 20k				& 10-75 \tabularnewline
+				IEEE802.15.4	&							& Halbduplex	& 								&	40k				&				\tabularnewline
+											&							& 						&									& 250k			&				\tabularnewline
+				\hline
+				WLAN IEEE			& 256					& seriell,		& 0,001 bis 0,1W	& 54M				& 50		\tabularnewline
+				802.11g/h/n		&							& Vollduplex  & 								& 600M			&				\tabularnewline
+				\hline
+			\end{tabular}
+	\end{table}
+
+\end{frame}
+
+\begin{frame}{Serielle RS-232 \& co.}
+\small
+	\textbf{UART-Controller(Universal Asynchronous Receiver/Transmitter):}\\
+	\hspace{0.3cm} konvertiert parallel ankommende Daten in einen seriellen Einzelbit-Datenstrom und umgekehrt. 
+	Meisten mit FIFO(First-In/First-Out)-Puffer.
+	
+	\textbf{RS-232}:\\
+	zählt zum ältesten Schnittstellenstandard. Vollduplex Punkt-zu-Punkt-Verbindung. 
+	
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.50\textwidth]{Bilder/ESEM.B0902.png.jpg}
+		\label{fig:ESEM.B0902.png}
+	\end{figure}
+	
+	Reichweite abhängig von Pegel, Baudrate bis 100m.
+	
+
+\end{frame}
+
+\begin{frame}{RS-422}
+\footnotesize
+
+\textbf{RS-422:}\\
+breite Anwendung im industriellen Prüffeld und vor allem in der Prozessmesstechnik. \\
+
+Datenleitung mit einem einzigen potenzialfreien Leitungspaar ohne Massenbezug. Weniger störanfällig. Halbduplex.\\
+
+\textbf{RS-485:}\\
+Weiterentwicklung auf Basis RS-422. Keine einheitliche Normung. 
+Bis zu 32 Teilnehmer, 1200m und bis zu 187,5kBaud.\\
+
+Zweidraht-Leitung für Halbduplex; Vierdraht-Leitung für Vollduplex-Betrieb.
+
+
+Je nach Anwendungsgebiet auch als Feldbus, Prozessbus oder 
+Sensor/Aktor-Bus bezeichnet. 
+
+Verschiedene Bussysteme auf dem Markt:\\
+\begin{itemize}
+	\tiny
+	\item Profibus DIN 19 245 (Process Field Bus für Prozessautomatisierungssysteme der Energie- und
+		Verfahrenstechnik
+	\item DIN-Messbus (DIN 66 348)
+	\item CAN-Bus (Controller Area Network für sicherheitskritischen Kfz-Bereich
+	\item Futurebus+
+	\item Interbus
+\end{itemize}
+
+
+\end{frame}
+
+%\begin{frame}{RS-485 Feldbus}
+%\end{frame}
+
+\begin{frame}{USB}
+	Ziel: Verbindung von Peripherie an PC über eine einheitliche Schnittstelle. \\
+
+	Plug-and Play-Fähigkeit. Auch Hot-Plugging.
+	
+	Hierarchische Struktur mit einem Hostadapter. Sternförmiges Bussystem (Hub).
+	
+	USB 2.0: vier Leitungen, 2 für bidirektionale Datenübertragung, 1 für Masse, 1 für 5V. 
+	Stromversorgung bis zu 500mA. Datenrate 480 MBit/s.
+	
+	USB 3.0: 5 zusätzliche Leitungen, 2x2 Datenleitungen, 1 Masse. 
+	Bis zu 4000 MBit/s. Stromversorgung bis zu 900mA.
+
+\end{frame}
+
+\begin{frame}{Paralleler IEC-Bus}
+	\small
+	Bus zur Steuerung von Messgeräten im Laborbereich. Maiximale Leitungslänge 20m. Datenrate bis zu 1MByte/s.
+	Maximal 15 Teilnehmer. Huckpackverfahren zur Weiterverbindung.
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.60\textwidth]{Bilder/ESEM.B0903.jpg}
+			\includegraphics[width=0.30\textwidth]{Bilder/HuckepackIEC.jpg}
+
+		\label{fig:ESEM.B0903}
+	\end{figure}
+	\tiny
+	Bezeichnungen: 
+	
+	\begin{itemize}
+		\item HP-IB (Hewlett-Packard Interface Bus), 
+		\item GPIB (General Purpose Interface Bus), 
+		\item IEEE-488 (Institution of Electrical and Electronic Engineering, Standard No. 488, 'i triple e'),
+		\item ANSI MC1.1 (American National Standard Institute), IEC 625 (International Electrotechnical Commission)
+	\end{itemize}
+	
+	
+\end{frame}
+
+\begin{frame}{Kabellose Netzwerke}
+	\small
+	\textbf{Bluetooth:}\
+		Für Nahbereich bis 100m. Sicherheitsmechnismen mit Pairing. Vordefinierte Profile z.B. Serial Port Profile.
+		
+	\textbf{ZigBee:} \
+		Einfacher Aufbau von Funktnetzwerk mit sehr geringem Stromverbrauch.
+		2,4GHz international, Australien und USA 915 MHz und Europa 868MHz, China 784MHz.
+		Datenrate 20 bis 250kBit/s.
+		
+	\textbf{WLAN (Wireless Local Area Network):}\
+		Datenrate bis zu 600MBit/s. Reichweite 50m im Gebäude, 300m Sichtverbindung. 
+		Mit Richtantennen bis zu mehreren Kilometer.\
+		Mit Access Poits lassen sich Netzwerke bis zu 256 Funkstationen aufbauen. Roaming-Fähigkeit.
+
+\end{frame}
+
+\begin{frame}{Messgeräte mit/ohne integrierter digitaler Schnittstelle}
+
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.60\textwidth]{Bilder/RLEM.B1502.png}
+		\label{fig:RLEM.B1502}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Messgeräte mit integrierte Schnittstelle}
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.60\textwidth]{Bilder/RLEM.B1510.png}
+		\label{fig:RLEM.B1510}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Messprogramme}
+
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.40\textwidth]{Bilder/ESEM.B0908.jpg}
+		\label{fig:ESEM.B0908}
+	\end{figure}
+	
+
+\end{frame}
+
+\begin{frame}{LabVIEW}
+\footnotesize
+	LabVIEW (Laboratory Virtual Instrument Engineering Workbench): sehr leistungsfähige Entwicklungsumgebung,
+	graphische Programmierung, umfangreiche Bibliotheken
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.45\textwidth]{Bilder/labview01.jpg}
+			\includegraphics[width=0.45\textwidth]{Bilder/labview02.png}
+		\label{fig:labview01}
+	\end{figure}
+	Programmierung des VIs (Virtual Instrument) über graphische Bolckdiagramme. 
+	Funktionsblöcke mit elementaren Funktionen: mathematischen bzw. anderen VIs (SubVIs)
+	
+	Frontpanel für mit Bedien- und Anzeigeelementen für Interaktion mit Benutzer.
+
+\end{frame}
+
+\begin{frame}{SPS}
+	\footnotesize
+	SPS (Speicherprogrammierbare Steuerungen) sind modular und freiprogrammierbare Steuergeräte, die nach Anforderungen der Applikationen 
+	konfiguriert und programmiert werden. \\
+	
+	Grundausstattung:\\
+	- Stromversorgung \\
+	- Prozessor (CPU) \\
+	- Speichermodule \\
+	- Eingang- und Ausgangsbaugruppe \\
+	
+	Bei vernetzter Automatisierung:\\
+	- http (Hypertext Treansfer Protocol)\\
+	- GSM (Global System for Mobile Communication)\\
+	- SMS (Short Message Services)\\
+	- TCP/IP (Transmission Control Protocol / Internet Protocol)
+
+\end{frame}
+
+\begin{frame}{Beispiel Fa. WAGO}
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.50\textwidth]{Bilder/RLEM.B1709.png}
+			\includegraphics[width=0.50\textwidth]{Bilder/RLEM.B1710.png}
+		\label{fig:RLEM.B1709}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}{Hirarchie industrieller Bussysteme}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.50\textwidth]{Bilder/RLEM.B1714.png}
+		\label{fig:RLEM.B1714}
+	\end{figure}
+	
+	
+\end{frame}
+
+%\begin{frame}{}
+%\end{frame}
+%\begin{frame}{}
+%\end{frame}
+%\begin{frame}{}
+%\end{frame}
+%\begin{frame}{}
+%\end{frame}
+%\begin{frame}{}
+%\end{frame}
+%\begin{frame}{}
+%\end{frame}

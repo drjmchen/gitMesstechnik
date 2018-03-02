@@ -1,0 +1,901 @@
+%
+%\lecture{Kap 02 Charakterisierung von Messsignalen}{K02}
+%\setcounter{framenumber}{0}
+%\AtBeginLecture{\frame{\insertlecture}}
+
+\section{Kap 02 Charakterisierung von Messsignalen}
+\begin{frame}{Übersicht}
+
+
+\textbf{Thema}: Signalformen und -charakteristika
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Technisch interessante Signalformen
+\item Mittelwerte periodischer Signale
+\item Kenngrößen von Messsignalen
+\item Logarithmische Übertragungsverhältnisse
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 3
+
+\end{frame}
+
+\begin{frame}{Messsignale}
+
+	Zwischen Messeinrichtungen werden Messsignale in Form von Spannungen und Strömen ausgetauscht, 
+	die Informationen über die gemessenen Größen enthalten.
+	
+	Häufig verwendete Signalarten:
+	\begin{itemize}
+		\item amplitudenanaloges Signal: Amplitude proportional dem Messwert
+		\item digitales Signal: Binärsignale beinhalten codierte Messwerte
+		\item zeitanaloges Signal: Zeitdauer proportional dem Messwert
+		\item frequenzanaloges Signal: Frequenz proportional dem Messwert
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Signalformen von Messsignalen}
+
+\scriptsize
+\begin{tabular}{|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|}
+\hline 
+{\scriptsize{}amplitudenanalog} & {\scriptsize{}frequenzanalog} & {\scriptsize{}digital}\tabularnewline
+\hline \hline
+{\scriptsize{}Information in Amplituden} & {\scriptsize{}Information in Frequenzen} & {\scriptsize{}Information in Codes}\tabularnewline
+\hline 
+{\scriptsize{}Amplitude kontinuierlich} & {\scriptsize{}Frequenz kontinuierlich} & {\scriptsize{}diskrete Werte}\tabularnewline
+\hline 
+{\scriptsize{}Genauigkeit anhängig von Reproduzierbarkeit} & {\scriptsize{}Genauigkeit abhängig von Torzeit} & {\scriptsize{}Genauigkeit anhängig von Stellenzahl }\tabularnewline
+\hline 
+{\scriptsize{}störanfällig} & {\scriptsize{}hohe Störsicherheit} & {\scriptsize{}hohe Störsicherheit}\tabularnewline
+\hline 
+{\scriptsize{}Signalverarbeitung aufwändig} & {\scriptsize{}Signalverarbeitung z.T. gut} & {\scriptsize{}Signalverarbeitung gut}\tabularnewline
+\hline 
+{\scriptsize{}galvanische Trennung aufwendig} & {\scriptsize{}einfache galvanische Trennung mit Optokoppler} & {\scriptsize{}einfache galvanische Trennung mit Optokoppler}\tabularnewline
+\hline 
+{\scriptsize{}Digitalisierung aufwändig} & {\scriptsize{}einfache Digitalisierung durch Zählen} & \tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Signalformen}
+
+
+Signal, wie elektrische Spannung, muss grundsätzlich mit Angaben zu
+ihrem Wert, Zeitverhalten und Kurvenverhalten beschrieben werden.
+
+
+\medskip{}
+Form der Angabe kann sehr unterschiedliche sein. 
+
+
+Häufig haben sich verbale Bezeichnungen, wie Sinusschwingung, Pulsspannung,
+etc. etabliert.\medskip{}
+
+
+
+In der Messtechnik sind zwei Signalformen interessant:
+\begin{itemize}
+\item Einzelimpuls
+\item periodischer Signalverlauf\medskip{}
+
+\end{itemize}
+
+Periodische Signale haben in der Messtechnik eine besondere Bedeutung,
+da sie viele technische Systeme charakterisieren.
+
+
+Sinusförmige Signale können durch wenige Parameter vollständig beschrieben
+werden. Das vereinfacht die mathematische Behandlung von Signalübertragung
+erheblich.
+
+\end{frame}
+
+\begin{frame}{Kenngrößen von Einzelimpulsen}
+
+Einzelimpuls kann in Form wie Nadelimpuls, Rechteckimpuls oder Sägezahnimpuls
+auftreten.
+
+Einzelimpulsen werden in der Messtechnik häufig zum \emph{Triggern}
+(Starten von Messvorgängen) genutzt.
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot B0301}
+\par\end{center}
+
+Kennzeichnung:\emph{Anstiegszeit} (rise time $t_{r}$), \emph{Abfallzeit}
+(falltime $t_{f}$), \emph{Impulsdauer} (pulse width $t_{i}$) und
+\emph{Amplitude} $A_{max}$
+
+\end{frame}
+
+\begin{frame}{Kenngrößen von Pulsfolgen}
+
+Treten Einzelimpulse mit regelmäßiger Wiederholung auf, wird von einer
+\emph{Pulsfolge} oder kurz vom \emph{Puls}, gesprochen.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{Bilder/RPMT\lyxdot B0302}
+\par\end{center}
+
+\medskip{}
+$t_{i}$- Impulsdauer, $T$ - Periodendauer,
+
+$K_{V}=t_{i}/T$ - Tastverhältnis, $f=1/T$ - Folgefrequenz
+
+\end{frame}
+
+\begin{frame}{Kenngrößen von periodischen sinusförmigen Signalen}
+
+
+Sinusförmige Signalform ist grundlegend für Signaltheorie und Messtechnik.
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Bilder/RPMT\lyxdot B0303}
+\par\end{center}
+
+\scriptsize
+\[
+x(t)=\hat{x}\cdot\sin(\omega t+\varphi)
+\]
+
+$\hat{x}$ - Spitzenwert, $T$ - Periodendauer, $\omega$ - Kreisfrequenz,
+$t$ - Zeit, 
+
+$\phi=\omega t$ - Winkel des rotierenden Zeigers, $\varphi$ - Phasenverschiebung
+
+\[
+\phi=\frac{2\cdot\pi}{T}\cdot t+\varphi=\omega\cdot t+\varphi
+\]
+
+\[
+\omega=\frac{2\pi}{T},\;T=\frac{2\pi}{\omega},\;\omega=2\pi f
+\]
+
+\end{frame}
+
+\begin{frame}{Mittelwerte periodischer Signale}
+
+Bei Wechselgrößen wie z.B. Wechselspannung oder -strom, ist oftmals
+nicht der \emph{Momentanwert} interessant, sondern ein kompakter
+repräsentativer Ausdruck, der den Kurvenverlauf über einen bestimmten
+Zeitraum charakterisiert.
+
+\medskip{}
+
+\emph{Mittelwerte} und davon abgeleitete Größen sind gute Charakterisierung.
+Sie kann unterschiedlich gebildet werden.
+
+\begin{itemize}
+	\item linearer Mittelwert
+	\item Gleichrichtwert
+	\item Quadratischer Mittelwert und Effektivwert
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Linearer Mittelwert und Gleichrichtwert}
+
+\small
+\emph{Linearer Mittelwert}: arithmetischer Mittelwert des Kurvenverlaufs
+über eine Periode:
+
+\[
+\bar{x}=\frac{1}{T}\int_{t}^{t+T}x(t)dt
+\]
+
+Der arithmetische Mittelwert lässt sich technisch sehr einfach realisieren. 
+
+Ausnutzen der Trägheit mechanischer Messwerke bzw. des Integrationsverhaltens
+eines Tiefpasses 1. Ordnung bei elektronischen Messeinrichtungen.
+
+\emph{Gleichrichtwert}: \mode<article>{Um auch reine Wechselgrößen zu bewerten, wird die Wechselgröße einer
+Gleichrichtung unterzogen, und dann den Mittelwert gebildet:} arithmetischer Mittelwert des Betrags über eine Periode
+
+\[
+\overline{|x|}=\frac{1}{T}\int_{t}^{t+T}|x(t)|dt
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: Arithmetischer Mittelwert und Gleichrichtwert }
+\small
+\begin{flushright}
+\begin{figure}
+\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot Beisp0301}
+\end{figure}
+
+\par\end{flushright}
+
+a) Mittelwertbildung über Integration nach der Zeit
+
+\[
+\bar{u}=\frac{1}{T}\int_{0}^{T}u(t)dt=\frac{1}{T}\int_{0}^{T}\hat{U}\sin(\omega t)dt
+\]
+
+\[
+=\frac{\hat{U}}{T}\left[-\frac{1}{\omega}\cos(\omega t)\right]_{0}^{T}
+=\frac{\hat{U}}{T}\left[-\frac{1}{\omega}\cos(\omega T)-(-\frac{1}{\omega}\cos0)\right]
+\]
+
+\[
+=-\frac{\hat{U}}{\omega T}[\cos2\pi-\cos0]=0
+\]
+
+Für eine reine sinusförmige Wechselgröße ist: $\bar{x}=0$.
+\end{frame}
+
+\begin{frame}{Beispiel: Mittelwert}
+\small
+b) Mittelwertbildung über Integration nach Phase $\phi=\omega t$
+
+\[
+\bar{u}=\frac{1}{2\pi}\int_{0}^{2\pi}\hat{U}\sin(\omega t)d(\omega t)
+\]
+
+\[
+=\frac{\hat{U}}{2\pi}\left[-\cos(\omega t)\right]_{0}^{2\pi}=\frac{\hat{U}}{2\pi}(-\cos2\pi+\cos0)=0
+\]
+
+c) Gleichrichtwert
+
+\[
+\bar{|u|}=\frac{1}{T}\int_{0}^{T}|u(t)|dt=\frac{1}{T}\int_{0}^{T}\hat{U}|\sin(\omega t)|dt
+\]
+
+\[
+=2\cdot\frac{\hat{U}}{T}\int_{0}^{\frac{T}{2}}\sin(\omega t)dt=\frac{2\hat{U}}{\omega T}(-\cos(\omega\cdot\frac{T}{2})+\cos0)
+\]
+
+\[
+=\frac{\hat{U}}{\pi}(1+1)=\frac{2\hat{U}}{\pi}=0,637\hat{U}
+\]
+
+\end{frame}
+
+\begin{frame}{Quadratischer Mittelwert und Effektivwert}
+
+\emph{Quadratischer Mittelwert}:
+
+\[
+\overline{x^{2}}=\frac{1}{T}\int_{t}^{t+T}[x(t)]^{2}dt
+\]
+
+Die Bedeutung des quadratischen Mittelwertes liegt vor allem in der
+Leistungsmessung.
+
+\[
+P=\frac{\overline{u^{2}}}{R},\;P=\bar{i^{2}}\cdot R
+\]
+
+\emph{Effektivwert:}
+
+Wert der Gleichspannung mit der gleichen Leistung der Wechselspannung.
+
+\[
+P_{\sim}=\frac{\overline{u^{2}}}{R}=P_{-}=\frac{U_{eff}^{2}}{R}
+\]
+
+\[
+\Rightarrow U_{eff}=\sqrt{\overline{u^{2}}}
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: Rechteckpuls}
+
+Eine Stromquelle mit einem periodischen Rechteckimpuls, $\unit[0,3]{\Omega}$
+
+\begin{flushright}
+\begin{figure}
+
+\includegraphics[width=0.5\textwidth]{Bilder/RPMT\lyxdot Beisp0302}
+
+\end{figure}
+
+\par\end{flushright}
+
+a) Berechnung von arithmetischem Mittelwert $\overline{i}$
+
+{\footnotesize{}
+\[
+\overline{i}=\frac{1}{T}\int_{0}^{T}i(t)dt=\frac{1}{\unit[6]{ms}}
+	\left[\int_{0}^{\unit[2]{ms}}\unit[6]{mA}dt+\int_{\unit[2]{ms}}^{\unit[6]{ms}}\unit[-4]{mA}dt\right]
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+=\frac{(\unit[6]{mA}\cdot\unit[2]{ms})+(\unit[-4]{mA}\cdot\unit[4]{ms})}{\unit[6]{ms}}
+	=-\unit[\frac{2}{3}]{mA}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{}
+
+b) Welche Leistung wird bei der Messung umgesetzt
+
+{\footnotesize{}
+\[
+\overline{i^{2}}=\frac{1}{T}\int_{0}^{T}[i(t)]^{2}dt=\frac{1}{\unit[6]{ms}}
+	\left[\int_{0}^{\unit[2]{ms}}(\unit[6]{mA})^{2}dt+\int_{\unit[2]{ms}}^{\unit[6]{ms}}(\unit[-4]{mA})^{2}dt\right]
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+=\frac{[(\unit[6]{mA})^{2}\cdot\unit[2]{ms})+[(\unit[-4]{mA})^{2}\cdot\unit[4]{ms}]}{\unit[6]{ms}}
+	=\unit[22,\overline{6}]{(mA)^{2}}=\unit[22,\overline{6}\cdot10^{-6}]{A^{2}}
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+P=\overline{i^{2}}\cdot R_{i}=\unit[22,\overline{6}\cdot10^{-6}]{A^{2}}\cdot\unit[0,3]{\Omega}
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+=\unit[6,8\cdot10^{-6}]{W}=\unit[6,8]{\mu W}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Einweg-Gleichrichtwert und quadratischer MW}
+
+\begin{columns}[t]
+	\column{0.4\textwidth}
+
+		\begin{minipage}[t]{1\columnwidth}%
+			Einweg-Gleichrichtwert und quadratischer Mittelwert für eine sinusförmige
+			Spannung $u(t)$ mit einer Amplitude von 1 V.
+
+			{\footnotesize{}
+			\[
+			u(t)=\unit[1]{V}\cdot\sin\omega t
+			\]
+			}{\footnotesize \par}%
+			\end{minipage}
+	\column{0.4\textwidth}
+
+	\begin{flushright}
+	\begin{minipage}[t]{1\columnwidth}%
+	\begin{flushright}
+	\includegraphics[width=1\columnwidth]{Bilder/RPMT\lyxdot B0304}
+	\par\end{flushright}%
+	\end{minipage}
+	\par\end{flushright}
+
+\end{columns}
+\medskip
+
+Einweg-Gleichrichtwert:
+
+{\scriptsize{}
+\[
+	\overline{|u|}=\frac{1}{T}\int_{0}^{T/2}|u(t)|dt=\frac{1}{T}\int_{0}^{T/2}\unit[1]{V}\cdot\sin\omega t\,dt
+\]
+\[
+	=\frac{\unit[1]{V}}{T}\left[-\frac{1}{\omega}\cdot\cos\omega t\right]_{0}^{\frac{T}{2}}
+	=\frac{\unit[1]{V}}{\omega T}\left(-\cos(\omega\cdot\frac{T}{2})+\cos0\right)
+\]
+\[
+	=\frac{\unit[1]{V}}{2\pi}\cdot2=\frac{\unit[1]{V}}{\pi}=\unit[0,318]{V}
+\]
+}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Einweg-Gleichrichtwert und quadratischer MW}
+
+Quadratischer Mittelwert:
+
+{\scriptsize{}
+\[
+\overline{u^{2}}=\frac{1}{T}\int_{0}^{T}[u(t)]^{2}dt=\frac{1}{T}\int_{0}^{T}[\unit[1]{V}\cdot\sin\omega t]^{2}dt
+\]
+\[
+=\frac{\unit[1]{V^{2}}}{T}\int_{0}^{T}[\sin\omega t]^{2}dt
+	=\frac{\unit[1]{V^{2}}}{T}\left|\frac{1}{2}\cdot t-\frac{1}{4\omega}\cdot\sin2\omega t\right|_{0}^{T}
+\]
+\[
+=\frac{\unit[1]{V^{2}}}{T}\left[(\frac{1}{2}\cdot T-\frac{1}{4\omega}\cdot\sin2\omega T)
+	-(0-\frac{1}{4\omega}\cdot\sin0)\right]
+\]
+\[
+=\frac{\unit[1]{V^{2}}}{T}\left(\frac{1}{2}\cdot T-\frac{T}{4\cdot2\pi}\cdot\sin(2\cdot2\pi)\right)
+\]
+\[
+=\unit[0,5]{V^{2}}
+\]
+}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Weitere Parameter periodischer Signale: Crestfaktor}
+
+\emph{Scheitelfaktor} oder auch \emph{Crestfaktor} $\xi$ (sprich
+Xsi) beschreibt das Verhältnis von Spitzenwert zum Effektivwert einer
+periodischen Funktion:
+
+\[
+\xi=\frac{\hat{x}}{X}
+\]
+
+In der Messtechnik kann es bei der Ermittelung eines Effektivwertes
+bei Signal mit großem $\xi$ zu Folge haben, dass die Messeinrichtung
+schon von hohem Spitzenwert übersteuert ist, obwohl der Effektivwert
+noch ausreichende Aussteuerungsreserve suggeriert.
+\begin{wrapfigure}{o}{0.3\columnwidth}%
+	\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot B0305}
+\end{wrapfigure}%
+
+Ähnliche Effekte auch bei Lautsprecher bzw. Kopfhörer.
+\[
+\xi_{sin}=\sqrt{2}=1,414
+\]
+\end{frame}
+
+\begin{frame}{Formfaktor}
+
+\emph{Formfaktor} ist definiert als Quotient aus Effektivwert und
+Gleichrichtwert einer periodischen Wechselgröße:
+
+\[
+F=\frac{X}{\overline{|x|}}
+\]
+
+Für eine gegebene Kurvenform ist der Zusammenhang zwischen Effektiv-
+und Gleichrichtwert fest. 
+
+Damit kann messtechnisch den sehr einfach zu realisierenden Gleichrichtwert
+zu dem oft bedeutsameren Effektivwert umgerechnet werden, vorausgesetzt
+die Kurvenformen sind bekannt. 
+
+\end{frame}
+
+\begin{frame}{Beispiel}
+
+Für das vorherige Beispiel mit $u(t)=\unit[1]{V}\cdot\sin\omega t$
+sind Einweg-Gleichrichtwert und Effektivwert berechnet.\medskip{}
+
+Gleichrichtwert: $\overline{|u|}=2\cdot\unit[0,318]{V}=\unit[0,636]{V}$
+
+Effektivwert: $U=\sqrt{\overline{u^{2}}}=\sqrt{\unit[0,5]{V^{2}}}=\unit[\frac{1}{\sqrt{2}}]{V}$\medskip{}
+
+Formfaktor: 
+\[
+F=\frac{X}{\overline{|x|}}=\frac{U}{\overline{|u|}}=\frac{\unit[\frac{1}{\sqrt{2}}]{V}}{\unit[0,636]{V}}=1,11
+\]
+
+\end{frame}
+
+\begin{frame}{Kenngrößen von nichtsinusförmigen periodischen Signalen}
+
+Jede nichtsinusförmiges periodisches Signal lässt sich als Überlagerung
+von Sinusschwingungen generieren, deren Frequenzen $f$ in einem ganzzahligen
+Verhältnis zur Frequenz der Grundschwingung stehen. Sie lässt sich
+in solche zerlegen.\medskip{}
+
+Für einen Rechteckimpuls mit der Periodendauer $T=1/f_{0}$ und $\omega_{0}=2\pi f_{0}$
+
+\[
+x(t)=\frac{4}{\pi}\cdot\hat{x}\cdot\left[\sin(\omega_{0}t)
+	+\frac{1}{3}\sin(3\omega_{0}t)+\frac{1}{5}\sin(5\omega_{0}t)+\frac{1}{7}\sin(7\omega_{0}t)+\dots\right]
+\]
+
+\end{frame}
+
+\begin{frame}{}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=0.6\textwidth]{Bilder/RPMT\lyxdot B0306}
+\end{figure}
+
+{\tiny{}Darstellung in Amplituden-Zeit und Amplituden-Frequenz-Diagramm.}{\tiny \par}
+
+{\scriptsize{}Bei Übertragung von nichtsinusförmigen periodischen
+Schwingungen reicht es nicht aus, die Grenzfrequenz einer Übertragungseinrichtung
+oberhalb der Grundschwingung eines Messsignals zu legen. Es müssen
+zu deren richtigen Bewertung auch ausreichende Oberschwingungen berücksichtigt
+werden.}{\scriptsize \par}
+
+{\scriptsize{}Bei Rechteckimpuls lässt eine Bandbreite der Signalverarbeitung
+größer als 11-fache der Grundschwingung die 5. Harmonische berücksichtigt.}{\scriptsize \par}
+
+{\scriptsize{}Bei einem Rechteckimpuls mit 10MHz Folgefrequenz entspricht
+dies eine Bandbreite von mindestens 110MHz.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Klirrfaktor und -koeffizient}
+
+\emph{Klirrfaktor}: Verhältnis der Summe der Effektivwerte aller
+Oberschwingungen zum Effektivwert des Gesamten Spektrum.
+
+Anteil der Oberschwingungen zu Gesamtschwingung.{\footnotesize{}
+\[
+K=\sqrt{\frac{U_{f1}^{2}+U_{f2}^{2}+U_{f3}^{2}+U_{f4}^{2}+\dots}{U_{f0}^{2}+U_{f1}^{2}+U_{f2}^{2}+U_{f3}^{2}+U_{f4}^{2}+\dots}}\cdot100\%
+\]
+\medskip{}
+}{\footnotesize \par}
+
+\emph{Klirrkoeffizient:} das Verhältnis einer Oberschwingung zur
+Gesamtschwingung.
+
+Messtechnisch: Darstellung der spektralen Verzerrung eines Signals
+durch Nichtlinearitäten im Übertragungsweg.
+
+{\footnotesize{}
+\[
+k_{v}=\frac{U_{fv}}{\sqrt{U_{f0}^{2}+U_{f1}^{2}+U_{f2}^{2}+U_{f3}^{2}+U_{f4}^{2}+\dots}}\cdot100\%
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+\scriptsize
+
+Ein Messgerät mit Verzögerungsverhalten 1. Ordnung, i.e. Tiefpass\-verhalten
+und Grenzfrequenz $f_{0}=\unit[1]{MHz}$ wird jeweils mit zwei Spannungs\-signalen
+beaufschlagt:
+\begin{enumerate}[a)]
+	\item sinusförmig: 
+	
+		\begin{itemize}
+			\item 		$u_{1}(t)=\unit[5]{V}\sin(2\pi\cdot5\cdot10^{5}\unit{s^{-1}\cdot t})$
+		\end{itemize}
+	\item nichtsinusförmig: 
+	
+	\begin{itemize}
+		\item $u_{11}(t)=\unit[5]{V}\sin(2\pi\cdot5\cdot10^{5}\unit{s^{-1}\cdot t})$ \par
+		\item $u_{12}(t)=\unit[3]{V}\sin(2\pi\cdot1\cdot10^{6}\unit{s^{-1}\cdot t})$ \par
+		\item $u_{13}(t)=\unit[2]{V}\sin(2\pi\cdot1,5\cdot10^{6}\unit{s^{-1}\cdot t})$ \par
+	\end{itemize}
+
+\end{enumerate}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot Beisp0305}
+		\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot Beisp0305b}
+\end{figure}
+
+Der Einfluss auf die Messsignalen ist zu ermitteln.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+\scriptsize
+Übertragungsfunktion des Tiefpasses:
+
+\[
+G(\omega)=\frac{U_{2}}{U_{1}}
+	=\frac{\hat{u}_{2}}{\hat{u}_{1}}
+	=\frac{1}{\sqrt{1+\left(\frac{\omega}{\omega_{0}}\right)^{2}}}
+	=\frac{1}{\sqrt{1+\left(\frac{f}{f_{0}}\right)^{2}}}
+\]
+
+\[
+\phi=\arctan\left(-\frac{f}{f_{0}}\right)
+\]
+
+\[
+\hat{u}_{2}=\hat{u}_{1}\cdot G=\hat{u}_{1}\cdot\frac{1}{\sqrt{1+\left(\frac{f}{f_{0}}\right)^{2}}}
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+\scriptsize
+Zu a) sinusförmig
+
+\[
+\hat{u}_{2}=\hat{u}_{1}\cdot\frac{1}{\sqrt{1+\left(\frac{f}{f_{0}}\right)^{2}}}
+	=\unit[5]{V}\cdot\frac{1}{\sqrt{1+\left(\frac{\unit[5\cdot10^{5}]{s^{-1}}}{\unit[10^{6}]{s^{-1}}}\right)^{2}}}
+	=4,472\unit{V}
+\]
+
+\[
+\phi=\arctan\left(-\frac{\unit[5\cdot10^{5}]{s^{-1}}}{\unit[10^{6}]{s^{-1}}}\right)=-26,6\text{\textdegree}
+\]
+
+\begin{figure}
+	\centering
+		\includegraphics[width=0.50\textwidth]{Bilder/RPMT\lyxdot Beisp0305c}
+	\label{fig:RPMT.Beisp0305c}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+\scriptsize
+Zu b) nichtsinusförmig
+
+\[
+\hat{u}_{21}=\hat{u}_{11}\cdot\frac{1}{\sqrt{1+\left(\frac{f}{f_{0}}\right)^{2}}}
+	=4,472\unit{V},\;\phi_{21}=-26,6\text{\textdegree}
+\]
+
+\[
+\hat{u}_{22}=\hat{u}_{12}\cdot\frac{1}{\sqrt{1+\left(\frac{f}{f_{0}}\right)^{2}}}
+	=\unit[3]{V}\cdot\frac{1}{\sqrt{1+\left(\frac{\unit[10^{6}]{s^{-1}}}{\unit[10^{6}]{s^{-1}}}\right)^{2}}}
+	=2,12\unit{V},\;\phi_{22}=-45\text{\textdegree}
+\]
+
+\[
+\hat{u}_{23}=\hat{u}_{13}\cdot\frac{1}{\sqrt{1+\left(\frac{f}{f_{0}}\right)^{2}}}
+	=\unit[2]{V}\cdot\frac{1}{\sqrt{1+\left(\frac{1,5\cdot\unit[10^{6}]{s^{-1}}}{\unit[10^{6}]{s^{-1}}}\right)^{2}}}
+	=1,109\unit{V},\;\phi_{23}=-56,3\text{\textdegree}
+\]
+
+Somit:
+
+\[
+u_{21}=4,472\unit{V}\sin((2\pi\cdot5\cdot10^{5}\unit{s^{-1}}\cdot t)-26,6\text{\textdegree})
+\]
+
+\[
+u_{22}=2,12\unit{V}\sin((2\pi\cdot10^{6}\unit{s^{-1}}\cdot t)-45\text{\textdegree})
+\]
+
+\[
+u_{23}=1,109\unit{V}\sin((2\pi\cdot1,5\cdot10^{6}\unit{s^{-1}}\cdot t)-56,3\text{\textdegree})
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{Bilder/RPMT\lyxdot Beisp0305d}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Verallgemeinerte Schlussfolgerung}
+
+Ein sinusförmiges Signal am Eingang eines frequenzabhängigen Übertragungsgliedes
+bleibt am Ausgang ein sinusförmiges Signal am Ausgang. Betrag und
+Phasenwinkel sind verändert.
+
+\medskip{}
+
+Ein nichtsinusförmiges Signal am Eingang verändert am Ausgang seine
+zeitliche Verlaufsform. Der Einfluss des frequenzabhängigen Übertragungsgliedes
+auf die spektrale Komponenten in Amplituden und Phasenwinkel ist abhängig
+vom jeweiligen Frequenz. 
+
+\end{frame}
+
+\begin{frame}{Logarithmische Übertragungsverhältnisse}
+
+Für die Darstellung und Bewertung von Messsignalen, die sich über
+mehrere Zehnerpotenzen, i.e. großen dynamischen Bereich, erstrecken,
+sind \emph{logarithmische Übertragungsmaße} übersichtlicher und zielgerichteter.
+Besonders sinnvoll und hilfreich in graphischer Darstellung, z.B.
+Messung von elektrischer Feldstärke oder Bestimmung von Übertragungsverhältnissen.
+\medskip{}
+
+\emph{Dezibel} für Übertragungsverhältnis von \emph{Pegelgrößen}
+wie Strom und Spannung:
+
+\[
+X_{dB}=20\cdot\lg\frac{X_{2}}{X_{1}}
+\]
+
+mit $X_{1}$- Eingangsgröße, $X_{2}$- Ausgangsgröße
+
+Umkehrung der Definitionsgleichung:
+
+\[
+\frac{X_{2}}{X_{1}}=10^{\frac{X_{dB}}{20}}
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: Spannungsverstärker}
+
+Für einen Spannungsverstärker wird ein Pegelverhältnis von 35,6 dB
+angegeben.\medskip{}
+
+\[
+\frac{U_{2}}{U_{1}}=10^{\frac{X_{dB}}{20}}=10^{\frac{35,6}{20}}=10^{1,778}=60
+\]
+
+\end{frame}
+
+\begin{frame}{Leistungsverhältnis}
+
+Die Leistungen sind quadratisch abhängig von den Pegelgrößen wie Spannung
+bzw. Strom:
+
+{\footnotesize{}
+\[
+P_{1}=\frac{U_{1}^{2}}{R};\;P_{2}=\frac{U_{2}^{2}}{R}
+\]
+}{\footnotesize \par}
+
+bzw.
+
+{\footnotesize{}
+\[
+P_{1}=I_{1}^{2}\cdot R;\;P_{2}=I_{2}^{2}\cdot R
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+\frac{P_{2}}{P_{1}}=\frac{U_{2}^{2}}{U_{1}^{2}}
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+\lg\frac{P_{2}}{P_{1}}=\lg\left(\frac{U_{2}}{U_{1}}\right)^{2}=2\cdot\lg\frac{U_{2}}{U_{1}}
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+10\cdot\lg\frac{P_{2}}{P_{1}}=20\cdot\lg\frac{U_{2}}{U_{1}}
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+\left(\frac{P_{2}}{P_{1}}\right)_{dB}=10\cdot\lg\frac{P_{2}}{P_{1}},\quad X_{dB}=10\cdot\lg\frac{X_{2}}{X_{1}}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel}
+
+
+Ein Verstärker liefert bei einer Eingangsleistung von 1mW eine Ausgangsleistung
+von 1W. 
+
+\[
+X_{\mbox{dB}}=10\cdot\lg\frac{\unit[1]{W}}{\unit[0,001]{W}}=10\cdot\lg1000=\unit[30]{dB}
+\]
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+{\footnotesize{}Angabe in dB} & {\footnotesize{}10} & {\footnotesize{}20} & {\footnotesize{}30} & {\footnotesize{}40} & {\footnotesize{}50} & {\footnotesize{}60}\tabularnewline
+\hline 
+{\footnotesize{}Verhältnis in Pegel} & {\footnotesize{}3,16} & {\footnotesize{}10} & {\footnotesize{}31,6} & {\footnotesize{}100} & {\footnotesize{}316} & {\footnotesize{}1000}\tabularnewline
+\hline 
+{\footnotesize{}Verhältnis in Leistung} & {\footnotesize{}10} & {\footnotesize{}100} & {\footnotesize{}1000} & {\footnotesize{}$10^{4}$} & {\footnotesize{}$10^{5}$} & {\footnotesize{}$10^{6}$}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Absolute Größen im logarithmischen Maß}
+
+In der messtechnischen Praxis ist es sehr oft zweckmäßig, absolute
+Größen über großen Wertebereich, im logarithmischen Maß anzugeben.\par
+\medskip{}
+Eine Bezugsgröße ist jeweils festzulegen.\medskip{}
+
+\emph{Normpegel für Leistung:}
+
+$P_{0}=\unit[1]{mW}$ am Widerstand $R=\unit[600]{\Omega}$\medskip{}
+
+\emph{Normpegel für Spannung}:
+
+$U_{0}=\unit[0,775]{V}$\medskip{}
+
+Beide Normpegel werden als Bezugswert für den jeweiligen absoluten
+0dB-Pegel genutzt.\par
+\medskip{}
+Streng genommen ist die dB-Angabe eine dimensionslose Verhältniszahl.
+Mit der Normpegel erhält sie die physikalische Größe.
+
+\end{frame}
+
+\begin{frame}{Normpegel in der Messtechnik}
+
+{\scriptsize{}}%
+\begin{tabular}{|>{\centering}p{1.5cm}|c|c|>{\centering}p{4cm}|}
+\hline 
+{\tiny{}Pegelart} & {\tiny{}Definition} & {\tiny{}Kennzeichnung} & {\tiny{}Anwendungen}\tabularnewline
+\hline 
+\hline 
+{\tiny{}absoluter Leistungs\-pegel} & {\tiny{}$10\lg(\frac{P_{x}}{\unit[1]{mW}})$} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}dB(1 mW)}\tabularnewline
+{\tiny{}dBm (auch dB)}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4cm}}
+{\tiny{}Studiotechnik}\tabularnewline
+{\tiny{}Charakterisierung von elektronischen Verstärkern}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}absolute Spannungs\-pegel} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}$20\lg(\frac{U_{x}}{\unit[0,755]{V}})$}\tabularnewline
+\hline 
+{\tiny{}$20\lg(\frac{U_{x}}{\unit[1]{V}})$}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}dB(0,775V),}\tabularnewline
+{\tiny{}dB}\tabularnewline
+\hline 
+{\tiny{}dB(1V),}\tabularnewline
+{\tiny{}dBV}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4cm}}
+{\tiny{}Dämpfungsmessung in Kommunikationstechnik}\tabularnewline
+{\tiny{}Charakterisierung von elektronischen Verstärkern}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}Feldstärke\-pegel} & {\tiny{}$20\lg(\frac{E_{x}}{\unit[1]{\mu Vm^{-1}}})$} & {\tiny{}dB($\mu V\mbox{m}^{-1}$)} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4cm}}
+{\tiny{}Funktechnik}\tabularnewline
+{\tiny{}Störmesstechnik (EMV)}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}Leistungs\-dichte\-pegel} & {\tiny{}$10\lg(\frac{P_{x}/\Delta F}{\unit[1]{W}/\unit[1]{Hz}})$} & {\tiny{}dB(WHz$^{-1}$)} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4cm}}
+{\tiny{}Funktechnik}\tabularnewline
+{\tiny{}Störmesstechnik (EMV)}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Rundfunkempfänger}
+\scriptsize
+Ein Rundfunkempfänger benötigt als erforderliches Eingangssignal ein
+Spannungspegel von -115dBV.
+
+Eingangsspannung in Volt:
+
+\[
+\left(\frac{U_{2}}{U_{1}}\right)_{dB}=20\lg\frac{U_{x}}{\unit[1]{V}}
+\]
+
+\[
+\unit[-115]{dB}=20\lg\frac{U_{x}}{\unit[1]{V}}
+\]
+
+\[
+U_{x}=\unit[1]{V}\cdot10^{\frac{-115}{20}}=\unit[1]{V}\cdot10^{-5,75}=\unit[1,778\cdot10^{-6}]{V=\unit[1,778]{\mu V}}
+\]
+
+Bezogen auf $\unit[1]{\mu V}$:
+
+\[
+X\,(\mbox{in dB\ensuremath{\mu}V})=20\lg\frac{\unit[1,778]{\mu V}}{\unit[1]{\mu V}}=20\cdot0,25=\unit[5]{dB\mu V}
+\]
+
+\[
+\unit[5]{dB\mu V}=\unit[-115]{dBV}
+\]
+
+\end{frame}
+
+\end{document}
+
+
+
+
+

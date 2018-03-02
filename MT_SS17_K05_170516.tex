@@ -1,0 +1,989 @@
+% \mode
+% <all>
+\lecture{Kap 05 Messung elektrischer Größen}{K05}
+%\setcounter{framenumber}{0}
+\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 05 Messung elektrischer Größen}
+\begin{frame}{Übersicht}
+
+
+\textbf{Thema}: Messung elektrischer Größen als Grundlagen der Messtechnik
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Messung von Spannung, Stromstärke, Leistung und Arbeit, 
+\item Messung von Widerstand, Induktivität und Kapazität
+\item Messung von Zeit und Frequenz
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 8
+
+\end{frame}
+
+\begin{frame}{Elektrische Größen}
+
+
+Elektrische Größen: Spannung, Stromstärke, elektrische Leistung und
+Arbeit, elektrischer Widerstand, Induktivität und Kapazität.\medskip{}
+
+
+
+Notwendige Größen zur Messung von Wechselgrößen: Zeit und Frequenz\medskip{}
+
+
+
+Messung elektrischer Größen ist die Grundlage für Messungen nichtelektrischer
+Größen und für Automatisierung und Rechner basierende Steuerung.
+
+\end{frame}
+
+\begin{frame}{Erreichbare Messgenauigkeiten}
+
+Ausschlaggebend sind neben geeigneten Messprinzipien auch die verwendeten
+Normale.\medskip{}
+
+Aus Primärnormalen werden Arbeits- und Referenznormale für Eichlabor
+abgeleitet. Die Messeinrichtungen werden dagegen geeicht bzw. kalibriert. 
+
+
+\medskip{}
+Somit legen die verwendete Normale die Grenzen erreichbarer Messgenauigkeiten.
+
+\end{frame}
+
+\begin{frame}{}
+
+\tiny
+\begin{tabular}[t]{|>{\centering}p{1.2cm}|>{\centering}p{3cm}|>{\centering}p{1.6cm}|>{\centering}p{2.2cm}|>{\centering}p{1.6cm}|}
+\hline \par
+physikalische Größe & Primärnormal & typische Genauigkeit & Referenznormal & typische Genauigkeit\tabularnewline
+\hline\hline \par
+Spannung & Josephson-Spannungsnormal ($U\le\unit[10]{V}$) & $$\frac{\Delta U}{U}\le\pm 10^{-9}$$ & Dioden-Transistor-Referenzspannungquelle 
+	& $$\frac{\Delta U}{U}\le 10^{-6}$$\tabularnewline
+\hline  \par 
+Widerstand & Manganinwiderstand (hermetisch abgeschlossen, $R=\unit[1]{\Omega}$ & $$\frac{\Delta R}{R}\le\pm10^{-7}$$ 
+	& Manganinwiderstände im Bereich von $\unit[1]{\Omega}\dots\unit[1]{M\Omega}$ oder Widerstandsdekaten
+	& $$\frac{\Delta R}{R}\le 10^{-5}$$\tabularnewline
+\hline  \par
+Kapazität & berechenbarer Kondensator aus vier Stäbe genauer Länge $C=\unit[10]{pF}$
+	oder $\unit[1]{pF}$ & $$\frac{\Delta C}{C}\le\pm 10^{-7}$$ 
+	& Glas- oder Glimmerkondensator \par 
+		$$C=\unit[100]{pF}\dots\unit[1]{nF}$$ 
+	& $$\frac{\Delta C}{C}\le\pm10^{-5}$$\tabularnewline
+\hline  \par
+Induktivität & Lange dünne Luftspule $L=\unit[1]{mH}\dots\unit[10]{mH}$ 
+	& $$\frac{\Delta L}{L}\le\pm10^{-6}$$ & Zylinderluftspulen, Eisenkernspulen $L=\unit[0,1]{mH}\dots\unit[10]{H}$ 
+	& $$\frac{\Delta L}{L}\le\pm10^{-4}$$\tabularnewline
+\hline 
+\end{tabular} \par
+
+\end{frame}
+
+\begin{frame}
+
+\begin{tabular}{|>{\centering}p{1.3cm}|>{\centering}p{3cm}|>{\centering}p{1.5cm}|>{\centering}p{2cm}|>{\centering}p{1.5cm}|}
+\hline 
+{\tiny{}physikalische Größe} & {\tiny{}Primärnormal} & {\tiny{}typische Genauigkeit} & {\tiny{}Referenznormal} & {\tiny{}typische Genauigkeit}\tabularnewline
+\hline 
+{\tiny{}Zeit} & {\tiny{},,Atomuhr``, Cäsiumresonator mit nachfolgender Pulsgewinnung
+und Generierung einer vereibarten Zeitbasis} & {\tiny{}$\frac{\Delta t}{t}\le\pm10^{-13}$} & {\tiny{}Normfrequenzsender DCF77, sendet auf 77,5 kHz BCD-kodierte
+Zeitinformation} & {\tiny{}$\frac{\Delta t}{t}\le10^{-13}$}\tabularnewline
+\hline 
+{\tiny{}Frequenz} & {\tiny{},,Atomuhr``, Cäsiumresonator} & {\tiny{}$\frac{\Delta f}{f}\le\pm10^{-13}$} & {\tiny{}Quarzoszillator (temperaturstabilisiert)} & {\tiny{}$\frac{\Delta f}{f}\le\pm10^{-10}$}\tabularnewline
+\hline 
+\end{tabular}\medskip{}
+
+Die Normale für Frequenz und Zeit besitzen die mit Abstand höchste
+Genauigkeit. Daher wird bei Messverfahren versucht, diese nach Möglichkeiten
+auf Zeit oder Frequenz zurückzuführen.
+
+\medskip
+\scriptsize
+$^{133}Cs:\; 9.192.630.770\, \text{Hz}$ \par
+$^{87}Sr: \; 429.228.004.229.877\, \text{Hz} $
+
+\end{frame}
+
+\begin{frame}{Messung von Stromstärke und Spannung: Drehspulmesswerk}
+
+Messung von Stromstärke und Spannung ist Voraussetzung für fast alle
+anderen Messungen.\medskip{}
+
+Klassische elektromechanische Messgeräte basieren auf magnetische
+Kraftwirkung auf stromdurchflossenen Leiter in einem Magnetfeld.\medskip{}
+
+Die Messung von Spannung wird über die ohmsche Beziehung: $U=I\cdot R$
+in Messung von Strom überführt.
+\begin{columns}
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=5cm]{Bilder/RPMT.B0801}
+
+	\column{0.4\textwidth}
+
+		{\scriptsize{}Drehspulmesswerk}{\scriptsize \par}
+
+		{\scriptsize{}Widerstand der Spule ist temperatur\-abhängig und wirkt
+		auf die Mess\-genauigkeit aus. }{\scriptsize \par}
+
+
+		{\scriptsize{}Zeigerausschlag des Drehspul\-messwerks ist proportional
+		zum arithmetischen Mittelwert des durchfließenden Stroms.}{\scriptsize \par}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.8\textwidth]{Bilder/AMM_Skalen_lin.jpg}
+		\label{fig:AMM_Skalen_lin}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Messung von Stromstärke und Spannung: elektronisch}
+
+Elektronische Messung mit digitalen Anzeigen.\medskip{}
+
+Zur Bestimmung von Spannung wird sehr hohen Eingangswiderstand ($\unit[10^{7}]{\Omega}\dots\unit[10^{10}]{\Omega}$)
+verwendet. Somit \emph{fast leistungs- und rückwirkungsfreie Messung}.\medskip{}
+
+Zur Strommessung wird Spannungsabfall über einen Messwiderstand (engl.
+Shunt) erzeugt.\medskip{}
+
+Für möglichst rückwirkungsfreie Strommessung werden Shunts mit sehr
+kleinen Widerstandswerten (bis Milliohm-Bereich) verwendet. Die Spannung
+wird ggf. mit großer Verstärkung weiterverarbeitet.\medskip{}
+
+Preisgünstige Digitalmultimeter (DMM) für Werkstatt und Heimwerker
+schon ab 10¤. Präzisionsmultimeter mit an Referenznormal liegenden
+Genauigkeiten bis zu einige 1000¤.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Strommessung mittels Spannungsmesser}
+
+Shunt: $R_{N}=\unit[1]{\Omega}$
+
+\[
+U=I_{M}\cdot R
+\]
+
+Stromwert $I_{M}=\unit[1]{A}\Rightarrow$Spannungswert $U=\unit[1]{V}$
+
+Stromwert $I_{M}=\unit[15]{mA}\Rightarrow$Spannungswert $U=\unit[15]{mV}$
+
+\medskip{}
+
+Alternative Shunt: $R_{N}=\unit[0,1]{\Omega}$\medskip{}
+
+Stromwert $I_{M}=\unit[1]{A}\Rightarrow$Spannungswert $U=\unit[0,1]{V}$
+
+Stromwert $I_{M}=\unit[15]{mA}\Rightarrow$Spannungswert $U=\unit[1,5]{mV}$
+
+\end{frame}
+
+\begin{frame}{Elektronische Messgeräte: Wechselspannung und -strom}
+
+Mittelwertbildung und -anzeige: Gleichrichtwert
+
+{\scriptsize{}
+\[
+\overline{|u|}=\frac{1}{T}\int_{0}^{T}\left|u(t)\right|dt
+\]
+}{\scriptsize \par}
+
+Einfach zu realisieren. Bei mechanischen Messwerken erfolgt die Mittelwertbildung
+durch Trägheit des Messwerks. In elektronische Messgeräten ist hierfür
+elektronischer Tiefpassfilter 1. Ordnung notwendig.
+
+Oft wird der Effektivwert gebraucht. Bei festgelegter Kurvenform wird
+über Formfaktor $F$ umgerechnet:
+
+{\scriptsize{}
+\[
+F=\frac{U}{\overline{|u|}}\Rightarrow U=F\cdot\overline{|u|}
+\]
+}{\scriptsize \par}
+
+mit $U$ dem Effektivwert der Wechselspannung. Energieversorgungsnetz.
+
+Bei Einsatz für beliebige Kurvenform muss Effektivwertbildung nach
+
+{\scriptsize{}
+\[
+U=\sqrt{\frac{1}{T}\int_{0}^{T}[u(t)]^{2}dt}
+\]
+}{\scriptsize \par}
+
+konkret durchgeführt werden.
+
+\end{frame}
+
+\begin{frame}{Leistungsmessung}
+
+Leistungsmessung im Gleichstromkreis:
+
+\[
+P=U\cdot I,\quad\mbox{bzw.}\quad P=\frac{U^{2}}{R},\;P=I^{2}\cdot R
+\]
+
+Auf dieser Basis kann Messeinrichtung für Leistungsmessung, Wattmeter,
+konstruiert werden.
+
+Leistungsmessung im Wechselstromkreis:
+
+\[
+p(t)=u(t)\cdot i(t)
+\]
+
+Sinusförmige Wechselgröße:
+
+\[
+u(t)=\hat{u}\sin\omega t\;\mbox{und }i(t)=\hat{i}\sin(\omega t-\phi)
+\]
+
+\[
+p(t)=\hat{u}\sin\omega t\cdot\hat{i}\sin(\omega t-\phi)
+\]
+
+\end{frame}
+
+\begin{frame}{Leistungsmessung: Wirkleistung}
+
+\[
+p(t)=\frac{\hat{u}\cdot\hat{i}}{2}[\cos(\omega t-(\omega t-\phi))-\cos(\omega t+(\omega t-\phi))]
+\]
+
+\[
+=\frac{\hat{u}\cdot\hat{i}}{2}[\cos\phi-\cos(2\omega t-\phi)]
+\]
+
+Momentane Leistung pulsiert mit $2\omega$.
+
+Durchschnittliche Leistung:
+
+\[
+P=\frac{1}{T}\int_{0}^{T}p(t)dt=\frac{\hat{u}\cdot\hat{i}}{2}\cdot\cos\phi
+\]
+
+Mit $\hat{u}=U\cdot\sqrt{2}$ und $\hat{i}=I\cdot\sqrt{2}$ für Sinusschwingung:
+
+\[
+P=U\cdot I\cdot\cos\phi\quad[\unit{W}]
+\]
+
+\emph{Wirkleistung}: Leistung, mit der Arbeit über Zeit verrichtet
+wird.
+
+\end{frame}
+
+\begin{frame}{Blindleistung}
+
+Im Wechselstromkreis steht der Vektor der \emph{Blindleistung} $Q$
+senkrecht auf dem Vektor der Wirkleistung:
+
+\[
+Q=U\cdot I\cdot\sin\phi\quad[\unit{var}]
+\]
+
+Zur Unterscheidung wird die Blindkomponente der Leistung mit Volt-Ampere-reaktive
+{[}var{]}, auch {[}VAr{]} (sprich ,,war``) bezeichnet.
+
+\emph{Scheinleistung}: quadratische Addition der beiden Leistungskomponenten
+
+\[
+S=\sqrt{P^{2}+Q^{2}}\quad\mbox{bzw. }\quad S=U\cdot I\quad[\unit{VA}]
+\]
+
+Messung der Scheinleistung erfolgt durch separate Messungen von Strom
+und Spannung über komplexen Widerstand und Produktbildung. 
+
+\note[item]{Messung mit elektrodynamischem Messwerk weglassen, auch digitale
+Methode mit Phasenschieber. Allpass mit frequenzunabhängige 90\textdegree{}
+Phasenverschiebung.}
+
+\end{frame}
+
+\begin{frame}{Komplexe Leistung und Widerstände}
+
+\includegraphics[width=3cm]{Bilder/RPMT.B0802}\includegraphics[width=3cm]{Bilder/RPMT.B0803}
+
+In komplexer Darstellung:
+
+\[
+\underbar{U}=U\cdot e^{j\phi_{U}},\;\underbar{I}=I\cdot e^{j\phi_{I}},\;\underbar{U}=\underbar{I}\cdot\underbar{Z}
+\]
+
+\[
+\underbar{P}=\underbar{U}\cdot\underbar{I}^{*}=U\cdot I\cdot e^{i\phi_{UI}}=\mbox{Re}(\underbar{P})+j\cdot\mbox{Im}(\underbar{P})
+\]
+
+\[
+\mbox{Re}(\underbar{P})=U\cdot I\cdot\cos\phi_{UI},\;\mbox{Im}(\underbar{P})=U\cdot I\cdot\sin\phi_{UI}
+\]
+
+\[
+P=U\cdot I
+\]
+
+\end{frame}
+
+\begin{frame}{Messung Scheinleistung}
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT.B0804}
+\end{center}
+\scriptsize
+Messung der Scheinleistung erfolgt durch separate Messungen der Effektivwerte
+für Strom und Spannung und Produktbildung.
+
+\medskip{}
+
+Oder bei bekanntem komplexen Widerstand über
+
+{\scriptsize{}
+\[
+S=\frac{U^{2}}{Z},\;S=I^{2}\cdot Z
+\]
+}{\scriptsize \par}
+
+mit dem Scheinwiderstand $Z=|\underbar{Z}|=\sqrt{R^{2}+X^{2}}$, wobei
+$X$ Blindwiderstand darstellt.
+
+
+Die Wirkleistung ist der Anteil der Scheinleistung, der in einem ohmschen
+Widerstand irreversibel in Wirkleistung, z.B. Wärme oder Arbeit, umgesetzt
+wird.
+
+\end{frame}
+
+\begin{frame}{Elektrodynamisches Messwerk}
+
+\begin{center}
+\includegraphics[width=7cm]{Bilder/RPMT.B0805}
+\par\end{center}
+
+Kraftauswirkung auf Zeiger durch zwei aufeinander wirkenden Magnetfelder
+zweier Spulen. Wird Spannungsabfall $U_{RL}$ über Verbraucherwiderstand
+$R_{L}$ gewonnen, so erhält man direktanzeigenden Wirkleistungsmesser.
+
+\end{frame}
+
+\begin{frame}{Messung Blindleistung}
+
+1) mit $Q=\sqrt{S^{2}-P^{2}}$, durch Messungen von Schein- und Wirkleistung
+
+2) mit Phasenschiebung um 90\textdegree{} wird Blind- in Wirkleistung
+umgewandelt:
+
+\[
+Q=U\cdot I\cdot\sin\phi=U\cdot I\cdot\cos(\phi-\frac{\pi}{2})
+\]
+
+\begin{center}
+\includegraphics[width=6cm]{Bilder/RPMT.B0806}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Messung von Wirkwiderständen (ohmsche)}
+
+Messungen über Strom-/Spannungsmessung oder durch Widerstandsvergleich
+in einer Brückenschaltung.
+
+Bei hohen Frequenzen sind parasitäre Kapazität und Induktivität des
+Widerstandes zu berücksichtigen.
+
+\begin{center}
+	\includegraphics[width=5cm]{Bilder/RPMT.B0807}
+\par\end{center}
+
+Aufbau eines realen Widerstandes
+
+Anschlusskappen besitzen kapazitive Eigenschaften.
+
+Wendelbahnen wirken induktiv wie Spule.
+
+\end{frame}
+
+\begin{frame}{Messung mittels Spannung/Strom}
+
+Zweileiter Schaltung:
+
+\begin{center}
+	\includegraphics[width=0.7\textwidth]{Bilder/RPMT.B0808}
+\par\end{center}
+
+Zuleitungswiderstände $R_{L}$ werden mitbestimmt, und sollten $\ll R_{x}$
+sein.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Relative Abweichung durch Messkabel}
+
+Zweileiter-Schaltung. Messkabel mit den Eigenschaften:
+
+Länge $l=\unit[2,5]{m}$
+
+Kabelquerschnitt: $A=\unit[0,5]{mm^{2}}$
+
+Leitermaterial: Kupfer mit spezifischem Widerstand(sigma) $\varsigma=\unit[0,0175]{\frac{\Omega\cdot mm^{2}}{m}}$
+
+Messstrom: $I=\unit[100]{mA}$
+
+Messspannung: $U=\unit[100]{mV}$\medskip{}
+
+Widerstand der Zuleitung:
+
+\[
+R=\varsigma\cdot\frac{l}{A}
+\]
+
+\[
+R_{L}=\unit[0,0175]{\frac{\Omega\cdot mm^{2}}{m}}\cdot\frac{\unit[2,5]{m}}{\unit[0,5]{mm^{2}}}=\unit[0,0875]{\Omega=\unit[87,5]{m\Omega}}
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: Relative Abweichung durch Messkabel}
+\scriptsize
+
+Bekannte systematische Abweichung:
+
+\[
+A_{s,b}=2U_{RL}=I\cdot2R_{L}
+\]
+
+\[
+=\unit[100]{mA}\cdot2\cdot\unit[87,5]{m\Omega}=\unit[0,0175]{V}=\unit[17,5]{mV}
+\]
+ 
+Korrekter Widerstandswert:
+
+\[
+R_{x}=\frac{U_{M}-2U_{RL}}{I_{M}}=\frac{\unit[100]{mV}-\unit[17,5]{mV}}{\unit[100]{mA}}=\unit[0,825]{\Omega}
+\]
+
+Unkorrigierter Widerstandswert:
+
+\[
+R'_{x}=\frac{U_{M}}{I_{M}}=\frac{\unit[100]{mV}}{\unit[100]{mA}}=\unit[1]{\Omega}
+\]
+Relative Abweichung:
+
+\[
+\Delta R_{rel}=\frac{\Delta R_{x}}{R_{x}}=\frac{R_{x}'-R_{x}}{R_{x}}=\frac{\unit[1]{\Omega}-0\unit[,825]{\Omega}}{\unit[0,825]{\Omega}}=0,2121=21\%
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel Zweileiter-Schaltung}
+
+Messstrom: $I=\unit[10]{mA}$, Messspannung: $U_{M}=\unit[1,2]{V}$
+
+Widerstand der Gesamtleitung: $R_{Lges}=\unit[1,3]{\Omega}$
+
+\medskip{}
+Korrekter Wert $R_{x}$:
+
+\[
+R_{x}=\frac{U_{M}-(I\cdot R_{Lges})}{I}=\frac{\unit[1,2]{V}-(\unit[10]{mA}\cdot\unit[1,3]{\Omega})}{\unit[10]{mA}}=\unit[118,7]{\Omega}
+\]
+
+Relative systematische Abweichung ohne Korrektur:
+
+\[
+\Delta R_{rel}=\frac{R_{x}'-R_{x}}{R_{x}}=\frac{\frac{\unit[12]{V}}{\unit[10]{mA}}-\unit[118,7]{\Omega}}{\unit[118,7]{\Omega}}=0,01095=1,095\%
+\]
+
+\end{frame}
+
+\begin{frame}{Vierleiter-Schaltung}
+
+Bei Messung sehr kleiner Widerstände bzw. bei hoch präziser Widerstandsmessung
+muss Vierleiter-Schaltung verwendet werden.
+
+\begin{center}
+	\includegraphics[width=7cm]{Bilder/RPMT.B0809}
+\par\end{center}
+
+Aufwändig und mit hohen Kosten verbunden.
+
+\end{frame}
+
+\begin{frame}{Messung mit Brückenschaltung}
+
+Widerstandsmessung mit Gleichstrombrücke
+\begin{columns}
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=4cm]{Bilder/RPMT.B0810}
+
+	\column{0.5\textwidth}
+
+		{\scriptsize{}Im \emph{{\scriptsize{}Abgleichsfall}} $U_{AB}=0$
+		gilt}{\scriptsize \par}
+
+		{\scriptsize{}
+		\[
+		\frac{R_{1}}{R_{2}}=\frac{R_{3}}{R_{4}}
+		\]
+		}Wenn an der Stelle $R_{2}$ der zu messende Widerstand $R_{x}$ steht,
+		und $R_{4}=R_{V}$ der Vergleichswiderstand ist:
+
+		{\scriptsize{}
+		\[
+		R_{x}=R_{V}\cdot\frac{R_{1}}{R_{3}}
+		\]
+		}{\scriptsize \par}
+
+\end{columns}
+
+Solche Wheastone-Brücke kann Messung von Widerständen zwischen $\unit[1]{\Omega}$
+bis $\unit[10]{M\Omega}$mit einer Fehlergrenze von 0,1\% bewerkstelligen.
+
+Für niedrigen Widerstandswerte im $\unit{m\Omega}$-Bereich bis zu
+$\unit[10^{-7}]{\Omega}$ kommt Thomson-Brücke in Einsatz, welche
+mit Vierleiter-Schaltung die störenden Leitungswiderständen vermeidet.
+
+\end{frame}
+
+\begin{frame}{Ausschlagverfahren mit Brückenschaltung}
+
+Sollte nur kleine Veränderung $\Delta R$ nachgewiesen werden, so
+kann die Brückenschaltung im Ausschlagverfahren betrieben werden.
+\begin{columns}
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=4cm]{Bilder/RPMT.B0811}
+
+	\column{0.5\textwidth}
+
+		{\scriptsize{}
+		\[
+		U_{A}=U_{0}\cdot\frac{R+\Delta R}{2R+\Delta R}=\frac{U_{0}}{2}(\frac{1+\frac{\Delta R}{R}}{1+\frac{\Delta R}{2R}})
+		\]
+
+		\[
+		\approx\frac{U_{0}}{2}(1+\frac{\Delta R}{R})(1-\frac{\Delta R}{2R})\approx\frac{U_{0}}{2}(1+\frac{\Delta R}{2R}),\;
+		\]
+		}{\scriptsize \par}
+
+		{\scriptsize{}
+		\[
+		U_{B}=U_{0}\frac{R}{2R}
+		\]
+		}{\scriptsize \par}
+
+		{\scriptsize{}
+		\[
+		U_{AB}=U_{A}-U_{B}\approx\frac{U_{0}}{2}\cdot\frac{\Delta R}{2R}
+		\]
+		}{\scriptsize \par}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Dreileiter-Brückenschaltung}
+
+Bei elektrischer Temperatur-Messung ist der veränderliche Widerstand
+abgesetzt von der Messschaltung angeordnet.
+\begin{center}
+	\includegraphics[width=5cm]{Bilder/RPMT.B0812}
+\end{center}
+
+Mit der 3ter Zuleitung wird die Messbrücke wieder symmetrisch, wenn
+$R_{L1}=R_{L2}$. Der Abgleich wird somit nicht von Leitungswiderstand
+beeinflusst.
+
+\end{frame}
+
+\begin{frame}{Messung von Kondensator}
+
+Kapazität und Induktivität sind nur mit Wechselspannungs-Messschaltung
+zu ermitteln.
+
+Betrachte Spannung, Strom und Widerstand als komplexe Größe, es gilt:
+\begin{columns}
+
+	\column{0.5\textwidth}
+
+		{\scriptsize{}
+		\[
+		\underline{Z}=\frac{\underline{U}}{\underline{I}};\quad\underline{Y}=\underline{\frac{\underline{I}}{U}}
+		\]
+		}{\scriptsize \par}
+
+		für den komplexen Widerstand $\underline{Z}$ und komplexen Leitwert
+		$\underline{Y}$.
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=5cm]{Bilder/RPMT.B0813}
+
+\end{columns}
+
+Für die Bestimmung des Scheinwiderstandes wird der Zweipol mit einer
+konstanter Effektivspannung oder einem konstanten Effektivstrom mit
+bekannter Frequenz gespeist, der Quotient aus Spannung und Strom liefert
+den Betrag des Scheinwiderstandes
+
+{\scriptsize{}
+\[
+Z=\frac{U}{I};\quad Y=\frac{I}{U}
+\]
+}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Bestimmung der Kapazität mittels Strom/Spannung}
+
+Ein realer Kondensator besitzt neben Kapazität $C$ auch induktive
+Blindanteile und Wirkanteile.
+\begin{columns}
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=5cm]{Bilder/RPMT.B0814}
+
+		{\scriptsize{}Ersatzschaltung eines realen Kondensators}{\scriptsize \par}
+
+	\column{0.5\textwidth}
+
+		{\scriptsize{}Parallelwiderstand durch ohmsche Verluste der Zuleitungen
+		und endliche Isolationsfähigkeit des Dielektrikums u.a. verursacht.}{\scriptsize \par}
+
+		{\scriptsize{}Wenn 
+		\[
+		R_{p}\gg\left|\frac{1}{\omega C}\right|
+		\]
+		}{\scriptsize \par}
+
+		{\scriptsize{}gilt, kann der reale Kondensator als ein idealer betrachtet
+		werden. Unter dieser Bedingung kann die Kapazität mit einer Strom-/Spannungsmessung
+		bestimmt werden:}{\scriptsize \par}
+
+		{\scriptsize{}
+		\[
+		X_{C}=\frac{1}{\omega C}=\frac{1}{2\pi f\cdot C}=\frac{U}{I}
+		\]
+		}{\scriptsize \par}
+
+		{\scriptsize{}
+		\[
+		C=\frac{I}{2\pi f\cdot U}
+		\]
+		}{\scriptsize \par}
+
+		{\scriptsize{}mit $f$ - Arbeitsfrequenz, $U$ und $I$ Effektivwerte}{\scriptsize \par}
+
+\end{columns}
+
+
+{\scriptsize{}Diese einfache Methode ist geeignet für hochwertige
+verlustarmen Kondensatoren. Für Hochfrequenzbereich ($\gg\unit[1]{MHz}$)
+und bei Elektrolytkondensatoren jedoch ungeeignet.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Verlustbehafteter Kondensator mit vereinfachter Ersatzschaltung}
+
+
+Annahme: Verlust vergleichsweise klein ($\ll90\text{\textdegree})$
+
+
+\includegraphics[width=5cm]{Bilder/RPMT.B0815}
+
+
+\[
+\tan\delta=\frac{I_{G}}{I_{C}}=\frac{\frac{U}{R_{P}}}{U\cdot\omega C}=\frac{1}{\omega C\cdot R_{p}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Bestimmung Kapazität hoher Güte}
+
+
+Messschaltung mit einer Frequenz $f=\unit[1]{MHz}$ und einem Strom
+$I=\unit[1,0]{mA}$. Gemessener Spannungsabfall $U=\unit[2]{V}.$\medskip{}
+
+
+
+Kapazität:
+
+
+\[
+C=\frac{I}{2\pi f\cdot U}=\frac{\unit[1]{mA}}{2\pi\cdot\unit[1]{MHz}\cdot\unit[2]{V}}=\unit[7,96\cdot10^{-11}]{\frac{As}{V}}=\unit[79,6]{pF}
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Bestimmung der Induktivität mittels Strom/Spannung}
+
+
+Messung von Induktivität einer Spule, oft Drossel genannt, ähnlich
+der Messung von Kapazität eines Kondensators.
+
+
+Allerdings eilt der Strom in der Spule der angelegten Spannung um
+90\textdegree{} nach. Der Verlustwinkel ist bei realen Spule meistens
+nicht vernachlässigbar.
+
+
+Die Verlust entsteht durch ohmschen Widerstand der Wicklung der Spule
+und durch Wirbelstromverluste.
+
+
+\includegraphics[width=5cm]{Bilder/RPMT.B0816}
+
+
+Abgesehen von Höchstfrequenzbereich können kapazitive Wirkungen zwischen
+benachbarten Spulenwicklungen vernachlässigt werden. 
+
+\end{frame}
+
+\begin{frame}{Verlustbehaftete Spule}
+
+
+\includegraphics[width=5cm]{Bilder/RPMT.B0817}
+
+
+Für Verlustwinkel $\delta$ gilt:
+
+
+{\scriptsize{}
+\[
+\tan\delta=\frac{U_{Rs}}{U_{L}}=\frac{I\cdot R_{S}}{I\cdot\omega L}=\frac{R_{S}}{\omega L}
+\]
+}{\scriptsize \par}
+
+
+Beziehung Schein-, Blind- und Wirkwiderstand:
+
+
+{\scriptsize{}
+\[
+Z^{2}=R^{2}+(\omega L)^{2}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+L=\frac{\sqrt{Z^{2}-R^{2}}}{\omega}=\frac{\sqrt{(\frac{U}{I})^{2}-(\frac{U_{-}}{I_{-}})^{2}}}{2\pi f}
+\]
+}{\scriptsize \par}
+
+
+Es sind eine Wechsel- und eine Gleichspannungsmessung erforderlich,
+um die Induktivität einer realen Spule zu bestimmen.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Induktivität einer Spule}
+
+
+Effektivwertmesser über eine Spule: $U=\unit[10]{V},\,I=\unit[1,0]{mA}$
+bei $f=\unit[10]{kHz}$. 
+
+
+Gleichspannungsmessung: $U_{-}=\unit[10]{V},\,I_{-}=\unit[10]{mA}$\medskip{}
+
+
+
+Berechnung der Induktivität:
+
+
+\[
+L=\frac{\sqrt{(\frac{U}{I})^{2}-(\frac{U_{-}}{I_{-}})^{2}}}{2\pi f}=\frac{\sqrt{(\frac{\unit[10]{V}}{\unit[10^{-3}]{A}})^{2}-(\frac{\unit[10]{V}}{\unit[10^{-2}]{A}})^{2}}}{2\pi\cdot\unit[10^{4}]{s^{-1}}}
+\]
+
+
+
+\[
+=\unit[0,158]{\frac{Vs}{A}=\unit[0,158]{H}=\unit[158]{mH}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Kapazität und Induktivität mittels Brückenschaltung}
+
+\begin{columns}
+
+
+\column{0.5\textwidth}
+
+
+\includegraphics[width=5cm]{Bilder/RPMT.B0818}
+
+
+{\scriptsize{}Wechselstrombrücke zur Messung von Kondensator und Spule}{\scriptsize \par}
+
+
+\column{0.5\textwidth}
+
+
+{\scriptsize{}Im Abgleichsfall $\underline{U_{AB}}=0$ gilt:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\frac{\underline{Z_{1}}}{\underline{Z_{2}}}=\frac{\underline{Z_{3}}}{\underline{Z_{4}}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Mit der Exponentialschreibweise $\underline{Z}=Z\cdot e^{j\phi}$:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\frac{Z_{1}\cdot e^{j\phi_{1}}}{Z_{2}\cdot e^{j\phi_{2}}}=\frac{Z_{3}\cdot e^{j\phi_{3}}}{Z_{4}\cdot e^{j\phi_{4}}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Rightarrow\frac{Z_{1}}{Z_{2}}=\frac{Z_{3}}{Z_{4}}\;\mbox{und }\phi_{1}-\phi_{2}=\phi_{3}-\phi_{4}
+\]
+}{\scriptsize \par}
+
+\end{columns}
+
+
+\medskip{}
+Für Gleichstrom ist der Blindwiderstand einer Kapazität gegen unendlich
+und der Blindwiderstand einer Induktivität gegen Null.
+
+\end{frame}
+
+\begin{frame}{Kapazität und Induktivität mittels Brückenschaltung}
+
+\begin{columns}
+
+
+
+
+\column{0.5\textwidth}
+
+
+{\scriptsize{}Mit $\underline{Z_{2}}=\underline{Z_{x}}$, zu messendem
+Widerstand und $\underline{Z_{4}}=\underline{Z_{V}}$, Vergleichswiderstand:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+Z_{x}=Z_{V}\cdot\frac{Z_{1}}{Z_{3}};\quad\phi_{X}=\phi_{V}-\phi_{3}+\phi_{1}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\underline{Z_{x}}=Z_{x}\cdot e^{j\phi_{X}}
+\]
+}{\scriptsize \par}
+
+
+\column{0.5\textwidth}
+
+
+{\scriptsize{}Es sind zwei Abgleichsschritte notwendig.}{\scriptsize \par}
+
+
+\includegraphics[width=5cm]{Bilder/RPMT.B0818}
+
+\end{columns}
+
+
+Strom-/Spannungsmessung vorrangig in automatischen und integrierten
+Messsystemen eingesetzt.
+
+
+Brückenmessmethode vorrangig in Präzisionsmesstechnik. In der Messtechnik
+als ,,Trägerfrequenzmessgerät`` bezeichnet, mit Frequenz von $\unit[50]{kHz}$,
+auch mit $\unit[5]{kHz}.$ Messgenauigkeit von $<0,1\%$ erzielbar.
+
+\end{frame}
+
+\begin{frame}{Frequenz- und Zeitmessung}
+
+
+Frequenz- und Zeitmessung erreicht höchste Genauigkeit: 
+
+
+mit Quarzgenerator als Zeitbasis um Faktor $10^{4}$ bis $10^{5}$
+mal besser als bei Normalen anderer physikalischer Größe.
+
+
+In der Messtechnik heute dominieren digitale Frequenz- bzw. Zeitmessverfahren.\medskip{}
+
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT.B0820}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{}
+
+
+{\scriptsize{}}%
+\begin{tabular}{|c|c|c|}
+\hline 
+{\scriptsize{}Eingang 1} & {\scriptsize{}Eingang 2} & {\scriptsize{}Ausgang}\tabularnewline
+\hline 
+\hline 
+{\scriptsize{}0} & {\scriptsize{}0} & {\scriptsize{}0}\tabularnewline
+\hline 
+{\scriptsize{}0} & {\scriptsize{}1} & {\scriptsize{}0}\tabularnewline
+\hline 
+{\scriptsize{}1} & {\scriptsize{}0} & {\scriptsize{}0}\tabularnewline
+\hline 
+{\scriptsize{}1} & {\scriptsize{}1} & {\scriptsize{}1}\tabularnewline
+\hline 
+\end{tabular}{\scriptsize \par}
+
+
+{\scriptsize{}Wahrheitstabelle einer UND-Schaltung (Gatter)}\medskip{}
+
+
+
+Digitale Frequenzzähler für den typischen Labor- und Prüffeldeinsatz
+arbeiten mit temperaturstabilisierten Referenz-Quarz-Oszillatoren.
+Für höhere Anforderungen wird die Referenzzeit mit Hilfe von DCF 77-Signal
+herangezogen.
+
+\end{frame}
+
+\begin{frame}{Zeitmessung}
+
+Grundprinzip ähnlich dem für Frequenzmessung.
+
+\begin{center}
+	\includegraphics[width=5cm]{Bilder/RPMT.B0821}\medskip{}
+\par\end{center}
+
+Frequenz- und Zeitmessung sind häufig in ein Gerät integriert.
+
+\end{frame}
+

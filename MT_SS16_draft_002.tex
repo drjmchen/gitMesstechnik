@@ -1,0 +1,7257 @@
+%% LyX 2.1.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english,ngerman]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{calc}
+\usepackage{units}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{amstext}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{esint}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % this default might be overridden by plain title style
+ \newcommand\makebeamertitle{\frame{\maketitle}}%
+ % (ERT) argument for the TOC
+ \AtBeginDocument{%
+   \let\origtableofcontents=\tableofcontents
+   \def\tableofcontents{\@ifnextchar[{\origtableofcontents}{\gobbletableofcontents}}
+   \def\gobbletableofcontents#1{\origtableofcontents}
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usetheme{CambridgeUS}
+% oder ...
+
+\setbeamercovered{transparent}
+% oder auch nicht
+\usepackage{tikz}
+\usepackage{trfsigns}
+\setlength{\intextsep}{0cm plus1cm minus1cm} %for wrapfig
+\usefonttheme[onlymath]{serif}
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\title{Messtechnik }
+
+
+\author{Prof. Dr. Jianmin CHEN}
+
+
+\institute{HDBW}
+
+
+\date{\inst{HDBW}}
+
+
+\date[SS16]{2016.02.}
+
+\makebeamertitle
+\includeonlylecture{K04}
+
+% \mode
+% <all>
+\lecture{Übersicht}{K01}
+%\setcounter{framenumber}{0}
+% \AtBeginLecture{\frame{\insertlecture}}
+% \LectureTitlePage
+
+
+\section{Übersicht}
+\begin{frame}{}
+
+
+1 VE Messen, Messsignale (RP K1 \& 2) 
+
+
+2 VE Charakterisierung von Messsignalen (RP K3) 
+
+
+3 VE Messmethoden und -einrichtung (RP K4 \& 5) 
+
+
+4-5 VE Bewertung von Messergebnissen (RP K6 \& 7) 
+
+
+6-7 VE Messung elektrischer Größen (RP K8) 
+
+
+8-10 VE Messung nicht elektrischer physikalischer Größen (RP K9) 
+
+
+11-12 VE Automatisierte Messsysteme (RP K10) 
+
+
+Literatur: 
+
+
+Parthier, Rainer: 
+
+
+Messtechnik: Grundlagen und Anwendungen der elektrischen Messtechnik 
+
+
+Tränkler, H.-R., Fischerauer G.: 
+
+
+Das Ingenieurwissen Messtechnik
+
+\end{frame}
+
+
+% \mode
+% <all>
+\lecture{Kap 01 Messen und Messsignale}{K01}
+%\setcounter{framenumber}{0}
+% \AtBeginLecture{\frame{\insertlecture}}
+% \LectureTitlePage
+
+
+\section{Kap 01 Messen und Messsignale}
+\begin{frame}
+
+
+\begin{center}
+{\Large{}Kap 01 Messen und Messsignale}
+\par\end{center}{\Large \par}
+
+\end{frame}
+
+\begin{frame}{Übersicht}
+
+
+\textbf{Thema}: Grundbegriffe der Messtechnik
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Begriffe Messgröße und Maßeinheit
+\item SI-Einheitensystem
+\item Hierarchie der Normale
+\item Klassifizierung von Signalen
+\item Analoge und digitale Signalen
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 1 \& 2
+
+
+
+
+\end{frame}
+
+\begin{frame}{Bedeutung für die Technik}
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Bilder/MT_Bedeutung\lyxdot Technik}
+\par\end{center}
+
+
+Messtechnik und Sensorik liefern Informationen und Daten für alle
+Bereiche der Technik: von Entwicklung, Konstruktion, Fertigung, bis
+hin zur Funktionsoptimierung und zum Qualitätsmanagement.
+
+
+Messtechnik ist ein entscheidender Faktor der globalen Wirtschaft.
+
+\end{frame}
+
+\begin{frame}{Sensoren an modernen Fahrzeugen}
+
+
+\includegraphics[width=0.9\textwidth]{Bilder/Sensor\lyxdot an\lyxdot Auto}
+
+\end{frame}
+
+\begin{frame}{Industrie 4.0 und IoT}
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Bilder/Vernetzung\lyxdot Mesch\lyxdot Objekt\lyxdot System}
+\par\end{center}
+
+
+{\footnotesize{}Vernetzung von Menschen, Dingen und Diensten zu Cyber-
+Physikalischen Systemen}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Messen - Begriff}
+
+
+\fbox{\begin{minipage}[t]{0.8\textwidth}%
+Messen ist das Ausführen von geplanten Tätigkeiten zum quantitativen
+Vergleich der Messgröße mit einer \emph{Maßeinheit}.
+
+\medskip{}
+
+
+- DIN1319-1 Ausgabe 1995-01, Grundlagen der Messtechnik - Teil 1:
+Grundbegriffe%
+\end{minipage}}
+
+
+\medskip{}
+- theoretische Überlegung
+
+
+- experimentelle Ausführung
+
+
+- rechnerische Verarbeitung
+
+\end{frame}
+
+\begin{frame}{Messgröße, Maßeinheit}
+
+
+Eigenschaften von Körpern, Zuständen oder Verfahren werden mit Hilfe
+von \emph{physikalischen Größen} beschrieben.\medskip{}
+
+
+
+Eine physikalische Größe wird als \emph{Messgröße} bezeichnet, wenn
+sie Gegenstand einer Messung ist.\medskip{}
+
+
+
+Zuerst wird die \emph{Maßeinheiten} festgelegt, dann die vorhandenen
+physikalischen Größen damit verglichen.\medskip{}
+
+
+
+\emph{Basis- oder Grundeinheiten} sind unabhängig von einander festgelegte
+Maßeinheiten.\medskip{}
+
+
+
+\emph{Abgeleitete Maßeinheiten} bestehen aus Verknüpfungen der Basiseinheiten.
+
+\end{frame}
+
+\begin{frame}{Größengleichung}
+
+
+\emph{Größengleichung:}
+
+
+
+
+
+Messwert = Maßzahl $\cdot$ Maßeinheit
+
+
+\medskip{}
+
+
+
+Das Ergebnis einer Messgröße ist ein \alt{}{Produkt aus Maßzahl und Maßeinheit}.
+In erweiterter Form als Einheitengleichung, wie z.B. für Arbeit
+
+
+\[
+\unit[1]{Joule}=\unit[1]{Newton\cdot\unit[1]{Meter}}
+\]
+
+
+
+\[
+\unit[1]{J}=\unit[1]{N}\cdot\unit[1]{m}
+\]
+
+
+
+\[
+\unit[1]{J}=\unit[1]{Nm}
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Einheitensystem}
+
+
+Maßeinheiten entstanden historisch aus praktischem Leben, z.B. Elle,
+Fuß. Diese waren über lange Zeit lokal und bedeuteten trotz gleicher
+Bezeichnung verschiedene Größen. Probleme für Warenaustausch.
+
+
+Mit dem Fortschreiten der technischen Entwicklung, der staatlicher
+Verwaltung, der Globalisierung und der Arbeitsaufteilung entstand
+der unausweichliche Bedarf nach einem (weltweit) akzeptierten Einheitensystem.
+
+
+Erster Ansatz in der Neuzeit war die Meterkonvention im Jahre 1875.
+Generalkonferenz für Maß und Gewicht (Conference Générale des Poid
+et Measures, CGPM) ist auch heute noch die höchsten Autorität im Bereich
+des Messwesens. Sie bewahrt die international gültigen Prototypen
+der Einheiten.
+
+
+Die Unterzeichnerstaaten vergleichen ihre nationalen Prototypen regelmäßig
+mit diesen ,,Urprotypen`` und garantieren somit die Verwendung global
+einheitlicher Maßverkörperungen.
+
+
+
+
+\end{frame}
+
+\begin{frame}{Definition: Meter}
+
+
+{\footnotesize{}Sekundenpendel (1668, Abbé Jean Picard): Länge eines
+Pendels mit halber Periodendauer von 1 Sekunde}{\footnotesize \par}
+
+
+{\footnotesize{}Teil des Erdumfangs (1793, französischer Nationalkonvent):
+10-millionster Teil des Erdquadranten auf dem Meridian durch Paris }{\footnotesize \par}
+
+
+\begin{center}
+{\footnotesize{}\includegraphics[width=0.25\textwidth]{Bilder/Kilometre_definition\lyxdot svg}\hspace{0.1\textwidth}\includegraphics[width=0.25\textwidth]{Bilder/US_National_Length_Meter}}
+\par\end{center}{\footnotesize \par}
+
+
+{\footnotesize{}Urmeter aus Platin-Iridium (90:10) (1889, BIPM): Abstand
+der Mittelstriche zweier Strichgruppen auf dem Prototyp in Sèvres
+bei der Temperatur des schmelzenden Eises und bei der Auflage in den
+Besselschen Punkten.}{\footnotesize \par}
+
+
+{\footnotesize{}Wellenlänge Kadmium (1927, 7. Generalkonferenz): 1m
+= 1.553.164,13 Wellenlängen der roten Kadmiumlinie bei 20\textdegree C,
+770 Torr, 10 Torr Wasserdruck}{\footnotesize \par}
+
+
+{\footnotesize{}Wellenlänge Krypton (1960, 11. Generalkonferenz):
+1m = 1.650.763,73 Wellenlängen des Kryptonisotops 86 vom Zustand 5d5
+zum 2p10 im Vakuum}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{SI-Einheitensystem: Basiseinheiten}
+
+
+Als Einheiten sind im SI-Einheitensystem Basiseinheiten und die abgeleiteten
+Einheiten festgelegt. (SI: Système international d'unités)
+
+
+{\scriptsize{}}%
+\begin{tabular}{|c|c|c|c|>{\centering}p{0.3\textwidth}|}
+\hline 
+{\tiny{}Basisgröße} & {\tiny{}Zeichen} & {\tiny{}Basiseinheit} & {\tiny{}Zeichen} & {\tiny{}Definition über}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Länge} & {\tiny{}$l$} & {\tiny{}Meter} & {\tiny{}m} & {\tiny{}Lichtgeschwindigkeit und Zeit}\tabularnewline
+\hline 
+{\tiny{}Zeit} & {\tiny{}$t$} & {\tiny{}Sekunde} & {\tiny{}s} & {\tiny{}Periodendauer einer Strahlung}\tabularnewline
+\hline 
+{\tiny{}Masse} & {\tiny{}$m$} & {\tiny{}Kilogramm} & {\tiny{}kg} & {\tiny{}Prototyp im BIPM}\tabularnewline
+\hline 
+{\tiny{}Stromstärke} & {\tiny{}$I$} & {\tiny{}Ampere} & {\tiny{}A} & {\tiny{}Kraftwirkung zwischen parallelen elektrischen Leitern}\tabularnewline
+\hline 
+{\tiny{}Temperatur} & {\tiny{}$T$} & {\tiny{}Kelvin} & {\tiny{}K} & {\tiny{}Triplepunkt des Wassers}\tabularnewline
+\hline 
+{\tiny{}Lichtstärke} & {\tiny{}$I_{v}$} & {\tiny{}Candela} & {\tiny{}cd} & {\tiny{}Strahlung des schwarzen Körpers}\tabularnewline
+\hline 
+{\tiny{}Stoffmenge} & {\tiny{}$n$} & {\tiny{}Mol} & {\tiny{}mol} & {\tiny{}Atomzahl ($^{12}\mbox{C}$ in 12 g)}\tabularnewline
+\hline 
+\end{tabular}{\scriptsize \par}
+
+
+Alle Basiseinheiten von Naturkonstante abgeleitet bzw. über Naturkonstanten
+definiert. Ausnahme Kilogramm: Maßverkörperung durch Zylinder aus
+Platin-Iridium-Legierung.
+
+
+Von diesen Basiseinheiten aus leiten sich alle anderen Einheiten ab.
+
+\end{frame}
+
+\begin{frame}{SI-Einheitensystem: Abgeleitete Einheiten}
+
+
+{\tiny{}}%
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+{\tiny{}Basisgröße} & {\tiny{}Zeichen} & {\tiny{}Größengleichung} & {\tiny{}Zeichen} & {\tiny{}Definition über}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Geschwindigkeit} & {\tiny{}$v$} & {\tiny{}$v=\frac{s}{t}$} & {\tiny{}$\frac{\mbox{Meter}}{\mbox{Sekunde}}$} & {\tiny{}$\text{\ensuremath{\frac{\mbox{m}}{\mbox{s}}}}$}\tabularnewline
+\hline 
+{\tiny{}Kraft} & {\tiny{}$F$} & {\tiny{}$F=m\cdot a$} & {\tiny{}Newton} & {\tiny{}$\mbox{N}=\unit[1]{kg}\cdot\frac{\mbox{m}}{\mbox{s}^{2}}$}\tabularnewline
+\hline 
+{\tiny{}Druck} & {\tiny{}$p$} & {\tiny{}$p=\frac{F}{A}$} & {\tiny{}$\frac{\mbox{Newton}}{\mbox{Meter}\cdot\mbox{Meter}}$} & {\tiny{}$\frac{\mbox{N}}{\mbox{m}^{2}}$}\tabularnewline
+\hline 
+{\tiny{}Arbeit, Energie} & {\tiny{}$W$} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}$W=F\cdot l$ \-}\tabularnewline
+\selectlanguage{english}%
+\textrm{\tiny{}$W=U\cdot I\cdot t$}\selectlanguage{ngerman}%
+\tabularnewline
+{\tiny{}$W=P\cdot t$}\tabularnewline
+\end{tabular} & {\tiny{}Joule} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}J=1N$\cdot$m}\tabularnewline
+{\tiny{}J=1V$\cdot$A$\cdot$s}\tabularnewline
+{\tiny{}J=1W$\cdot$s}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}Leistung} & {\tiny{}$P$} & {\tiny{}$P=\frac{W}{t}$} & {\tiny{}Watt} & {\tiny{}\-}%
+\begin{tabular}{c}
+{\tiny{}1W=1$\frac{\mbox{J}}{\mbox{s}}$}\tabularnewline
+{\tiny{}1W=1V$\cdot$A}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}{\tiny{}\medskip{}
+}{\tiny \par}
+
+
+Die abgeleitete Einheiten haben den Zahlenfaktor 1. Die Einheiten
+innerhalb des SI-Systems sind \emph{kohärent} zueinander.
+
+\end{frame}
+
+\begin{frame}{Nichtkohärente Maßeinheiten}
+
+
+Es sind auch einige \emph{nichtkohärente Maßeinheiten} zulässig,
+die mit einem Umrechnungsfaktor ungleich 1 verknüpft sind.
+
+
+In der Elektroindustrie mit Dominanz der USA über lange Zeit. Das
+Längenmaß Zoll (eng. Inch, 1``=25,4 mm) weit verbreitet.\medskip{}
+
+
+
+Auf der Seefahrt mit langzeitiger Dominanz der Engländer bleibt die
+Einheit der Geschwindigkeit Knoten (1 kn=1,852 kmh$^{-1}$).\medskip{}
+
+
+
+Die Leistung eines Autos wird immer noch gerne in Pferdestärke (1
+PS = 0,735 kW) angegeben, obwohl die Leistung rechtsverbindlich in
+der kohärenten Maßeinheit Watt anzugeben ist.
+
+\end{frame}
+
+\begin{frame}{Vorsätze für SI-Einheiten}
+
+
+Vielfaches und Teile von Einheiten werden durch international festgelegte
+Vorsätze beschrieben.
+
+
+{\tiny{}}%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+{\tiny{}Name} & {\tiny{}Zeichen} & {\tiny{}Multiplikator} & {\tiny{}Name} & {\tiny{}Zeichen} & {\tiny{}Multiplikator}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Yotta} & {\tiny{}Y} & {\tiny{}$10^{24}$} & {\tiny{}Dezi} & {\tiny{}d} & {\tiny{}$10^{-1}$}\tabularnewline
+\hline 
+{\tiny{}Zetta} & {\tiny{}Z} & {\tiny{}$10^{18}$} & {\tiny{}Zenti} & {\tiny{}c} & {\tiny{}$10^{-2}$}\tabularnewline
+\hline 
+{\tiny{}Exa} & {\tiny{}E} & {\tiny{}$10^{18}$} & {\tiny{}Milli} & {\tiny{}m} & {\tiny{}$10^{-3}$}\tabularnewline
+\hline 
+{\tiny{}Peta} & {\tiny{}P} & {\tiny{}$10^{15}$} & {\tiny{}Mikro} & {\tiny{}$\mu$} & {\tiny{}$10^{-6}$}\tabularnewline
+\hline 
+{\tiny{}Tera} & {\tiny{}T} & {\tiny{}$10^{12}$} & {\tiny{}Nano} & {\tiny{}n} & {\tiny{}$10^{-9}$}\tabularnewline
+\hline 
+{\tiny{}Giga} & {\tiny{}G} & {\tiny{}$10^{9}$} & {\tiny{}Piko} & {\tiny{}p} & {\tiny{}$10^{-12}$}\tabularnewline
+\hline 
+{\tiny{}Mega} & {\tiny{}M} & {\tiny{}$10^{6}$} & {\tiny{}Femto} & {\tiny{}f} & {\tiny{}$10^{-15}$}\tabularnewline
+\hline 
+{\tiny{}Kilo} & {\tiny{}k} & {\tiny{}$10^{3}$} & {\tiny{}Atto} & {\tiny{}a} & {\tiny{}$10^{-18}$}\tabularnewline
+\hline 
+{\tiny{}Hekto} & {\tiny{}h} & {\tiny{}$10^{2}$} & {\tiny{}Zepto} & {\tiny{}z} & {\tiny{}$10^{-21}$}\tabularnewline
+\hline 
+{\tiny{}Deka} & {\tiny{}da} & {\tiny{}$10^{1}$} & {\tiny{}Yokto} & {\tiny{}y} & {\tiny{}$10^{-24}$}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+
+
+Z.B. mV=$10^{-3}$V
+
+\end{frame}
+
+\begin{frame}{Normale}
+
+
+Normale (franz. Etalons) stellen handhabbare Maßverkörperung dar und
+dienen zur Kalibrierung anderer Messgeräte.
+
+
+Im BIPM (Bureau International des Poids et Measure) in Servrés bei
+Paris werden praktisch anwendbare Primärnormale unmittelbar von den
+Basisgrößen abgeleitet. Sie sichert auch deren ständige Überwachung
+ab. Für fast jede Messgröße existieren solche Primärnormal.
+
+
+Die Unterzeichnerstaaten des GCPM erhalten jeweils ein solches Primärnormal,
+von denen dann Sekundärnormale abzuleiten sind, die zur Eichung von
+betrieblichen Referenz- und Arbeitsnormalen in zugelassenen Eichlabor
+benutzt werden.
+
+
+In Deutschland ist die Physikalisch-Technische Bundesanstalt (PTB)
+Braunschweig und Berlin für die Überwachung der Forderungen des SI
+zuständig. Sie ist die technische Oberbehörde für das Messwesen. Sie
+überwacht und gewährleistet die Einhaltung geforderter Fehlergrenzen
+bei den einzelnen Normalen.
+
+
+\end{frame}
+
+\begin{frame}{Hierarchie der Normale}
+
+
+
+
+
+\includegraphics[width=0.8\textwidth]{Bilder/RPMT\lyxdot B0101}
+
+\end{frame}
+
+\begin{frame}{Eichung und Kalibrierung}
+
+
+\emph{Eichung}: nach Eichgesetze oder -ordnungen durchzuführende
+Qualitätsprüfungen und Kennzeichnungen einer Maßverkörperung oder
+eines mit dieser Maßverkörperung realisierten Messgerätes.
+
+
+Eichung ist eine hoheitliche Aufgabe und dürfen nur von staatlich
+dazu berechtigten Einrichtungen durchgeführt.\medskip{}
+
+
+
+\emph{Kalibrierung}: alle nicht staatlich reglementierten Aktivitäten
+zur Ermittelung des Zusammenhanges zwischen einem Messwert von einer
+Messeinrichtung und dem richtigen Wert. 
+
+
+Bei Kalibrierung erfolgt kein veränderter Eingriff in die Messeinrichtung.\medskip{}
+
+
+
+\emph{Justierung:} Einstellen oder Abgleichen einer Messeinrichtung.
+
+
+Mit zunehmenden Qualitätsanforderung in der Industrie ist die Festlegung
+der Kalibrierung aller Messmittel und die kontinuierliche Überwachung
+unerlässlich geworden.
+
+
+\end{frame}
+
+\begin{frame}{Messsignale}
+
+
+\emph{Messwerte} beinhalten Informationen über physikalische Größen.
+Übertragung dieser Informationen erfolgt in Form eines Signals.\medskip{}
+
+
+
+\emph{Signal}: Zeitlicher Verlauf einer physikalischer Größe. In
+der Messtechnik auch als \emph{Messsignal} bezeichnet. 
+
+
+In der abstrakten Form ist ein Signal nicht an bestimmte physikalische
+Größe gebunden. Es kommt auf den zeitlichen Verlauf an.
+
+
+Nicht alle Kennzeichen der physikalischen Größe sind von Bedeutung,
+oft sind ein oder mehrere Parameter des Signals (\emph{Informationsparameter})
+Träger des interessierenden Informationsgehaltes.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Messsignal}
+
+
+Beispiel: ein Messsignal folgender Form:
+
+
+\[
+u(t)=\hat{u}\cdot\sin(\omega t+\varphi)
+\]
+
+
+
+Der zeitlicher Signalverlauf ist durch die Amplitude $\hat{u}$, die
+Kreisfrequenz $\omega$ und den Phasenwinkel $\varphi$ gekennzeichnet.
+
+
+Die messtechnische Aufgabe kann sich auf die Auswertung von diesen
+Parametern beschränken, ohne den sinusförmigen zeitlichen Verlauf
+des Funktionswertes besondere Aufmerksamkeit zu geben.
+
+
+
+
+\end{frame}
+
+\begin{frame}{Klassifizierung von Messsignalen}
+
+
+In der modernen Messtechnik werden am häufigsten elektrische Signale
+verwendet.\medskip{}
+
+
+
+In einigen Bereichen sind auch mechanische, pneumatische und hydraulische
+Signale üblich.\medskip{}
+
+
+
+
+
+
+Messsignale können nach \emph{Wertevorrat} (analog oder diskret)
+und nach zeitlichem Auftreten (kontinuierlich oder diskontinuierlich)
+klassifiziert werden.\medskip{}
+
+
+
+
+
+
+Ferner werden zwischen stochastischen und determinierten Messsignalen
+unterschieden.\medskip{}
+
+
+
+
+
+
+\emph{Stochastisches Messsignal}: Auftreten und Werte sind zufallsbehaftet.
+Nur wiederholte Messungen ermöglichen gesicherte Aussagen. 
+
+\end{frame}
+
+\begin{frame}{Analog / Diskret}
+
+
+\begin{tabular}{|>{\centering}p{0.1\textwidth}|>{\raggedright}p{2.8cm}|>{\raggedright}p{2.8cm}|>{\raggedright}p{2.8cm}|}
+\hline 
+{\tiny{}Signalcharak\-terisierung} & {\tiny{}Erläuterung} & {\tiny{}Vorteil} & {\tiny{}Nachteil}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Analog} & {\tiny{}Informationsparameter kann theoretisch beliebig viele Werte
+innerhalb seines Wertebereichs annehmen} & {\tiny{}Proportionale Abbildung zwischen Messsignal und Informationsparameter} & {\tiny{}einfach zu stören, z.B. durch externe Signale, Rauschen, Temperaturdrift}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Diskret} & {\tiny{}Informationsparameter kann nur endlich viele Werte innerhalb
+seines Wertebereichs annehmen} & {\tiny{}Störeinflüsse machen sich erst nach Überschreiten von Grenzwerten
+bemerkbar} & {\tiny{}Bei der Abbildung analoger Messwerte auf einen diskreten Informationsparameter
+entsteht ein Informationsverlust}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Analog / Diskret}
+
+
+
+
+
+\includegraphics[width=0.6\textwidth]{Bilder/RPMT\lyxdot B0201ab}
+
+
+{\footnotesize{}a) kontinuierlich-analog\hspace{0.15\textwidth}b)
+diskontinuierlich-analog}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Kontinuierlich / Diskontinuierlich}
+
+
+\begin{tabular}{|>{\centering}p{0.1\textwidth}|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|>{\raggedright}p{2.9cm}|}
+\hline 
+{\tiny{}Signalcharak\-teristik} & {\tiny{}Erläuterung} & {\tiny{}Vorteil} & {\tiny{}Nachteil}\tabularnewline
+\hline 
+{\tiny{}Kontinuier\-lich} & {\tiny{}Informationsparameter kann zu jedem beliebigen Zeit\-punkt
+seinen Wert ändern} & {\tiny{}Jederzeit ist der zeitliche Verlauf von Messwerten verfolgbar} & {\tiny{}Störungen können jederzeit wirken, Informationsmenge ist oft
+unnötig groß}\tabularnewline
+\hline 
+{\tiny{}Diskonti\-nuierlich} & {\tiny{}Informationsparameter kann nur zu diskreten Zeitpunkten seinen
+Wert ändern} & {\tiny{}Störungen zwischen den Zeitpunkten der Parameteränderungen
+können sich nicht auswirken} & {\tiny{}Informationen stehen nur zu diskreten Zeitpunkt zur Verfügung}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Kontinuierlich / Diskontinuierlich}
+
+
+
+
+
+\includegraphics[width=0.7\textwidth]{Bilder/RPMT\lyxdot B0201cd}
+
+
+{\footnotesize{}c) diskontinuierlich-diskret\hspace{0.1\textwidth}d)
+kontinuierlich-diskret}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Determiniert / Stochastisch }
+
+
+\begin{tabular}{|>{\centering}p{0.1\textwidth}|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|>{\raggedright}p{2.9cm}|}
+\hline 
+{\tiny{}Signalcharak\-teristik} & {\tiny{}Erläuterung} & {\tiny{}Vorteil} & {\tiny{}Nachteil}\tabularnewline
+\hline 
+{\tiny{}Determiniert} & {\tiny{}Determiniertheit des Informationsparameters} & {\tiny{}Information mit einmaliger Messung gewinnbar} & {\tiny{}Information kann durch Störung unbrauchbar werden}\tabularnewline
+\hline 
+{\tiny{}Stochastisch} & {\tiny{}Informationsparameter repräsentiert stochastische Größe} & {\tiny{}Störungen machen sich nur stark reduziert bemerkbar, sie werden
+über die Messzeit integriert} & {\tiny{}Information ist erst durch mehrmalige Messungen zu gewinnen,
+das erfordert einen großen Zeitbedarf}\tabularnewline
+\hline 
+\end{tabular}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Wandlung von Messsignalen}
+
+
+\emph{Messeinrichtung} verwandelt physikalische Größe in eine für
+den Menschen interpretierbare bzw. zur Weiterverarbeitung geeignete
+Signalform.
+
+
+Messinformation repräsentierende \emph{Informationsparameter} dürfen
+bei einer Umwandlung nicht undefiniert verändert werden. Dies ist
+in der Praxis nur in Näherung möglich.\medskip{}
+
+
+
+- Wandlung der Signalform des Informationsparameters
+\begin{quote}
+Messgröße bleibt, nur Form wird angepasst, z.B. Messverstärker.\medskip{}
+
+\end{quote}
+
+- Wandlung der physikalischen Größe des Informationsparameters
+\begin{quote}
+Messgröße wird zur Anzeige oder Weiterverarbeitung umgewandelt. Meistens
+erforderlich, 
+
+Messung von elektrischer Spannung mit analogem Multimeter: Umwandlung
+des Informationsparameters in Zeigerausschlag.
+
+Elektrische Messung von Temperatur: Spannungsabfall über einen temperaturabhängigen
+Widerstand.
+\end{quote}
+\end{frame}
+
+\begin{frame}{Wandlung durch Modulation einer Trägerschwingung}
+
+
+Eine typische Wandlung in der modernen Messtechnik ist die Wandlung
+der Informationsparameter von Amplitude in Frequenz. Frequenz eines
+Messsignals ist gegenüber Störeinflüssen relativ unempfindlich.
+
+
+Häufig verwendete Modulation:
+\begin{itemize}
+\item Amplitudenmodulation AM
+\item Frequenzmodulation FM
+\item Phasenmodulation PM
+\end{itemize}
+
+Die Rückgewinnung der originalen Amplituden-Zeit-Funktion erfolgt
+durch eine Demodulation.
+
+\end{frame}
+
+\begin{frame}{Modulationsverfahren}
+
+
+
+
+
+\includegraphics[width=0.7\textwidth]{Bilder/RPMT\lyxdot B0202}
+
+\end{frame}
+
+\begin{frame}{Pulsmodulation}
+
+
+In modernen Messsystemen wird als Trägerschwingung auch häufig eine
+Rechteckpulsfolge verwendet.
+\begin{itemize}
+\item Pulsamplitudenmodulation (PAM), 
+\item Pulsdauermodulation (PWM) und 
+\item Pulscodemodulation (PCM)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Pulsmodulation}
+
+
+
+
+
+\includegraphics[width=0.6\textwidth]{Bilder/RPMT\lyxdot B0203}
+
+\end{frame}
+
+\begin{frame}{Analog-Digital-Wandlung}
+
+
+Die Mächtigkeit und die niedrigen Kosten der digitalen technik fordert
+immer mehr die Bereitstellung von digitalen Eingangsinformationen.
+
+
+Messgrößen liegen meistens als analoge Signale vor. Analog-Digital-Wandlung,
+i.a. Digitalisierung, ist unerlässlich.
+
+
+Analoges Signal verfügt über einen unendlich großen Wertevorrat. Digitales
+Signal wird mit endlichen Zahlen dargestellt. Information geht dabei
+teilweise verloren.
+
+
+
+
+
+\fbox{\begin{minipage}[t]{0.9\columnwidth}%
+Der unendliche Wertevorrat der analogen Größe wird auf einen endlichen
+Wertevorrat von Teilbereichen (Quanten) abgebildet.%
+\end{minipage}}
+
+
+Zwei Schritte:
+
+
+- Quantisieren
+
+
+- Kodieren
+
+\end{frame}
+
+\begin{frame}{Beispiel ADW}
+
+
+Beispiel: ein 3-Bit-Analog-Digital-Wandler (ADW)
+
+
+
+
+
+\includegraphics[width=0.5\textwidth]{Bilder/RPMT\lyxdot B0204}
+
+
+LSB: Least Significant Bit, kleinstes unterscheidbares Inkrement
+
+\end{frame}
+
+\begin{frame}{Diskretes zeitliches Verhalten eines digitalen Signals}
+
+
+Neben den diskreten Amplituden ist auch das zeitliche Verhalten des
+digitalen Ausgangssignals diskret.
+
+
+Einem zeitlich kontinuierlichen Eingangsignal wird nur eine endliche
+Zahl von Proben (Samples) entnommen.
+
+
+
+
+
+Diese Zeitdiskretisierung muss nicht unbedingt mit einem Informationsverlust
+verbunden sein.
+
+\end{frame}
+
+\begin{frame}{Shannonsches Abtasttheorem}
+
+
+Das \emph{Shannonsche Abtasttheorem} gibt an, wie häufig eine Sinusschwingung
+abgetastet werden muss, damit sie aus dem digitalisierten Signal wieder
+regeneriert werden kann.
+
+
+Wenn $f$ die Frequenz der Sinusschwingung und $f_{ab}$ die Abtastfrequenz
+für die Sample-Entnahme ist, dann gilt nach Shannon:
+
+
+\[
+f_{ab}>2\, f
+\]
+
+
+
+Eine Sinusschwingung muss in einer Periode mehr als zweimal abgetastet
+werden, um aus dem digitalisierten Kurvenverlauf, der zeit- und wertediskret
+ist, mittels eines idealen Tiefpasses wieder die Originalschwingung
+zu generieren.
+
+\end{frame}
+
+\begin{frame}{}
+
+
+
+
+
+\includegraphics[width=0.5\textwidth]{Bilder/RPMT\lyxdot B0205}
+
+
+$t_{ab}=1/f_{ab}$=\emph{Abtastzeit}
+
+
+dunkle Linie: abzutastender Kurvenverlauf
+
+
+helle Linie: durch Integration aus den Abtastwerten gewonnener Kurvenverlauf
+
+
+In der Messpraxis ist es unbedingt zu vermeiden, dass Signale mit
+höheren Frequenzanteilen als die lt. Shannonschen Abtasttheorem zulässigen
+Höchstfrequenz auf den Eingang des ADW gelangen können. Dies würde
+infolge des sog. \emph{Aliasing-Effekt}s, zu Mehrdeutigkeiten des
+gewonnenen digitalen Ausgangssignals führen. 
+
+
+Gegebenfalls ist ein \emph{Anti-Aliasing-Filter} einzusetzen. Das
+ist ein steilflankiges Tiefpassfilter.
+
+\end{frame}
+
+
+
+
+% \mode
+% <all>
+\lecture{Kap 02 Charakterisierung von Messsignalen}{K02}
+%\setcounter{framenumber}{0}
+%\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 02 Charakterisierung von Messsignalen}
+\begin{frame}{Übersicht}
+
+
+\textbf{Thema}: Signalformen
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Technisch interessante Signalformen
+\item Mittelwerte periodischer Signale
+\item Kenngrößen von Messsignalen
+\item Logarithmische Übertragungsverhältnisse
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 3
+
+\end{frame}
+
+\begin{frame}{Signalformen von Messsignalen}
+
+
+\begin{tabular}{|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|}
+\hline 
+{\scriptsize{}amplitudenanalog} & {\scriptsize{}frequenzanalog} & {\scriptsize{}digital}\tabularnewline
+\hline 
+{\scriptsize{}Information in Amplituden} & {\scriptsize{}Information in Frequenzen} & {\scriptsize{}Information in Codes}\tabularnewline
+\hline 
+{\scriptsize{}Amplitude kontinuierlich} & {\scriptsize{}Frequenz kontinuierlich} & {\scriptsize{}diskrete Werte}\tabularnewline
+\hline 
+{\scriptsize{}Genauigkeit anhängig von Reproduzierbarkeit} & {\scriptsize{}Genauigkeit abhängig von Torzeit} & {\scriptsize{}Genauigkeit anhängig von Stellenzahl }\tabularnewline
+\hline 
+{\scriptsize{}störanfällig} & {\scriptsize{}hohe Störsicherheit} & {\scriptsize{}hohe Störsicherheit}\tabularnewline
+\hline 
+{\scriptsize{}Signalverarbeitung aufwändig} & {\scriptsize{}Signalverarbeitung z.T. gut} & {\scriptsize{}Signalverarbeitung gut}\tabularnewline
+\hline 
+{\scriptsize{}galvanische Trennung aufwendig} & {\scriptsize{}einfache galvanische Trennung mit Optokoppler} & {\scriptsize{}einfache galvanische Trennung mit Optokoppler}\tabularnewline
+\hline 
+{\scriptsize{}Digitalisierung aufwändig} & {\scriptsize{}einfache Digitalisierung durch Zählen} & \tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Signalformen}
+
+
+Signal, wie elektrische Spannung, muss grundsätzlich mit Angaben zu
+ihrem Wert, Zeitverhalten und Kurvenverhalten beschrieben werden.
+
+
+\medskip{}
+Form der Angabe kann sehr unterschiedliche sein. 
+
+
+Häufig haben sich verbale Bezeichnungen, wie Sinusschwingung, Pulsspannung,
+etc. etabliert.\medskip{}
+
+
+
+In der Messtechnik sind zwei Signalformen interessant:
+\begin{itemize}
+\item Einzelimpuls
+\item periodischer Signalverlauf\medskip{}
+
+\end{itemize}
+
+Periodische Signale haben in der Messtechnik eine besondere Bedeutung,
+da sie viele technische Systeme charakterisieren.
+
+
+Sinusförmige Signale können durch wenige Parameter vollständig beschrieben
+werden. Das vereinfacht die mathematische Behandlung von Signalübertragung
+erheblich.
+
+
+
+
+\end{frame}
+
+\begin{frame}{Kenngrößen von Einzelimpulsen}
+
+
+Einzelimpuls kann in Form wie Nadelimpuls, Rechteckimpuls oder Sägezahnimpuls
+auftreten.
+
+
+Einzelimpulsen werden in der Messtechnik häufig zum \emph{Triggern}
+(Starten von Messvorgängen) genutzt.
+
+
+
+
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot B0301}
+\par\end{center}
+
+
+Kennzeichnung:\emph{Anstiegszeit} (rise time $t_{r}$), \emph{Abfallzeit}
+(falltime $t_{f}$), \emph{Impulsdauer} (pulse width $t_{i}$) und
+\emph{Amplitude} $A_{max}$
+
+\end{frame}
+
+\begin{frame}{Kenngrößen von Pulsfolgen}
+
+
+Treten Einzelimpulse mit regelmäßiger Wiederholung auf, wird von einer
+\emph{Pulsfolge} oder kurz vom \emph{Puls}, gesprochen.
+
+
+
+
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{Bilder/RPMT\lyxdot B0302}
+\par\end{center}
+
+
+\medskip{}
+$t_{i}$- Impulsdauer, $T$ - Periodendauer,
+
+
+$K_{V}=t_{i}/T$ - Tastverhältnis, $f=1/T$ - Folgefrequenz
+
+\end{frame}
+
+\begin{frame}{Kenngrößen von periodischen sinusförmigen Signalen}
+
+
+Sinusförmige Signalform ist grundlegend für Signaltheorie und Messtechnik.
+
+
+
+
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{Bilder/RPMT\lyxdot B0303}
+\par\end{center}
+
+
+\[
+x(t)=\hat{x}\cdot\sin(\omega t+\varphi)
+\]
+
+
+
+$\hat{x}$ - Spitzenwert, $T$ - Periodendauer, $\omega$ - Kreisfrequenz,
+$t$ - Zeit, 
+
+
+$\phi=\omega t$ - Winkel des rotierenden Zeigers, $\varphi$ - Phasenverschiebung
+
+
+\[
+\phi=\frac{2\cdot\pi}{T}\cdot t+\varphi=\omega\cdot t+\varphi
+\]
+
+
+
+\[
+\omega=\frac{2\pi}{T},\; T=\frac{2\pi}{\omega},\;\omega=2\pi f
+\]
+
+
+\end{frame}
+
+\begin{frame}{Mittelwerte periodischer Signale}
+
+
+Bei Wechselgrößen wie z.B. Wechselspannung oder -strom, ist oftmals
+nicht der \emph{Momentanwert} interessant, sondern ein kompakter
+repräsentativer Ausdruck, der den Kurvenverlauf über einen bestimmten
+Zeitraum charakterisiert.\medskip{}
+
+
+
+\emph{Mittelwerte} und davon abgeleitete Größen sind gute Charakterisierung.
+Sie kann unterschiedlich gebildet werden.
+
+\end{frame}
+
+\begin{frame}{Linearer Mittelwert und Gleichrichtwert}
+
+
+\emph{Linearer Mittelwert}: arithmetischer Mittelwert des Kurvenverlaufs
+über eine Periode:
+
+
+\[
+\bar{x}=\frac{1}{T}\int_{t}^{t+T}x(t)dt
+\]
+
+
+
+Der arithmetische Mittelwert lässt sich technisch sehr einfach realisieren. 
+
+
+Ausnutzen der Trägheit mechanischer Messwerke bzw. des Integrationsverhaltens
+eines Tiefpasses 1. Ordnung bei elektronischen Messeinrichtungen.
+
+
+Für eine reine sinusförmige Wechselgröße ist: $\bar{x}=0$.
+
+
+\emph{Gleichrichtwert}: \mode<article>{Um auch reine Wechselgrößen zu bewerten, wird die Wechselgröße einer
+Gleichrichtung unterzogen, und dann den Mittelwert gebildet:} arithmetischer Mittelwert des Betrags über eine Periode
+
+
+\[
+|\bar{x}|=\frac{1}{T}\int_{t}^{t+T}|x(t)|dt
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Arithmetischer Mittelwert und Gleichrichtwert }
+
+
+
+
+
+\begin{flushright}
+\begin{figure}
+\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot Beisp0301}
+\end{figure}
+
+\par\end{flushright}
+
+
+a) Mittelwertbildung über Integration nach der Zeit
+
+
+\[
+\bar{u}=\frac{1}{T}\int_{0}^{T}u(t)dt=\frac{1}{T}\int_{0}^{T}\hat{U}\sin(\omega t)dt
+\]
+
+
+
+\[
+=\frac{\hat{U}}{T}\left[-\frac{1}{\omega}\cos(\omega t)\right]_{0}^{T}=\frac{\hat{U}}{T}\left[-\frac{1}{\omega}\cos(\omega T)-(-\frac{1}{\omega}\cos0)\right]
+\]
+
+
+
+\[
+=-\frac{\hat{U}}{\omega T}[\cos2\pi-\cos0]=0
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Mittelwert}
+
+
+b) Mittelwertbildung über Integration nach $\phi=\omega t$
+
+
+\[
+\bar{u}=\frac{1}{2\pi}\int_{0}^{2\pi}\hat{U}\sin(\omega t)d(\omega t)
+\]
+
+
+
+\[
+=\frac{\hat{U}}{2\pi}\left[-\cos(\omega t)\right]_{0}^{2\pi}=\frac{\hat{U}}{2\pi}(-\cos2\pi+\cos0)=0
+\]
+
+
+
+c) Gleichrichtwert
+
+
+\[
+\bar{|u|}=\frac{1}{T}\int_{0}^{T}|u(t)|dt=\frac{1}{T}\int_{0}^{T}\hat{U}|\sin(\omega t)|dt
+\]
+
+
+
+\[
+=2\cdot\frac{\hat{U}}{T}\int_{0}^{\frac{T}{2}}\sin(\omega t)dt=\frac{2\hat{U}}{\omega T}(-\cos(\omega\cdot\frac{T}{2})+\cos0)
+\]
+
+
+
+\[
+=\frac{\hat{U}}{\pi}(1+1)=\frac{2\hat{U}}{\pi}=0,637\hat{U}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Quadratischer Mittelwert und Effektivwert}
+
+
+\emph{Quadratischer Mittelwert}:
+
+
+\[
+\bar{x^{2}}=\frac{1}{T}\int_{t}^{t+T}[x(t)]^{2}dt
+\]
+
+
+
+Die Bedeutung des quadratischen Mittelwertes liegt vor allem in der
+Leistungsmessung.
+
+
+\[
+P=\frac{\bar{u^{2}}}{R},\; P=\bar{i^{2}}\cdot R
+\]
+
+
+
+\emph{Effektivwert:}
+
+
+Wert der Gleichspannung mit der gleichen Leistung der Wechselspannung.
+
+
+\[
+P_{\sim}=\frac{\bar{u^{2}}}{R}=P_{-}=\frac{U_{eff}^{2}}{R}
+\]
+
+
+
+\[
+\Rightarrow U_{eff}=\sqrt{\bar{u^{2}}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Rechteckpuls}
+
+
+Eine Stromquelle mit einem periodischen Rechteckimpuls, $\unit[0,3]{\Omega}$
+
+
+
+
+
+\begin{flushright}
+\begin{figure}
+
+
+\includegraphics[width=0.5\textwidth]{Bilder/RPMT\lyxdot Beisp0302}
+
+\end{figure}
+
+\par\end{flushright}
+
+
+a) Berechnung von arithmetischem Mittelwert $\bar{i}$
+
+
+{\footnotesize{}
+\[
+\bar{i}=\frac{1}{T}\int_{0}^{T}i(t)dt=\frac{1}{\unit[6]{ms}}[\int_{0}^{\unit[2]{ms}}\unit[6]{mA}dt+\int_{\unit[2]{ms}}^{\unit[6]{ms}}\unit[-4]{mA}dt]
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\frac{(\unit[6]{mA}\cdot\unit[2]{ms})+(\unit[-4]{mA}\cdot\unit[4]{ms})}{\unit[6]{ms}}=-\unit[\frac{2}{3}]{mA}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{}
+
+
+b) Welche Leistung wird bei der Messung umgesetzt
+
+
+{\footnotesize{}
+\[
+\bar{i^{2}}=\frac{1}{T}\int_{0}^{T}[i(t)]^{2}dt=\frac{1}{\unit[6]{ms}}[\int_{0}^{\unit[2]{ms}}(\unit[6]{mA})^{2}dt+\int_{\unit[2]{ms}}^{\unit[6]{ms}}(\unit[-4]{mA})^{2}dt]
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\frac{[(\unit[6]{mA})^{2}\cdot\unit[2]{ms})+[(\unit[-4]{mA})^{2}\cdot\unit[4]{ms}]}{\unit[6]{ms}}=\unit[22,\bar{6}]{(mA)^{2}}=\unit[22,\bar{6}\cdot10^{-6}]{A^{2}}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+P=\bar{i^{2}}\cdot R_{i}=\unit[22,\bar{6}\cdot10^{-6}]{A^{2}}\cdot\unit[0,3]{\Omega}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\unit[6,8\cdot10^{-6}]{W}=\unit[6,8]{\mu W}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Einweg-Gleichrichtwert und quadratischer MW}
+
+\begin{columns}[t]
+
+
+\column{0.4\textwidth}
+
+
+\begin{minipage}[t]{1\columnwidth}%
+Einweg-Gleichrichtwert und quadratischer Mittelwert für eine sinusförmige
+Spannung $u(t)$ mit einer Amplitude von 1 V.
+
+{\footnotesize{}
+\[
+u(t)=\unit[1]{V}\cdot\sin\omega t
+\]
+}%
+\end{minipage}
+
+
+\column{0.4\textwidth}
+
+
+\begin{flushright}
+\begin{minipage}[t]{1\columnwidth}%
+\begin{flushright}
+\includegraphics[width=1\columnwidth]{Bilder/RPMT\lyxdot B0304}
+\par\end{flushright}%
+\end{minipage}
+\par\end{flushright}
+
+\end{columns}
+
+
+Einweg-Gleichrichtwert:
+
+
+{\footnotesize{}
+\[
+\bar{|u|}=\frac{1}{T}\int_{0}^{T/2}|u(t)|dt=\frac{1}{T}\int_{0}^{T/2}\unit[1]{V}\cdot\sin\omega t\, dt
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\frac{\unit[1]{V}}{T}\left[-\frac{1}{\omega}\cdot\cos\omega t\right]_{0}^{\frac{T}{2}}=\frac{\unit[1]{V}}{\omega T}\left(-\cos(\omega\cdot\frac{T}{2})+\cos0\right)=\frac{\unit[1]{V}}{2\pi}\cdot2=\frac{\unit[1]{V}}{\pi}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\unit[0,318]{V}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Einweg-Gleichrichtwert und quadratischer MW}
+
+
+Quadratischer Mittelwert:
+
+
+{\footnotesize{}
+\[
+\bar{u^{2}}=\frac{1}{T}\int_{0}^{T}[u(t)]^{2}dt=\frac{1}{T}\int_{0}^{T}[\unit[1]{V}\cdot\sin\omega t]^{2}dt
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\frac{\unit[1]{V^{2}}}{T}\int_{0}^{T}[\sin\omega t]^{2}dt=\frac{\unit[1]{V^{2}}}{T}|\frac{1}{2}\cdot t-\frac{1}{4\omega}\cdot\sin2\omega t|_{0}^{T}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\frac{\unit[1]{V^{2}}}{T}[(\frac{1}{2}\cdot T-\frac{1}{4\omega}\cdot\sin2\omega T)-(0-\frac{1}{4\omega}\cdot\sin0)]
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\frac{\unit[1]{V^{2}}}{T}(\frac{1}{2}\cdot T-\frac{T}{4\cdot2\pi}\cdot\sin(2\cdot2\pi))
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\unit[0,5]{V^{2}}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Weitere Parameter periodischer Signale}
+
+
+\emph{Scheitelfaktor} oder auch \emph{Crestfaktor} $\xi$ (sprich
+Xsi) beschreibt das Verhältnis von Spitzenwert zum Effektivwert einer
+periodischen Funktion:
+
+
+\[
+\xi=\frac{\hat{x}}{X}
+\]
+
+
+
+In der Messtechnik kann es bei der Ermittelung eines Effektivwertes
+bei Signal mit großem $\xi$ zu Folge haben, dass die Messeinrichtung
+schon von hohem Spitzenwert übersteuert ist, obwohl der Effektivwert
+noch ausreichende Aussteuerungsreserve suggeriert.\begin{wrapfigure}{o}{0.3\columnwidth}%
+\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot B0305}\end{wrapfigure}%
+
+
+
+Ähnliche Effekte auch bei Lautsprecher bzw. Kopfhörer.
+
+
+
+
+
+\[
+\xi_{sin}=\sqrt{2}=1,414
+\]
+
+
+\end{frame}
+
+\begin{frame}{Formfaktor}
+
+
+\emph{Formfaktor} ist definiert als Quotient aus Effektivwert und
+Gleichrichtwert einer periodischen Wechselgröße:
+
+
+\[
+F=\frac{X}{\bar{|x|}}
+\]
+
+
+
+Für eine gegebene Kurvenform ist der Zusammenhang zwischen Effektiv-
+und Gleichrichtwert fest. 
+
+
+Damit kann messtechnisch den sehr einfach zu realisierenden Gleichrichtwert
+zu dem oft bedeutsameren Effektivwert umgerechnet werden, vorausgesetzt
+die Kurvenformen sind bekannt. 
+
+\end{frame}
+
+\begin{frame}{Beispiel}
+
+
+Für das vorherige Beispiel mit $u(t)=\unit[1]{V}\cdot\sin\omega t$
+sind Einweg-Gleichrichtwert und Effektivwert berechnet.\medskip{}
+
+
+
+Gleichrichtwert: $\bar{|u|}=2\cdot\unit[0,318]{V}=\unit[0,636]{V}$
+
+
+Effektivwert: $U=\sqrt{\bar{u^{2}}}=\sqrt{\unit[0,5]{V^{2}}}=\unit[\frac{1}{\sqrt{2}}]{V}$\medskip{}
+
+
+
+Formfaktor: 
+\[
+F=\frac{X}{\bar{|x|}}=\frac{U}{\bar{|u|}}=\frac{\unit[\frac{1}{\sqrt{2}}]{V}}{\unit[0,636]{V}}=1,11
+\]
+
+
+\end{frame}
+
+\begin{frame}{Kenngrößen von nichtsinusförmigen periodischen Signalen}
+
+
+Jede nichtsinusförmiges periodisches Signal lässt sich als Überlagerung
+von Sinusschwingungen generieren, deren Frequenzen $f$ in einem ganzzahligen
+Verhältnis zur Frequenz der Grundschwingung stehen. Sie lässt sich
+in solche zerlegen.\medskip{}
+
+
+
+Für einen Rechteckimpuls mit der Periodendauer $T=1/f_{0}$ und $\omega_{0}=2\pi f_{0}$
+
+
+\[
+x(t)=\frac{4}{\pi}\cdot\hat{x}\cdot\left[\sin(\omega_{0}t)+\frac{1}{3}\sin(3\omega_{0}t)+\frac{1}{5}\sin(5\omega_{0}t)+\frac{1}{7}\sin(7\omega_{0}t)+\dots\right]
+\]
+
+
+\end{frame}
+
+\begin{frame}{}
+
+
+\includegraphics[width=0.6\textwidth]{Bilder/RPMT\lyxdot B0306}
+
+
+{\tiny{}Darstellung in Amplituden-Zeit und Amplituden-Frequenz-Diagramm.}{\tiny \par}
+
+
+{\scriptsize{}Bei Übertragung von nichtsinusförmigen periodischen
+Schwingungen reicht es nicht aus, die Grenzfrequenz einer Übertragungseinrichtung
+oberhalb der Grundschwingung eines Messsignals zu legen. Es müssen
+zu deren richtigen Bewertung auch ausreichende Oberschwingungen berücksichtigt
+werden.}{\scriptsize \par}
+
+
+{\scriptsize{}Bei Rechteckimpuls lässt eine Bandbreite der Signalverarbeitung
+größer als 11-fache der Grundschwingung die 5. Harmonische berücksichtigt.}{\scriptsize \par}
+
+
+{\scriptsize{}Bei einem Rechteckimpuls mit 10MHz Folgefrequenz entspricht
+dies eine Bandbreite von mindestens 110MHz.}{\scriptsize \par}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Klirrfaktor und -koeffizient}
+
+
+\emph{Klirrfaktor}: Verhältnis der Summe der Effektivwerte aller
+Oberschwingungen zum Effektivwert des Gesamten Spektrum.
+
+
+Anteil der Oberschwingungen zu Gesamtschwingung.{\footnotesize{}
+\[
+K=\sqrt{\frac{U_{f1}^{2}+U_{f2}^{2}+U_{f3}^{2}+U_{f4}^{2}+\dots}{U_{f0}^{2}+U_{f1}^{2}+U_{f2}^{2}+U_{f3}^{2}+U_{f4}^{2}+\dots}}\cdot100\%
+\]
+\medskip{}
+}{\footnotesize \par}
+
+
+\emph{Klirrkoeffizient:} das Verhältnis einer Oberschwingung zur
+Gesamtschwingung.
+
+
+Messtechnisch: Darstellung der spektralen Verzerrung eines Signals
+durch Nichtlinearitäten im Übertragungsweg.
+
+
+{\footnotesize{}
+\[
+k_{v}=\frac{U_{fv}}{\sqrt{U_{f0}^{2}+U_{f1}^{2}+U_{f2}^{2}+U_{f3}^{2}+U_{f4}^{2}+\dots}}\cdot100\%
+\]
+}{\footnotesize \par}
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+
+
+Ein Messgerät mit Verzögerungsverhalten 1. Ordnung, i.e. Tiefpass\-verhalten
+und Grenzfrequenz $f_{0}=\unit[1]{MHz}$ wird jeweils mit zwei Spannungs\-signalen
+beaufschlagt:
+
+
+a) sinusförmig: $u_{1}(t)=\unit[5]{V}\sin(2\pi\cdot5\cdot10^{5}\unit{s^{-1}\cdot t})$
+
+
+b) nichtsinusförmig: $u_{11}(t)=\unit[5]{V}\sin(2\pi\cdot5\cdot10^{5}\unit{s^{-1}\cdot t})$
+
+
+$u_{12}(t)=\unit[3]{V}\sin(2\pi\cdot1\cdot10^{6}\unit{s^{-1}\cdot t})$
+
+
+$u_{13}(t)=\unit[2]{V}\sin(2\pi\cdot1,5\cdot10^{6}\unit{s^{-1}\cdot t})$
+
+
+
+
+
+\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot Beisp0305}\includegraphics[width=0.3\textwidth]{Bilder/RPMT\lyxdot Beisp0305b}
+
+
+Der Einfluss auf die Messsignalen ist zu ermitteln.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+
+
+Übertragungsfunktion des Tiefpasses:
+
+
+\[
+G(\omega)=\frac{U_{2}}{U_{1}}=\frac{\hat{u}_{2}}{\hat{u}_{1}}=\frac{1}{\sqrt{1+(\frac{\omega}{\omega_{0}})^{2}}}=\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}
+\]
+
+
+
+\[
+\phi=\arctan(-\frac{f}{f_{0}})
+\]
+
+
+
+\[
+\hat{u}_{2}=\hat{u}_{1}\cdot G=\hat{u}_{1}\cdot\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+
+
+Zu a) sinusförmig
+
+
+\[
+\hat{u}_{2}=\hat{u}_{1}\cdot\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}=\unit[5]{V}\cdot\frac{1}{\sqrt{1+(\frac{\unit[5\cdot10^{5}]{s^{-1}}}{\unit[10^{6}]{s^{-1}}})^{2}}}=4,472\unit{V}
+\]
+
+
+
+\[
+\phi=\arctan(-\frac{\unit[5\cdot10^{5}]{s^{-1}}}{\unit[10^{6}]{s^{-1}}})=-26,6\text{\textdegree}
+\]
+
+
+
+
+
+
+\includegraphics[width=0.5\textwidth]{Bilder/RPMT\lyxdot Beisp0305c}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+
+
+{\footnotesize{}Zu b) nichtsinusförmig}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+\hat{u}_{21}=\hat{u}_{11}\cdot\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}=4,472\unit{V},\;\phi_{21}=-26,6\text{\textdegree}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+\hat{u}_{22}=\hat{u}_{12}\cdot\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}=\unit[3]{V}\cdot\frac{1}{\sqrt{1+(\frac{\unit[10^{6}]{s^{-1}}}{\unit[10^{6}]{s^{-1}}})^{2}}}=2,12\unit{V},\;\phi_{22}=-45\text{\textdegree}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+\hat{u}_{23}=\hat{u}_{13}\cdot\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}=\unit[2]{V}\cdot\frac{1}{\sqrt{1+(\frac{1,5\cdot\unit[10^{6}]{s^{-1}}}{\unit[10^{6}]{s^{-1}}})^{2}}}=1,109\unit{V},\;\phi_{23}=-56,3\text{\textdegree}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}Somit:}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+u_{21}=4,472\unit{V}\sin((2\pi\cdot5\cdot10^{5}\unit{s^{-1}}\cdot t)-26,6\text{\textdegree})
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+u_{22}=2,12\unit{V}\sin((2\pi\cdot10^{6}\unit{s^{-1}}\cdot t)-45\text{\textdegree})
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+u_{23}=4,472\unit{V}\sin((2\pi\cdot1,5\cdot10^{6}\unit{s^{-1}}\cdot t)-56,3\text{\textdegree})
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Frequenzabhängiges Übertragungsglied}
+
+
+
+
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Bilder/RPMT\lyxdot Beisp0305d}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Verallgemeinerte Schlussfolgerung}
+
+
+Ein sinusförmiges Signal am Eingang eines frequenzabhängigen Übertragungsgliedes
+bleibt am Ausgang ein sinusförmiges Signal am Ausgang. Betrag und
+Phasenwinkel sind verändert.
+
+
+\medskip{}
+
+
+
+Ein nichtsinusförmiges Signal am Eingang verändert am Ausgang seine
+zeitliche Verlaufsform. Der Einfluss des frequenzabhängigen Übertragungsgliedes
+auf die spektrale Komponenten in Amplituden und Phasenwinkel ist abhängig
+vom jeweiligen Frequenz. 
+
+\end{frame}
+
+\begin{frame}{Logarithmische Übertragungsverhältnisse}
+
+
+Für die Darstellung und Bewertung von Messsignalen, die sich über
+mehrere Zehnerpotenzen, i.e. großen dynamischen Bereich, erstrecken,
+sind \emph{logarithmische Übertragungsmaße} übersichtlicher und zielgerichteter.
+Besonders sinnvoll und hilfreich in graphischer Darstellung, z.B.
+Messung von elektrischer Feldstärke oder Bestimmung von Übertragungsverhältnissen.\medskip{}
+
+
+
+\emph{Dezibel} für Übertragungsverhältnis von \emph{Pegelgrößen}
+wie Strom und Spannung:
+
+
+\[
+X_{dB}=20\cdot\lg\frac{X_{2}}{X_{1}}
+\]
+
+
+
+mit $X_{1}$- Eingangsgröße, $X_{2}$- Ausgangsgröße
+
+
+Umkehrung der Definitionsgleichung:
+
+
+\[
+\frac{X_{2}}{X_{1}}=10^{\frac{X_{dB}}{20}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Spannungsverstärker}
+
+
+Für einen Spannungsverstärker wird ein Pegelverhältnis von 35,6 dB
+angegeben.\medskip{}
+
+
+
+\[
+\frac{U_{2}}{U_{1}}=10^{\frac{X_{dB}}{20}}=10^{\frac{35,6}{20}}=10^{1,778}=60
+\]
+
+
+\end{frame}
+
+\begin{frame}{Leistungsverhältnis}
+
+
+Die Leistungen sind quadratisch abhängig von den Pegelgrößen wie Spannung
+bzw. Strom:
+
+
+{\footnotesize{}
+\[
+P_{1}=\frac{U_{1}^{2}}{R};\; P_{2}=\frac{U_{2}^{2}}{R}
+\]
+}{\footnotesize \par}
+
+
+bzw.
+
+
+{\footnotesize{}
+\[
+P_{1}=I_{1}^{2}\cdot R;\; P_{2}=I_{2}^{2}\cdot R
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+\frac{P_{2}}{P_{1}}=\frac{U_{2}^{2}}{U_{1}^{2}}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+\lg\frac{P_{2}}{P_{1}}=\lg(\frac{U_{2}}{U_{1}})^{2}=2\cdot\lg\frac{U_{2}}{U_{1}}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+10\cdot\lg\frac{P_{2}}{P_{1}}=20\cdot\lg\frac{U_{2}}{U_{1}}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+\left(\frac{P_{2}}{P_{1}}\right)_{dB}=10\cdot\lg\frac{P_{2}}{P_{1}},\quad X_{dB}=10\cdot\lg\frac{X_{2}}{X_{1}}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel}
+
+
+Ein Verstärker liefert bei einer Eingangsleistung von 1mW eine Ausgangsleistung
+von 1W. 
+
+
+\[
+X_{\mbox{dB}}=10\cdot\lg\frac{\unit[1]{W}}{\unit[0,001]{W}}=10\cdot\lg1000=\unit[30]{dB}
+\]
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+{\footnotesize{}Angabe in dB} & {\footnotesize{}10} & {\footnotesize{}20} & {\footnotesize{}30} & {\footnotesize{}40} & {\footnotesize{}50} & {\footnotesize{}60}\tabularnewline
+\hline 
+{\footnotesize{}Verhältnis in Pegel} & {\footnotesize{}3,16} & {\footnotesize{}10} & {\footnotesize{}31,6} & {\footnotesize{}100} & {\footnotesize{}316} & {\footnotesize{}1000}\tabularnewline
+\hline 
+{\footnotesize{}Verhältnis in Leistung} & {\footnotesize{}10} & {\footnotesize{}100} & {\footnotesize{}1000} & {\footnotesize{}$10^{4}$} & {\footnotesize{}$10^{5}$} & {\footnotesize{}$10^{6}$}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Absolute Größen im logarithmischen Maß}
+
+
+In der messtechnischen Praxis ist es sehr oft zweckmäßig, absolute
+Größen über großen Wertebereich, im logarithmischen Maß anzugeben.
+
+
+Eine Bezugsgröße ist jeweils festzulegen.\medskip{}
+
+
+
+\emph{Normpegel für Leistung:}
+
+
+$P_{0}=\unit[1]{mW}$ am Widerstand $R=\unit[600]{\Omega}$\medskip{}
+
+
+
+\emph{Normpegel für Spannung}:
+
+
+$U_{0}=\unit[0,775]{V}$\medskip{}
+
+
+
+Beide Normpegel werden als Bezugswert für den jeweiligen absoluten
+0dB-Pegel genutzt.
+
+
+Streng genommen ist die dB-Angabe eine dimensionslose Verhältniszahl.
+Mit der Normpegel erhält sie die physikalische Größe.
+
+\end{frame}
+
+\begin{frame}{Normpegel in der Messtechnik}
+
+
+{\scriptsize{}}%
+\begin{tabular}{|>{\centering}p{1.5cm}|c|c|>{\centering}p{4cm}|}
+\hline 
+{\tiny{}Pegelart} & {\tiny{}Definition} & {\tiny{}Kennzeichnung} & {\tiny{}Anwendungen}\tabularnewline
+\hline 
+\hline 
+{\tiny{}absoluter Leistungs\-pegel} & {\tiny{}$10\lg(\frac{P_{x}}{\unit[1]{mW}})$} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}dB(1 mW)}\tabularnewline
+{\tiny{}dBm (auch dB)}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4cm}}
+{\tiny{}Studiotechnik}\tabularnewline
+{\tiny{}Charakterisierung von elektronischen Verstärkern}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}absolute Spannungs\-pegel} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}$20\lg(\frac{U_{x}}{\unit[0,755]{V}})$}\tabularnewline
+\hline 
+{\tiny{}$20\lg(\frac{U_{x}}{\unit[1]{V}})$}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}dB(0,775V),}\tabularnewline
+{\tiny{}dB}\tabularnewline
+\hline 
+{\tiny{}dB(1V),}\tabularnewline
+{\tiny{}dBV}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4cm}}
+{\tiny{}Dämpfungsmessung in Kommunikationstechnik}\tabularnewline
+{\tiny{}Charakterisierung von elektronischen Verstärkern}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}Feldstärke\-pegel} & {\tiny{}$20\lg(\frac{E_{x}}{\unit[1]{\mu Vm^{-1}}})$} & {\tiny{}dB($\mu V\mbox{m}^{-1}$)} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4cm}}
+{\tiny{}Funktechnik}\tabularnewline
+{\tiny{}Störmesstechnik (EMV)}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}Leistungs\-dichte\-pegel} & {\tiny{}$10\lg(\frac{P_{x}/\Delta F}{\unit[1]{W}/\unit[1]{Hz}})$} & {\tiny{}dB(WHz$^{-1}$)} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4cm}}
+{\tiny{}Funktechnik}\tabularnewline
+{\tiny{}Störmesstechnik (EMV)}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Rundfunkempfänger}
+
+
+Ein Rundfunkempfänger benötigt als erforderliches Eingangssignal ein
+Spannungspegel von -115dBV.
+
+
+
+
+
+Eingangsspannung in Volt:
+
+
+\[
+\left(\frac{U_{2}}{U_{1}}\right)_{dB}=20\lg\frac{U_{x}}{\unit[1]{V}}
+\]
+
+
+
+\[
+\unit[-115]{dB}=20\lg\frac{U_{x}}{\unit[1]{V}}
+\]
+
+
+
+\[
+U_{x}=\unit[1]{V}\cdot10^{\frac{-115}{20}}=\unit[1]{V}\cdot10^{-5,75}=\unit[1,778\cdot10^{-6}]{V=\unit[1,778]{\mu V}}
+\]
+ 
+
+
+Bezogen auf $\unit[1]{\mu V}$:
+
+
+\[
+X\,(\mbox{in dB\ensuremath{\mu}V})=20\lg\frac{\unit[1,778]{\mu V}}{\unit[1]{\mu V}}=20\cdot0,25=\unit[5]{dB\mu V}
+\]
+
+
+
+\[
+\unit[5]{dB\mu V}=\unit[-115]{dBV}
+\]
+
+
+\end{frame}
+
+
+
+
+% \mode
+% <all>
+\lecture{Kap 03 Messmethoden und -einrichtung}{K03}
+%\setcounter{framenumber}{0}
+%\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 03 Messmethoden und -einrichtung}
+\begin{frame}{}
+
+
+\textbf{Thema}: Messmethoden und -einrichtung
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item grundlegende Arten, Messung durchzuführen
+\item Messeinrichtung als Übertragungseinrichtung
+\item Bewertung von Messeinrichtung
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 4 \& 5
+
+\end{frame}
+
+\begin{frame}{Ausschlagmethode}
+
+
+Durch die Verschiebung einer Marke (Zeiger) gegen eine Skala wird
+das Messergebnis repräsentiert. Die Messgröße am Eingang $x_{e}$
+wird direkt in eine Ausgangsgröße $x_{a}$, Verschiebung des Zeigers,
+überführt.
+
+
+\begin{figure}
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+{\scriptsize{}Beispiel Druckmesser}{\scriptsize \par}
+
+
+{\scriptsize{}Auch Flüssigkeits-Ausdehnungsthermometer arbeitet nach
+Ausschlagmethoden}{\scriptsize \par}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=3cm]{Bilder/RPMT\lyxdot B0401}\end{columns}
+
+\end{figure}
+
+
+
+In der Regel wird keine Hilfsenergie benötigt. Energie wird dem Messobjekt
+entzogen. Grundbedingung für akzeptierbare Messergebnisse ist geringe
+Energiebelastung auf Messobjekt. Minimale Rückwirkung der Messmethode
+auf das Messergebnis ist anzustreben.
+
+
+Typische Beispiele: klassische elektrische Spannungsmesser. 
+
+
+Über eine Drehspule wird der Zeiger proportional zur durchfließenden
+Stromstärke gedreht. Relativ hohe Energie zur Erzielung des Ausschlags.
+Elektronische Spannungsmesser arbeiten dagegen nahezu leistungslos.
+
+
+\end{frame}
+
+\begin{frame}{Differenzmethode}
+
+
+Der Messgröße wird eine Vergleichsgröße gegenübergestellt.
+
+
+Gegenstand der Messauswertung ist die Differenz zwischen Mess- und
+Vergleichsgröße.
+
+
+
+
+
+\begin{figure}
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+{\footnotesize{}Beispiel: Neigungswaage.}{\footnotesize \par}
+
+
+{\footnotesize{}Auch Temperaturmessung mit Thermoelementen basiert
+auf Differenzverfahren.}{\footnotesize \par}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=3cm]{Bilder/RPMT\lyxdot B0402}\end{columns}
+
+\end{figure}
+
+
+
+Über die Differenz können sich Störung auf Messergebnis auswirken.
+Eine möglichst kleine Differenz ergibt auch eine kleine resultierende
+Wirkung der Störeinflüsse, die gleichzeitig auf beiden Größen einwirken.
+
+
+.
+
+\end{frame}
+
+\begin{frame}{Kompensationsmethode}
+
+
+Der Messgröße wird eine variable Vergleichsgröße entgegengesetzt,
+mit dem Ziel, die Differenz zwischen beiden Größen gegen Null streben
+zu lassen.
+
+
+
+
+
+\begin{figure}
+\includegraphics[width=2.5cm]{Bilder/RPMT\lyxdot B0403}\hspace{1cm}
+\includegraphics[width=4cm]{Bilder/RPMT\lyxdot B0404}
+\end{figure}
+
+
+
+Vorteile:
+
+
+- Im Kompensationsfall wird dem Messobjekt keine Energie entzogen
+
+
+- Der Indikator kann für den Kompensationsfall (Nullindikation) mit
+sehr hohen Empfindlichkeit arbeiten.
+
+
+- Störungen mit gleichem Betrag und Vorzeichen auf Mess- und Kompensationsgröße
+können das Messergebnis nicht verfälschen.
+
+
+Diese Methode ist für hochgenaue Messeinrichtungen prädestiniert.
+Hebelwaage, Motorkompensator.
+
+\end{frame}
+
+\begin{frame}{Messeinrichtung}
+
+
+Eine Messeinrichtung soll eine zu messende physikalische Größe in
+einen interpretierbaren Messwert transformieren.
+
+
+
+
+
+\begin{center}
+\includegraphics[width=8cm]{Bilder/RPMT\lyxdot B0501}
+\par\end{center}
+
+
+Jede Messeinrichtung kann als Übertragungseinrichtung aufgefasst werden.
+
+\end{frame}
+
+\begin{frame}{Messeinrichtung als Übertragungssystem}
+
+
+
+
+
+
+
+
+Typischerweise ist der Übertragungsfaktor $k=x_{a}/x_{e}$ keine dimensionslose
+Größe.
+
+
+Die reale Messeinrichtung übersetzt aufgrund ihres technisch-physikalischen
+Aufbaus die Messgröße in eine für die Weiterverarbeitung geeignete
+Größe.
+
+
+Drehspulmesswerk: Spannung wird in einen Zeigerausschlag überführt.
+
+
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0502}\hspace{2cm}\includegraphics[width=4cm]{Bilder/drehspulmesswerk}
+
+
+Häufig ist der Messeinrichtung ein geeigneter Messwandler bzw. \emph{Sensor}
+vorzuschalten, um die gesuchte physikalische Größe der Messung zugänglich
+zu machen. 
+
+\end{frame}
+
+\begin{frame}{Statische Kenngrößen von Messeinrichtungen}
+
+
+Im eingeschwungenen Zustand charakterisiert Übertragungsfaktor $k$
+das Überführungsverhalten der Messgröße $x_{e}$ zu Ausgangssignal
+$x_{a}$. 
+
+
+In elektronischen Messeinrichtungen auch Verstärkung $v$ genannt
+(dimensionslos).
+
+
+Statische Kennlinie
+
+
+\begin{figure}
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\begin{spacing}{0}
+{\scriptsize{}Idealfall - lineares Verhalten}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+x_{a}=f(x_{e})=x_{a0}+\frac{\Delta x_{a}}{\Delta x_{e}}\cdot(x_{e}-x_{e0})
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Bei Kennlinien durch den Nullpunkt:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+x_{a}=f(x_{e})=\frac{\Delta x_{a}}{\Delta x_{e}}\cdot(x_{e}-x_{e0})
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Übertragungsfaktor:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+k=v=\frac{\Delta x_{a}}{\Delta x_{e}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Allgemeiner Fall mit nichtlinearen Anteilen $x_{anl}$:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+x_{a}=f(x_{e})=x_{a0}+\frac{dx_{a}}{dx_{e}}\cdot(x_{e}-x_{e0})+x_{anl}
+\]
+}{\scriptsize \par}
+\end{spacing}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0503}\end{columns}
+
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}{Empfindlichkeit}
+
+
+\emph{Empfindlichkeit:}
+
+
+\[
+E=\frac{dx_{a}}{dx_{e}}
+\]
+
+
+
+Bei linearen Kennlinien sind Empfindlichkeit und Übertragungsfaktor
+identisch
+
+
+\[
+E=\frac{dx_{a}}{dx_{e}}=\frac{\Delta x_{a}}{\Delta x_{e}}
+\]
+
+
+
+\emph{Auflösung:} Kleinste Differenz zwischen zwei Messwerten, die
+ein Messgerät eindeutig unterscheiden kann. \medskip{}
+
+
+
+\emph{Ansprechschwelle}: Der kleinstmögliche Wert einer Messgröße,
+der zu einer erkennbaren Reaktion des Messgerätes führt.
+
+\end{frame}
+
+\begin{frame}{Weitere Merkmale:}
+
+
+\emph{Hysterese:} Messwerte abgängig vom vorherigen Zustand
+
+
+\includegraphics[width=4cm]{Bilder/hysterese}
+
+
+\medskip{}
+
+
+
+\emph{Rückwirkung} eines Messgerätes auf Messobjekt: Belastung des
+Messobjektes durch Ankoppelung an Messgeräten\medskip{}
+
+
+
+\emph{Messwertdrift}: Kennlinie ändert sich mit der Zeit
+
+\end{frame}
+
+\begin{frame}{Dynamische Kenngrößen}
+
+
+Bei Messung zeitlich veränderlicher Größen sind zudem dynamische Eigenschaften
+von Messeinrichtungen für die Qualität des erzielten Messergebnisses
+von Bedeutung.\medskip{}
+
+
+
+Trägheit existiert in jedem physikalischen System. Messeinrichtung
+folgt der veränderten Messgrößen nur mit Zeitverzögerung.\medskip{}
+
+
+
+Bei mechanischem Zeiger zum schnell veränderten Messwerten leicht
+erkennbar.
+
+
+Auch bei elektronischen Systemen sind immer Verzögerungen vorhanden.
+
+
+
+
+
+Dynamische Eigenschaften von Messeinrichtungen lassen sich weitgehend
+durch Verzögerungsverhalten 1. und 2. Ordnung beschreiben.
+
+
+Es sind Übertragungseinrichtungen mit Differentialgleichung 1. und
+2. Ordnung.
+
+\end{frame}
+
+\begin{frame}{Zeitverhalten linearer Übertragungsglieder}
+
+
+Idealfall: Übertragungseinrichtung proportional, ohne Zeitverzögerung
+
+
+\[
+x_{a}(t)=k\cdot x_{e}(t)
+\]
+
+
+
+Realfall: mit Verzögerung, linear (\emph{ideal}), Abweichung $A_{d}$
+
+
+\[
+A_{d}(t)=x_{a}'(t)-x_{a}(t)=x_{a}'(t)-k\cdot x_{e}(t)
+\]
+
+
+
+mit: $x_{a}'(t)$ - verzögertes Ausgangssignal
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0504}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Tiefpass 1. Ordnung}
+
+
+Übertragungsglied mit Verzögerungsverhalten kann am einfachsten mit
+einem Tiefpass 1. Ordnung beschrieben werden.
+
+
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0505}
+
+
+Spannungsteiler mit : $R$ und $1/j\omega C$ 
+
+
+\[
+u_{a}=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}u_{e}=\frac{1}{1+j\omega RC}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Wechselspannungsmessung}
+
+
+\begin{figure}
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[angle=2,width=5cm]{Bilder/RPMT\lyxdot B0506}
+
+
+{\tiny{}Wirkbild einer Wechselspannungsmessung}{\tiny \par}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[angle=2,width=5.5cm]{Bilder/RPMT\lyxdot B0507}
+
+
+{\tiny{}Ersatzschaltung einer Wechselspannungsmessung}\end{columns}
+
+\end{figure}
+
+
+
+{\scriptsize{}Der Widerstand des Messobjektes $R_{Mo}$ und der zu
+messende Spannungsabfall lässt sich in eine ideale Spannungsquelle
+mit Innenwiderstand $R_{i}\rightarrow0$ und dem als Quellwiderstand
+wirkenden $R_{Mo}$ zerlegen.}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+C=C_{L}\Vert C_{e}=C_{L}+C_{e}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+R=R_{Mo}\Vert R_{e}=\frac{R_{Mo}\cdot R_{e}}{R_{Mo}+R_{e}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Bei $R_{Mo}\ll R_{e}$ für korrekte Messung von Spannung
+wird $R\approx R_{e}$und Zeitkonstante:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\tau=R\cdot C=R_{Mo}\cdot(C_{L}+C_{e})
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+f_{0}=\frac{1}{2\pi\cdot\tau}=\frac{1}{2\pi\cdot R\cdot C}=\frac{1}{2\pi\cdot R_{Mo}\cdot(C_{L}+C_{e})}
+\]
+}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Wechselspannung am Oszilloskop}
+
+
+Wechselspannung am Widerstand $R_{Mo}=\unit[1]{k\Omega},$
+
+
+Messaufbau: Eingangskapazität des Oszilloskop $C_{e}=\unit[15]{pF}$
+
+
+Eingangswiderstand des Oszilloskop: $R_{e}=\unit[1]{M\Omega}$
+
+
+Kapazität des geschirmten Messkabels: $C_{L}=\unit[100]{pF}$
+
+
+Betrachtung Grenzfrequenz der Messanordnung.
+
+
+$R_{e}\gg R_{Mo}$
+
+
+\[
+f_{0}=\frac{1}{2\pi\cdot R_{Mo}\cdot(C_{L}+C_{e})}=\frac{1}{2\pi\cdot\unit[1]{k\Omega}\cdot(\unit[100]{pF}+\unit[15]{pF})}
+\]
+
+
+
+\[
+f_{0}\approx\unit[1,384]{MHz}
+\]
+
+
+
+Messaufbau hat eine Grenzfrequenz von nur $\unit[1,384]{MHz}.$ Amplitudenabfall
+dabei ca.$30\%$ bzw. 10 dB. Recht große Verzerrung.
+
+
+Auch wenn der Oszilloskop eine Grenzfrequenz von z.B. 100 MHz besitzt,
+wird dieser vom Messaufbau nicht ausgenutzt.
+
+\end{frame}
+
+\begin{frame}{Differentialgleichung und Zeitverhalten: Tiefpass 1. Ordnung}
+
+
+\begin{flushright}
+\includegraphics[width=4cm]{Bilder/RPMT\lyxdot B0505}
+\par\end{flushright}
+
+
+\[
+i(t)=C\cdot\frac{du_{a}(t)}{dt}
+\]
+
+
+
+\[
+u_{R}(t)=R\cdot i(t)=R\cdot C\cdot\frac{du_{a}(t)}{dt}
+\]
+
+
+
+\[
+u_{R}(t)+u_{a}(t)=u_{e}(t)
+\]
+
+
+
+\[
+R\cdot C\cdot\frac{du_{a}(t)}{dt}+u_{a}(t)=u_{e}(t)
+\]
+
+
+\end{frame}
+
+\begin{frame}{Allgemeine Form DGL und Zeitverhalten}
+
+
+\[
+\tau\cdot\frac{dx_{a}(t)}{dt}+x_{a}(t)=k\cdot x_{e}(t)
+\]
+
+
+
+mit $k$ als Proportionalitätsfaktor, Zusammenfassung aller Übertragungskonstanten,
+wie Verstärkung, Umwandlung etc.
+
+
+Übertragungssysteme mit Zeitverzögerung höherer Ordnung
+
+
+\[
+a_{n}\cdot\frac{d^{n}x_{a}(t)}{dt}+\dots+a_{1}\cdot\frac{dx_{a}(t)}{dt}+a_{0}\cdot x_{a}(t)=k\cdot x_{e}(t)
+\]
+
+
+
+Normierte Form mit $a_{0}=1$
+
+\end{frame}
+
+\begin{frame}{Testfunktionen}
+
+
+Allgemeine Lösungen der DGL sehr oft aufwändig und enthalten zu viele
+Parameter für praktische Interpretation.
+
+
+Übertragungsverhalten auf Testfunktionen sind oft wesentlich aussagekräftiger.
+
+
+Häufig verwendete Testfunktionen:
+
+
+\begin{figure}
+\begin{columns}
+
+
+\column{0.3\textwidth}
+\begin{itemize}
+\item Rampenfunktion
+\item Sprungfunktion
+\item Impulsfunktion
+\end{itemize}
+
+\column{0.6\textwidth}
+
+
+\includegraphics[width=6cm]{Bilder/RPMT\lyxdot B0509}\end{columns}
+
+\end{figure}
+
+
+
+\medskip{}
+Mathematisch lassen sich diese durch Differentiation bzw. Integration
+in einander überführen.
+
+
+
+
+\end{frame}
+
+\begin{frame}{Sprungantwort Verzögerungsglied 1. Ordnung}
+
+
+\begin{figure}
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\begin{raggedright}
+\[
+x_{e}(t)=x_{e0}\quad\mbox{für }t\ge0
+\]
+
+\par\end{raggedright}
+
+
+\begin{raggedright}
+\[
+x_{a}(t)=x_{a0}(1-e^{-\frac{t}{\tau}})
+\]
+\medskip{}
+
+\par\end{raggedright}
+
+
+\column{0.6\textwidth}
+
+
+\subfloat{\includegraphics[width=7cm]{Bilder/RPMT\lyxdot B0510}}\end{columns}
+
+\end{figure}
+
+
+
+$\tau$ - Zeitkonstante des Messsystems, $x_{a}(\tau)/x_{a}(\infty)=0,63$
+
+
+$t_{e}$ - Einstellzeit (auf $\vert1-x_{a}(t)/x_{a}(\infty)\vert\le0,05$):
+$t_{e}=3\tau$
+
+
+$t_{r}$ - Anstiegszeit ($x_{a}(t)/x_{a}(\infty)$ von 0,1 auf 0,9:
+$t_{r}=2,197\cdot\tau$ (Hausaufgabe)
+
+
+Steigung bei $t=0$ nicht gleich Null. Indiz für Verzögerung 1. Ordnung.
+
+
+In der Praxis oft eine gute und einfache Näherung.
+
+
+\end{frame}
+
+\begin{frame}{Frequenzverhalten von Messeinrichtung}
+
+
+Für Frequenzverhalten wird Sinusschwingungen am Eingang verwendet.
+
+
+\[
+x_{e}(t)=\hat{x}_{e}\cdot\sin\omega t
+\]
+
+
+
+Am Ausgang als Reaktion:
+
+
+\[
+x_{a}(t)=\hat{x}_{a}\cdot\sin(\omega t+\phi)
+\]
+
+
+
+mit der Phasenverschiebung $\phi$ und $\hat{x}_{a}$ der Ausgangsamplitude.
+
+
+Für die Darstellung von Frequenzverhalten:
+
+
+Amplitudengang: $\frac{\hat{x}_{a}}{\hat{x}_{e}}=f(\omega)$
+
+
+Phasengang: $\phi(\omega)$
+
+\end{frame}
+
+\begin{frame}{Übertragungsfunktion Tiefpass 1. Ordnung}
+
+
+{\scriptsize{}
+\[
+G(j\omega)=\frac{\underline{U_{a}}}{\underline{U_{e}}}=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}=\frac{1}{1+j\omega RC}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+|G(j\omega)|=G(\omega)=\left|\frac{U_{a}}{U_{e}}\right|
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\phi(\omega)=\arctan\frac{\mbox{Im}}{\mbox{Re}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+G(j\omega)=\frac{1}{1+j\omega RC}\cdot\frac{1-j\omega RC}{1-j\omega RC}=\frac{1-j\omega RC}{1+\omega^{2}(RC)^{2}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\left|G(j\omega)\right|=G(\omega)=\sqrt{(\frac{1}{1+\omega^{2}(RC)^{2}})^{2}+(\frac{\omega RC}{1+\omega^{2}(RC)^{2}})^{2}}=\frac{1}{\sqrt{1+\omega^{2}(RC)^{2}}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}mit $\tau=RC=1/\omega_{0}$ und $\omega=2\pi f$}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+G(\omega)=\frac{1}{\sqrt{1+(\frac{\omega}{\omega_{0}})^{2}}}=\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+G(\omega_{0})=1/\sqrt{2}=0,707=\unit[-3]{dB}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}$\omega_{0}$ bzw. $f_{0}$: 3 dB-Grenzfrequenz}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Phasengang}
+
+
+{\scriptsize{}
+\[
+\phi(\omega)=\arctan\frac{\mbox{Im}}{\mbox{Re}}=\arctan\frac{-\frac{\omega RC}{1+\omega^{2}(RC)^{2}}}{\frac{1}{1+\omega^{2}(RC)^{2}}}=\arctan(-\omega RC)
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\phi(\omega)=\arctan(-\frac{\omega}{\omega_{0}})=\arctan(-\frac{f}{f_{0}})
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}$\phi(\omega_{0})=-45\text{\textdegree}$}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Amplitudengang}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+{\scriptsize{}In der Praxis ist oftmals die Kenntnis des Amplitudengangs
+einer Messeinrichtung ausreichend.}{\scriptsize \par}
+
+
+{\scriptsize{}Zur Charakterisierung des Amplitudengangs bietet sich
+die Grenzfrequenz an. Für Übertragungsverhalten mit Verzögerung 1.
+Ordnung gilt bei der Grenzfrequenz ein Amplitudenabfall auf $1/\sqrt{2}$.}{\scriptsize \par}
+
+
+{\scriptsize{}In der Messtechnik ist ein solcher Amplitudenabfall
+oft schon erheblich. Die Grenzfrequenz wird oft mit}{\scriptsize \par}
+
+
+{\scriptsize{}$x_{a}/x_{e}\ge0,99=99\%$ oder $\ge0,9=90\%$ angegeben.}{\scriptsize \par}
+
+
+{\scriptsize{}Die Angabe einer Grenzfrequenz in der Messtechnik sollte
+immer mit der Angabe des Amplitudenabfalls verbunden sein.}{\scriptsize \par}
+
+
+\column{0.5\textwidth}
+
+
+\includegraphics[width=6cm]{Bilder/RPMT\lyxdot B0511}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Oszilloskop und Grenzfrequenz}
+
+
+Ein Oszilloskop besitzt lt. Herstellerangabe eine Grenzfrequenz von
+60 MHz. Wie groß darf das Verhältnis $f/f_{0}$ bzw. $f$ werden,
+damit $x_{a}/x_{e}$ größer als 90\% bleibt.
+
+
+$0,9\le\frac{x_{a}}{x_{e}}=\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}$
+
+
+\[
+1+(\frac{f}{f_{0}})^{2}\le\frac{1}{0,9^{2}}\Rightarrow\frac{f}{f_{0}}\le\sqrt{\frac{1}{0,9^{2}}-1}=0,484
+\]
+
+
+
+\[
+f\le0,484\cdot f_{0}\approx\unit[29]{MHz}
+\]
+
+
+
+Für Messabweichung kleiner als 90\% muss die Frequenz des Messsignals
+kleiner als 29 MHz sein. 
+
+\end{frame}
+
+
+
+
+% \mode
+% <all>
+\lecture{Kap 04 Bewertung von Messergebnissen}{K04}
+%\setcounter{framenumber}{0}
+%\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 04 Bewertung von Messergebnissen }
+\begin{frame}
+
+
+Kap 04 Bewertung von Messergebnissen
+
+\end{frame}
+
+
+
+\begin{frame}{Übersicht}
+
+
+\textbf{Thema}: Bewertung von Messergebnissen
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Definition der Messabweichung, Unterschied zwischen Abweichung und
+Fehler 
+\item Systematische Abweichung und zufallsverursachte Abweichung
+\item Unsicherheiten bei direkten und indirekten Messungen
+\item durch Messgerät verursachte Abweichung
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 6 \& 7
+
+
+\end{frame}
+
+\begin{frame}{Grundbegriffe}
+
+
+Ziel jeder Messung: physikalische Größe eines Messobjektes wertmäßig
+zu ermitteln, Messergebnis mit der erforderlichen Genauigkeit zu bestimmen,
+dem \emph{wahren Wert} der Messgröße ausreichend anzunähern.\medskip{}
+
+
+
+Reale Messung immer mit Messabweichungen behaftet. \emph{Abweichungen}
+müssen zur Bewertung der Messqualität quantifiziert werden.
+
+
+Messwert kann immer nur ein Schätzwert des wahren Wertes einer Messgröße
+sein.
+
+
+Für messtechnische Praxis wird der Begriff richtiger Wert als Ersatz
+eingeführt.\medskip{}
+
+
+
+Der \emph{richtiger Wert} ist der durch ausreichend aufwändiges Verfahren
+ermittelte Wert mit der Annahme, dass die Abweichung zum wahren Wert
+der Messgröße in vorliegender Messaufgabe vernachlässigbar ist.
+
+
+I. Allg. kann das Ergebnis einer Kalibrierung als richtiger Wert einer
+Messgröße betrachtet werden.
+
+\end{frame}
+
+\begin{frame}{Abweichung vs. Fehler}
+
+
+Umgangsprachlich wird oft der Begriff \emph{Fehler} anstelle des
+Begriffes \emph{Abweichung} verwendet.\medskip{}
+
+
+
+Nach DIN 1319 sowie DIN EN ISO 8402:
+
+
+\fbox{\begin{minipage}[t]{1\columnwidth}%
+Fehler sind Abweichungen, die vorgegebene Grenzen überschreiten, Nichterfüllung
+einer festgelegten Forderung.%
+\end{minipage}}\medskip{}
+
+
+
+In diesem Sinne: Nicht jede Abweichung ist ein Fehler.
+
+\end{frame}
+
+\begin{frame}{Absolute und relative Abweichung}
+
+
+Messwert: Summe aus dem wahren Wert der Messgröße und der Abweichung
+$A$ bzw. $e$ (nach DIN 1319)
+
+
+\[
+x=x_{w}+A
+\]
+
+
+
+In der Messtechnik wird Abweichung auch mit $\Delta x$ gekennzeichnet.
+
+
+{\footnotesize{}
+\[
+\Delta x=A=x-x_{R}
+\]
+}{\footnotesize \par}
+
+
+Da $x_{w}$ in der Praxis nicht bekannt ist, wird der richtige Wert
+$x_{R}$ benutzt.
+
+
+$A$ wird auch als \emph{absolute Messabweichung} bezeichnet.
+
+
+\emph{Relative Abweichung: }
+
+
+{\footnotesize{}
+\[
+A_{rel}=\frac{A}{x_{R}}
+\]
+}{\footnotesize \par}
+
+
+In der Praxis liegt $x_{R}$ häufig für die Berechnung nicht vor.
+Mit der Annahme einer hinreichenden kleine Abweichung, $A\ll x$:
+
+
+{\footnotesize{}
+\[
+A_{rel}=\frac{A}{x}=\frac{\Delta x}{x}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel Abweichungen}
+
+
+Der Shuntwiderstand für Strommessnetzwerke wird bei Kalibrierung zu
+$x_{R}=R=\unit[0,207]{\Omega}$ bestimmt. Die Messung mit einem Betriebsmessgerät
+ergab einen (Schätz-)Wert von $x=0,212\Omega$.
+
+
+Absolute Abweichung: 
+
+
+$A=x-x_{R}=\unit[0,212]{\Omega}-\unit[0,207]{\Omega}=\unit[0,005]{\Omega}$
+
+
+Relative Abweichungen:
+
+
+\[
+A_{rel1}=\frac{A}{x_{R}}=\frac{\unit[0,005]{\Omega}}{\unit[0,207]{\Omega}}=0,02415=2,415\%
+\]
+
+
+
+\[
+A_{rel2}=\frac{A}{x}=\frac{\unit[0,005]{\Omega}}{\unit[0,212]{\Omega}}=0,02358=2,358\%
+\]
+
+
+
+Der Unterschied ist für die Bewertung der Messgenauigkeit nicht bedeutsam.
+Die Angabe $A_{rel}=2,4\%$ ist meistens ausreichend.
+
+\end{frame}
+
+\begin{frame}{Zufällige und systematische Abweichung}
+
+
+Klassifizierung in zufällige Abweichungen $A_{r}$(random) und systematische
+Abweichungen $A_{s}$:
+
+
+\[
+A=A_{r}+A_{s}
+\]
+
+
+
+\emph{Zufällige Abweichungen}: nicht reproduzierbare, unvorhersehbare
+Fehlerwirkungen, Streuung der Messwerte um einen Mittelwert unter
+Wiederholungsbedingung, führt zu Unsicherheit.
+
+
+\emph{Wahrscheinlichkeit}: statistische Sicherheiten von z.B. 95\%
+und 99\% innerhalb bestimmten Bereich.
+
+
+Ursachen: U.a zufällige Veränderungen der Einflussgrößen, zufällige
+Parameteränderungen der Messgeräte, zufällige Änderung der Messgröße
+
+
+
+
+
+\emph{Systematische Abweichungen}: unter gleichen Bedingungen reproduzierbare
+gleiche Abweichungen, führt zu Unrichtigkeit.
+
+
+Ursachen: Unvollkommenheit des Messsystems, u.a. Temperatureinfluss
+auf Messobjekt und -einrichtung, Rückwirkung von Messgerät auf -objekt
+(ungünstige Eingangsimpedanz), unterschiedliche Höhenlage
+
+\end{frame}
+
+\begin{frame}{(Un-)bekannte systematische Abweichungen}
+
+
+Systematische Abweichung $A_{s}$ kann als Zusammensetzung von zwei
+Komponenten aufgefasst werden, \emph{bekannten} und \emph{unbekannten}:
+
+
+\[
+A_{s}=A_{s,b}+A_{s,u}
+\]
+
+
+
+Die bekannte systematische Abweichung ist ermittelbar und korrigierbar
+
+
+Die unbekannte systematische Abweichung ist nicht ermittelbar.
+
+
+Temperatureinfluss auf Messung kann als bekannt betrachtet werden,
+wenn Temperature bei Messung aufgenommen werden.
+
+
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0601}
+
+
+Einfluss Leitungswiderstand auf Messung: $A_{s,b}=2\cdot U_{RL}$ 
+
+
+\end{frame}
+
+\begin{frame}{Ermittlung bekannter systematischen Abweichung}
+
+
+Theoretische Betrachtung: Unter Analyse der bekannten Bedingungen
+der Messung kann die Wirkung auf Messabweichungen berechnet werden.\medskip{}
+
+
+
+Referenzmessung: Massverkörperung bzw. -einrichtung mit wesentlich
+kleineren Messabweichung zum Vergleich ziehen. Typischerweise mit
+mindestens 10mal höheren Genauigkeit.
+
+
+\medskip{}
+
+
+
+Im Beispiel Spannungsmessung wird das Messergebnis korrigiert:
+
+
+$U_{R_{x}}=U-2U_{R_{L}}$
+
+\end{frame}
+
+\begin{frame}{Beispiel Korrektion }
+
+
+Messkabel mit folgenden Eigenschaften:
+
+
+Länge $l=\unit[2]{m}$
+
+
+Kabelquerschnitt $A=\unit[0,5]{mm^{2}}$
+
+
+Leitermaterial: Kupfer mit spezifischem Widerstand $\varsigma=\unit[0,0175]{\frac{\Omega\cdot mm^{2}}{m}}$
+
+
+Messstrom $I=\mbox{const.}=\unit[100]{mA}$\medskip{}
+
+
+
+Berechnung des Widerstandes eines Laborkabels:
+
+
+\[
+R_{L}=\varsigma\cdot\frac{l}{A}=\unit[0,0175]{\frac{\Omega\cdot mm^{2}}{m}}\frac{\unit[2]{m}}{\unit[0,5]{mm^{2}}}=\unit[0,07]{\Omega=\unit[70]{m\Omega}}
+\]
+
+
+
+\[
+A_{s,b}=2U_{R_{L}}=2\cdot I\cdot R_{L}=2\cdot\unit[0,1]{A}\cdot\unit[0,07]{\Omega}
+\]
+
+
+
+\[
+=\unit[0,014]{V=\unit[14]{mV}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Systematische Abweichung indirekter Messung}
+
+
+\emph{Indirekte Messung}: In der Messtechnik wird oft die interessierende
+Messgröße in eine der Messung zugängliche Messgröße umgewandelt. Die
+Umwandlung folgt einem definierten funktionellen Zusammenhang.
+
+
+Fragestellung: Abweichung $\Delta y$ der indirekt zu messenden Größe
+$y$ bei bekannten Abwqeichungen der direkt zugänglichen Messgrößen
+$x_{i}$
+
+
+\[
+y=f(x_{1},x_{2},\dots,x_{n})\quad\mbox{mit Laufindex }i
+\]
+
+
+
+\[
+dy=\frac{\partial y}{\partial x_{1}}\cdot dx_{1}+\frac{\partial y}{\partial x_{2}}\cdot dx_{2}+\dots+\frac{\partial y}{\partial x_{n}}\cdot dx_{n}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Totales Differential indirekter Messung}
+
+
+Messtechnisch gültige Annahme: $\Delta x_{i}\ll x_{i}$ , das totale
+Differetial ist eine ausreichend gute Näherung für die Gesamtabweichung:
+
+
+\[
+\Delta y=\frac{\partial y}{\partial x_{1}}\cdot\Delta x_{1}+\frac{\partial y}{\partial x_{2}}\cdot\Delta x_{2}+\dots+\frac{\partial y}{\partial x_{n}}\cdot\Delta x_{n}=\sum_{i=1}^{n}\frac{\partial y}{\partial x_{i}}\cdot\Delta x_{i}
+\]
+
+
+
+Der Fehler $\Delta x_{i}$ wird mit dem Gewichtsfaktor $\frac{\partial y}{\partial x_{i}}$
+fortgepflanzt.
+
+
+Relative Abweichungen: 
+
+
+\[
+\frac{\Delta y}{y}=\frac{1}{y}\sum_{i=1}^{n}\frac{\partial y}{\partial x_{i}}\cdot\Delta x_{i}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Widerstandsmessung mittels Spannung und Strom}
+
+
+Widerstand wird über Ohmsches Gesetz mittel Spannung und Strom indirekt
+gemessen.
+
+
+\[
+R=f(U,I)=\frac{U}{I}
+\]
+
+
+
+\[
+\Delta R=\sum_{i=1}^{2}\frac{\partial R}{\partial x_{i}}\cdot\Delta x_{i}=\frac{\partial R}{\partial U}\cdot\Delta U+\frac{\partial R}{\partial I}\cdot\Delta I
+\]
+\[
+=\frac{1}{I}\cdot\Delta U-\frac{U}{I^{2}}\cdot\Delta I
+\]
+ 
+\[
+\frac{\Delta R}{R}=\frac{I}{U}\cdot(\frac{1}{I}\cdot\Delta U-\frac{U}{I^{2}}\cdot\Delta I)=\frac{\Delta U}{U}-\frac{\Delta I}{I}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Leistungmessung mittels Spannung und Strom}
+
+
+\begin{figure}
+\begin{columns}
+
+
+\column{0.5\textwidth}
+
+
+{\scriptsize{}Eine stromrichtige Messschaltung mit}{\scriptsize \par}
+
+
+{\scriptsize{}Strommesser: Innenwiderstand $R_{iA}=\unit[0,5]{\Omega}$}{\scriptsize \par}
+
+
+{\scriptsize{}Spannungsmesser: Innenwiderstand $R_{iV}=\unit[150]{\Omega}$}{\scriptsize \par}
+
+
+{\scriptsize{}Messwerte: $U=\unit[1,25]{V},\; I=\unit[0,2]{A}$}{\scriptsize \par}
+
+
+\column{0.4\textwidth}
+
+
+
+
+
+\includegraphics[width=4cm]{Bilder/RPMT\lyxdot B0602}\end{columns}
+
+\end{figure}
+
+
+
+\begin{spacing}{0}
+{\scriptsize{}Berechnung Leistung: $P=f(U,I)=U\cdot I=\unit[1,25]{V}\cdot\unit[0,2]{A}=\unit[0,25]{W}$}{\scriptsize \par}
+
+
+{\scriptsize{}Berechnung Abweichung:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Delta P=\frac{\partial P}{\partial U}\cdot\Delta U+\frac{\partial P}{\partial I}\cdot\Delta I=I\cdot\Delta U+U\cdot\Delta I
+\]
+\medskip{}
+}{\scriptsize \par}
+
+
+{\scriptsize{}Für stromrichtige Messung ist: $\Delta I=0$: }{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Delta P=I\cdot\Delta U=I\cdot U_{A}=I\cdot(I\cdot R_{iA})=I^{2}\cdot R_{iA}
+\]
+\medskip{}
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Delta P=(\unit[0,2]{A})^{2}\cdot\unit[0,5]{\Omega}=\unit[0,02]{W}=\unit[20]{mW}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Korrektion:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+P_{K}=P-\Delta P=\unit[0,25]{W}-\unit[0,02]{W}=\unit[0,23]{W}
+\]
+\medskip{}
+}{\scriptsize \par}
+
+
+{\scriptsize{}Abweichung bzw Korrektion um 10\%.}{\scriptsize \par}
+\end{spacing}
+
+\end{frame}
+
+\begin{frame}{Unbekannte systematische Abweichungen}
+
+
+Unbekannte systematische Abweichungen verhalten sich der bekannten
+systematischen Abweichungen ähnlich. Sie sind reproduzierbar. Eine
+Berechnung und damit Korrektion ist nicht möglich.\medskip{}
+
+
+
+In der Praxis ist oft die Unterscheidung zwischen unbekannten systematischen
+Abweichungen und zufälligen Abweichungen nicht möglich. Sie kann wie
+zufällige Abweichungen behandelt werden, und bewirken unter Umständen
+eine einseitige Verschiebung des gemessenen Mittelwertes und verändern
+die Sicherheit der Aussage.
+
+\end{frame}
+
+\begin{frame}{Zufällige Abweichungen}
+
+
+Einflüsse von zufälligen Abweichungen können nur durch Messungen unter
+weitgehend identischen Bedingungen erkannt werden.\medskip{}
+
+
+
+Messreihe, Ergebnisse der wiederholten Messungen, ist mit statistischen
+Methoden zur Bewertung auf zufällige Abweichungen zu analysieren.\medskip{}
+
+
+
+Statistische Auswertung der Messreihe erlaubt Aussagen zum Bereich
+und zur Sicherheit bzw. Wahrscheinlichkeit über den wahren Wert bzw.
+Erwartungswert der Messgröße.
+
+
+\medskip{}
+
+
+
+Zwei Aussagen aus statisitischen Berechnung:
+
+
+\emph{Bezogen auf einzelene Messwerte}: Angabe eines Bereiches um
+den arithmetischen Mittelwert, mit oberen und unteren Grenze, in dem
+einzelne Messwerte mit vorgegebenen Wahrscheinlichkeit (Sicherheit)
+liegen.\medskip{}
+
+
+
+\emph{Bezogen auf Mittelwert}: Angabe eines Bereiches, mit oberen
+und unteren Grenze, in dem der \emph{Erwartungswert} der Messung
+mit vorgegebener Wahrscheinlichkeit (Sicherheit) liegt.
+
+\end{frame}
+
+\begin{frame}{Aufnahme und Analyse einer Messreihe}
+
+
+\begin{center}
+{\scriptsize{}}%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+{\scriptsize{}Messwert $j$} & {\scriptsize{}$l$ in m} & {\scriptsize{}Messwert $j$} & {\scriptsize{}$l$ in m} & {\scriptsize{}Messwert $j$} & {\scriptsize{}$l$ in m}\tabularnewline
+\hline 
+\hline 
+{\scriptsize{}1} & {\scriptsize{}1,018} & {\scriptsize{}6} & {\scriptsize{}0,993} & {\scriptsize{}11} & {\scriptsize{}0,995}\tabularnewline
+\hline 
+{\scriptsize{}2} & {\scriptsize{}1,032} & {\scriptsize{}7} & {\scriptsize{}0,986} & {\scriptsize{}12} & {\scriptsize{}1,011}\tabularnewline
+\hline 
+{\scriptsize{}3} & {\scriptsize{}0,981} & {\scriptsize{}8} & {\scriptsize{}1,005} & {\scriptsize{}13} & {\scriptsize{}0,991}\tabularnewline
+\hline 
+{\scriptsize{}4} & {\scriptsize{}0,994} & {\scriptsize{}9} & {\scriptsize{}1,003} & {\scriptsize{}14} & {\scriptsize{}0,998}\tabularnewline
+\hline 
+{\scriptsize{}5} & {\scriptsize{}0,966} & {\scriptsize{}10} & {\scriptsize{}0,982} & {\scriptsize{}15} & {\scriptsize{}1,012}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}{\scriptsize \par}
+
+
+Der Bereich zwischen kleinstem und größtem Wert wird in Intervallen
+gleicher Breite, Klassen genannt, eingeteilt. Die Werte werden in
+Klassen einsortiert.
+
+
+Aus $m=15$ Messwerte:
+
+
+\[
+\Delta x_{max}=x_{max}-x_{min}=\unit[1,032]{m}-\unit[0,966]{m}=\unit[0,066]{m}
+\]
+
+
+
+Richtwert für Anzahl der Klassen: $p\approx\sqrt{m}=\sqrt{15}\approx4$
+
+
+\[
+\Delta x=\Delta x_{max}:5=\unit[0,066]{m}:5=\unit[0,0132]{m}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Messwertverteilung und Häufigkeit}
+
+
+\begin{flushright}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0603}\includegraphics[width=6cm]{Bilder/RPMT\lyxdot B0604}
+\par\end{flushright}
+
+
+Absolute Häufigkeit für eine Klasse:
+
+
+{\footnotesize{}
+\[
+H_{k}=\frac{m_{k}}{\Delta x}
+\]
+}{\footnotesize \par}
+
+
+mit $m_{k}$ die Zahl der Ereignisse in der Klasse $k$, und $\Delta x$
+die Klassenbreite
+
+
+Relative Häufigkeit:
+
+
+{\footnotesize{}
+\[
+h_{k}=\frac{\frac{m_{k}}{\Delta x}}{m}
+\]
+}{\footnotesize \par}
+
+
+\emph{Histogramm}: Aneinanderreihung der absoluten Häufigkeit (y-Achse).
+
+\end{frame}
+
+\begin{frame}{Wahrscheinlichkeit}
+
+
+Wahrscheinlichkeit
+
+
+\[
+P_{k}=\frac{m_{k}}{m}
+\]
+
+
+
+mit Normierung 
+\[
+P=\sum_{k=1}^{p}P_{k}=1
+\]
+
+
+
+d.h. alle Messwerte der Messreihe fallen in $\Delta x_{max}=p\cdot\Delta x$.
+
+\end{frame}
+
+\begin{frame}{Wahrscheinlichkeit - Kontinuierlich}
+
+
+Überführug in kontinuierliche Funktion im Grenzfall unendlich vielen
+Messwerte
+
+
+\[
+h(x)=\lim_{\Delta x\rightarrow0,m\rightarrow\infty}\frac{m_{k}}{m\cdot\Delta x}=\lim_{m\rightarrow\infty}\frac{1}{m}\cdot\frac{dm_{k}}{dx}
+\]
+
+
+
+Verteilungsdichtefunktion:
+
+
+\[
+P(x_{1},x_{2})=\int_{x_{1}}^{x_{2}}h(x)dx
+\]
+
+
+
+\begin{figure}
+\begin{columns}
+
+
+\column{0.5\textwidth}
+
+
+\includegraphics[width=4.5cm]{Bilder/RPMT\lyxdot B0605}
+
+
+\column{0.5\textwidth}
+
+
+Normierung:
+
+
+{\footnotesize{}
+\[
+P=\int_{-\infty}^{\infty}h(x)dx=1
+\]
+}\end{columns}
+
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}{Gausssche Normalverteilung}
+
+
+Oft ist die zufällige unbekannte Komponente in Nesswerten normalverteil.
+Immer dann wenn genügend viele und von einander unabhängige Einflussgröße
+wirksam sind.
+
+
+Gaußsche Dichtefunktion:
+
+
+\[
+h(x)=f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]
+\]
+
+
+
+Erwartungswert, auch Mittelwert:
+
+
+\[
+\mu=\lim_{m\rightarrow\infty}\frac{1}{m}\sum_{j=1}^{m}x_{j}
+\]
+
+
+
+Standardabweichung:
+
+
+\[
+\sigma=\sqrt{\lim_{m\rightarrow\infty}\frac{1}{m}\sum_{j=1}^{m}(x_{j}-\mu)^{2}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Gausssche Normalverteilung}
+
+
+\includegraphics[width=7cm]{Bilder/Schruf\lyxdot MT\lyxdot B0110}
+
+\end{frame}
+
+\begin{frame}{Normierte Gauß-Verteilung}
+
+
+Jede Normalverteilung kann in eine normierte Gauß-Verteilung transformiert
+werden mit
+
+
+\[
+t=\frac{x-\mu}{\sigma}
+\]
+
+
+
+Verschiebung des Ursprungs auf $\mu$ und Skalierung mit $\sigma$
+\begin{columns}
+
+
+\column{0.5\textwidth}
+
+
+\[
+\Phi(x)=\frac{1}{\sqrt{2\pi}}\exp(-\frac{t^{2}}{2})
+\]
+
+
+
+\column{0.5\textwidth}
+
+
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0607}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Typische Wahrscheinlichkeiten für Einhaltung der Messaussage}
+
+
+\begin{tabular}{|>{\raggedright}p{1.8cm}|>{\raggedright}p{0.8cm}|>{\raggedright}p{0.9cm}|>{\raggedright}p{2.5cm}|>{\centering}p{2.5cm}|}
+\hline 
+{\tiny{}Intervallgrenzen (symmetrisch)} & {\tiny{}$t=\frac{x-\mu}{\sigma}$} & {\tiny{}$P(x)=\Phi(t)$} & {\tiny{}Bezeichnung in betrieblicher Messpraxis} & {\tiny{}Wahrscheinlichkeit: Messwert innerhalb des Intervalls}\tabularnewline
+\hline 
+{\tiny{}$\mu\pm1\cdot\sigma$} & {\tiny{}1} & {\tiny{}0,6827} & {\tiny{}Orientierende Messung} & {\tiny{}68,27\%}\tabularnewline
+\hline 
+{\tiny{}$\mu\pm1,96\cdot\sigma$} & {\tiny{}1,96} & {\tiny{}0,95} & \multirow{2}{2.5cm}{{\tiny{}Betrieblsmessung}} & {\tiny{}95,00\%}\tabularnewline
+\cline{1-3} \cline{5-5} 
+{\tiny{}$\mu\pm2\cdot\sigma$} & {\tiny{}2} & {\tiny{}0,9545} &  & {\tiny{}95,45\%}\tabularnewline
+\hline 
+{\tiny{}$\mu\pm2,58\cdot\sigma$} & {\tiny{}2,58} & {\tiny{}0,99} & \multirow{3}{2.5cm}{{\tiny{}Präzisionsmessung}} & {\tiny{}99,00\%}\tabularnewline
+\cline{1-3} \cline{5-5} 
+{\tiny{}$\mu\pm3\cdot\sigma$} & {\tiny{}3} & {\tiny{}0,9973} &  & {\tiny{}99,73\%}\tabularnewline
+\cline{1-3} \cline{5-5} 
+{\tiny{}$\mu\pm4\cdot\sigma$} & {\tiny{}4} & {\tiny{}0,9999} &  & {\tiny{}99,99\%}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Messsystem einer Abfüllanlage}
+
+
+Die Anlage befüllt Flaschen mit 0,7l Saftgetränke. Aus Kalibrieung
+bekannt, Messwerte sind normalverteilt mit Erwartungswert $\mu=\unit[0,7]{l}$
+und Standardabweichung $\sigma=\unit[5]{ml}$.
+
+
+Wahrscheinlichkeit für befüllte Falscheninhalte zwischen 0,69l und
+0,71l ?
+\begin{columns}
+
+
+\column{0.6\textwidth}
+
+
+{\footnotesize{}
+\[
+\mbox{Transformation: }t=\frac{x-\mu}{\sigma}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+\mbox{Untergrenze: }t_{1}=\frac{0,69-0,7}{0,005}=-2
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+\mbox{Obergrenze: }t_{2}=\frac{0,71-0,7}{0,005}=2
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+P(x)=\Phi(t)=\Phi(2)=0,9545
+\]
+}{\footnotesize \par}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=4cm]{Bilder/RPMT\lyxdot B0608}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Auswertung endlicher Messreihen}
+
+
+Für viele Messaufgaben kann eine Normalverteilung der Messwerte angenommen
+werden.
+
+
+Erwartungswert $\mu\Rightarrow$ arithmetischer Mittelwert $\bar{x}$
+(bester Schätzwert): 
+\[
+\bar{x}=\mu=\frac{1}{m}\sum_{j=1}^{m}x_{j}
+\]
+
+
+
+Standardabweichung $\sigma\Rightarrow$ empirische Standardabweichung
+$s$ (Einzelwerte): 
+\[
+s=s(x)=\sqrt{\frac{1}{m-1}\sum_{j=1}^{m}(x_{j}-\bar{x})^{2}}
+\]
+
+
+
+$s$ kann als Schätzwert der Standardabweichung $\sigma$ betrachtet
+werden. 
+
+
+\[
+\sum_{j=1}^{m}(x_{j}-\bar{x})=0;\;\sum_{j=1}^{m}(x_{j}-\bar{x})^{2}=\mbox{Minimum}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Auswertung endlicher Messreihen}
+
+
+\emph{Varianz vom Mittelwert/Schätzwert} $\bar{x}$
+
+
+\[
+s_{\bar{x}}^{2}=s^{2}(\bar{x})=\frac{s^{2}}{m}
+\]
+
+
+
+Streuung des Mittelwertes einer Messreihe ist um den Faktor $1/\sqrt{m}$
+kleiner gegenüber Streuung der Einzelwerte. Ein Maß für die Qualität
+von Mittelwert $\bar{x}$ einer Messreihe zu deren Erwartungswert
+$\mu$.
+
+
+\emph{Standardunsicherheit}: 
+\[
+u(x)=s_{\bar{x}}
+\]
+
+
+
+\emph{Relative Standardunsicherheit:} 
+\[
+u(x)_{rel}=\frac{u(x)}{|M|}=\frac{u(x)}{|\bar{x}|}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Standardabweichung: Einzelwerte und Mittelwerte}
+
+
+Beispiel
+
+
+\begin{center}
+\includegraphics[width=8cm]{Bilder/Schruf\lyxdot MT\lyxdot B0111}
+\par\end{center}
+
+
+{\scriptsize{}a) Stichprobe mit m=200; $\bar{x}=99,99,\, s(x)=2,08$}{\scriptsize \par}
+
+
+{\scriptsize{}b) Stichprobe mit m=49; }\foreignlanguage{english}{\textrm{\scriptsize{}$\bar{x}=99,48,\, s(x)=2,06$}}{\scriptsize \par}
+
+
+{\scriptsize{}c) Verteilung der N Stichprobenmittelwerte mit m=49:
+$\bar{\bar{x}}=99,98,\, s(\bar{x})=s(x)/\sqrt{m}=0,3$}{\scriptsize \par}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Vertrauensniveau}
+
+
+{\tiny{}Bei kleiner Anzahl kann die Verteilung vom Normalverteilung
+stark abweichen.}{\tiny \par}
+
+
+{\tiny{}Vertrauensbereich $v$ für Mittelwert $\bar{x}$ zum geforderten
+Vertrauensniveau über $t$-Verteilung bzw. Student-Verteilung angegeben
+werden.}{\tiny \par}
+
+
+{\tiny{}Diskrete $t$-Verteilung bzw. Student-Verteilung}{\tiny \par}
+
+
+\begin{singlespace}
+{\tiny{}}%
+\begin{tabular}{|>{\centering}p{2cm}|>{\centering}p{2.5cm}|>{\centering}p{2.5cm}|>{\centering}p{2.5cm}|}
+\hline 
+{\tiny{}Anzahl Messwerte $m$} & {\tiny{}Vertrauensniveau $P=(1-\alpha)=68,3\%$ ($1s$-Grenzen)} & {\tiny{}Vertrauensniveau $P=(1-\alpha)=95\%$ ($2s$-Grenzen)} & {\tiny{}Vertrauensniveau $P=(1-\alpha)=99,7\%$ ($3s$-Grenzen)}\tabularnewline
+\hline 
+{\tiny{}3} & {\tiny{}1,32} & {\tiny{}4,30} & {\tiny{}19,21}\tabularnewline
+\hline 
+{\tiny{}5} & {\tiny{}1,15} & {\tiny{}2,78} & {\tiny{}6,62}\tabularnewline
+\hline 
+{\tiny{}6} & {\tiny{}1,11} & {\tiny{}2,57} & {\tiny{}5,51}\tabularnewline
+\hline 
+{\tiny{}8} & {\tiny{}1,08} & {\tiny{}2,36} & {\tiny{}4,53}\tabularnewline
+\hline 
+{\tiny{}10} & {\tiny{}1,06} & {\tiny{}2,26} & {\tiny{}4,09}\tabularnewline
+\hline 
+{\tiny{}15} & {\tiny{}1,04} & {\tiny{}2,15} & {\tiny{}3,67}\tabularnewline
+\hline 
+{\tiny{}20} & {\tiny{}1,03} & {\tiny{}2,09} & {\tiny{}3,45}\tabularnewline
+\hline 
+{\tiny{}30} & {\tiny{}1,02} & {\tiny{}2,05} & {\tiny{}3,28}\tabularnewline
+\hline 
+{\tiny{}50} & {\tiny{}1,01} & {\tiny{}2,01} & {\tiny{}3,16}\tabularnewline
+\hline 
+{\tiny{}100} & {\tiny{}1,00} & {\tiny{}1,98} & {\tiny{}3,08}\tabularnewline
+\hline 
+{\tiny{}200} & {\tiny{}1,00} & {\tiny{}1,97} & {\tiny{}3,04}\tabularnewline
+\hline 
+{\tiny{}$\gg200$} & {\tiny{}1,00} & {\tiny{}1,96} & {\tiny{}3,00}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+\end{singlespace}
+
+\end{frame}
+
+\begin{frame}{Berechnung Vertrauensbereich}
+
+
+Der Vertrauensbereich wird um Faktor $t$ breiter.
+
+
+Vertrauensbereich
+
+
+\[
+v=\pm\frac{t}{\sqrt{m}}\cdot s=u_{V}
+\]
+
+
+
+Obere Grenze des Vertrauensbereichs:
+
+
+\[
+v_{o}=\bar{x}+v=\bar{x}+\frac{t}{\sqrt{m}}\cdot s
+\]
+
+
+
+Untere Grenze des Vertrauensbereichs:
+
+
+\[
+v_{u}=\bar{x}-v=\bar{x}-\frac{t}{\sqrt{m}}\cdot s
+\]
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{Beispiel Messreihenauswertung}
+
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Messwert $j$ & $l$ in m & Messwert $j$ & $l$ in m & Messwert $j$ & $l$ in m\tabularnewline
+\hline 
+\hline 
+1 & 1,018 & 6 & 0,993 & 11 & 0,995\tabularnewline
+\hline 
+2 & 1,032 & 7 & 0,986 & 12 & 1,011\tabularnewline
+\hline 
+3 & 0,981 & 8 & 1,005 & 13 & 0,991\tabularnewline
+\hline 
+4 & 0,994 & 9 & 1,003 & 14 & 0,998\tabularnewline
+\hline 
+5 & 0,966 & 10 & 0,982 & 15 & 1,012\tabularnewline
+\hline 
+\end{tabular}
+
+
+Mittelwert:
+
+
+\[
+\bar{x}=\frac{1}{m}\sum_{j=1}^{15}x_{j}=\frac{\unit[14,967]{m}}{15}=\unit[0,9978]{m}
+\]
+
+
+
+Empirischer Standardabweichung:
+
+
+\[
+s=s(x_{j})=\sqrt{\frac{1}{m-1}\sum_{j=1}^{m}(x_{j}-\bar{x})^{2}}=\sqrt{\frac{\unit[380,640\cdot10^{-5}]{m^{2}}}{14}}=\unit[16,49\cdot10^{-3}]{m}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel Messreihenauswertung}
+
+
+Standardunsicherheit des Mittelwertes $\bar{x}$:
+
+
+\[
+u(x)=s_{\bar{x}}=\frac{s}{\sqrt{m}}=\frac{\unit[16,49\cdot10^{-3}]{m}}{\sqrt{15}}=\unit[4,26\cdot10^{-3}]{m}
+\]
+
+
+
+Relative Standardunsicherheit des Mittelwertes $\bar{x}$:
+
+
+\[
+u(x)_{rel}=\frac{u(x)}{|\bar{x}|}=\frac{\unit[4,26\cdot10^{-3}]{m}}{\unit[0,9978]{m}}=0,004267\approx0,43\%
+\]
+
+
+\end{frame}
+
+\begin{frame}{Tabellarische Berechnung mittels Excel}
+
+
+\begin{center}
+\includegraphics[height=7cm]{Bilder/RPMT\lyxdot T06\lyxdot S82}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Interpretation der Auswertung}
+
+
+1. Standardabweichung
+
+
+Mit einer Wahrscheinlichkeit von $P=68,3\%$ liegen die Einzelwerte
+der Messreihe im Intervall $\unit[0,9978]{m}\pm\unit[16,49\cdot10^{-3}]{m}$
+
+
+2. Standardunsicherheit:
+
+
+Der wahre Wert der Messgröße darf im Intervall $\unit[0,9978]{m}\pm\unit[4,26\cdot10^{-3}]{m}$
+vermutet werden, sofern alle systematische Abweichungen korrigiert
+wurden. 
+
+
+Bei einer geforderten statitischen Sicherheit von 68\%:
+
+
+$m=15$, $1s$-Grenzen, $t=1,04\approx1$
+
+\[
+\mbox{Vertrauensbereich:}\quad v=\pm\frac{t}{\sqrt{m}}\cdot s=\pm\unit[\frac{1,04}{\sqrt{15}}\cdot16,5\cdot10^{-3}]{m}=\pm\unit[4,4\cdot10^{3}]{m}
+\]
+
+
+\[
+\mbox{Obere und untere Grenze:}\; v_{o/u}=\unit[0,9978]{m}\pm\unit[4,4\cdot10^{-3}]{m}
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Unsicherheiten indirekter Messungen}
+
+
+Für den Fall, dass einzelne Messgrößen \emph{nicht korreliert} sind
+gilt für die kombinierte Standardunsicherheit:
+
+
+\[
+u(y)=\sqrt{\sum_{i=1}^{n}\left(\frac{\partial y}{\partial x_{i}}\cdot u(x_{i})\right)^{2}}
+\]
+
+
+
+\[
+u(y)_{rel}=\frac{u(y)}{|y|}=\frac{1}{|y|}\sqrt{\sum_{i=1}^{n}\left(\frac{\partial y}{\partial x_{i}}\cdot u(x_{i})\right)^{2}}
+\]
+\medskip{}
+
+
+
+Bei korrelierten Messgrößen muss der Korrelationskoeffizient geeignet
+berücksichtigt werden.
+
+
+\end{frame}
+
+\begin{frame}{Beispiel Bewertung Leistungsmessung mittels Spannung und Widerstand}
+
+
+Gemessener Widerstand $R=\unit[301,4]{\Omega}$ mit Unsicherheit $u(R)=\unit[0,4]{\Omega}$
+
+
+Gemessene Spannung $U=\unit[230,1]{V}$mit Unsicherheit $u(U)=\unit[0,1]{V}$
+
+
+Unsicherheit der Leistungsbestimmung?
+
+
+{\footnotesize{}
+\[
+y=f(x_{1},x_{2})=P=\frac{U^{2}}{R}=\frac{(\unit[230,1]{V)^{2}}}{\unit[301,4]{\Omega}}=\unit[175,67]{W}
+\]
+}{\footnotesize \par}
+
+
+Unsicherheit der Leistung:
+
+
+{\footnotesize{}
+\[
+u(P)=\sqrt{\sum_{i=1}^{n}(\frac{\partial P}{\partial x_{i}}\cdot u(x_{i}))^{2}}=\sqrt{(\frac{\partial P}{\partial U}\cdot u(U))^{2}+(\frac{\partial P}{\partial R}\cdot u(U))^{2}}
+\]
+ }{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\sqrt{(\frac{2U}{R}\cdot u(U))^{2}+(-\frac{U^{2}}{R^{2}}\cdot u(R))^{2}}=\sqrt{(\frac{2\cdot\unit[230,1]{V}}{\unit[301,4]{\Omega}}\cdot\unit[0,1]{V})^{2}+(\frac{(\unit[230,1]{V)^{2}}}{\unit[(301,4]{\Omega)^{2}}}\cdot\unit[0,4]{\Omega})^{2}}
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+=\sqrt{\unit[0,0233]{W^{2}+\unit[0,0544]{W^{2}}}}=\unit[0,279]{W}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Bewertung Leistungsmessung}
+
+
+Relative Unsicherheit der Leistung:
+
+
+\[
+u(P)_{rel}=\frac{u(P)}{|y|}=\frac{u(P)}{|P|}=\frac{\unit[0,279]{W}}{\unit[175,67]{W}}=0,0016=0,16\%
+\]
+
+
+
+Es sollte in Angaben der Ergebnisse \emph{nicht mehr Stellen} angegeben
+werden als in den gegebenen Werten vorhanden sind:
+
+
+Leistung: $P=\unit[175,7]{W}$, Unsicherheit: $u(P)=\unit[0,3]{W}$
+
+\end{frame}
+
+\begin{frame}{Bericht der Messergebnisses}
+
+
+In die Mitteilung des Messergebnisses sind alle relevanten Informationen
+einzubeziehen.\medskip{}
+
+
+
+Unterschiedliche Darstellungstypen\medskip{}
+
+
+
+\begin{tabular}{|c|c|}
+\hline 
+Direkte Messung $X=$ & Indirekte Messung $Y=$\tabularnewline
+\hline 
+$M\pm u(x)$ & $M\pm u(y)$\tabularnewline
+\hline 
+$M,$$u(x)$ & $M,$$u(y)$\tabularnewline
+\hline 
+$M,$$u(x)_{rel}$ & $M,$$u(y)_{rel}$\tabularnewline
+\hline 
+$M\,(u(x))$ & $M\,(u(y))$\tabularnewline
+\hline 
+$M\cdot(1\pm u_{rel}(x))$ & $M\cdot(1\pm u_{rel}(y))$\tabularnewline
+\hline 
+\end{tabular}
+
+
+Mit $M=x-\Delta x=x-A_{s,b}(x)$ bzw. $M=y-\Delta y=y-A_{s,b}(y)$
+berichtigtes Messergebnis
+
+
+$u(x);$ $u(y)$ - Standardunsicherheit von $x$ bzw. $y$
+
+
+$u(x)_{rel};\, u(y)_{rel}$ - relative Standardunsicherheit von $x$
+bzw. $y$
+
+\end{frame}
+
+\begin{frame}{Beispiel Bericht Messergebnis}
+
+
+Im Ergebnis der Messung eines Vergleichsgewichtes liegen folgende
+Resultate vor:
+
+
+unberichtigtes Messergebnis: $x=\unit[1,0003]{kg}$
+
+
+bekannte systematische Abweichung: $A_{s,b}=\unit[-1,1]{g}=\unit[-0,0011]{kg}$
+
+
+Standardunsicherheit: $u(x)=\unit[0,6]{g}=\unit[0,0006]{kg}$
+
+
+\medskip{}
+Vollständiger Bericht des Messergebnisses:
+
+
+Berichtigtes Messergebnis: $M=x-A_{s,b}=\unit[1,0003]{kg}-(\unit[-0,0011]{kg})=\unit[1,0014]{kg}$
+
+
+Bericht z.B. in der Form: $X=\unit[1,0014]{kg}\pm\unit[0,0006]{kg}$
+
+
+Relative Unsicherheit:
+
+
+\[
+u(x)_{rel}=\frac{u(x)}{|M|}=\frac{\unit[0,0006]{kg}}{\unit[1,0014]{kg}}=6\cdot10^{-4}
+\]
+
+
+
+Bericht in einer anderen Form: $X=\unit[1,0014]{kg},\:6\cdot10^{-4}$
+
+\end{frame}
+
+\begin{frame}{Messgeräteabweichungen}
+
+
+Teil der Messabweichungen haben ihre Ursachen in Messgeräte.
+
+
+Die Abweichungen von Messgeräten können auch in systematische und
+zufällige Abweichungen unterschieden werden.
+
+
+Bei Angaben von relativen Abweichungen ist zu beachten, dass die Bezugsgröße
+eine repräsentative messgerätetypische Werte annehmen.
+
+
+\[
+A_{M}=A_{Ms}+A_{Mr}
+\]
+
+
+
+mit: $A_{M}$ - Messgeräteabweichung
+
+
+$A_{Ms}$ - systematische Messgeräteabweichung
+
+
+$A_{Mr}$ - zufällige Messgeräteabweichung
+
+
+relative Abweichung:
+
+
+\[
+A_{Mrel}=\frac{A_{M}}{x}
+\]
+
+
+
+mit: $x$ - gewählter Bezugswert (meistens Endwert des Messbereichs)
+
+\end{frame}
+
+\begin{frame}{Fehlergrenze}
+
+
+\emph{Fehlergrenze}: beschrieben durch obere Grenzabweichung $G_{o}$
+und untere Grenzabweichung $G_{u}$.
+
+
+\medskip{}
+
+
+
+Fehlergrenzen werden vom Messgeräte-Hersteller in eigener Verantwortung
+festgelegt und dokumentiert. Die Unsicherheit des Messgerätes unter
+festgelegten Betriebsbedingungen kann daraus unmittelbar abgeleitet
+werden. \medskip{}
+
+
+
+Fehlergrenzen können symmetrisch (Angabe $G$) oder unsymmetrisch
+(Angabe $G_{u}$ und $G_{o}$) sein.\\
+\medskip{}
+
+
+
+Ein Messgerät arbeitet korrekt, wenn die Abweichungen durch das Messgeräte
+innerhalb der angegebenen Grenzabweichung sind.
+
+\end{frame}
+
+\begin{frame}{Genauigkeitsklasse}
+
+
+Einteilung von Messgeräten in Genauigkeitsklassen ist eine einfache,
+anschauliche Methode zur Unterscheidung.\medskip{}
+
+
+
+Bezogen auf den Endwert des gewählten Messbereichs in Prozent.\\
+\medskip{}
+
+
+
+95\% statistische Sicherheit für Einhaltung der Klassengrenze gilt
+als vereinbart.\\
+\medskip{}
+
+
+
+\begin{tabular}{|>{\raggedright}p{4cm}|>{\centering}p{6cm}|}
+\hline 
+Messgerätekategorie & Genauigkeitsklassen\tabularnewline
+\hline 
+Präzisionsmessgeräte & 0,001; 0,002; 0,005; 0,01; 0,05\tabularnewline
+\hline 
+Feinmessgeräte & 0,1; 0,2; 0,5\tabularnewline
+\hline 
+Betriebsmessgeräte & 1; 1,5; 2,5; 5\tabularnewline
+\hline 
+\end{tabular}\medskip{}
+
+
+
+Messgeräte mit gesamter Abweichung $A_{Mrel}<0,001\%$ gehört zur
+Klasse 0,001. Wird $A_{Mrel}=0,0011\%$ festgestellt, ist das Messgeräte
+in die Klasse 0,002 einzuordnen.
+
+\end{frame}
+
+\begin{frame}{Abweichung von Messgeräten bei indirekten Messungen}
+
+
+Maximale Gesamtabweichung:
+
+
+\[
+A_{Mgm}=\sum_{i=1}^{n}\left|\frac{\partial y}{\partial x_{i}}A_{Mi}\right|
+\]
+
+
+
+mit:
+
+
+$A_{Mgm}$ - maximale Gesamtabweichung vom Messgerät
+
+
+$A_{Mi}$ - Abweichung verursacht vom Messgerät für die Messung von
+$x_{i}$
+
+
+$\frac{\partial y}{\partial x_{i}}$ - Gewichtsfaktor für die Messgröße
+$x_{i}$ im Messergebnis.\medskip{}
+
+
+
+Alle mögliche Fehlerwirkungen werden zusammen addiert.
+
+\end{frame}
+
+\begin{frame}{Mittlere Gesamtabweichung}
+
+
+Mittlere bzw. wahrscheinliche Gesamtabweichung:
+
+
+\[
+A_{Mgw}=\sqrt{\sum_{i=1}^{n}\left(\frac{\partial y}{\partial x_{i}}A_{Mi}\right)^{2}}
+\]
+
+
+
+Wesentlich realistischere Annahme. 
+
+
+\medskip{}
+Messergebnisse können jedoch außerhalb der Grenzen der wahrscheinlichen
+Abweichung liegen.
+
+
+\medskip{}
+
+
+
+Für Fehlergrenzen gilt die gleiche Überlegung.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Leistungsmessung mittels Spannung und Strom}
+
+
+{\footnotesize{}Zu den Messgeräten sind Fehlergrenzen bekannt:}{\footnotesize \par}
+
+
+{\footnotesize{}Strommesser: Fehlergrenze G(in \%)=2,5\%, Messbereichsendwert
+$M_{EA}=\unit[0,3]{A}$}{\footnotesize \par}
+
+
+{\footnotesize{}Spannungsmesser: Fehlergrenze G(in \%)=1,5\%, Messbereichsendwert
+$M_{EV}=\unit[1,5]{V}$}{\footnotesize \par}
+
+
+{\footnotesize{}Mittlere Fehlergrenze für Leistungsmessung?}{\footnotesize \par}
+
+
+{\scriptsize{}
+\[
+P=f(U,I)=U\cdot I
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+G_{ges}=\sqrt{\sum_{i=1}^{n}(\frac{\partial y}{\partial x_{i}}G_{i})^{2}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+=\sqrt{(\frac{\partial P}{\partial U}\cdot G_{V})^{2}+(\frac{\partial P}{\partial I}\cdot G_{A})^{2}}=\sqrt{(I\cdot G_{V})^{2}+(U\cdot G_{A})^{2}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+G_{V}=M_{EV}\cdot\frac{G(in\,\%)}{100\%}=\unit[1,5]{V\cdot0,015=\unit[0,0225]{V}}
+\]
+ 
+\[
+G_{A}=M_{EA}\cdot\frac{G(in\,\%)}{100\%}=\unit[0,3]{A\cdot0,025=\unit[0,0075]{A}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+G_{P}=\sqrt{(0,3\cdot0,225)^{2}+(1,5\cdot0,0075)^{2}}\unit{W}=\unit[0,0131]{W}=\unit[13,1]{mW}
+\]
+}{\scriptsize \par}
+
+
+\end{frame}
+
+\begin{frame}{Additive Fehler}
+
+
+Grundsätzliche Fehlertypen von Messeinrichtungen müssen bekannt sein,
+um ihre Auswirkungen auf resultierenden Messgeräteabweichungen einschätzen
+zu können.
+\begin{columns}
+
+
+\column{0.48\textwidth}
+
+
+Additiver Fehler / Offset:
+
+
+Übertragungsfunktion der Messeinrichtung
+
+
+{\footnotesize{}
+\[
+x_{a}=k\cdot x_{e}
+\]
+}{\footnotesize \par}
+
+
+Additive Auswirkung eines Fehlers $\Delta x_{a}$
+
+
+{\footnotesize{}
+\[
+x_{a}'=(k\cdot x_{a})+\Delta x_{a}
+\]
+}{\footnotesize \par}
+
+
+\column{0.5\textwidth}
+
+
+\includegraphics[width=6cm]{Bilder/RPMT\lyxdot B0701}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Multiplikativer Fehler}
+
+\begin{columns}
+
+
+\column{0.48\textwidth}
+
+
+Übertragungsfunktion einer Messeinrichtung:
+
+
+\[
+x_{a}=k\cdot x_{e}
+\]
+
+
+
+Multiplikative Auswirkung eines Fehlers:
+
+
+\[
+x_{a}'=(k+\Delta k)\cdot x_{e}
+\]
+
+
+
+\column{0.5\textwidth}
+
+
+\includegraphics[width=6cm]{Bilder/RPMT\lyxdot B0702}
+
+\end{columns}
+
+
+\medskip{}
+Additiver und multiplikativer Fehler können in der Praxis gleichzeitig
+auftreten.
+
+\end{frame}
+
+\begin{frame}{Abweichung infolge Quantisierung}
+
+
+Quantisierung: Analoges Signal mit unendlichem Wertevorrat wird in
+digitales Signal mit diskretem Wertevorrat umgewandelt.
+
+
+Informationsgehalt geht verloren.
+\begin{columns}
+
+
+\column{0.5\textwidth}
+
+
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0204}
+
+
+{\footnotesize{}Absolute Abweichung $A$ infolge Quantisierung wird
+auch Quantisierungsfehler $F_{Q}$ bezeichnet.}{\footnotesize \par}
+
+
+\column{0.5\textwidth}
+
+
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0703}
+
+
+{\footnotesize{}$A_{max}=\pm0,5\mbox{ LSB}=|1\,\mbox{LSB}|=1\,\mbox{LSB}$}{\footnotesize \par}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Relative Abweichung}
+
+
+Quantisierung wird meistens mit binärem Zahlensystem dargestellt.\medskip{}
+
+
+
+Mit $n$ Stellen können $2^{n}$ Werte dargestellt werden, von 0 bis
+$2^{n}-1$. LSB=1.
+
+
+\[
+A_{rel}=\frac{A_{max}}{2^{n}-1}=\frac{1}{2^{n}-1}
+\]
+
+
+
+In der meisten technischen Applikationen ist $n\ge8$ ($2^{8}=256)$,
+es gilt in guter Näherung vereinfacht:
+
+
+\[
+A_{rel}\approx\frac{1}{2^{n}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: A-D-Wandler mit 10 Bit Auflösung}
+
+
+Ein A-D-Wandler hat eine Wortbreite von 10 Bit. Abweichung infolge
+Quantisierung?
+
+
+\[
+A_{rel}\approx\frac{1}{2^{n}}=\frac{1}{2^{10}}=\frac{1}{1024}=0,001
+\]
+
+
+
+Die relative Abweichung infolge der Quantisierung beträgt 0,1\%.
+
+\end{frame}
+
+\begin{frame}{Beispiel: A-D-Wandler mit Quantisierungsfehler $<$0,02\% }
+
+
+Wie groß muss die Auflösung des A-D-Wandlers sein, damit die relative
+Abweichung infolge der Quantisierung kleiner als 0,02\% bleibt?
+
+
+{\small{}
+\[
+A_{rel}=0,02\%=0,0002
+\]
+}{\small \par}
+
+
+{\small{}
+\[
+A_{rel}\approx\frac{1}{2^{n}}<0,0002
+\]
+}{\small \par}
+
+
+{\small{}
+\[
+2^{n}>\frac{1}{0,0002}=5000
+\]
+}{\small \par}
+
+
+{\small{}
+\[
+\lg2^{n}=n\cdot\lg2>\lg(5\cdot10^{3})=\lg5+3=3,699
+\]
+}{\small \par}
+
+
+{\small{}
+\[
+n>\frac{3,699}{\lg2}=\frac{3,699}{0,301}=12,3
+\]
+}{\small \par}
+
+
+Der A-D-Wandler muss eine Auflösung von $\ge13$ haben.
+
+\end{frame}
+
+
+% \mode
+% <all>
+\lecture{Kap 05 Messung elektrischer Größen}{K05}
+%\setcounter{framenumber}{0}
+\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 05 Messung elektrischer Größen}
+\begin{frame}{Übersicht}
+
+
+\textbf{Thema}: Messung elektrischer Größen als Grundlagen der Messtechnik
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Messung von Spannung, Stromstärke, Leistung und Arbeit, 
+\item Messung von Widerstand, Induktivität und Kapazität
+\item Messung von Zeit und Frequenz
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 8
+
+\end{frame}
+
+\begin{frame}{Erreichbare Messgenauigkeiten}
+
+
+Ausschlaggebend sind neben geeigneten Messprinzipien auch die verwendeten
+Normale.
+
+
+Aus Primärnormalen werden Arbeits- und Referenznormale für Eichlabor
+abgeleitet. Die Messeinrichtungen werden dagegen geeicht bzw. kalibriert.
+Somit legen die verwendete Normale die Grenzen erreichbarer Messgenauigkeiten.
+
+
+{\tiny{}}%
+\begin{tabular}{|>{\centering}p{0.15\paperwidth}|>{\centering}p{0.3\paperwidth}|>{\centering}p{0.2\paperwidth}|c|c|}
+\hline 
+{\tiny{}physikalische Größe} & {\tiny{}Primärnormal} & {\tiny{}typische Genauigkeit} & {\tiny{}Referenznormal} & {\tiny{}typische Genauigkeit}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Spannung} & {\tiny{}Josephson-Spannungsnormal ($U\le\unit[10]{V}$)} & {\tiny{}$\frac{\Delta U}{U}\le\pm10^{-9}$} & {\tiny{}Dioden-Transistor-Referenzspannungquelle} & {\tiny{}$\frac{\Delta U}{U}\le10^{-6}$}\tabularnewline
+\hline 
+{\tiny{}Widerstand} & {\tiny{}Manganinwiderstand (hermetisch abgeschlossen, $R=\unit[1]{\Omega}$} & {\tiny{}$\frac{\Delta R}{R}\le\pm10^{-7}$} & {\tiny{}Manganinwiderstände im Bereich von $\unit[1]{\Omega\dots\unit[1]{\text{M\ensuremath{\Omega}}}}$
+oder Widerstandsdekaten} & {\tiny{}$\frac{\Delta R}{R}\le10^{-5}$}\tabularnewline
+\hline 
+{\tiny{}Kapazität} & {\tiny{}berechenbarer Kondensator aus vier Stäbe genauer Länge $C=\unit[10]{pF}$
+oder $\unit[1]{pF}$} & {\tiny{}$\frac{\Delta C}{C}\le\pm10^{-7}$} & {\tiny{}Glas- oder Glimmerkondensator $C=\unit[100]{pF}\dots\unit[1]{nF}$} & {\tiny{}$\frac{\Delta C}{C}\le\pm10^{-5}$}\tabularnewline
+\hline 
+{\tiny{}Induktivität} & {\tiny{}Lange dünne Luftspule $L=\unit[1]{mH}\dots\unit[10]{mH}$} & {\tiny{}$\frac{\Delta L}{L}\le\pm10^{-6}$} & {\tiny{}Zylinderluftspulen, Eisenkernspulen $L=\unit[0,1]{mH}\dots\unit[10]{H}$} & {\tiny{}$\frac{\Delta L}{L}\le\pm10^{-4}$}\tabularnewline
+\hline 
+{\tiny{}Zeit} & {\tiny{},,Atomuhr``, Cäsiumresonator mit nachfolgender Pulsgewinnung
+und Generierung einer vereibarten Zeitbasis} & {\tiny{}$\frac{\Delta t}{t}\le\pm10^{-13}$} & {\tiny{}Normfrequenzsender DCF77, sendet auf 77,5 kHz BCD-kodierte
+Zeitinformation} & {\tiny{}$\frac{\Delta t}{t}\le10^{-13}$}\tabularnewline
+\hline 
+{\tiny{}Frequenz} & {\tiny{},,Atomuhr``, Cäsiumresonator} & {\tiny{}$\frac{\Delta f}{f}\le\pm10^{-13}$} & {\tiny{}Quarzoszillator (temperaturstabilisiert)} & {\tiny{}$\frac{\Delta f}{f}\le\pm10^{-10}$}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+
+
+Die Normale für Frequenz und Zeit besitzen die mit Abstand höchste
+Genauigkeit. Daher wird bei Messverfahren versucht, diese nach Möglichkeiten
+auf Zeit oder Frequenz zurückzuführen. 
+
+\end{frame}
+
+\begin{frame}{Messung von Stromstärke und Spannung: Drehspulmesswerk}
+
+
+Messung von Stromstärke und Spannung ist Voraussetzung für fast alle
+anderen Messungen.
+
+
+Klassische elektromechanische Messgeräte basieren auf magnetische
+Kraftwirkung auf stromdurchflossenen Leiter in einem Magnetfeld.
+
+
+Die Messung von Spannung wird über die ohmsche Beziehung: $U=I\cdot R$
+in Messung von Strom überführt.
+
+
+
+
+
+Drehspulmesswerk
+
+
+Widerstand der Spule ist temperaturabhängig und wirkt auf die Messgenauigkeit
+aus. 
+
+
+Zeigerausschlag des Drehspulmesswerks ist proportional zum arithmetischen
+Mittelwert des durchfließenden Stroms.
+
+\end{frame}
+
+\begin{frame}{Messung von Stromstärke und Spannung: elektronisch}
+
+
+Elektronische Messung mit digitalen Anzeigen.
+
+
+Zur Bestimmung von Spannung wird sehr hohen Eingangswiderstand ($\unit[10^{7}]{\Omega}\dots\unit[10^{10}]{\Omega}$)
+verwendet. Somit fast leistungs- und rückwirkungsfreie Messung.
+
+
+Zur Strommessung wird Spannungsabfall über einen Messwiderstand (engl.
+Shunt) erzeugt.
+
+
+Für möglichst rückwirkungsfreie Strommessung werden Shunts mit sehr
+kleinen Widerstandswerten (bis Milliohm-Bereich) verwendet. Die Spannung
+wird ggf. mit großer Verstärkung weiterverarbeitet.
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Strommessung mittels Spannungsmesser}
+
+
+Shunt: $R_{N}=\unit[1]{\Omega}$
+
+
+$U=I_{M}\cdot R$
+
+
+
+
+
+Stromwert $I_{M}=\unit[1]{A}\Rightarrow$Spannungswert $U=\unit[1]{V}$
+
+
+Stromwert $I_{M}=\unit[15]{mA}\Rightarrow$Spannungswert $U=\unit[15]{mV}$
+
+
+
+
+
+Shunt: $R_{N}=\unit[0,1]{\Omega}$
+
+
+Stromwert $I_{M}=\unit[1]{A}\Rightarrow$Spannungswert $U=\unit[0,1]{V}$
+
+
+Stromwert $I_{M}=\unit[15]{mA}\Rightarrow$Spannungswert $U=\unit[1,5]{mV}$
+
+\end{frame}
+
+\begin{frame}{Elektronische Messgeräte: Wechselspannung und -strom}
+
+
+Mittelwertbildung und -anzeige: Gleichrichtwert
+
+
+\[
+\bar{|u|}=\frac{1}{T}\int_{0}^{T}\left|u(t)\right|dt
+\]
+
+
+
+Bei mechanischen Messwerken erfolgt die Mittelwertbildung durch Trägheit
+des Messwerks. In elektronische Messgeräten ist hierfür elektronischer
+Tiefpassfilter 1. Ordnung notwendig.
+
+
+Oft wird der Effektivwert gebraucht. Bei festgelegter Kurvenform wird
+über Formfaktor $F$ umgerechnet:
+
+
+\[
+F=\frac{U}{\bar{|u|}}\Rightarrow U=F\cdot\bar{|u|}
+\]
+
+
+
+mit $U$ dem Effektivwert des Wechselspannung.
+
+
+Einsatz zur Messung der Wechselspannung im Energieversorgungsnetzes.
+
+
+Bei Einsatz für beliebige Kurvenform muss Effektivwertbildung nach
+
+
+\[
+U=\sqrt{\frac{1}{T}\int_{0}^{T}[u(t)]^{2}dt}
+\]
+
+
+
+konkret durchgeführt werden.
+
+\end{frame}
+
+\begin{frame}{Leistungsmessung}
+
+
+Leistungsmessung im Gleichstromkreis:
+
+
+\[
+P=U\cdot I,\quad\mbox{bzw.}\quad P=\frac{U^{2}}{R},\; P=I^{2}\cdot R
+\]
+
+
+
+Auf dieser Basis kann Messeinrichtung für Leistungsmessung, Wattmeter,
+konstruiert werden.
+
+
+Leistungsmessung im Wechselstromkreis:
+
+
+\[
+p(t)=u(t)\cdot i(t)
+\]
+
+
+
+Sinusförmige Wechselgröße:
+
+
+\[
+u(t)=\hat{u}\sin\omega t\;\mbox{und }i(t)=\hat{i}\sin(\omega t-\phi)
+\]
+
+
+
+\[
+P(t)=\hat{u}\sin\omega t\cdot\hat{i}\sin(\omega t-\phi)
+\]
+
+
+
+\[
+=\frac{\hat{u}\cdot\hat{i}}{2}[\cos(\omega t-(\omega t-\phi))-\cos(\omega t+(\omega t-\phi))]
+\]
+
+
+
+\[
+=\frac{\hat{u}\cdot\hat{i}}{2}[\cos\phi-\cos(2\omega t-\phi)]
+\]
+
+
+
+Momentane Leistung pulsiert mit $2\omega$.
+
+
+Durchschnittliche Leistung:
+
+
+\[
+P=\frac{1}{T}\int_{0}^{T}p(t)dt=\frac{\hat{u}\cdot\hat{i}}{2}\cdot\cos\phi
+\]
+
+
+
+Mit $\hat{u}=U\cdot\sqrt{2}$ und $\hat{i}=I\cdot\sqrt{2}$ für Sinusschwingung:
+
+
+\[
+P=U\cdot I\cdot\cos\phi\quad[\unit{W}]
+\]
+
+
+
+\emph{Wirkleistung}: Leistung, mit der Arbeit über Zeit verrichtet
+wird.
+
+
+\end{frame}
+
+\begin{frame}{Blindleistung}
+
+
+Im Wechselstromkreis steht der Vektor der \emph{Blindleistung} $Q$
+senkrecht auf dem Vektor der Wirkleistung:
+
+
+
+
+
+\[
+Q=U\cdot I\cdot\sin\phi\quad[\unit{var}]
+\]
+
+
+
+Zur Unterscheidung wird die Blindkomponente der Leistung mit Volt-Ampere-reaktive
+{[}var{]}, auch {[}VAr{]} (sprich ,,war``) bezeichnet.
+
+
+
+
+
+\emph{Scheinleistung}: quadratische Addition der beiden Leistungskomponenten
+
+
+\[
+S=\sqrt{P^{2}+Q^{2}}\quad\mbox{bzw. }\quad S=U\cdot I\quad[\unit{VA}]
+\]
+
+
+
+Messung der Scheinleistung erfolgt durch separate Messungen von Strom
+und Spannung über komplexen Widerstand und Produktbildung. 
+
+
+\note[item]{Messung mit elektrodynamischem Messwerk weglassen, auch digitale
+Methode mit Phasenschieber. Allpass mit frequenzunabhängige 90\textdegree{}
+Phasenverschiebung.}
+
+\end{frame}
+
+\begin{frame}{Messung von Wirkwiderständen (ohmschen)}
+
+
+Messungen über Strom-/Spannungsmessung oder durch Widerstandsvergleich
+in einer Brückenschaltung.
+
+
+Bei hohen Frequenzen sind parasitäre Kapazität und Induktivität des
+Widerstandes zu berücksichtigen.
+
+
+
+
+
+Aufbau eines realen Widerstandes
+
+
+Anschlusskappen besitzen kapazitive Eigenschaften.
+
+
+Wendelbahnen wirken induktiv wie Spule.
+
+\end{frame}
+
+\begin{frame}{Messung mittels Spannung/Strom}
+
+
+Zweileiter Schaltung:
+
+
+
+
+
+Zuleitungswiderstände werden mit bestimmt, und sollten $\ll R_{x}$
+sein.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Relative Abweichung durch Messkabel}
+
+
+Zweileiter-Schaltung. Messkabel mit den Eigenschaften:
+
+
+Länge $l=\unit[2,5]{m}$
+
+
+Kabelquerschnitt: $A=\unit[0,5]{mm^{2}}$
+
+
+Leitermaterial: Kupfer mit spezifischem Widerstand $\varsigma=\unit[0,0175]{\frac{\Omega\cdot mm^{2}}{m}}$
+
+
+Messstrom: $I=\unit[100]{mA}$
+
+
+Messspannung: $U=\unit[100]{mV}$
+
+
+Widerstand der Zuleitung:
+
+
+\[
+R=\varsigma\cdot\frac{l}{A}
+\]
+
+
+
+\[
+R_{L}=\unit[0,0175]{\frac{\Omega\cdot mm^{2}}{m}}\cdot\frac{\unit[2,5]{m}}{\unit[0,5]{mm^{2}}}=\unit[0,0875]{\Omega=\unit[87,5]{m\Omega}}
+\]
+
+
+
+Bekannte systematische Abweichung:
+
+
+\[
+A_{s,b}=2U_{RL}=I\cdot2R_{L}
+\]
+
+
+
+\[
+=\unit[100]{mA}\cdot2\cdot\unit[87,5]{m\Omega}=\unit[0,0175]{V}=\unit[17,5]{mV}
+\]
+ 
+
+
+Korrekter Widerstandswert:
+
+
+\[
+R_{x}=\frac{U_{M}-2U_{RL}}{I_{M}}=\frac{\unit[100]{mV}-\unit[17,5]{mV}}{\unit[100]{mA}}=\unit[0,825]{\Omega}
+\]
+
+
+
+Unkorrigierter Widerstandswert:
+
+
+\[
+R_{x}'=\frac{U_{M}}{I_{M}}=\frac{\unit[100]{mV}}{\unit[100]{mA}}=\unit[1]{\Omega}Relative
+\]
+Abweichung:
+
+
+\[
+\Delta R_{rel}=\frac{\Delta R_{x}}{R_{x}}=\frac{R_{x}'-R_{x}}{R_{x}}=\frac{\unit[1]{\Omega}-0\unit[,825]{\Omega}}{\unit[0,825]{\Omega}}=0,2121=21\%
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Beispiel Zweileiter-Schaltung}
+
+
+Messstrom: $I=\unit[10]{mA}$, Messspannung:$U_{M}=\unit[1,2]{V}$
+
+
+Widerstand der Gesamtleitung: $R_{Lges}=\unit[1,3]{\Omega}$
+
+
+Korrekter Wert $R_{x}$:
+
+
+\[
+R_{x}=\frac{U_{M}-(I\cdot R_{Lges})}{I}=\frac{\unit[1,2]{V}-(\unit[10]{mA}\cdot\unit[1,3]{\Omega})}{\unit[10]{mA}}=\unit[118,7]{\Omega}
+\]
+
+
+
+Relative systematische Abweichung ohne Korrektur:
+
+
+\[
+\Delta R_{rel}=\frac{R_{x}'-R_{x}}{R_{x}}=\frac{\frac{\unit[12]{V}}{\unit[10]{mA}}-\unit[118,7]{\Omega}}{\unit[118,7]{\Omega}}=0,01095=1,095\%
+\]
+
+
+\end{frame}
+
+\begin{frame}{Vierleiter-Schaltung}
+
+
+Bei Messung sehr kleiner Widerstände bzw. bei hoch präziser Widerstandsmessung
+muss Vierleiter-Schaltung verwendet werden.
+
+
+
+
+
+Aufwändig und mit hohen Kosten verbunden.
+
+\end{frame}
+
+\begin{frame}{Messung mit Brückenschaltung}
+
+
+Widerstandsmessung mit Gleichstrombrücke
+
+
+
+
+
+
+
+
+Im \emph{Abgleichsfall} $U_{AB}=0$ gilt
+
+
+\[
+\frac{R_{1}}{R_{2}}=\frac{R_{3}}{R_{4}}
+\]
+
+
+
+Wenn an der Stelle $R_{2}$ der zu messende Widerstand $R_{x}$ steht,
+und $R_{4}=R_{V}$ der Vergleichswiderstand ist:
+
+
+\[
+R_{x}=R_{V}\cdot\frac{R_{1}}{R_{3}}
+\]
+
+
+
+Solche Wheastone-Brücke kann Messung von Widerständen zwischen $\unit[1]{\Omega}$bis
+$\unit[10]{M\Omega}$mit einer Fehlergrenze von 0,1\% bewerkstelligen.
+
+
+Für niedrigen Widerstandswerte im $\unit{m\Omega}$-Bereich bis zu
+$\unit[10^{-7}]{\Omega}$ kommt Thomson-Brücke in Einsatz, welche
+mit Vierleiter-Schaltung die störenden Leitungswiderständen vermeidet.
+
+\end{frame}
+
+\begin{frame}{Azsschalgverfahren mit Brückenschaltung}
+
+
+Sollte nur kleine Veränderung $\Delta R$ nachgewiesen werden, so
+kann die Brückenschaltung im Ausschlagverfahren betrieben werden.
+
+
+\[
+U_{A}=U_{0}\cdot\frac{R+\Delta R}{2R+\Delta R}=\frac{U_{0}}{2}(\frac{1+\frac{\Delta R}{R}}{1+\frac{\Delta R}{2R}})
+\]
+ 
+\[
+\approx\frac{U_{0}}{2}(1+\frac{\Delta R}{R})(1-\frac{\Delta R}{2R})\approx\frac{U_{0}}{2}(1+\frac{\Delta R}{2R}),\;
+\]
+
+
+
+\[
+U_{B}=U_{0}\frac{R}{2R}
+\]
+
+
+
+\[
+U_{AB}=U_{A}-U_{B}\approx\frac{U_{0}}{2}\cdot\frac{\Delta R}{2R}
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Dreileiter-Brückenschaltung}
+
+
+Bei elektrischer Temperatur-Messung ist der veränderliche Widerstand
+abgesetzt von der Messschaltung angeordnet.
+
+
+
+
+
+Mit der 3ter Zuleitung wird die Messbrücke wieder symmetrisch, wenn
+$R_{L1}=R_{L2}$. Der Abgleich wird somit nicht von Leitungswiderstand
+beeinflusst.
+
+
+\end{frame}
+
+\begin{frame}{Messung von Kondensator}
+
+
+Kapazität und Induktivität sind nur mit Wechselspannungs-Messschaltung
+zu ermitteln.
+
+
+Betrachte Spannung, Strom und Widerstand als komplexe Größe, es gilt:
+
+
+\[
+\underline{Z}=\frac{\underline{U}}{\underline{I}};\quad\underline{Y}=\underline{\frac{\underline{I}}{U}}
+\]
+
+
+
+für den komplexen Widerstand $\underline{Z}$ und komplexen Leitwert
+$\underline{Y}$.
+
+
+
+
+
+Für die Bestimmung des Scheinwiderstandes wird der Zweipol mit einer
+konstanter Effektivspannung oder einem konstanten Effektivstrom mit
+bekannter Frequenz gespeist, der Quotient aus Spannung und Strom liefert
+den Betrag des Scheinwiderstandes
+
+
+\[
+Z=\frac{U}{I};\quad Y=\frac{I}{U}
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Bestimmung der Kapazität eines Kondensators mittels Strom/Spannung}
+
+
+Ein realer Kondensator besitzt neben Kapazität $C$ auch induktive
+Blindanteile und Wirkanteile.
+
+
+
+
+
+Ersatzschaltung eines realen Kondensators
+
+
+Der Parallelwiderstand werden durch ohmsche Verluste der Zuleitungen
+und endliche Isolationsfähigkeit des Dielektrikums u.a. verursacht.
+
+
+Wenn 
+\[
+R_{p}\gg\left|\frac{1}{\omega C}\right|
+\]
+
+
+
+gilt, kann der reale Kondensator als ein idealer betrachtet werden.
+Unter dieser Bedingung kann die Kapazität mit einer Strom-/Spannungsmessung
+bestimmt werden:
+
+
+\[
+X_{C}=\frac{1}{\omega C}=\frac{1}{2\pi f\cdot C}=\frac{U}{I}
+\]
+
+
+
+\[
+C=\frac{I}{2\pi f\cdot U}
+\]
+
+
+
+mit $f$ - Arbeitsfrequenz, $U$ und $I$ Effektivwerte
+
+
+Diese einfache Methode ist geeignet für hochwertige verlustarmen Kondensatoren.
+Für Hochfrequenzbereich ($\gg\unit[1]{MHz}$) und bei Elektrolytkondensatoren
+jedoch ungeeignet.
+
+\end{frame}
+
+\begin{frame}{Verlustbehafteter Kondensator mit vereinfachter Ersatzschaltung}
+
+
+Annahme: Verlust vergleichsweise klein ($\ll90\text{\textdegree})$
+
+
+
+
+
+\[
+\tan\delta=\frac{I_{G}}{I_{C}}=\frac{\frac{U}{R_{P}}}{U\cdot\omega C}=\frac{1}{\omega C\cdot R_{p}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Beispiel: Bestimmung Kapazität hoher Güte}
+
+
+Messschaltung mit einer Frequenz $f=\unit[1]{MHz}$und einem Strom
+$I=\unit[1,0]{mA}$. Gemessener Spannungsabfall $U=\unit[2]{V}.$
+
+
+Kapazität:
+
+
+\[
+C=\frac{I}{2\pi f\cdot U}=\frac{\unit[1]{mA}}{2\pi\cdot\unit[1]{MHz}\cdot\unit[2]{V}}=\unit[7,96\cdot10^{-11}]{\frac{As}{V}}=\unit[79,6]{pF}
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Bestimmung der Induktivität einer Spule mittels Strom/Spannung}
+
+
+Messung von Induktivität einer Spule, oft Drossel genannt, ähnlich
+der Messung von Kapazität eines Kondensators.
+
+
+Allerdings eilt der Strom in der Spule der angelegten Spannung um
+90\textdegree{} nach. Der Verlustwinkel ist bei realen Spule meistens
+nicht vernachlässigbar.
+
+
+Die Verlust entsteht durch ohmschen Widerstand der Wicklung der Spule
+und durch Wirbelstromverluste.
+
+
+
+
+
+Abgesehen von Höchstfrequenzbereich können kapazitive Wirkungen zwischen
+benachbarten Spulenwicklungen vernachlässigt werden. 
+
+\end{frame}
+
+\begin{frame}{Verlustbehaftete Spule}
+
+
+
+
+
+Für Verlustwinkel $\delta$ gilt:
+
+
+\[
+\tan\delta=\frac{U_{Rs}}{U_{L}}=\frac{I\cdot R_{S}}{I\cdot\omega L}=\frac{R_{S}}{\omega L}
+\]
+
+
+
+Beziehung Schein-, Blind- und Wirkwiderstand:
+
+
+\[
+Z^{2}=R^{2}+(\omega L)^{2}
+\]
+
+
+
+\[
+L=\frac{\sqrt{Z^{2}-R^{2}}}{\omega}=\frac{\sqrt{(\frac{U}{I})^{2}-(\frac{U_{-}}{I_{-}})^{2}}}{2\pi f}
+\]
+
+
+
+Es sind eine Wechsel- und eine Gleichspannungsmessung erforderlich,
+um die Induktivität einer realen Spule zu bestimmen.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Induktivität einer Spule}
+
+
+Effektivwertmesser über eine Spule: $U=\unit[10]{V},\, I=\unit[1,0]{mA}$
+bei $f=\unit[10]{kHz}$. 
+
+
+Gleichspannungsmessung: $U_{-}=\unit[10]{V},\, I_{-}=\unit[10]{mA}$
+
+
+Berechnung der Induktivität:
+
+
+\[
+L=\frac{\sqrt{(\frac{U}{I})^{2}-(\frac{U_{-}}{I_{-}})^{2}}}{2\pi f}=\frac{\sqrt{(\frac{\unit[10]{V}}{\unit[10^{-3}]{A}})^{2}-(\frac{\unit[10]{V}}{\unit[10^{-2}]{A}})^{2}}}{2\pi\cdot\unit[10^{4}]{s^{-1}}}
+\]
+
+
+
+\[
+=\unit[0,158]{\frac{Vs}{A}=\unit[0,158]{H}=\unit[158]{mH}}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Kapazität und Induktivität mittels Brückenschaltung}
+
+
+Wechselstrombrücke zur Messung von Kondensator und Spule
+
+
+
+
+
+Für Gleichstrom ist der Blindwiderstand einer Kapazität gegen unendlich
+und der Blindwiderstand einer Induktivität gegen Null.
+
+
+Im Abgleichsfall $\underline{U_{AB}}=0$ gilt:
+
+
+\[
+\frac{\underline{Z_{1}}}{\underline{Z_{2}}}=\frac{\underline{Z_{3}}}{\underline{Z_{4}}}
+\]
+
+
+
+Mit der Exponentialschreibweise $\underline{Z}=Z\cdot e^{j\phi}$:
+
+
+\[
+\frac{Z_{1}\cdot e^{j\phi_{1}}}{Z_{2}\cdot e^{j\phi_{2}}}=\frac{Z_{3}\cdot e^{j\phi_{3}}}{Z_{4}\cdot e^{j\phi_{4}}}
+\]
+
+
+
+\[
+\Rightarrow\frac{Z_{1}}{Z_{2}}=\frac{Z_{3}}{Z_{4}}\;\mbox{und }\phi_{1}-\phi_{2}=\phi_{3}-\phi_{4}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Kapazität und Induktivität mittels Brückenschaltung}
+
+
+Mit $\underline{Z_{2}}=\underline{Z_{x}}$, zu messendem Widerstand
+und $\underline{Z_{4}}=\underline{Z_{V}}$, Vergleichswiderstand:
+
+
+\[
+Z_{x}=Z_{V}\cdot\frac{Z_{1}}{Z_{3}};\quad\phi_{X}=\phi_{V}-\phi_{3}+\phi_{1}
+\]
+
+
+
+\[
+\underline{Z_{x}}=Z_{x}\cdot e^{j\phi_{X}}
+\]
+
+
+
+Es sind zwei Abgleichsschritte notwendig.
+
+
+
+
+
+Strom-/Spannungsmessung vorrangig in automatischen und integrierten
+Messsystemen eingesetzt.
+
+
+Brückenmessmethode vorrangig in Präzisionsmesstechnik. In der Messtechnik
+als ,,Trägerfrequenzmessgerät`` bezeichnet, mit Frequenz von $\unit[50]{kHz}$,
+auch mit $\unit[5]{kHz}.$ Messgenauigkeit von $<0,1\%$ erzielbar.
+
+\end{frame}
+
+\begin{frame}{Frequenz- und Zeitmessung}
+
+
+Frequenz- und Zeitmessung erreicht höchste Genauigkeit: 
+
+
+mit Quarzgenerator als Zeitbasis um Faktor $10^{4}$ bis $10^{5}$
+mal besser als bei Normalen anderer physikalischer Größe.
+
+
+In der Messtechnik heute dominieren digitale Frequenz- bzw. Zeitmessverfahren.
+
+
+
+
+\end{frame}
+
+\begin{frame}{}
+
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Eingang 1 & Eingang 2 & Ausgang\tabularnewline
+\hline 
+\hline 
+0 & 0 & 0\tabularnewline
+\hline 
+0 & 1 & 0\tabularnewline
+\hline 
+1 & 0 & 0\tabularnewline
+\hline 
+1 & 1 & 1\tabularnewline
+\hline 
+\end{tabular}
+
+
+Wahrheitstabelle einer UND-Schaltung (Gatter)
+
+
+Digitale Frequenzzähler für den typischen Labor- und Prüffeldeinsatz
+arbeiten mit temperaturstabilisierten Referenz-Quarz-Oszillatoren.
+Für höhere Anforderungen wird die Referenzzeit mit Hilfe von DCF 77-Signal
+herangezogen.
+
+\end{frame}
+
+\begin{frame}{Zeitmessung}
+
+
+Grundprinzip ähnlich dem für Frequenzmessung.
+
+
+
+
+
+Frequenz- und Zeitmessung sind häufig in ein Gerät integriert.
+
+
+\end{frame}
+
+
+% \mode
+% <all>
+\lecture{Kap 06 Messung nichtelektrischer physikalischer Größen}{K06}
+%\setcounter{framenumber}{0}
+\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 06 Messung nichtelektrischer physikalischer Größen}
+\begin{frame}{Übersicht}
+
+
+\textbf{Thema}: Messung nichtelektrischer physikalischer Größen,
+Sensorik
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Messkette 
+\item Verarbeitung und Ausgeben
+\item Sensoren
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 9
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Die Mehrzahl physikalischer Größen sind nichtelektrischer Natur.
+
+
+Zur Messung nichtelektrischer Größen werden meisten diese in elektrische
+Signale umgesetzt.
+
+
+In der modernen Messtechnik müssen diese für weitere Verarbeitung
+in digitale Form umgewandelt werden.
+
+\end{frame}
+
+\begin{frame}{Die Messkette}
+
+
+Messwerterfassungskette
+
+
+
+
+
+- Messsignalaufnahme mittels Sensoren
+
+
+- Multiplexen, Auswählen über Multiplexer (MUX)
+
+
+- Verstärken des Messsignals
+
+
+- Abtasten und Halten des Messsignals (Sample \& Hold)
+
+
+- Digitalisierung mittels Analog-Digital-Wandler (ADW)
+
+\end{frame}
+
+\begin{frame}{Messsignalaufnahme}
+
+
+Sensorik
+
+
+Nichtelektrische physikalische Größe beeinflusst elektrische Eigenschaften
+eines Sensors.
+
+
+Über den Zusammenhang beider Größen kann nichtelektrische Größe durch
+Messung von elektrischen Größen ermittelt werden.
+
+
+Der Zusammenhang soll möglichst eindeutig und stabil sein.
+
+
+Sensoren sollen nach Möglichkeiten nur ungestörtes Nutzsignal nach
+außen liefern. 
+
+
+Elektromagnetische Verträglichkeit (EMV)
+
+
+
+Elektromagnetische Verträglichkeit (EMV) ist ein wichtiger Aspekt
+im Entwurf, Konstruktion und Betrieb elektronischen Geräte. Sie umfasst
+alle ungewollten oder gewollten Funktionsstörungen elektrischer oder
+elektronischer Betriebsmittel durch z. B. elektrische, magnetische
+oder elektromagnetische Felder und Vorgänge. 
+
+
+\emph{Leitungsgebundene Störungen}: Störquelle direkt über Versorgungs-
+und Signalleitung an Störsenke übertragen
+
+
+\emph{Feldgebundene Störung}: Kapazitive und induktive Beeinflussungen
+elektrischer bzw magnetischer Felder 
+
+
+Die Gesetzgeber schreiben in der EU, Directive 2004/108/EC, den Inverkehrbringern
+von Elektrogeräten vor, entsprechende Schutzanforderungen einzuhalten,
+die durch Grenzwerte zur Störfestigkeit oder zur Störaussendung in
+einschlägigen Normen niedergelegt sind. 
+
+
+Die Geräte sind mit CE-Kennzeichnung mit Informationen zur EMV-Richtlinie
+zu versehen, die oft zusammen mit der Niederspannungsrichtlinie angewendet
+werden muss.
+
+\end{frame}
+
+\begin{frame}{Messung Ausstrahlung}
+
+
+
+
+
+Filterung
+
+\end{frame}
+
+\begin{frame}{Schirmung}
+
+
+\emph{Schirmung}
+
+
+Maßnahme zur Dämpfung von elektromagnetischen Störsignalen
+
+
+Gegen elektrische Komponente im elektromagnetischen Feld
+
+
+Umhüllung mit elektrisch leitfähigen Materialien, wie Kupferblech
+oder -geflecht.
+
+
+Gegen magnetische Komponente im elektromagnetischen Feld:
+
+
+- hochpermeable ferromagnetische Materialien für niederfrequente Störung:
+Eisenbleche, Ferrite
+
+
+- para- bzw. diamagnetische Schirmung für hochfrequente Störfelder:
+Kupfer oder Aluminium
+
+\end{frame}
+
+\begin{frame}{Filterung}
+
+
+\emph{Filterung:}
+
+
+Maßnahme zur Unterdrückung von Störsignalen mit Frequenzen außerhalb
+des Nutzsignalbereiches.
+
+
+Vorrangig werden elektrische Filter 1. und 2. Ordnung verwendet.
+
+
+Für hohe Ansprüche werden auch Filter höherer Ordnung verwendet.
+
+
+Filter-Typen:
+
+
+- Hochpass-Filter: Unterdrückung von netzfrequenten Störspannungen,
+auch Netzbrummspannungen genannt
+
+
+- Tiefpass-Filter: Abblocken von Hochfrequenzstreuungen von Rundfunksendern
+oder Mobiltelefonen
+
+
+- Bandpass-Filter: Begrenzung der Nutzbandbreite zwecks Verbesserung
+des Signal-Rausch-Verhältnisses.
+
+
+
+
+\end{frame}
+
+\begin{frame}{Multiplexen}
+
+
+Bei Messaufgaben mit mehreren Messstellen ist es häufig die gemeinsame
+Nutzung der Messeinrichtung günstig.
+
+
+Multiplexer: zeitserielle Anbindung der Messstellen an die Messeinrichtung
+
+
+
+
+
+Struktur eines 1-aus-8-Multiplexers
+
+
+
+
+
+Struktur eines Matrix-Multiplexers
+
+\end{frame}
+
+\begin{frame}{Multiplexer}
+
+
+\begin{tabular}{|c|c|}
+\hline 
+monolithischer Multiplexer & Relais-Multiplexer\tabularnewline
+\hline 
+\hline 
+keine mechanische Elemente & meist Reed-Relais (klimastabile Kontakte)\tabularnewline
+\hline 
+Signalübersprechen relativ groß (<30dB) & Signalübersprechen >100dB möglich\tabularnewline
+\hline 
+Durchlasswiderstand ($2\dots100\unit{\Omega}$) & Durchlasswiderstand $\ll1\unit{\Omega}$\tabularnewline
+\hline 
+Sperrwiderstand $>1\unit{M\Omega}$ & Sperrwiderstand $\ge1\unit{G\Omega}$\tabularnewline
+\hline 
+zulässige Eingangsspannungsbereich kleiner als Betriebsspannung (V) & zulässiger Eingangsspannungsbereich durch konstruktiven Aufbau begrenzt
+(Durchschlagsspannung)\tabularnewline
+\hline 
+schnelle Kanalumschaltung $\le1\unit{\mu s}$ & Kanalumschaltzeit $\ge5\unit{ms}$\tabularnewline
+\hline 
+geringer Platzbedarf & großer Platzbedarf\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Verstärken}
+
+
+Messsignale müssen häufig den Pegel am Eingangsbereich der nachfolgenden
+Baugruppe, z.B. ADW angepasst werden, i.e. verstärkt werden. 
+
+
+In der Messtechnik wird i.Allg. lineare Verstärkung gefordert.
+
+
+Rauscharme und leistungsfähige Operationsverstärker (OPV) stehen zur
+Verfügung.
+
+
+Grundschaltungen mit OPV:
+
+
+Invertierte und nichtinvertierte Schaltung
+
+
+
+
+\end{frame}
+
+\begin{frame}{Invertierte Schaltung}
+
+
+
+
+
+Ausgangsspannung wird invertiert, i.e. um 180\textdegree{} phasenverschoben.
+
+
+Eingangswiderstand $\approx R_{1}$, typ. Werte $1\unit{k\Omega}\dots50\unit{k\Omega}$
+
+
+Bei vielen Messsignalquellen zu niedrig, daher nicht rückwirkungsfrei
+
+\end{frame}
+
+\begin{frame}{Nichtinvertierende Schaltung}
+
+
+
+
+
+Geeignet zur Entkopplung zwischen Sensor und Messverarbeitung.
+
+
+Hoher Eingangswiderstand $\ge1\unit{M\Omega}$
+
+
+Niedrige Ausgangswiderstand
+
+
+Bei hoher Verstärkung Neigung zu Instabilität: Kleine parasitäre Kapazität
+bildet RC-Glied mit hohem Eingangwiderstand zu Filter mit niedriger
+Grenzfrequenz. Phasenverschiebung kann Gegenkopplung zu Mitkopplung
+umkehren.
+
+\end{frame}
+
+\begin{frame}{Spannungsfolger}
+
+
+Nichtinvertierende Verstärker werden nur bei kleinen Verstärkung genutzt.
+
+
+Spannungsfolger:
+
+
+
+
+
+$R_{2}\rightarrow0,\; R_{1}\rightarrow\infty$
+
+
+Eingangswiderstand sehr hoch, begrenzt durch OPV
+
+
+Ausgangswiderstand sehr niedrig, begrenzt durch OPV
+
+
+Geeignet für rückwirkungsfreie Trennung von Messsignalquelle und Messsignalverarbeitung
+in Messtechnik. 
+
+\end{frame}
+
+\begin{frame}{Messverstärker aus Spannungsfolger und invertierendem Verstärker}
+
+
+
+
+
+Zweistufige Messverstärker: Kombination aus Spannungsfolger und invertierendem
+Verstärker
+
+
+Stabile Arbeitsweise (ohne zu schwingen) auch bei hoher Verstärkung.
+
+
+Hoher Eingangswiderstand des Spannungsfolgers sichert die rückwirkungsfreie
+Kopplung an Messsignalquelle.
+
+
+Niedriger Ausgangswiderstand des Spannungsfolger erlaubt niedrigohmsche
+Eingangswiderstand des Inverters.
+
+
+Auch bei hoher Verstärkung ($10^{2}\dots10^{3})$ bleibt Gegenkopplungswiderstand
+$R_{2}$ relativ niederohmig. Daher hohe Bandbreite für Gegenkopplung.
+
+\end{frame}
+
+\begin{frame}{Abtasten und Halten (Sample \& Hold)}
+
+
+Abtast- und Halteschaltung (Sample \& Hold):
+
+
+zeitveränderliche Signale an ihrem Ausgang für bestimmte kurze Zeit
+konstant zu halten.
+
+
+Analogwertspeicher für ADW, da Umwandlung zu digitalen Signalen Zeit
+benötigt.
+
+
+
+
+
+a) Abtasten- / Sample-Mode: Schalter S geschlossen
+
+
+Schalter S geschlossen
+
+
+Verzögerungsfreies Folgen der Eingangsspannung anzustreben:$\tau_{1}=(R_{i}\parallel R_{eOPV})\cdot C\rightarrow0$
+
+
+b) Halten- / Hold-Mode: Schalter S offen
+
+
+Konstantes Halten des Spannungswertes anzustreben: $\tau_{2}=R_{eOPV}\cdot C\rightarrow\infty$
+
+\end{frame}
+
+\begin{frame}{Analog-Digital-Wandlung und Kenngrößen}
+
+
+Analog-Digital-Wandler: Umwandlung von kontinuierlichen Signalen in
+zeit- und wertediskrete Signale für weiter digitale Verarbeitung.
+
+
+Auflösung und Abtastgeschwindigkeit sind bestimmende Kenngröße eines
+ADW.
+
+
+Auflösung: Anzahl der Bits für die Darstellung der Ausgangsinformation
+
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Wandlungsbreite & 1 Bit & 2 Bit & 4 Bit & 8 Bit & 10 Bit\tabularnewline
+\hline 
+\hline 
+Zahl der Inkremente & $2^{1}=2$ & $2^{2}=4$ & $2^{4}=16$ & $2^{8}=256$ & $2^{10}=1\,024$\tabularnewline
+\hline 
+relative Abweichung $A_{rel}$  & 1 & 0,33 & 0,066 & $3,9\cdot10^{-3}$ & $0,98\cdot10^{-3}$\tabularnewline
+\hline 
+\end{tabular}
+
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Wandlungsbreite & 12 Bit & 14 Bit & 16 Bit & 18 Bit & 20 Bit\tabularnewline
+\hline 
+\hline 
+Zahl der Inkremente & $2^{12}=4\,096$ & $2^{14}=16\,384$ & $2^{16}=65\,536$ & $2^{18}=262\,144$ & $2^{20}=1\,048\,576$ \tabularnewline
+\hline 
+relative Abweichung $A_{rel}$  & $2,44\cdot10^{-4}$ & $6,1\cdot10^{-5}$ & $1,5\cdot10^{-5}$ & $3,8\cdot10^{-6}$ & $9,5\cdot10^{-7}$\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Genauigkeit ADW}
+
+
+Typischer Schwachpunkt eines ADW ist die Genauigkeit der Referenzspannungsquelle
+
+
+Bei einer auf $0,1\%$ stabilisierten Referenzspannung ist eine Auflösung
+von größer als 10 Bit nicht mehr sinnvoll.
+
+
+Höhere Auflösungen sind nur mit überproportional hohen Aufwendungen
+realisierbar.
+
+
+Messtechnischer Pragmatismus: Aufwand so hoch wie nötig statt so hoch
+wie möglich.
+
+
+Rapide Technologie-Entwicklung senken ständig Bauteile-Kosten. 
+
+\end{frame}
+
+\begin{frame}{Abtastfrequenz}
+
+
+Entnahme von Samples soll schnell erfolgen.
+
+
+Nach dem Abtast-Theorem von Shannon sollen mehr als zwei Samples pro
+Periode entnommen werden.
+
+
+Bei nichtsinusförmigen Messsignalen ist die höchste Spektralfrequenz
+des Messsignals zu berücksichtigen.
+
+
+Die technische Anforderung an ADW werden durch konkrete technische
+Anforderungen an Wandlungszeiten und Auflösungen bestimmt. Unterschiedliche
+Wandlertypen sind technisch und wirtschaftlich geeignet für unterschiedliche
+Aufgaben.
+
+\end{frame}
+
+\begin{frame}{ADW: Sukzessive Approximation}
+
+
+ADW mit sukzessiver Approximation
+
+
+
+
+
+
+
+
+Auch als ,,Vorgehensweise nach dem Waageprinzip`` bezeichnet.
+
+
+Weit verbreiteter Einsatz in Messtechnik wegen gutem Kompromiss zwischen
+Aufwand, Geschwindigkeit und Genauigkeit
+
+\end{frame}
+
+\begin{frame}{ADW: Dual Slope}
+
+
+Dual Slope Prinzip auch als Doppelflanken-Integrationsverfahren bekannt.
+
+
+Geeignet für hohe Auflösung mit geringem technischen Aufwand, untergeordnete
+Rolle der Wandlungszeit.
+
+
+
+
+
+
+
+
+Spannung wird in Auf- und Enladezeit und Zeit in Anzahl von Takt umgewandelt.
+
+\end{frame}
+
+\begin{frame}{ADW: Parallel-Wandler}
+
+
+Parallel-ADW, auch Flash-Converter genannt.
+
+
+Sehr hohe Schaltungsaufwand. Für jede Schaltschwelle ($2^{n}-1$)
+eine eigene Referenzquelle und ein eigener Komparator.
+
+
+
+
+
+Wandlungszeit im unteren ns-Bereich realisierbar. 
+
+
+\end{frame}
+
+\begin{frame}{Vergleich ADW}
+
+
+\begin{tabular}{|c|c|}
+\hline 
+ADW-Prinzip & Merkmale\tabularnewline
+\hline 
+\hline 
+sukzessive Approximation & %
+\begin{tabular}{l}
+- Genauigkeit von Stabilität der Referenz und Genauigkeit des DAW
+ahhängig\tabularnewline
+- Mittlere Genauigkeit (Auflösung $\le12\unit{Bit}$, $A_{rel}\ge2,44\cdot10^{-4}$\tabularnewline
+- Wandlungszeit in $\mu s$-Bereich\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+Dual-Slope & %
+\begin{tabular}{l}
+- Bauteile müssen nur kurzzeitstabil in ihren Parametern sein\tabularnewline
+- Hohe Genauigkeit erreichbar (Auflösung von $14\dots16$Bit, $A_{rel}\approx6\cdot10^{-5}\dots1,5\cdot10^{-5}$)\tabularnewline
+- Lange Wandlungszeit ($100\dots500\unit{ms}$)\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+Parallel & %
+\begin{tabular}{l}
+- Genauigkeit von Stabilität der Referenzspannung und des Widerstandsnetzwerkes
+abhängig\tabularnewline
+- Aus Aufwandgründen nur geringe Genauigkeit erreichbar (Auflösung
+$\le10$Bit, $A_{rel}\ge1\cdot10^{-3}$\tabularnewline
+- Wandlungszeiten in ns-Bereich möglich\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Verarbeitung und Ausgeben}
+
+
+Verarbeiten in der Messtechnik:
+
+
+- Komprimieren der Messinformationen
+
+
+- Ermitteln interessierender Parameter aus den Messinformationen,
+z.B. Mittelwerte, Korrelationen
+
+
+- Visualisieren von Messinformationen
+
+
+Ausgeben von Messinformationen:
+
+
+- Anzeige für Menschen
+
+
+- Steuersignal für automatisierte Prozesse, beinhaltet
+
+
+{*} Digital-Analog-Wandlung
+
+
+{*} Multiplexen
+
+
+{*} Verstärken
+
+
+{*} Umsetzung Signal zu Wirkung auf Umwelt durch Aktoren
+
+\end{frame}
+
+\begin{frame}{Analog- und Digitalanzeige}
+
+
+\begin{tabular}{|c|c|}
+\hline 
+analoge bzw. quasianaloge Anzeige & Digital-Anzeige\tabularnewline
+\hline 
+\hline 
+\begin{tabular}{l}
+- schnelle Erfassung eines Messwertes\tabularnewline
+- Erkennen von Trends\tabularnewline
+- Auflösung auf 2 bis 3 Dezimalstellen beschränkt\tabularnewline
+- Integration schwankender Messwerte über Trägeheit\tabularnewline
+- bei mechanischen Anzeigen sind Ablesefehler (Parallaxe) möglich\tabularnewline
+\end{tabular} & %
+\begin{tabular}{l}
+- Messwerterfassung für Mensch zeitaufwendig\tabularnewline
+- bei schwankender Anzeige Ablesen schwer möglich\tabularnewline
+- keine Ablesefehler\tabularnewline
+- hohe Auflösung für Mensch erfassbar\tabularnewline
+\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Sensoren}
+
+
+Sensoren sind Bindeglieder zwischen der nichtelektrischer Umwelt und
+der elektrischen Messtechnik. Auch als Aufnehmer oder Fühler bezeichnet.
+
+
+Grundvoraussetzung für Sensor:
+
+
+bekannter und reproduzierbarer Zusammenhang zwischen interessierender
+nichtelektrischer physikalischer Größe und der beeinflusster elektrischer
+Eigenschaft.
+
+
+Eine Vielzahl von physikalischen Effekten stehen für die Anwendungen
+zu Verfügung.
+
+
+Rapide Entwicklung in Bereich MEMS (Microelectromechanical System)
+durch Vorteile der Halbleiter ähnlichen Herstellung. 
+
+\end{frame}
+
+\begin{frame}{Klassifizierung von Sensoren}
+
+
+\begin{tabular}{|c|>{\centering}p{0.4\paperwidth}|}
+\hline 
+Passive Sensoren & Aktive Sensoren\tabularnewline
+\hline 
+\begin{tabular}{l}
+- Verändern ihre elektrischen Eigenschaften unter Einfluss einer nichtelektrischen
+physikalischen Größe\tabularnewline
+- benötige zur Auswertung eine Hilfsenergie\tabularnewline
+- hohe Genauigkeiten sind erreichbar\tabularnewline
+\end{tabular} & %
+\begin{tabular}{l}
+- Wandeln eine nichtelektrische physikalische Größe in eine elektrische
+Größe um, physikalisch gesehen ein Energieumwandler\tabularnewline
+- keine Hilfsenergie zur Auswertung erforderlich\tabularnewline
+- oft nur geringe Genauigkeit erreichbar, vor allem bzgl. Langzeitstabilität,
+häufige Kalibirierung erforderlich\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}
+
+
+Aktiver Sensor entzieht dem Messobjekt Energie.
+
+\end{frame}
+
+\begin{frame}{Beispiele für aktive Sensoren}
+
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Sensor & einwirkende nichtelektrische Größe & ausgegebene elektrische Größe\tabularnewline
+\hline 
+\hline 
+Fotoelement & Beleuchtungsstärke & Spannung (Leerlaufbetrieb) oder Strom (Kurzschlussbetrieb)\tabularnewline
+\hline 
+Thermoelement & Temperaturdifferenz zwischen Messpunkten & Spannung\tabularnewline
+\hline 
+Piezokristall & Druck & Ladungsmenge bzw. Spannung über Kondensator\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Beispiele für passive Sensoren}
+
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Sensor & einwirkende nichtelektrische Größe & beeinflusste elektrische Größe\tabularnewline
+\hline 
+\hline 
+Potentiometer & Länge, Winkel & ohmscher Widerstand\tabularnewline
+\hline 
+Widerstandsthermometer & Temperatur & ohmscher Widerstand\tabularnewline
+\hline 
+Dehnungsmessstreifen & kleine Längenänderungen bzw. sie hervorrufende Kräfte & ohmscher Widerstand\tabularnewline
+\hline 
+Fotowiderstand, -diode & Beleuchtungsstärke & ohmscher Widerstand\tabularnewline
+\hline 
+Induktive Sensoren & Länge, Winkel & Induktivität\tabularnewline
+\hline 
+Kapazitive Sensoren & Länge, Winkel & Kapazität\tabularnewline
+\hline 
+Transformatorische Sensoren & Winkel & induzierte Spannung\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Grundstruktur: Passiver Sensor}
+
+
+
+
+
+Unterscheidung zwischen Sensor und Sensorelement nicht immer eindeutig.
+
+
+Streng genommen beinhaltet Sensorelement nur die Umwandlung nichtelektrischer
+physikalischer Größe in elektrische Größe.
+
+\end{frame}
+
+\begin{frame}{Struktur: Sensor mit Mikrocontroller}
+
+
+
+
+
+Sensorbaugruppe oder ,,intelligente`` Sensoren
+
+\end{frame}
+
+\begin{frame}{Sensoren zur Messung geometrischer Größen}
+
+
+Aufgabe: Erfassung der gegenseitigen Position zweier Körper bzw. zweier
+Grenzflächen in Ebene oder Raum oder Erfassung der Verlagerung eines
+Körpers bzw. Grenzfläche in der Ebene oder im Raum.
+
+
+Verlagerung:
+
+
+- translatorisch - Weg-(Längen-)Sensoren
+
+
+- rotatorisch - Winkel-Sensoren
+
+
+Vielfältige Sensorprinzipien lassen sich zur Messung von Längen und
+Winkel heranziehen.
+
+\end{frame}
+
+\begin{frame}{Inkrementale Sensoren}
+
+
+Inkrementale Sensoren gehören zu den direkt digitalen Sensoren, d.h.
+sie liefern unmittelbar digitale Werte.
+
+
+
+
+
+Prinzipbild des inkrementalen Sensors
+
+
+Positionsverschiebung $\Delta s$ (Inkrement) wird in Anzahl der Hell/Dunkelphasen
+(Quantisierungseinheit) umgewandelt.
+
+
+Genauigkeit vorrangig von Messlineal bestimmt.
+
+\end{frame}
+
+\begin{frame}{Bewegungsrichtung mit inkrementalen Sensoren}
+
+
+
+
+
+Abtastpulsfolgen der Messlineale stellen zwei Folgen von 0-1 und 1-0-Flanken
+dar. Das Muster ist abhängig von der Bewegungsrichtung.
+
+\end{frame}
+
+\begin{frame}{}
+
+
+
+
+
+Heidenhain-Beispiel ausarbeiten
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Die Ausbildung und Ablese der Quantisierung lässt sich unterschiedlich
+realisieren mit:
+
+
+optisch: 
+
+
+lichtreflektierend, zerstreuend oder 
+
+
+lichtdurchlässig/-undurchlässig
+
+
+magnetisch:
+
+
+mit unterschiedlichen Magnetisierung (digitale Messschieber)
+
+
+Auflösung bis $10\unit{\mu m}$ erreichbar.
+
+
+Das Kodierungsverfahren kann kreisförmig angeordnet aufgebracht werden
+zur inkrementalen Winkelmessung.
+
+
+Erreichbare Auflösung unterhalb einer Bogenminute bzw. $1/60$ Grad. 
+
+\end{frame}
+
+\begin{frame}{Laserinterferometer}
+
+
+Höhere Genauigkeit ist mit Laserinterferometer erreichbar.
+
+
+
+
+
+Das monochromatische Licht wird an einem halbdurchlässigen Spiegel
+in einen Messstrahl und einen Vergleichsstrahl aufgespalten.
+
+
+Die beiden reflektierenden Strahlen treffen auf den halbdurchlässigen
+Spiegel wieder zusammen. Das Überlagerungsergebnis hängt von der relativen
+Phasenlage der beiden Strahlen ab und kann über den Fotodetektor aufgenommen
+werden.
+
+
+Interferenz:
+
+
+Gleicher Phasenlage: Lichtverstärkung durch Addition der Momentanwerte
+
+
+Gegenphasenlage: Auslöschung aufgrund der Subtraktion der Momentanwerte.
+
+
+Eine Lageveränderung von $\lambda/2$ verursacht eine volle Hell-Dunkel-(Hell)-Phase.
+
+
+\[
+\Delta s=N\cdot\frac{\lambda}{2}
+\]
+
+
+
+Mit einer Wellenlänge des Lichts von 650 nm kann mit Durchzählen von
+Hell-Dunkel-Streifen eine Auflösung von 325 nm realisiert werden.
+
+\end{frame}
+
+\begin{frame}{Potenziometrische Sensoren}
+
+
+Sensoren auf Basis von Schiebe- und Drehpotentiometern, d.h. Widerständen
+mit einem veränderbaren Abgriff, dem Schleifer.
+
+
+Länge bzw. Winkel werden in Widerstandswert umgewandelt.
+
+
+Messbereiche: 1mm bis 2m bzw. 0\textdegree{} bis 350\textdegree{}
+
+
+Einsatz: Maschinentisch, Gelenkwinkel bei Roboter, Stellung von Klappen
+und Ventilen
+
+
+
+
+
+Messung über einen Spannungsteiler. Bei unbelasteten Spannungsteiler
+($R_{L}\gg R$) gilt:
+
+
+\[
+\frac{U_{a}}{U_{B}}=\frac{\Delta R}{R}=\frac{l_{x}}{l}
+\]
+
+
+
+\[
+l_{x}=\frac{U_{a}}{U_{B}}\cdot l
+\]
+
+
+
+Genauigkeit von <1\% des Messbereichsendwertes erreichbar.
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Potenziometrische Sensoren werden vorwiegend als Drahtwiderstände
+ausgeführt. Sie sind robust und tauglich im Alltag.
+
+
+Da Quotient $\Delta R/R$ gebildet wird sind sie unempfindlich gegenüber
+Temperatur. Temperaturbeiwert von <1,5 ppm erreichbar bei 200 ppm
+für Widerstandsdraht.
+
+
+ppm = part per million, $10^{-6}$
+
+
+Mit Schichtwiderständen kann hohe Widerstandswerte kompakt hergestellt
+werden. Solche Sensoren haben kleine Verlustleistung und werden in
+abgesetzten batteriebetriebenen Sensorbaugruppen eingesetzt. Schichtwiderständen
+sind mechanisch wesentlich empfindlicher.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Leistungsaufnahme}
+
+
+Drahtpotentiometer mit $R=\unit[1]{k\Omega}$
+
+
+Schichtpotentiometer mit $R=\unit[50]{k\Omega}$
+
+
+werden mit einer Spannung $U_{B}=\unit[10]{V}$ betrieben.
+
+
+Leistungsaufnahme?
+
+
+Drahtpotentiometer: 
+
+
+\[
+P=\frac{U_{B}^{2}}{R}=\frac{(\unit[10]{V})^{2}}{\unit[1\cdot10^{3}]{\Omega}}=\unit[0,1]{W}=\unit[100]{mW}
+\]
+
+
+
+Schichtpotentiometer:
+\[
+P=\frac{U_{B}^{2}}{R}=\frac{(\unit[10]{V})^{2}}{\unit[50\cdot10^{3}]{\Omega}}=\unit[0,002]{W}=\unit[2]{mW}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Induktive Sensoren}
+
+
+Prinzip: Induktivität $L$ einer Spulenanordnung ist eine Funktion
+geometrischer Größen.
+
+
+\[
+L=f(N,\,\mu_{r},\, A,\, l)
+\]
+
+
+
+mit $N$ - Anzahl der Windungen der Spule, $\mu_{r}$ - relative Permeabilität
+oder Permeabilitätszahl des Materials, $A$ -Querschnittsfläche, $l$
+- Länge der magnetischen Feldlinie
+
+
+Für eine Ringspule gilt konkret:
+
+
+\[
+L=\frac{N^{2}\cdot\mu\cdot A}{l}
+\]
+
+
+
+mit $\mu=\mu_{r}\cdot\mu_{0}$ und $\mu_{0}=\unit[4\pi\cdot10^{-7}]{Hm^{-1}}=\unit[12,5664\cdot10^{-7}]{Hm^{-1}}=\unit[12,5664\cdot10^{-7}]{NA^{-2}}$
+
+\end{frame}
+
+\begin{frame}{Berührungsloser induktiver Wegsensor }
+
+
+Prinzip: Breite des Luftspalts zwischen einem ferromagnetischen Platte
+(z.B. Stahl) und dem Spulenkörper beeinflusst die Induktivität.
+
+
+
+
+
+Übertragungskurve deutlich nicht linear.
+
+
+Induktivität nimmt mit zunehmendem Abstand stark ab und wird unempfindlich
+für Wegänderung und empfindlich gegen externe Magnetfelder.
+
+
+Übliche Messwege: 1mm.
+
+
+Anwendung: Dynamische Wegmessung von bewegten Messobjekten, z.B. Ermittelung
+der Verlagerung von Drehmaschinenspindeln bei Belastung, Erfassung
+und Analysieren von Schweißfugen beim Robotschweißen.
+
+\end{frame}
+
+\begin{frame}{Induktiver Sensor als Differentialsystem}
+
+
+Differentialsystem besitzt zwei Spulen. Eine Wegänderung verursacht
+entgegengesetzte Änderungen der Induktivitäten in beiden Spulen.
+
+
+
+
+
+Der fett gezeichnete Teil der Kennlinie beschreibt den nutzbaren Aussteuerbereich.
+Durch Bildung von Differenz heben sich die Nichtlinearität weitgehend
+ab. Große Linearität über den Messbereich.
+
+
+
+
+
+Messbereiche $\Delta s$ Querankergeber: $\unit[\pm10]{\mu m}$ bis
+$\unit[\pm1]{mm}$ 
+
+
+Messbereiche $\Delta s$ Längsankergeber: $\unit[\pm1]{mm}$ bis $\unit[\pm500]{mm}$
+
+
+Linearitätsfehler: typ. <1\% 
+
+
+Anwendung: Taster für Dickenmessung, Weggeber bei Maschinentischen,
+Erfassung der Bewegung von Greifer in Robotern, Schwingungsmessung
+auf Prüfständen.
+
+\end{frame}
+
+\begin{frame}{Transformatorische induktive Sensoren zur Winkelmessung}
+
+
+Winkelabhängige Änderung von Induktivität: Messung von Rotationsbewegungen
+mit mehr als einer Vollumdrehung.
+
+
+Solcher Sensoren werden häufig als Resolver bezeichnet.
+
+
+
+
+
+\[
+U_{2}=-N\cdot\frac{d\Phi}{dt}=-N\cdot\frac{dB}{dt}\cdot A(\alpha)=-N\cdot\frac{dB}{dt}\cdot A_{max}\cdot\cos\alpha
+\]
+
+
+
+mit $B$ - magnetische Induktion
+
+
+
+
+
+\[
+U_{2}=k\cdot U_{1}\cdot\cos\alpha
+\]
+
+
+
+Stator- und Rotorwicklung können Primär- und Sekundärwicklung sein
+oder umgekehrt.
+
+\end{frame}
+
+\begin{frame}{Winkelsensor mit mehreren Empfangswicklungen}
+
+
+
+
+
+
+
+
+Erreichbare Winkelauflösung: 0,1\textdegree{} bzw. 6 Bogenminuten,
+relative Abweichung $2,8\cdot10^{-4}$
+
+
+Anwendung: im Flugzeug zur Überwachung der Stellung von Landeklappen,
+Radaranlage, NM-Maschine, Roboter
+
+\end{frame}
+
+\begin{frame}{Kapazitive Sensoren}
+
+
+Kraftwirkung am Schieber eines potentiometrischen Sensors führt zu
+Rückwirkungen auf die Messgröße. Kapazitive Sensoren sind dagegen
+berührungslos und weitgehend rückwirkungsfrei.
+
+
+Allgemein:
+
+
+\[
+C=f(\epsilon,A,l)\quad\mbox{mit }\epsilon=\epsilon_{0}\cdot\epsilon_{r}
+\]
+
+
+
+Dabei ist $\epsilon_{0}=\unit[8,854\cdot10^{-12}]{Fm^{-1}}=\unit[8,854\cdot10^{-12}]{\frac{As}{Vm}}$
+die absolute Dielektrizitätskonstante und $\epsilon_{r}$ die relative
+Dielektrizitätskonstante, auch Dielektrizitätszahl des Materials.
+
+
+\[
+\Delta C=\frac{\partial C}{\partial l}\Delta l+\frac{\partial C}{\partial A}\Delta A+\frac{\partial C}{\partial\epsilon_{r}}\Delta\epsilon_{r}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Ausführungsformen für kapazitive Sensoren}
+
+
+{\tiny{}}%
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & {\tiny{}Plattenkondensator} & {\tiny{}Zylinderkondensator } & {\tiny{}Stabkondensator}\tabularnewline
+\hline 
+\hline 
+ &  &  & \tabularnewline
+\hline 
+{\tiny{}Berechnungsformel} & {\tiny{}}%
+\begin{tabular}{|c|}
+\hline 
+{\tiny{}$C=\frac{\epsilon_{0}\epsilon_{r}A}{s}$}\tabularnewline
+\hline 
+\hline 
+{\tiny{}mit}\tabularnewline
+\hline 
+{\tiny{}$A=h\cdot l$}\tabularnewline
+\hline 
+\end{tabular} & {\tiny{}$C=\frac{2\pi\epsilon_{0}\epsilon_{r}l}{\ln\frac{D}{d}}$} & {\tiny{}}%
+\begin{tabular}{|c|}
+\hline 
+{\tiny{}$C=\frac{\pi\epsilon_{0}\epsilon_{r}l}{\ln\left[\frac{s}{2r_{0}+\sqrt{(\frac{s}{2r_{0})^{2}-1}}}\right]}$}\tabularnewline
+\hline 
+\hline 
+{\tiny{}$C\approx\frac{\pi\epsilon_{0}\epsilon_{r}l}{\ln\frac{s}{r_{0}}}\;\mbox{für }s\gg r_{0}$ }\tabularnewline
+\hline 
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}zur Kapazitätsänderung ausgenutzte Parameter} & {\tiny{}}%
+\begin{tabular}{|c|}
+\hline 
+{\tiny{}- Anstand $s$}\tabularnewline
+\hline 
+\hline 
+{\tiny{}- Dieelektrikum $\epsilon_{r}$}\tabularnewline
+\hline 
+{\tiny{}- wirksame Fläche $A$}\tabularnewline
+\hline 
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{|c|}
+\hline 
+{\tiny{}- wirksame Kondensatorlänge $l$}\tabularnewline
+\hline 
+\hline 
+{\tiny{}- Dieelektrikum $\epsilon_{r}$}\tabularnewline
+\hline 
+\tabularnewline
+\hline 
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{|c|}
+\hline 
+{\tiny{}- Dieelektrikum $\epsilon_{r}$}\tabularnewline
+\hline 
+\hline 
+\tabularnewline
+\hline 
+\tabularnewline
+\hline 
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+
+\end{frame}
+
+\begin{frame}{Kapazitive Füllstandmessung}
+
+
+
+
+
+\[
+C=C_{0}+\Delta C=k\cdot(l-\Delta l)+k\cdot\epsilon_{r}\cdot\Delta l
+\]
+
+
+
+Die Gesamtkapazität besteht aus der Summe von der Kapazität mit Luft
+als Dielektrikum $\epsilon_{r}=1$ und der Kapazität mit der Flüssigkeit
+als Dielektrikum $\epsilon_{r>1}$
+
+
+\[
+C=kl+(-k+k\cdot\epsilon_{r})\Delta l=C_{0}+\Delta C
+\]
+
+
+
+\[
+\Delta C=(-k+k\cdot\epsilon_{r})\Delta l\quad C_{0}=kl
+\]
+
+
+
+\[
+\frac{\Delta C}{C}=(\epsilon_{r}-1)\cdot\frac{\Delta l}{l}
+\]
+
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Messschaltungen: Wechselstrommessbrücke, Strom-Spannungs-Messmethode
+
+
+Anwendung: Füllstandsmessung für nichtleitende und leitende Flüssigkeiten,
+Dickenmessung von Garnen und Folien, wegen Robustheit in rauen Bereichen
+wie Gießereien.
+
+
+Linearitätsfehler: 1\% bis 3\%.
+
+
+Konstanz der Messfrequenz und Unterdrückung der Störkopplungen beeinflussen
+die Genauigkeit.
+
+
+\end{frame}
+
+\begin{frame}{Sensoren zur Kraftmessung}
+
+
+Mechanisch:
+
+
+Kraft verursacht Verformung am Körper. Die erfahrene Dehnung kann
+gemessen werden.
+
+
+Piezoelektrisch:
+
+
+Kraft übt auf Piezokristall Ladungsverschiebung aus.
+
+\end{frame}
+
+\begin{frame}{Dehnungsmessstreifen}
+
+
+Dehnung $\varepsilon$: kleine relative Längenänderungen infolge von
+Temperatur- bzw. Krafteinwirkung.
+
+
+Bei konstanter Temperatur kann aus Dehnung auf die Krafteinwirkung
+geschlossen werden.
+
+
+Metall oder Halbleiter ändern ihre Leitfähigkeit bei Dehnung und können
+als Sensor verwendet werden.
+
+
+Dehnungsmessstreifen (DMS) bestehen aus Widerstandsmaterial (zumeist
+Konstantan oder Chrom-Nickel-Legierung).
+
+
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Draht mit kreisförmigem Querschnitt
+
+
+\[
+R=\varsigma\cdot\frac{l}{A}=\varsigma\cdot\frac{l\cdot4}{\pi\cdot d^{2}}
+\]
+
+
+
+mit: $\varsigma$ - spezifischer Widerstand des Drahtes
+
+
+$l$ - Länge des Drahtes
+
+
+$A$ - Querschnittfläche des Drahtes
+
+
+$d$ - Durchmesser des Drahtes 
+
+
+\[
+\Delta R=\frac{\partial R}{\partial\varsigma}\Delta\varsigma+\frac{\partial R}{\partial l}\Delta l+\frac{\partial R}{\partial d}\Delta d
+\]
+
+
+
+\[
+=\frac{l\cdot4}{\pi\cdot d^{2}}\Delta\varsigma+\frac{\varsigma\cdot4}{\pi\cdot d^{2}}\Delta l-2\cdot\frac{l\cdot\varsigma\cdot4}{\pi\cdot d^{3}}\Delta d
+\]
+
+
+
+\[
+\frac{\Delta R}{R}=\frac{\Delta\varsigma}{\varsigma}+\frac{\Delta l}{l}-2\frac{\Delta d}{d}
+\]
+
+
+
+\[
+=\frac{\Delta l}{l}\left(1-2\frac{\frac{\Delta d}{d}}{\frac{\Delta l}{l}}+\frac{\frac{\Delta\varsigma}{\varsigma}}{\frac{\Delta l}{l}}\right)=\varepsilon\cdot k
+\]
+ 
+
+
+\[
+k=1-2\mu+\eta
+\]
+
+
+
+mit $\mu=\frac{\Delta d}{d}/\frac{\Delta l}{l}$ - Poisson-Zahl (Querkontraktionszahl)
+
+
+$\eta=\frac{\Delta\varsigma}{\varsigma}/\frac{\Delta l}{l}$ - relative
+Änderung des spezifischen Widerstands infolge der Dehnung
+
+\end{frame}
+
+\begin{frame}{Typische Parameter DMS}
+
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Kenngröße & Metall-DMS & Halbleiter-DMS\tabularnewline
+\hline 
+\hline 
+Nennwiderstand $R$ & $\unit[120]{\Omega}\dots\unit[600]{\Omega}$ & $\unit[120]{\Omega}\dots\unit[600]{\Omega}$\tabularnewline
+\hline 
+k-Faktor & 2 & $|100\dots160|$\tabularnewline
+\hline 
+Arbeitsbereich der Dehnung $\varepsilon$ & $<10\cdot10^{-3}\unit{m/m}$ & \selectlanguage{english}%
+\textrm{$<1\cdot10^{-3}\unit{m/m}$}\selectlanguage{ngerman}%
+\tabularnewline
+\hline 
+max. zulässige Dehnung $\varepsilon_{max}$ & \selectlanguage{english}%
+\textrm{$<50\cdot10^{-3}\unit{m/m}$}\selectlanguage{ngerman}%
+ & \selectlanguage{english}%
+\textrm{$<5\cdot10^{-3}\unit{m/m}$}\selectlanguage{ngerman}%
+\tabularnewline
+\hline 
+Temperaturkoeffizient & $10^{-6}\unit{K^{-1}}$ & \selectlanguage{english}%
+\textrm{$10^{-4}\unit{K^{-1}}$}\selectlanguage{ngerman}%
+\tabularnewline
+\hline 
+\end{tabular}
+
+
+
+
+
+Halbleiter-DMS besitzt großen k-Faktor und hohe Temperaturabhängigkeit.
+Sie werden mit Temperaturkompensation eingesetzt.
+
+\end{frame}
+
+\begin{frame}{DMS-Viertelbrücke}
+
+
+Relative Widerstandsänderung kann mittels Brückenschaltung oder Strom-/Spannungsmessung
+ausgewertet.
+
+
+
+
+
+\[
+U_{AB}=U_{A}-U_{B}=U_{0}\frac{R+\Delta R}{2R+\Delta R}-U_{0}\frac{R}{2R}
+\]
+
+
+
+\[
+=U_{0}(\frac{R+\Delta R}{2R+\Delta R}-\frac{1}{2})=U_{0}\frac{2(R+\Delta R)-(2R+\Delta R)}{2(2R+\Delta R)}
+\]
+
+
+
+\[
+=U_{0}\frac{\Delta R}{4R+2\Delta R}
+\]
+
+
+
+Bei $R\gg\Delta R$ gilt:
+\[
+U_{AB}=U_{0}\frac{\Delta R}{4R}=\frac{U_{0}}{4}\varepsilon\cdot k
+\]
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{Temperaturkompensation}
+
+
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{DMS-Halbbrücke}
+
+
+
+
+
+\[
+U_{AB}=\frac{U_{0}}{2}\cdot\frac{\Delta R}{R}=\frac{U_{0}}{2}\varepsilon\cdot k
+\]
+
+
+\end{frame}
+
+\begin{frame}{Kraftmessaufnehmer mit Vollbrücke}
+
+
+
+
+
+\[
+U_{AB}=U_{0}\cdot\frac{\Delta R}{R}=U_{0}\varepsilon\cdot k
+\]
+
+
+
+Kraftmessaufnehmer werden für 10 N bis 500 MN konstruiert.
+
+
+Anwendung: Kraftmessung an Pressen und Walzen, Gewichtskraftsensor
+in elektronischen Waagen für Haushalt oder Kraftfahrzeugwaage.
+
+\end{frame}
+
+\begin{frame}{Beispiel: DMS}
+
+
+DMS mit einem $k$-Faktor von 2 wird an einem Träger befestigt. Eine
+Viertel-Brücke mit Brückenspannung $U_{0}=\unit[10]{V}$wird verwendet.
+Maximale Dehnung des Trägers beträgt $\varepsilon_{max}=0,2\%$.
+
+
+a) Maximale relative Widerstandsänderung
+
+
+\[
+(\frac{\Delta R}{R})_{max}=\varepsilon_{max}\cdot k=0,4\%
+\]
+
+
+
+b) Maximale Brückenausgangsspannung
+
+
+\[
+\left|U_{AB}\right|_{max}=\frac{U_{0}}{4}(\frac{\Delta R}{R})_{max}=\frac{\unit[10]{V}}{4}\cdot0,004=\unit[0,01]{V}=\unit[10]{mV}
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Piezoelektrische Kraftsensoren}
+
+
+Piezoelektrischer Effekt: Ladungsverschiebung in kristallinen Materialien
+infolge des Einwirkens einer Kraft.
+
+
+
+
+
+Charakteristische Größe ist Verschiebeflussdicht $D$:
+
+
+\[
+D=\frac{Q}{A}
+\]
+
+
+
+Piezoelektrischer Effekt wird beschrieben durch:
+
+
+\[
+Q=k_{p}\cdot F
+\]
+
+
+
+mit $k_{p}$- piezoelektrische Konstante, auch Piezomodul genannt.
+Für Quarz/$\unit{SiO_{2}}$ ist $k_{p}=\unit[2,3\cdot10^{-12}]{As/N}$,
+für Bariumtitanat/$\unit{BaTiO_{3}}$ (Keramik) ist $k_{p}=\unit[2,5\cdot10^{-10}]{As/N}$.
+
+\end{frame}
+
+\begin{frame}{Messschaltung }
+
+
+Ladungen werden über eine Kapazität in eine proportionale Spannung
+überführt und wird damit messbar.
+
+
+\[
+Q=C\cdot U_{q}\Rightarrow U_{q}=\frac{Q}{C}=\frac{k_{p}\cdot F}{C}
+\]
+
+
+
+
+
+
+Ersatzschaltbild einer Messschaltung
+
+
+\[
+U_{q}=\frac{Q}{C_{ges}}=\frac{k_{p}\cdot F}{C_{0}+C_{L}+C_{e}}
+\]
+
+
+
+Zeitkonstante für Ladungsverlust über Widerstände:
+
+
+\[
+\tau=R_{ges}\cdot C_{ges}=\left(\frac{R_{e}\cdot R_{p}}{R_{e}+R_{p}}\right)\cdot(C_{0}+C_{L}+C_{e})
+\]
+
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+
+
+
+% \mode
+% <all>
+\lecture{Kap 07 Automatisierte Messsysteme}{K07}
+%\setcounter{framenumber}{0}
+\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 07 Automatisierte Messsysteme}
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}
+
+\end{document}

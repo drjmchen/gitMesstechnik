@@ -1,0 +1,842 @@
+% \section{Kap 03 Messmethoden und -einrichtung}
+\begin{frame}{}
+
+\textbf{Thema}: Messmethoden und -einrichtung
+
+\vphantom{}
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item grundlegende Arten, Messung durchzuführen
+\item Messeinrichtung als Übertragungseinrichtung
+\item Bewertung von Messeinrichtung
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+RP: Kap 4 \& 5
+
+\end{frame}
+
+\begin{frame}{Ausschlagmethode}
+\small
+
+Durch die Verschiebung einer Marke (Zeiger) gegen eine Skala wird
+das Messergebnis repräsentiert. Die Messgröße am Eingang $x_{e}$
+wird direkt in eine Ausgangsgröße $x_{a}$, Verschiebung des Zeigers,
+überführt.
+
+\begin{figure}
+	\begin{columns}
+
+	\column{0.4\textwidth}
+		{\scriptsize{}Beispiel Druckmesser}{\scriptsize \par}
+
+		{\scriptsize{}Auch Flüssigkeits-Ausdehnungsthermometer arbeitet nach
+				Ausschlagmethoden}{\scriptsize \par}
+
+	\column{0.4\textwidth}
+
+		\includegraphics[width=3cm]{Bilder/RPMT.B0401.png}\end{columns}
+
+\end{figure}
+
+In der Regel wird \textit{keine Hilfsenergie} benötigt. Energie wird dem Messobjekt
+entzogen. Grundbedingung für akzeptierbare Messergebnisse ist geringe
+Energiebelastung auf Messobjekt. Minimale Rückwirkung der Messmethode
+auf das Messergebnis ist anzustreben.
+
+Typische Beispiele: klassische elektrische Spannungsmesser. 
+
+\scriptsize
+\begin{sloppypar}
+	Über eine Drehspule wird der Zeiger proportional zur durchfließenden
+	Stromstärke gedreht. Relativ hohe Energie zur Erzielung des Ausschlags.
+	Elektronische Spannungsmesser arbeiten dagegen nahezu leistungslos.
+\end{sloppypar}
+
+\end{frame}
+
+\begin{frame}{Differenzmethode}
+\small
+Der Messgröße wird eine Vergleichsgröße gegenübergestellt.
+
+Gegenstand der Messauswertung ist die Differenz zwischen Mess- und
+Vergleichsgröße.
+
+\begin{figure}
+	\begin{columns}
+
+	\column{0.4\textwidth}
+
+	{\footnotesize{}Beispiel: Neigungswaage.}{\footnotesize \par}
+
+	{\footnotesize{}Auch Temperaturmessung mit Thermoelementen basiert
+	auf Differenzverfahren.}{\footnotesize \par}
+
+	\column{0.4\textwidth}
+
+	\includegraphics[width=3cm]{Bilder/RPMT.B0402.png}\end{columns}
+
+\end{figure}
+
+Über die Differenz können sich Störung auf Messergebnis auswirken.
+Eine möglichst kleine Differenz ergibt auch eine kleine resultierende
+Wirkung der Störeinflüsse, die gleichzeitig auf beiden Größen einwirken.
+
+\end{frame}
+
+\begin{frame}{Kompensationsmethode}
+\small
+Der Messgröße wird eine variable Vergleichsgröße entgegengesetzt,
+mit dem Ziel, die Differenz zwischen beiden Größen gegen Null streben
+zu lassen.
+
+\begin{figure}
+	\includegraphics[width=2.5cm]{Bilder/RPMT.B0403.png}\hspace{1cm}
+	\includegraphics[width=4cm]{Bilder/RPMT.B0404.png}
+\end{figure}
+
+Vorteile:
+
+- Im Kompensationsfall wird dem Messobjekt keine Energie entzogen
+
+- Der Indikator kann für den Kompensationsfall (Nullindikation) mit
+sehr hohen Empfindlichkeit arbeiten.
+
+- Störungen mit gleichem Betrag und Vorzeichen auf Mess- und Kompensationsgröße
+können das Messergebnis nicht verfälschen.
+
+Diese Methode ist für hochgenaue Messeinrichtungen prädestiniert.
+
+Hebelwaage(Apothekerwaage), Potentiometer mit Motorkompensator.
+
+\end{frame}
+
+\begin{frame}{Messeinrichtung}
+
+Eine Messeinrichtung soll eine zu messende physikalische Größe in
+einen interpretierbaren Messwert transformieren.
+
+\begin{center}
+\includegraphics[width=8cm]{Bilder/RPMT.B0501.png}
+\par\end{center}
+
+Jede Messeinrichtung kann als Übertragungseinrichtung aufgefasst werden.
+
+\end{frame}
+
+\begin{frame}{Messeinrichtung als Übertragungssystem}
+
+Typischerweise ist der Übertragungsfaktor $k=x_{a}/x_{e}$ keine dimensionslose
+Größe.
+
+Die reale Messeinrichtung übersetzt aufgrund ihres technisch-physikalischen
+Aufbaus die Messgröße in eine für die Weiterverarbeitung geeignete
+Größe.
+
+Drehspulmesswerk: Spannung wird in einen Zeigerausschlag überführt.
+
+	\includegraphics[width=5cm]{Bilder/RPMT.B0502.png}\hspace{2cm}\includegraphics[width=4cm]{Bilder/drehspulmesswerk}
+
+Häufig ist der Messeinrichtung ein geeigneter Messwandler bzw. \emph{Sensor}
+vorzuschalten, um die gesuchte physikalische Größe der Messung zugänglich
+zu machen. 
+
+\end{frame}
+
+\begin{frame}{Statische Kenngrößen von Messeinrichtungen}
+
+Im eingeschwungenen Zustand charakterisiert Übertragungsfaktor $k$
+das Überführungsverhalten der Messgröße $x_{e}$ zu Ausgangssignal
+$x_{a}$. 
+
+In elektronischen Messeinrichtungen auch Verstärkung $v$ genannt
+(dimensionslos).
+
+Statische Kennlinie
+
+\begin{figure}
+	\begin{columns}
+
+	\column{0.4\textwidth}
+
+	\begin{spacing}{0}
+	{\scriptsize{}Idealfall - lineares Verhalten}{\scriptsize \par}
+
+	{\scriptsize{}
+	\[
+	x_{a}=f(x_{e})=x_{a0}+\frac{\Delta x_{a}}{\Delta x_{e}}\cdot(x_{e}-x_{e0})
+	\]
+	}{\scriptsize \par}
+
+	{\scriptsize{}Bei Kennlinien durch den Nullpunkt:}{\scriptsize \par}
+
+	{\scriptsize{}
+	\[
+	x_{a}=f(x_{e})=\frac{\Delta x_{a}}{\Delta x_{e}}\cdot(x_{e}-x_{e0})
+	\]
+	}{\scriptsize \par}
+
+	{\scriptsize{}Übertragungsfaktor:}{\scriptsize \par}
+
+	{\scriptsize{}
+	\[
+	k=v=\frac{\Delta x_{a}}{\Delta x_{e}}
+	\]
+	}{\scriptsize \par}
+
+	{\scriptsize{}Allgemeiner Fall mit nichtlinearen Anteilen $x_{anl}$:}{\scriptsize \par}
+
+	{\scriptsize{}
+	\[
+	x_{a}=f(x_{e})=x_{a0}+\frac{dx_{a}}{dx_{e}}\cdot(x_{e}-x_{e0})+x_{anl}
+	\]
+	}{\scriptsize \par}
+	\end{spacing}
+
+	\column{0.4\textwidth}
+
+	\includegraphics[width=5cm]{Bilder/RPMT.B0503.png}\end{columns}
+
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}{Empfindlichkeit}
+
+\emph{Empfindlichkeit:}
+
+\[
+E=\frac{dx_{a}}{dx_{e}}
+\]
+
+Bei linearen Kennlinien sind Empfindlichkeit und Übertragungsfaktor
+identisch
+
+\[
+E=\frac{dx_{a}}{dx_{e}}=\frac{\Delta x_{a}}{\Delta x_{e}}
+\]
+
+\emph{Auflösung:} Kleinste Differenz zwischen zwei Messwerten, die
+ein Messgerät eindeutig unterscheiden kann. \medskip{}
+
+\emph{Ansprechschwelle}: Der kleinstmögliche Wert einer Messgröße,
+der zu einer erkennbaren Reaktion des Messgerätes führt.
+
+\end{frame}
+
+\begin{frame}{Weitere Merkmale:}
+
+\emph{Hysterese:} Messwerte abgängig vom vorherigen Zustand
+
+\includegraphics[width=4cm]{Bilder/hysterese.jpg}
+
+\medskip{}
+
+\emph{Rückwirkung} eines Messgerätes auf Messobjekt: Belastung des
+Messobjektes durch Ankoppelung an Messgeräten\medskip{}
+
+\emph{Messwertdrift}: Kennlinie ändert sich mit der Zeit
+
+\end{frame}
+
+\begin{frame}{Dynamische Kenngrößen}
+
+Bei Messung zeitlich veränderlicher Größen sind zudem dynamische Eigenschaften
+von Messeinrichtungen für die Qualität des erzielten Messergebnisses
+von Bedeutung.\medskip{}
+
+Trägheit existiert in jedem physikalischen System. Messeinrichtung
+folgt der veränderten Messgrößen nur mit Zeitverzögerung.\medskip{}
+
+Bei mechanischem Zeiger zum schnell veränderten Messwerten leicht
+erkennbar.
+
+Auch bei elektronischen Systemen sind immer Verzögerungen vorhanden.
+
+Dynamische Eigenschaften von Messeinrichtungen lassen sich weitgehend
+durch Verzögerungsverhalten 1. und 2. Ordnung beschreiben.
+
+Es sind Übertragungseinrichtungen mit Differentialgleichung 1. und
+2. Ordnung.
+
+\end{frame}
+
+\begin{frame}{Zeitverhalten linearer Übertragungsglieder}
+
+Idealfall: Übertragungseinrichtung proportional, ohne Zeitverzögerung
+
+\[
+x_{a}(t)=k\cdot x_{e}(t)
+\]
+
+Realfall: mit Verzögerung, linear (\emph{ideal}), Abweichung $A_{d}$
+
+\[
+A_{d}(t)=x_{a}'(t)-x_{a}(t)=x_{a}'(t)-k\cdot x_{e}(t)
+\]
+
+mit: $x_{a}'(t)$ - verzögertes Ausgangssignal
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT.B0504.png}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Tiefpass 1. Ordnung}
+
+Übertragungsglied mit Verzögerungsverhalten kann am einfachsten mit
+einem Tiefpass 1. Ordnung beschrieben werden.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=5cm]{Bilder/RPMT.B0505.png}
+\end{figure}
+
+
+
+Spannungsteiler mit : $R$ und $1/j\omega C$ 
+
+\[
+u_{a}=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}\cdot u_{e}
+	=\frac{1}{1+j\omega \underbrace{RC}_{\tau}}\cdot u_{e}
+\]
+
+\end{frame}
+
+\begin{frame}{Wechselspannungsmessung}
+
+\begin{figure}
+\begin{columns}
+
+\column{0.4\textwidth}
+
+\includegraphics[angle=2,width=5cm]{Bilder/RPMT.B0506.png}
+
+{\tiny{}Wirkbild einer Wechselspannungsmessung}{\tiny \par}
+
+\column{0.4\textwidth}
+
+\includegraphics[angle=2,width=5.5cm]{Bilder/RPMT.B0507.png}
+
+{\tiny{}Ersatzschaltung einer Wechselspannungsmessung}{\tiny \par}\end{columns}
+
+\end{figure}
+
+{\scriptsize{}Der Widerstand des Messobjektes $R_{Mo}$ und der zu
+messende Spannungsabfall lässt sich in eine ideale Spannungsquelle
+mit Innenwiderstand $R_{i}\rightarrow0$ und dem als Quellwiderstand
+wirkenden $R_{Mo}$ zerlegen.}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+C=C_{L}\Vert C_{e}=C_{L}+C_{e}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+R=R_{Mo}\Vert R_{e}=\frac{R_{Mo}\cdot R_{e}}{R_{Mo}+R_{e}}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}Bei $R_{Mo}\ll R_{e}$ für korrekte Messung von Spannung
+wird $R\approx R_{e}$ und Zeitkonstante:}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+\tau=R\cdot C=R_{Mo}\cdot(C_{L}+C_{e})
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+f_{0}=\frac{1}{2\pi\cdot\tau}=\frac{1}{2\pi\cdot R\cdot C}=\frac{1}{2\pi\cdot R_{Mo}\cdot(C_{L}+C_{e})}
+\]
+}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Wechselspannung am Oszilloskop}
+\small
+Wechselspannung am Widerstand $R_{Mo}=\unit[1]{k\Omega},$
+
+Messaufbau: Eingangskapazität des Oszilloskop $C_{e}=\unit[15]{pF}$
+
+Eingangswiderstand des Oszilloskop: $R_{e}=\unit[1]{M\Omega}$
+
+Kapazität des geschirmten Messkabels: $C_{L}=\unit[100]{pF}$
+
+Betrachtung Grenzfrequenz der Messanordnung.
+
+$R_{e}\gg R_{Mo}$
+
+\[
+f_{0}=\frac{1}{2\pi\cdot R_{Mo}\cdot(C_{L}+C_{e})}=\frac{1}{2\pi\cdot\unit[1]{k\Omega}\cdot(\unit[100]{pF}+\unit[15]{pF})}
+\]
+
+\[
+f_{0}\approx\unit[1,384]{MHz}
+\]
+
+Messaufbau hat eine Grenzfrequenz von nur $\unit[1,384]{MHz}.$ Amplitudenabfall
+dabei ca. $30\%$ bzw. 10 dB. Recht große Verzerrung!
+
+Auch wenn der Oszilloskop eine Grenzfrequenz von z.B. 100 MHz besitzt,
+wird dieser vom Messaufbau nicht ausgenutzt.
+
+\end{frame}
+
+\begin{frame}{Differentialgleichung und Zeitverhalten: Tiefpass 1. Ordnung}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=4cm]{Bilder/RPMT.B0505.png}
+\end{figure}
+
+\[
+i(t)=C\cdot\frac{du_{a}(t)}{dt}
+\]
+
+\[
+u_{R}(t)=R\cdot i(t)=R\cdot C\cdot\frac{du_{a}(t)}{dt}
+\]
+
+\[
+u_{R}(t)+u_{a}(t)=u_{e}(t)
+\]
+
+\[
+R\cdot C\cdot\frac{du_{a}(t)}{dt}+u_{a}(t)=u_{e}(t)
+\]
+
+\end{frame}
+
+\begin{frame}{Allgemeine Form DGL und Zeitverhalten}
+
+\[
+\tau\cdot\frac{dx_{a}(t)}{dt}+x_{a}(t)=k\cdot x_{e}(t)
+\]
+
+mit $k$ als Proportionalitätsfaktor, Zusammenfassung aller Übertragungskonstanten,
+wie Verstärkung, Umwandlung etc.
+
+Übertragungssysteme mit Zeitverzögerung höherer Ordnung
+
+\[
+a_{n}\cdot\frac{d^{n}x_{a}(t)}{dt}+\dots+a_{1}\cdot\frac{dx_{a}(t)}{dt}+a_{0}\cdot x_{a}(t)=k\cdot x_{e}(t)
+\]
+
+Normierte Form mit $a_{0}=1$
+
+\end{frame}
+
+\begin{frame}{Testfunktionen}
+
+Allgemeine Lösungen der DGL sehr oft aufwändig und enthalten zu viele
+Parameter für praktische Interpretation.
+
+Übertragungsverhalten auf Testfunktionen sind oft wesentlich aussagekräftiger.
+
+Häufig verwendete Testfunktionen:
+
+\begin{figure}
+\begin{columns}
+
+\column{0.3\textwidth}
+\begin{itemize}
+\item Rampenfunktion
+\item Sprungfunktion
+\item Impulsfunktion
+\end{itemize}
+
+\column{0.6\textwidth}
+
+\includegraphics[width=6cm]{Bilder/RPMT.B0509.png}\end{columns}
+
+\end{figure}
+
+\medskip{}
+Mathematisch lassen sich diese durch Differentiation bzw. Integration
+in einander überführen.
+
+\end{frame}
+
+\begin{frame}{Sprungantwort Verzögerungsglied 1. Ordnung}
+
+\begin{figure}
+	\begin{columns}
+
+	\column{0.4\textwidth}
+
+	\begin{raggedright}
+	\[
+	x_{e}(t)=x_{e0}\quad\mbox{für }t\ge0
+	\]
+
+	\par\end{raggedright}
+
+	\begin{raggedright}
+	\[
+	x_{a}(t)=x_{a0}(1-e^{-\frac{t}{\tau}})
+	\]
+	\medskip{}
+
+	\par\end{raggedright}
+
+	\column{0.6\textwidth}
+
+	\subfloat{\includegraphics[width=7cm]{Bilder/RPMT.B0510.png}}\end{columns}
+
+\end{figure}
+
+$\tau$ - Zeitkonstante des Messsystems, $x_{a}(\tau)/x_{a}(\infty)=0,63$
+
+$t_{e}$ - Einstellzeit (auf $\vert1-x_{a}(t)/x_{a}(\infty)\vert\le0,05$):
+$t_{e}=3\tau$
+
+$t_{r}$ - Anstiegszeit ($x_{a}(t)/x_{a}(\infty)$ von 0,1 auf 0,9:
+$t_{r}=2,197\cdot\tau$ (Hausaufgabe)
+
+Steigung bei $t=0$ nicht gleich Null. Indiz für Verzögerung 1. Ordnung.
+
+In der Praxis oft eine gute und einfache Näherung.
+
+\end{frame}
+
+\begin{frame}{Impulsantwort}
+	
+
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.40\textwidth]{Bilder/ESEM.B0120.png}
+		\label{fig:ESEM.B0118}
+	\end{figure}
+	
+	
+\end{frame}
+
+\begin{frame}{Frequenzverhalten von Messeinrichtung}
+
+Für Frequenzverhalten wird Sinusschwingungen am Eingang verwendet.
+
+\[
+x_{e}(t)=\hat{x}_{e}\cdot\sin\omega t
+\]
+
+Am Ausgang als Reaktion:
+
+\[
+x_{a}(t)=\hat{x}_{a}\cdot\sin(\omega t+\phi)
+\]
+
+mit der Phasenverschiebung $\phi$ und $\hat{x}_{a}$ der Ausgangsamplitude.
+
+Für die Darstellung von Frequenzverhalten:
+
+Amplitudengang: $\displaystyle \frac{\hat{x}_{a}}{\hat{x}_{e}}=f(\omega)$
+
+Phasengang: $\phi(\omega)$
+
+\end{frame}
+
+\begin{frame}{Übertragungsfunktion Tiefpass 1. Ordnung}
+
+{\scriptsize{}
+\[
+G(j\omega)=\frac{\underline{U_{a}}}{\underline{U_{e}}}=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}=\frac{1}{1+j\omega RC}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+|G(j\omega)|=G(\omega)=\left|\frac{U_{a}}{U_{e}}\right|
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+\phi(\omega)=\arctan\frac{\mbox{Im}}{\mbox{Re}}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+G(j\omega)=\frac{1}{1+j\omega RC}\cdot\frac{1-j\omega RC}{1-j\omega RC}=\frac{1-j\omega RC}{1+\omega^{2}(RC)^{2}}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+\left|G(j\omega)\right|=G(\omega)=\sqrt{(\frac{1}{1+\omega^{2}(RC)^{2}})^{2}+(\frac{\omega RC}{1+\omega^{2}(RC)^{2}})^{2}}=\frac{1}{\sqrt{1+\omega^{2}(RC)^{2}}}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}mit $\tau=RC=1/\omega_{0}$ und $\omega=2\pi f$}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+G(\omega)=\frac{1}{\sqrt{1+(\frac{\omega}{\omega_{0}})^{2}}}=\frac{1}{\sqrt{1+(\frac{f}{f_{0}})^{2}}}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+G(\omega_{0})=1/\sqrt{2}=0,707=\unit[-3]{dB}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}$\omega_{0}$ bzw. $f_{0}$: 3 dB-Grenzfrequenz}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Phasengang}
+
+{\scriptsize{}
+\[
+\phi(\omega)=\arctan\frac{\text{Im}}{\text{Re}}=\arctan\frac{-\frac{\omega RC}{1+\omega^{2}(RC)^{2}}}{\frac{1}{1+\omega^{2}(RC)^{2}}}=\arctan(-\omega RC)
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\phi(\omega)=\arctan\left(-\frac{\omega}{\omega_{0}}\right)=\arctan\left(-\frac{f}{f_{0}}\right)
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}$\phi(\omega_{0})=-45\text{\textdegree}$}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Amplitudengang}
+
+\begin{columns}
+
+	\column{0.4\textwidth}
+
+	{\scriptsize{}In der Praxis ist oftmals die Kenntnis des Amplitudengangs
+	einer Messeinrichtung ausreichend.}{\scriptsize \par}
+
+	{\scriptsize{}Zur Charakterisierung des Amplitudengangs bietet sich
+	die Grenzfrequenz an. Für Übertragungsverhalten mit Verzögerung 1.
+	Ordnung gilt bei der Grenzfrequenz ein Amplitudenabfall auf $1/\sqrt{2}$.}{\scriptsize \par}
+
+	{\scriptsize{}In der Messtechnik ist ein solcher Amplitudenabfall
+	oft schon erheblich. Die Grenzfrequenz wird oft mit}{\scriptsize \par}
+
+	{\scriptsize{}$x_{a}/x_{e}\ge0,99=99\%$ oder $\ge0,9=90\%$ angegeben.}{\scriptsize \par}
+
+	{\scriptsize{}Die Angabe einer Grenzfrequenz in der Messtechnik sollte
+	immer mit der Angabe des Amplitudenabfalls verbunden sein.}{\scriptsize \par}
+
+	\column{0.5\textwidth}
+
+	\includegraphics[width=6cm]{Bilder/RPMT.B0511.png}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Oszilloskop und Grenzfrequenz}
+
+Ein Oszilloskop besitzt lt. Herstellerangabe eine Grenzfrequenz von
+60 MHz. Wie groß darf das Verhältnis $f/f_{0}$ bzw. $f$ werden,
+damit $x_{a}/x_{e}$ größer als 90\% bleibt.
+\medskip
+
+$$0,9\le\frac{x_{a}}{x_{e}}=\frac{1}{\sqrt{1+\left(\frac{f}{f_{0}}\right)^{2}}}$$
+
+\[
+1+\left(\frac{f}{f_{0}}\right)^{2}\le\frac{1}{0,9^{2}}\Rightarrow\frac{f}{f_{0}}\le\sqrt{\frac{1}{0,9^{2}}-1}=0,484
+\]
+
+\[
+f\le0,484\cdot f_{0}\approx\unit[29]{MHz}
+\]
+
+Für Messabweichung kleiner als 90\% muss die Frequenz des Messsignals
+kleiner als 29 MHz sein. 
+
+\end{frame}
+
+\begin{frame}{Filterwirkung eines Tiefpasses}
+
+Signale mit Frequenzen $\omega \gg \omega_0$ werden nicht mwehr amplitudenrichtig übertragen. 
+
+$$ G(\omega) =\frac{1}{\sqrt{1+(\frac{\omega}{\omega_{0}})^{2}}}
+	\approx \frac{\omega_0}{\omega} $$
+
+Dieser Effekt kann auch bewusst zur "Glättung", Trennung von Nutz- und Störsignal, eingesetzt werden.
+
+% Bild 1.18, Schrüfer
+\begin{figure}
+	\centering
+		\includegraphics[width=0.50\textwidth]{Bilder/ESEM.B0118.png}
+	\label{fig:ESEM.B0118}
+\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Tiefpass als Integrierglied}
+
+Für $\omega \gg \omega_0$ wird
+
+$$G(j\omega) \approx \frac{\omega_0}{j\omega}=\frac{1}{j\omega \tau}$$
+
+Die zugehörige DGL:
+$$\tau \dot{u}_a = u_e$$
+$$u_a =\frac{1}{\tau}\cdot\int u_e dt = \overline{u_e}$$
+
+\end{frame}
+
+\begin{frame}{Verzögerungsglied 2. Ordnung}
+
+	Messgeräte mit zwei gekoppelten Energiespeichern lassen sich durch eine DGL 2. Ordnung beschreiben. 
+	$$a_0\, u_a+a_1\, \dot{u}_a+a_2\,\ddot{u}_a=e_0\,u_e$$
+	Mit Kenngrößen: Dämpfungsfaktor $D$ und Zeitkonstante $T$
+	$$u_a + 2 D\, T\, \dot{u}_a + T^2\, \ddot{u}_a = k\, u_e$$
+	$$(a_1/a_0 =2\,D\,T ,\;a_2/a_0 = T^2\; \text{ und } e_0/a_0=k)$$
+
+\end{frame}
+
+\begin{frame}{Verzögerungsglied 2. Ordnung}
+
+	Partikuläre Lösung für den statischen Fall ($\dot{u}_a=\ddot{u}_a=0$)
+	$$u_a,p=k\, u_e$$
+	Für die homogene DGL, Verhalten des ungestörten Systems
+	$$u_a + 2 D\, T\, \dot{u}_a + T^2\, \ddot{u}_a =0$$
+	Ansatz: $ u_a,h=e^{rt}$
+	Charakteristische Gl.:
+	$$1+2D\,T\,r+T^2\, r^2 =0$$
+	$$r_{1,2}=-\frac{D}{T}\pm\frac{1}{T}\sqrt{D^2-1}$$
+Fall a) $D<1$ \quad b) $D>1$ \quad c) $D01$
+\end{frame}
+
+\begin{frame}{Fall a) $D<1$}
+\small
+	Mit Eigenfrequenz $\omega_d=\frac{1}{T}\sqrt{1-D^2}=\omega_0 \sqrt{1-D^2}$
+	$$r_{1,2}=-\frac{D}{T}\pmj\omega_d$$
+	Die Lösung der homogenen DGL:
+	$$u_{a,h}=e^{-\frac{D}{T}\cdot t}(A\cdot \cos \omega_d t + B\cdot \omega_d t)$$
+	Die Lösung der inhomogenen (kompletten) DGL:
+	$$u_{a,}=k\, u_e+e^{-\frac{D}{T}\cdot t}(A\cdot \cos \omega_d t + B\cdot \omega_d t)$$
+	mit Anfangsbedingungen: $u_a(0)=0,\,\dot{u}_a(0)=0$
+	$$u_a=k\,u_e\cdot\left[1-\underbrace{e^{-\frac{D}{T}\cdot t}}_{\text{Dämpfung}}
+		\left(\underbrace{\cos \omega_d t+\frac{D}{\sqrt{1-D^2}}\cdot \sin \omega_d t}_{\text{Schwingung}}\right)\right]$$
+\end{frame}
+
+\begin{frame}{Fall b) $D>1$}
+
+	$$r_{1,2} = -\frac{1}{T_{1,2}} \text{ mit } T_{1,2}=\frac{T}{D\mp\sqrt{D^2-1}}$$
+	$$u_a=k\, u_e\cdot\left(1-\frac{T_1}{T_1-T_2}\cdot e^{-t/T_1}+\frac{T_2}{T_1-T_2}\cdot e^{-t/T_2}\right)$$
+	Die Ausgangsspannung kann nicht mehr schwingen, sondern kriecht asymptotisch an den Behaarungswert heran, ähnlich Berührungsthermometer.
+	
+	Hintereinanderschaltung von zwei Verzögerungsglieder 1. Ordnung mit Zeitkonstanten $T_1$ und $T_2$.
+
+	\end{frame}
+
+\begin{frame}{Fall c) $D=1$}
+
+	$$r_{1}=r_2 =\frac{1}{T}$$
+	$$u_a=k\,u_e\left(1-e^{-t/T}-\frac{t}{T}e^{-t/T}\right)$$
+	
+	Bei diesem aperiodischen Grenzfall stellt sich die Ausgangsspannung ohen Überschwingen in der kürzest möglichen Zeit auf den 
+	Behaarungswert ein.
+	
+	\medskip
+	
+	In der Praxis werden Messwerke auf $D\approx 0,7$ abgeglichen, so dass bei einem tolerierbaren Überschwingungen 
+	der Behaarungswert schneller erreicht wird.
+
+\end{frame}
+
+\begin{frame}{RCL-Netzwerk}
+\small
+	\begin{columns}
+		\column{0.5\textwidth}
+			Maschengleichung
+			$$u_a+u_R+u_L=u_e$$
+			$$i=C\frac{du_a}{dt};\;u_R=R\,i\; u_L=L\frac{di}{dt}$$
+		\column{0.5\textwidth}
+		  
+			\begin{figure}
+				\centering
+					\includegraphics[width=0.90\textwidth]{Bilder/ESEM.B0122.png}
+				\label{fig:ESEM.B0122}
+			\end{figure}
+			
+	\end{columns}
+	\medskip
+	$$u_A+RC\,\dot{u}_a+LC\ddot{u}_a=u_e$$
+	$$k=1;\; T^2=LC;\; \omega_0=\frac{1}{\sqrt{RC}}; D=\frac{R}{2}\sqrt{\frac{C}{L}}$$
+	Die Lösungen können übernommen werden.
+\end{frame}
+
+\begin{frame}{Sinusantwort}
+\small
+	\begin{columns}
+		\column{0.5\textwidth}
+			$$[1+j\omega\, 2\,D\,T\,+(j\omeega)^2T^2]\,\underline{u}_a=k\,\underline{u}_e$$
+			$$G(j\omega)=\frac{\underline{u}_a}{\underline{u}_e}=\frac{k}{1-\omega^2 T^2+j\omega\,2\D\,T}$$
+		\column{0.5\textwidth}
+			
+			\begin{figure}
+				\centering
+					\includegraphics[width=0.90\textwidth]{Bilder/ESEM.B0123.png}
+				\label{fig:ESEM.B0123}
+			\end{figure}
+			
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}{Sprungantwort}
+
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Bilder/ESEM.B0124.png}
+		\label{fig:ESEM.B0124}
+	\end{figure}
+	
+	
+\end{frame}
+
+\begin{frame}{Impulsantwort}
+
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Bilder/ESEM.B0125.png}
+		\label{fig:ESEM.B0125}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Hochpass - Differenzierglied}
+\small
+	\begin{columns}
+		\column{0.5\textwidth}
+			$$u_a=iR;\; i=C\frac{d(u_e-u_a)}{dt};\; RC=T=\frac{1}{\omega_0}$$
+			$$u_a+RC\dot{u}_a=RC\dot{u}_e$$
+		\column{0.5\textwidth}
+			
+			\begin{figure}
+				\centering
+					\includegraphics[width=0.80\textwidth]{Bilder/ESEM.B0126.png}
+				\label{fig:ESEM.B0126}
+			\end{figure}
+			
+	\end{columns}
+	Spungantwort
+	$$u_a=U_0e^{-t/T}$$
+	Frequenzgang
+	$$G(j\omega)=\frac{\underline{u}_a}{\underline{u}_a}=\frac{j\omega T}{1+j\omega T}$$
+	Für $\omega \ll \omega_0$: $G(j\omega)\approx j\omega T$
+	
+	Für $\omega \gg \omega_0$: $G(j\omega)\approx 1$
+\end{frame}

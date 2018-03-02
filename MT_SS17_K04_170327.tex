@@ -1,0 +1,1357 @@
+% \mode
+% <all>
+%\lecture{Kap 04 Bewertung von Messergebnissen}{K04}
+%\setcounter{framenumber}{0}
+%\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 04 Bewertung von Messergebnissen }
+\begin{frame}
+
+
+Kap 04 Bewertung von Messergebnissen
+
+\end{frame}
+
+\begin{frame}{Übersicht}
+
+\textbf{Thema}: Bewertung von Messergebnissen
+
+\vphantom{}
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Definition der Messabweichung, Unterschied zwischen Abweichung und
+Fehler 
+\item Systematische Abweichung und zufallsverursachte Abweichung
+\item Unsicherheiten bei direkten und indirekten Messungen
+\item durch Messgerät verursachte Abweichung
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+RP: Kap 6 \& 7
+
+\end{frame}
+
+\begin{frame}{Grundbegriffe}
+
+Ziel jeder Messung: physikalische Größe eines Messobjektes wertmäßig
+zu ermitteln, Messergebnis mit der erforderlichen Genauigkeit zu bestimmen,
+dem \emph{wahren Wert} der Messgröße ausreichend anzunähern.\medskip{}
+
+Reale Messung immer mit Messabweichungen behaftet. \emph{Abweichungen}
+müssen zur Bewertung der Messqualität quantifiziert werden.
+
+Messwert kann immer nur ein Schätzwert des wahren Wertes einer Messgröße
+sein.
+
+Für messtechnische Praxis wird der Begriff richtiger Wert als Ersatz
+eingeführt.\medskip{}
+
+Der \emph{richtiger Wert} ist der durch ausreichend aufwändiges Verfahren
+ermittelte Wert mit der Annahme, dass die Abweichung zum wahren Wert
+der Messgröße in vorliegender Messaufgabe vernachlässigbar ist.
+
+I. Allg. kann das Ergebnis einer Kalibrierung als richtiger Wert einer
+Messgröße betrachtet werden.
+
+\end{frame}
+
+\begin{frame}{Abweichung vs. Fehler}
+\small
+Umgangsprachlich wird oft der Begriff \emph{Fehler} anstelle des
+Begriffes \emph{Abweichung} verwendet.\medskip{}
+
+Nach DIN 1319 sowie DIN EN ISO 8402:
+
+\fbox{\begin{minipage}[t]{1\columnwidth}%
+Fehler sind Abweichungen, die vorgegebene Grenzen überschreiten, Nichterfüllung
+einer festgelegten Forderung.%
+\end{minipage}}\medskip{}
+
+In diesem Sinne: Nicht jede Abweichung ist ein Fehler.
+
+\end{frame}
+
+\begin{frame}{Absolute und relative Abweichung}
+\small
+Messwert: Summe aus dem wahren Wert der Messgröße und der Abweichung
+$A$ bzw. $e$ (nach DIN 1319)
+
+\[
+x=x_{w}+A
+\]
+
+In der Messtechnik wird Abweichung auch mit $\Delta x$ gekennzeichnet.
+
+{\footnotesize{}
+\[
+\Delta x=A=x-x_{R}
+\]
+}{\footnotesize \par}
+
+Da $x_{w}$ in der Praxis nicht bekannt ist, wird der richtige Wert
+$x_{R}$ benutzt.
+
+$A$ wird auch als \emph{absolute Messabweichung} bezeichnet.
+
+\emph{Relative Abweichung: }
+
+{\footnotesize{}
+\[
+A_{rel}=\frac{A}{x_{R}}
+\]
+}{\footnotesize \par}
+
+In der Praxis liegt $x_{R}$ häufig für die Berechnung nicht vor.
+Mit der Annahme einer hinreichenden kleine Abweichung, $A\ll x$:
+
+{\footnotesize{}
+\[
+A_{rel}=\frac{A}{x}=\frac{\Delta x}{x}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel Abweichungen}
+
+Der Shuntwiderstand für Strommessnetzwerke wird bei Kalibrierung zu
+$x_{R}=R=\unit[0,207]{\Omega}$ bestimmt. Die Messung mit einem Betriebsmessgerät
+ergab einen (Schätz-)Wert von $x=0,212\Omega$.
+
+Absolute Abweichung: 
+
+$A=x-x_{R}=\unit[0,212]{\Omega}-\unit[0,207]{\Omega}=\unit[0,005]{\Omega}$
+
+Relative Abweichungen:
+
+\[
+A_{rel1}=\frac{A}{x_{R}}=\frac{\unit[0,005]{\Omega}}{\unit[0,207]{\Omega}}=0,02415=2,415\%
+\]
+
+\[
+A_{rel2}=\frac{A}{x}=\frac{\unit[0,005]{\Omega}}{\unit[0,212]{\Omega}}=0,02358=2,358\%
+\]
+
+Der Unterschied ist für die Bewertung der Messgenauigkeit nicht bedeutsam.
+Die Angabe $A_{rel}=2,4\%$ ist meistens ausreichend.
+
+\end{frame}
+
+\begin{frame}{Zufällige und systematische Abweichung}
+\small
+Klassifizierung in zufällige Abweichungen $A_{r}$(random) und systematische
+Abweichungen $A_{s}$:
+
+\[
+A=A_{r}+A_{s}
+\]
+
+\emph{Zufällige Abweichungen}: nicht reproduzierbare, unvorhersehbare
+Fehlerwirkungen, Streuung der Messwerte um einen Mittelwert unter
+Wiederholungsbedingung, führt zu Unsicherheit.
+
+\emph{Wahrscheinlichkeit}: statistische Sicherheiten von z.B. 95\%
+und 99\% innerhalb bestimmten Bereich.
+
+Ursachen: U.a zufällige Veränderungen der Einflussgrößen, zufällige
+Parameteränderungen der Messgeräte, zufällige Änderung der Messgröße.\par
+\medskip
+\emph{Systematische Abweichungen}: unter gleichen Bedingungen reproduzierbare
+gleiche Abweichungen, führt zu Unrichtigkeit.
+
+Ursachen: Unvollkommenheit des Messsystems, u.a. Temperatureinfluss
+auf Messobjekt und -einrichtung, Rückwirkung von Messgerät auf -objekt
+(ungünstige Eingangsimpedanz), unterschiedliche Höhenlage
+
+\end{frame}
+
+\begin{frame}{(Un-)bekannte systematische Abweichungen}
+\small
+Systematische Abweichung $A_{s}$ kann als Zusammensetzung von zwei
+Komponenten aufgefasst werden, \emph{bekannten} und \emph{unbekannten}:
+
+\[
+A_{s}=A_{s,b}+A_{s,u}
+\]
+
+Die bekannte systematische Abweichung ist ermittelbar und korrigierbar
+
+Die unbekannte systematische Abweichung ist nicht ermittelbar.
+
+Temperatureinfluss auf Messung kann als bekannt betrachtet werden,
+wenn Temperature bei Messung aufgenommen werden.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=5cm]{Bilder/RPMT.B0601.png}
+\end{figure}
+
+Einfluss Leitungswiderstand auf Messung: $A_{s,b}=2\cdot U_{RL}$ 
+
+\end{frame}
+
+\begin{frame}{Ermittlung bekannter systematischen Abweichung}
+
+Theoretische Betrachtung: Unter Analyse der bekannten Bedingungen
+der Messung kann die Wirkung auf Messabweichungen berechnet werden.\medskip{}
+
+Referenzmessung: Massverkörperung bzw. -einrichtung mit wesentlich
+kleineren Messabweichung zum Vergleich ziehen. Typischerweise mit
+mindestens 10mal höheren Genauigkeit.
+
+\medskip{}
+
+Im Beispiel Spannungsmessung wird das Messergebnis korrigiert:
+
+$U_{R_{x}}=U-2U_{R_{L}}$
+
+\end{frame}
+
+\begin{frame}{Beispiel Korrektion }
+
+
+Messkabel mit folgenden Eigenschaften:
+
+Länge $l=\unit[2]{m}$
+
+Kabelquerschnitt $A=\unit[0,5]{mm^{2}}$
+
+Leitermaterial: Kupfer mit spezifischem Widerstand $\varsigma=\unit[0,0175]{\frac{\Omega\cdot mm^{2}}{m}}$
+
+Messstrom $I=\mbox{const.}=\unit[100]{mA}$\medskip{}
+
+Berechnung des Widerstandes eines Laborkabels:
+
+\[
+R_{L}=\varsigma\cdot\frac{l}{A}=\unit[0,0175]{\frac{\Omega\cdot mm^{2}}{m}}\frac{\unit[2]{m}}{\unit[0,5]{mm^{2}}}=\unit[0,07]{\Omega=\unit[70]{m\Omega}}
+\]
+
+\[
+A_{s,b}=2U_{R_{L}}=2\cdot I\cdot R_{L}=2\cdot\unit[0,1]{A}\cdot\unit[0,07]{\Omega}
+\]
+
+\[
+=\unit[0,014]{V=\unit[14]{mV}}
+\]
+
+\end{frame}
+
+\begin{frame}{Systematische Abweichung indirekter Messung}
+
+\emph{Indirekte Messung}: In der Messtechnik wird oft die interessierende
+Messgröße in eine der Messung zugängliche Messgröße umgewandelt. Die
+Umwandlung folgt einem definierten funktionellen Zusammenhang.
+
+Fragestellung: Abweichung $\Delta y$ der indirekt zu messenden Größe
+$y$ bei bekannten Abwqeichungen der direkt zugänglichen Messgrößen
+$x_{i}$
+
+\[
+y=f(x_{1},x_{2},\dots,x_{n})\quad\mbox{mit Laufindex }i
+\]
+
+\[
+dy=\frac{\partial y}{\partial x_{1}}\cdot dx_{1}+\frac{\partial y}{\partial x_{2}}\cdot dx_{2}+\dots+\frac{\partial y}{\partial x_{n}}\cdot dx_{n}
+\]
+
+\end{frame}
+
+\begin{frame}{Totales Differential indirekter Messung}
+
+Messtechnisch gültige Annahme: $\Delta x_{i}\ll x_{i}$ , das totale
+Differetial ist eine ausreichend gute Näherung für die Gesamtabweichung:
+
+\[
+\Delta y=\frac{\partial y}{\partial x_{1}}\cdot\Delta x_{1}+\frac{\partial y}{\partial x_{2}}\cdot\Delta x_{2}+\dots+\frac{\partial y}{\partial x_{n}}\cdot\Delta x_{n}=\sum_{i=1}^{n}\frac{\partial y}{\partial x_{i}}\cdot\Delta x_{i}
+\]
+
+Der Fehler $\Delta x_{i}$ wird mit dem Gewichtsfaktor $\frac{\partial y}{\partial x_{i}}$
+fortgepflanzt.
+
+Relative Abweichungen: 
+
+\[
+\frac{\Delta y}{y}=\frac{1}{y}\sum_{i=1}^{n}\frac{\partial y}{\partial x_{i}}\cdot\Delta x_{i}
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: Widerstandsmessung mittels Spannung und Strom}
+
+Widerstand wird über Ohmsches Gesetz mittel Spannung und Strom indirekt
+gemessen.
+
+\[
+R=f(U,I)=\frac{U}{I}
+\]
+
+\[
+\Delta R=\sum_{i=1}^{2}\frac{\partial R}{\partial x_{i}}\cdot\Delta x_{i}
+	=\frac{\partial R}{\partial U}\cdot\Delta U+\frac{\partial R}{\partial I}\cdot\Delta I
+\]
+\[
+=\frac{1}{I}\cdot\Delta U-\frac{U}{I^{2}}\cdot\Delta I
+\]
+ 
+\[
+\frac{\Delta R}{R}=\frac{I}{U}\cdot(\frac{1}{I}\cdot\Delta U-\frac{U}{I^{2}}\cdot\Delta I)=\frac{\Delta U}{U}-\frac{\Delta I}{I}
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: Leistungmessung mittels Spannung und Strom}
+\scriptsize
+\begin{figure}
+	\begin{columns}
+
+		\column{0.5\textwidth}
+
+			{\scriptsize{}Eine stromrichtige Messschaltung mit}{\scriptsize \par}
+
+			{\scriptsize{}Strommesser: Innenwiderstand $R_{iA}=\unit[0,5]{\Omega}$}{\scriptsize \par}
+
+			{\scriptsize{}Spannungsmesser: Innenwiderstand $R_{iV}=\unit[150]{\Omega}$}{\scriptsize \par}
+
+			{\scriptsize{}Messwerte: $U=\unit[1,25]{V},\;I=\unit[0,2]{A}$}{\scriptsize \par}
+
+		\column{0.4\textwidth}
+
+		\includegraphics[width=3.5cm]{Bilder/RPMT.B0602}
+	\end{columns}
+
+\end{figure}
+
+\begin{spacing}{0}
+{\scriptsize{}Berechnung Leistung: $P=f(U,I)=U\cdot I=\unit[1,25]{V}\cdot\unit[0,2]{A}=\unit[0,25]{W}$}{\scriptsize \par}
+
+{\scriptsize{}Berechnung Abweichung:}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+\Delta P=\frac{\partial P}{\partial U}\cdot\Delta U+\frac{\partial P}{\partial I}\cdot\Delta I
+	=I\cdot\Delta U+U\cdot\Delta I
+\]
+\medskip{}
+}{\scriptsize \par}
+
+{\scriptsize{}Für stromrichtige Messung ist: $\Delta I=0$: }{\scriptsize \par}
+
+{\scriptsize{}
+\[
+\Delta P=I\cdot\Delta U=I\cdot U_{A}=I\cdot(I\cdot R_{iA})=I^{2}\cdot R_{iA}
+\]
+\medskip{}
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+\Delta P=(\unit[0,2]{A})^{2}\cdot\unit[0,5]{\Omega}=\unit[0,02]{W}=\unit[20]{mW}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}Korrektion:}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+P_{K}=P-\Delta P=\unit[0,25]{W}-\unit[0,02]{W}=\unit[0,23]{W}
+\]
+\medskip{}
+}{\scriptsize \par}
+
+{\scriptsize{}Abweichung bzw Korrektion um 10\%.}{\scriptsize \par}
+\end{spacing}
+\end{frame}
+
+\begin{frame}{Unbekannte systematische Abweichungen}
+
+Unbekannte systematische Abweichungen verhalten sich der bekannten
+systematischen Abweichungen ähnlich. Sie sind reproduzierbar. Eine
+Berechnung und damit Korrektion ist nicht möglich.\medskip{}
+
+In der Praxis ist oft die Unterscheidung zwischen unbekannten systematischen
+Abweichungen und zufälligen Abweichungen nicht möglich. Sie kann wie
+zufällige Abweichungen behandelt werden, und bewirken unter Umständen
+eine einseitige Verschiebung des gemessenen Mittelwertes und verändern
+die Sicherheit der Aussage.
+
+\end{frame}
+
+\begin{frame}{Zufällige Abweichungen}
+\small
+Einflüsse von zufälligen Abweichungen können nur durch Messungen unter
+weitgehend identischen Bedingungen erkannt werden.\medskip{}
+
+Messreihe, Ergebnisse der wiederholten Messungen, ist mit statistischen
+Methoden zur Bewertung auf zufällige Abweichungen zu analysieren.\medskip{}
+
+Statistische Auswertung der Messreihe erlaubt Aussagen zum Bereich
+und zur Sicherheit bzw. Wahrscheinlichkeit über den wahren Wert bzw.
+Erwartungswert der Messgröße.
+
+\medskip{}
+
+Zwei Aussagen aus statisitischen Berechnung:
+
+\emph{Bezogen auf einzelene Messwerte}: Angabe eines Bereiches um
+den arithmetischen Mittelwert, mit oberen und unteren Grenze, in dem
+einzelne Messwerte mit vorgegebenen Wahrscheinlichkeit (Sicherheit)
+liegen.\medskip{}
+
+\emph{Bezogen auf Mittelwert}: Angabe eines Bereiches, mit oberen
+und unteren Grenze, in dem der \emph{Erwartungswert} der Messung
+mit vorgegebener Wahrscheinlichkeit (Sicherheit) liegt.
+
+\end{frame}
+
+\begin{frame}{Aufnahme und Analyse einer Messreihe}
+\small
+\begin{center}
+\scriptsize%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Messwert $j$ & $l$ in m & Messwert $j$ & $l$ in m & Messwert $j$ & $l$ in m\tabularnewline
+\hline 
+\hline 
+1 & 1,018 & 6 & 0,993 & 11 & 0,995\tabularnewline
+\hline 
+2 & 1,032 & 7 & 0,986 & 12 & 1,011\tabularnewline
+\hline 
+3 & 0,981 & 8 & 1,005 & 13 & 0,991\tabularnewline
+\hline 
+4 & 0,994 & 9 & 1,003 & 14 & 0,998\tabularnewline
+\hline 
+5 & 0,966 & 10 & 0,982 & 15 & 1,012\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}\par
+
+Der Bereich zwischen kleinstem und größtem Wert wird in Intervallen
+gleicher Breite, Klassen genannt, eingeteilt. Die Werte werden in
+Klassen einsortiert.
+
+Aus $m=15$ Messwerte:
+
+\[
+\Delta x_{max}=x_{max}-x_{min}=\unit[1,032]{m}-\unit[0,966]{m}=\unit[0,066]{m}
+\]
+
+Richtwert für Anzahl der Klassen: $p\approx\sqrt{m}=\sqrt{15}\approx4$
+
+\[
+\Delta x=\Delta x_{max}:5=\unit[0,066]{m}:5=\unit[0,0132]{m}
+\]
+
+\end{frame}
+
+\begin{frame}{Messwertverteilung und Häufigkeit}
+\small
+\begin{flushright}
+\includegraphics[width=5cm]{Bilder/RPMT.B0603}\includegraphics[width=6cm]{Bilder/RPMT.B0604}
+\par\end{flushright}
+
+Absolute Häufigkeit für eine Klasse:
+
+{\footnotesize{}
+\[
+H_{k}=\frac{m_{k}}{\Delta x}
+\]
+}{\footnotesize \par}
+
+mit $m_{k}$ die Zahl der Ereignisse in der Klasse $k$, und $\Delta x$
+die Klassenbreite
+
+Relative Häufigkeit:
+
+{\footnotesize{}
+\[
+h_{k}=\frac{\frac{m_{k}}{\Delta x}}{m}
+\]
+}{\footnotesize \par}
+
+\emph{Histogramm}: Aneinanderreihung der absoluten Häufigkeit (y-Achse).
+
+\end{frame}
+
+\begin{frame}{Wahrscheinlichkeit}
+
+Wahrscheinlichkeit
+
+\[
+P_{k}=\frac{m_{k}}{m}
+\]
+
+mit Normierung 
+\[
+P=\sum_{k=1}^{p}P_{k}=1
+\]
+
+d.h. alle Messwerte der Messreihe fallen in $\Delta x_{max}=p\cdot\Delta x$.
+
+\end{frame}
+
+\begin{frame}{Wahrscheinlichkeit - Kontinuierlich}
+\small
+Überführug in kontinuierliche Funktion im Grenzfall unendlich vielen
+Messwerte
+
+\[
+h(x)=\lim_{\Delta x\rightarrow0,m\rightarrow\infty}\frac{m_{k}}{m\cdot\Delta x}=\lim_{m\rightarrow\infty}\frac{1}{m}\cdot\frac{dm_{k}}{dx}
+\]
+
+Verteilungsdichtefunktion:
+
+\[
+P(x_{1},x_{2})=\int_{x_{1}}^{x_{2}}h(x)dx
+\]
+
+\begin{figure}
+	\begin{columns}
+
+		\column{0.5\textwidth}
+
+			\includegraphics[width=4.5cm]{Bilder/RPMT.B0605}
+
+		\column{0.5\textwidth}
+
+			Normierung:
+
+			{\footnotesize{}
+			\[
+			P=\int_{-\infty}^{\infty}h(x)dx=1
+			\]
+			}{\footnotesize \par}\end{columns}
+
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Gaußsche Normalverteilung}
+\small
+Oft ist die zufällige unbekannte Komponente in Messwerten normalverteil.
+Immer dann wenn genügend viele und von einander unabhängige Einflussgröße
+wirksam sind.
+
+Gaußsche Dichtefunktion:
+
+\[
+h(x)=f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]
+\]
+
+Erwartungswert, auch Mittelwert:
+
+\[
+\mu=\lim_{m\rightarrow\infty}\frac{1}{m}\sum_{j=1}^{m}x_{j}
+\]
+
+Standardabweichung:
+
+\[
+\sigma=\sqrt{\lim_{m\rightarrow\infty}\frac{1}{m}\sum_{j=1}^{m}(x_{j}-\mu)^{2}}
+\]
+
+\end{frame}
+
+\begin{frame}{Gaußsche Normalverteilung}
+\begin{figure}
+	\centering
+		\includegraphics[width=7cm]{Bilder/Schruf.MT.B0110.jpg}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Normierte Gauß-Verteilung}
+
+Jede Normalverteilung kann in eine normierte Gauß-Verteilung transformiert
+werden mit
+
+\[
+t=\frac{x-\mu}{\sigma}
+\]
+
+Verschiebung des Ursprungs auf $\mu$ und Skalierung mit $\sigma$
+\begin{columns}
+
+	\column{0.5\textwidth}
+
+		\[
+		\Phi(x)=\frac{1}{\sqrt{2\pi}}\exp(-\frac{t^{2}}{2})
+		\]
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=3.5cm]{Bilder/RPMT.B0607}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Typische Wahrscheinlichkeiten für Einhaltung der Messaussage}
+
+
+\begin{tabular}{|>{\raggedright}p{1.8cm}|>{\raggedright}p{0.8cm}|>{\raggedright}p{1.2cm}|>{\raggedright}p{2.5cm}|>{\raggedright}p{2.5cm}|}
+\hline 
+{\tiny{}Intervallgrenzen (symmetrisch)} & {\tiny{}$t=\frac{x-\mu}{\sigma}$} & {\tiny{}$P(x)=\Phi(t)$} & {\tiny{}Bezeichnung in betrieblicher Messpraxis} & {\tiny{}Wahrscheinlichkeit: Messwert innerhalb des Intervalls}\tabularnewline
+\hline 
+{\tiny{}$\mu\pm1\cdot\sigma$} & {\tiny{}1,00} & {\tiny{}0,6827} & {\tiny{}Orientierende Messung} & {\tiny{}68,27\%}\tabularnewline
+\hline 
+{\tiny{}$\mu\pm1,96\cdot\sigma$} & {\tiny{}1,96} & {\tiny{}0,9500} & \multirow{2}{2.5cm}{{\tiny{}Betriebsmessung}} & {\tiny{}95,00\%}\tabularnewline
+\cline{1-3} \cline{5-5} 
+{\tiny{}$\mu\pm2\cdot\sigma$} & {\tiny{}2,00} & {\tiny{}0,9545} &  & {\tiny{}95,45\%}\tabularnewline
+\hline 
+{\tiny{}$\mu\pm2,58\cdot\sigma$} & {\tiny{}2,58} & {\tiny{}0,9900} & \multirow{3}{2.5cm}{{\tiny{}Präzisionsmessung}} & {\tiny{}99,00\%}\tabularnewline
+\cline{1-3} \cline{5-5} 
+{\tiny{}$\mu\pm3\cdot\sigma$} & {\tiny{}3,00} & {\tiny{}0,9973} &  & {\tiny{}99,73\%}\tabularnewline
+\cline{1-3} \cline{5-5} 
+{\tiny{}$\mu\pm4\cdot\sigma$} & {\tiny{}4,00} & {\tiny{}0,9999} &  & {\tiny{}99,99\%}\tabularnewline
+\hline 
+{\tiny{}$\mu\pm5\cdot\sigma$} & {\tiny{}5,00} & {\tiny{}0,99999943} &  & {\tiny{}99,999943\%}\tabularnewline
+\hline
+{\tiny{}$\mu\pm6\cdot\sigma$} & {\tiny{}6,00} & {\tiny{}0,999999996} &  & {\tiny{}99,9999996\%}\tabularnewline
+\hline
+
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Messsystem einer Abfüllanlage}
+
+Die Anlage befüllt Flaschen mit 0,7l Saftgetränke. Aus Kalibrieung
+bekannt, Messwerte sind normalverteilt mit Erwartungswert $\mu=\unit[0,7]{l}$
+und Standardabweichung $\sigma=\unit[5]{ml}$.
+
+Wahrscheinlichkeit für befüllte Falscheninhalte zwischen 0,69l und
+0,71l ?
+\begin{columns}
+
+	\column{0.6\textwidth}
+
+		{\footnotesize{}
+		\[
+		\mbox{Transformation: }t=\frac{x-\mu}{\sigma}
+		\]
+		}{\footnotesize \par}
+
+		{\footnotesize{}
+		\[
+		\mbox{Untergrenze: }t_{1}=\frac{0,69-0,7}{0,005}=-2
+		\]
+		}{\footnotesize \par}
+
+		{\footnotesize{}
+		\[
+		\mbox{Obergrenze: }t_{2}=\frac{0,71-0,7}{0,005}=2
+		\]
+		}{\footnotesize \par}
+
+		{\footnotesize{}
+		\[
+		P(x)=\Phi(t)=\Phi(2)=0,9545
+		\]
+		}{\footnotesize \par}
+
+	\column{0.4\textwidth}
+
+		\includegraphics[width=4cm]{Bilder/RPMT.B0608}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Auswertung endlicher Messreihen}
+
+Für viele Messaufgaben kann eine Normalverteilung der Messwerte angenommen
+werden.
+
+Erwartungswert $\mu\Rightarrow$ arithmetischer Mittelwert $\bar{x}$
+(bester Schätzwert): 
+\[
+\bar{x}=\mu=\frac{1}{m}\sum_{j=1}^{m}x_{j}
+\]
+
+Standardabweichung $\sigma\Rightarrow$ empirische Standardabweichung
+$s$ (Einzelwerte): 
+\[
+s=s(x)=\sqrt{\frac{1}{m-1}\sum_{j=1}^{m}(x_{j}-\bar{x})^{2}}
+\]
+
+$s$ kann als Schätzwert der Standardabweichung $\sigma$ betrachtet
+werden. 
+
+\[
+\sum_{j=1}^{m}(x_{j}-\bar{x})=0;\;\sum_{j=1}^{m}(x_{j}-\bar{x})^{2}=\mbox{Minimum}
+\]
+
+\end{frame}
+
+\begin{frame}{Auswertung endlicher Messreihen}
+
+\emph{Varianz vom Mittelwert/Schätzwert} $\bar{x}$
+
+\[
+s_{\bar{x}}^{2}=s^{2}(\bar{x})=\frac{s^{2}}{m}
+\]
+
+Streuung des Mittelwertes einer Messreihe ist um den Faktor $1/\sqrt{m}$
+kleiner gegenüber Streuung der Einzelwerte. Ein Maß für die Qualität
+von Mittelwert $\bar{x}$ einer Messreihe zu deren Erwartungswert
+$\mu$.
+
+\emph{Standardunsicherheit}: 
+\[
+u(x)=s_{\bar{x}}
+\]
+
+\emph{Relative Standardunsicherheit:} 
+\[
+u(x)_{rel}=\frac{u(x)}{|M|}=\frac{u(x)}{|\bar{x}|}
+\]
+
+\end{frame}
+
+\begin{frame}{Standardabweichung: Einzelwerte und Mittelwerte}
+
+Beispiel
+
+\begin{center}
+\includegraphics[width=8cm]{Bilder/Schruf.MT.B0111}
+\par\end{center}
+
+{\scriptsize{}a) Stichprobe mit m=200; $\bar{x}=99,99,\,s(x)=2,08$}{\scriptsize \par}
+
+{\scriptsize{}b) Stichprobe mit m=49; }\foreignlanguage{english}{\textrm{\scriptsize{}$\bar{x}=99,48,\,s(x)=2,06$}}{\scriptsize \par}
+
+{\scriptsize{}c) Verteilung der N Stichprobenmittelwerte mit m=49:
+$\bar{\bar{x}}=99,98,\,s(\bar{x})=s(x)/\sqrt{m}=0,3$}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Vertrauensniveau bei kleiner Anzahl}
+
+{\tiny{}Bei kleiner Anzahl kann die Verteilung vom Normalverteilung
+stark abweichen.}{\tiny \par}
+
+{\tiny{}Vertrauensbereich $v$ für Mittelwert $\bar{x}$ zum geforderten
+Vertrauensniveau über $t$-Verteilung bzw. Student-Verteilung angegeben
+werden.}{\tiny \par}
+
+{\tiny{}Diskrete $t$-Verteilung bzw. Student-Verteilung}{\tiny \par}
+
+\begin{singlespace}
+{\tiny{}}%
+\begin{tabular}{|>{\centering}p{2cm}|>{\centering}p{2.5cm}|>{\centering}p{2.5cm}|>{\centering}p{2.5cm}|}
+\hline 
+{\tiny{}Anzahl Messwerte $m$} & {\tiny{}Vertrauensniveau $P=(1-\alpha)=68,3\%$ ($1s$-Grenzen)} & {\tiny{}Vertrauensniveau $P=(1-\alpha)=95\%$ ($2s$-Grenzen)} & {\tiny{}Vertrauensniveau $P=(1-\alpha)=99,7\%$ ($3s$-Grenzen)}\tabularnewline
+\hline 
+{\tiny{}3} & {\tiny{}1,32} & {\tiny{}4,30} & {\tiny{}19,21}\tabularnewline
+\hline 
+{\tiny{}5} & {\tiny{}1,15} & {\tiny{}2,78} & {\tiny{}6,62}\tabularnewline
+\hline 
+{\tiny{}6} & {\tiny{}1,11} & {\tiny{}2,57} & {\tiny{}5,51}\tabularnewline
+\hline 
+{\tiny{}8} & {\tiny{}1,08} & {\tiny{}2,36} & {\tiny{}4,53}\tabularnewline
+\hline 
+{\tiny{}10} & {\tiny{}1,06} & {\tiny{}2,26} & {\tiny{}4,09}\tabularnewline
+\hline 
+{\tiny{}15} & {\tiny{}1,04} & {\tiny{}2,15} & {\tiny{}3,67}\tabularnewline
+\hline 
+{\tiny{}20} & {\tiny{}1,03} & {\tiny{}2,09} & {\tiny{}3,45}\tabularnewline
+\hline 
+{\tiny{}30} & {\tiny{}1,02} & {\tiny{}2,05} & {\tiny{}3,28}\tabularnewline
+\hline 
+{\tiny{}50} & {\tiny{}1,01} & {\tiny{}2,01} & {\tiny{}3,16}\tabularnewline
+\hline 
+{\tiny{}100} & {\tiny{}1,00} & {\tiny{}1,98} & {\tiny{}3,08}\tabularnewline
+\hline 
+{\tiny{}200} & {\tiny{}1,00} & {\tiny{}1,97} & {\tiny{}3,04}\tabularnewline
+\hline 
+{\tiny{}$\gg200$} & {\tiny{}1,00} & {\tiny{}1,96} & {\tiny{}3,00}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+\end{singlespace}
+
+\end{frame}
+
+\begin{frame}{Berechnung Vertrauensbereich}
+
+Der Vertrauensbereich wird um Faktor $t$ breiter.
+
+Vertrauensbereich
+
+\[
+v=\pm\frac{t}{\sqrt{m}}\cdot s=u_{V}
+\]
+
+Obere Grenze des Vertrauensbereichs:
+
+\[
+v_{o}=\bar{x}+v=\bar{x}+\frac{t}{\sqrt{m}}\cdot s
+\]
+
+Untere Grenze des Vertrauensbereichs:
+
+\[
+v_{u}=\bar{x}-v=\bar{x}-\frac{t}{\sqrt{m}}\cdot s
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel Messreihenauswertung}
+\tiny
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Messwert $j$ & $l$ in m & Messwert $j$ & $l$ in m & Messwert $j$ & $l$ in m\tabularnewline
+\hline 
+\hline 
+1 & 1,018 & 6 & 0,993 & 11 & 0,995\tabularnewline
+\hline 
+2 & 1,032 & 7 & 0,986 & 12 & 1,011\tabularnewline
+\hline 
+3 & 0,981 & 8 & 1,005 & 13 & 0,991\tabularnewline
+\hline 
+4 & 0,994 & 9 & 1,003 & 14 & 0,998\tabularnewline
+\hline 
+5 & 0,966 & 10 & 0,982 & 15 & 1,012\tabularnewline
+\hline 
+\end{tabular}
+
+\scriptsize
+Mittelwert:
+
+\[
+\bar{x}=\frac{1}{m}\sum_{j=1}^{15}x_{j}=\frac{\unit[14,967]{m}}{15}=\unit[0,9978]{m}
+\]
+
+Empirischer Standardabweichung:
+
+\[
+s=s(x_{j})=\sqrt{\frac{1}{m-1}\sum_{j=1}^{m}(x_{j}-\bar{x})^{2}}=\sqrt{\frac{\unit[380,640\cdot10^{-5}]{m^{2}}}{14}}=\unit[16,49\cdot10^{-3}]{m}
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel Messreihenauswertung}
+
+Standardunsicherheit des Mittelwertes $\bar{x}$:
+
+\[
+u(x)=s_{\bar{x}}=\frac{s}{\sqrt{m}}=\frac{\unit[16,49\cdot10^{-3}]{m}}{\sqrt{15}}=\unit[4,26\cdot10^{-3}]{m}
+\]
+
+Relative Standardunsicherheit des Mittelwertes $\bar{x}$:
+
+\[
+u(x)_{rel}=\frac{u(x)}{|\bar{x}|}=\frac{\unit[4,26\cdot10^{-3}]{m}}{\unit[0,9978]{m}}=0,004267\approx0,43\%
+\]
+\end{frame}
+
+\begin{frame}{Tabellarische Berechnung mittels Excel}
+
+\begin{center}
+\includegraphics[height=7cm]{Bilder/RPMT.T06.S82}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Interpretation der Auswertung}
+
+1. Standardabweichung
+
+Mit einer Wahrscheinlichkeit von $P=68,3\%$ liegen die Einzelwerte
+der Messreihe im Intervall $\unit[0,9978]{m}\pm\unit[16,49\cdot10^{-3}]{m}$
+
+2. Standardunsicherheit:
+
+Der wahre Wert der Messgröße darf im Intervall $\unit[0,9978]{m}\pm\unit[4,26\cdot10^{-3}]{m}$
+vermutet werden, sofern alle systematische Abweichungen korrigiert
+wurden. 
+
+Bei einer geforderten statitischen Sicherheit von 68\%:
+
+$m=15$, $1s$-Grenzen, $t=1,04\approx1$
+
+\[
+\mbox{Vertrauensbereich:}\quad v=\pm\frac{t}{\sqrt{m}}\cdot s=\pm\unit[\frac{1,04}{\sqrt{15}}\cdot16,5\cdot10^{-3}]{m}=\pm\unit[4,4\cdot10^{3}]{m}
+\]
+
+\[
+\mbox{Obere und untere Grenze:}\;v_{o/u}=\unit[0,9978]{m}\pm\unit[4,4\cdot10^{-3}]{m}
+\]
+
+\end{frame}
+
+\begin{frame}{Unsicherheiten indirekter Messungen}
+
+Für den Fall, dass einzelne Messgrößen \emph{nicht korreliert} sind
+gilt für die kombinierte Standardunsicherheit:
+
+\[
+u(y)=\sqrt{\sum_{i=1}^{n}\left(\frac{\partial y}{\partial x_{i}}\cdot u(x_{i})\right)^{2}}
+\]
+
+\[
+u(y)_{rel}=\frac{u(y)}{|y|}=\frac{1}{|y|}\sqrt{\sum_{i=1}^{n}\left(\frac{\partial y}{\partial x_{i}}\cdot u(x_{i})\right)^{2}}
+\]
+\medskip{}
+
+Bei korrelierten Messgrößen muss der Korrelationskoeffizient geeignet
+berücksichtigt werden.
+
+\end{frame}
+
+\begin{frame}{Beispiel Bewertung Leistungsmessung mittels Spannung und Widerstand}
+
+Gemessener Widerstand $R=\unit[301,4]{\Omega}$ mit Unsicherheit $u(R)=\unit[0,4]{\Omega}$
+
+Gemessene Spannung $U=\unit[230,1]{V}$mit Unsicherheit $u(U)=\unit[0,1]{V}$
+
+Unsicherheit der Leistungsbestimmung?
+
+{\footnotesize{}
+\[
+y=f(x_{1},x_{2})=P=\frac{U^{2}}{R}=\frac{(\unit[230,1]{V)^{2}}}{\unit[301,4]{\Omega}}=\unit[175,67]{W}
+\]
+}{\footnotesize \par}
+
+Unsicherheit der Leistung:
+
+{\footnotesize{}
+\[
+u(P)=\sqrt{\sum_{i=1}^{n}(\frac{\partial P}{\partial x_{i}}\cdot u(x_{i}))^{2}}=\sqrt{(\frac{\partial P}{\partial U}\cdot u(U))^{2}+(\frac{\partial P}{\partial R}\cdot u(U))^{2}}
+\]
+ }{\footnotesize \par}
+
+{\footnotesize{}
+\[
+=\sqrt{(\frac{2U}{R}\cdot u(U))^{2}+(-\frac{U^{2}}{R^{2}}\cdot u(R))^{2}}=\sqrt{(\frac{2\cdot\unit[230,1]{V}}{\unit[301,4]{\Omega}}\cdot\unit[0,1]{V})^{2}+(\frac{(\unit[230,1]{V)^{2}}}{\unit[(301,4]{\Omega)^{2}}}\cdot\unit[0,4]{\Omega})^{2}}
+\]
+}{\footnotesize \par}
+
+{\footnotesize{}
+\[
+=\sqrt{\unit[0,0233]{W^{2}+\unit[0,0544]{W^{2}}}}=\unit[0,279]{W}
+\]
+}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Beispiel: Bewertung Leistungsmessung}
+\small
+
+Relative Unsicherheit der Leistung:
+
+\[
+u(P)_{rel}=\frac{u(P)}{|y|}=\frac{u(P)}{|P|}=\frac{\unit[0,279]{W}}{\unit[175,67]{W}}=0,0016=0,16\%
+\]
+
+Es sollte in Angaben der Ergebnisse \emph{nicht mehr Stellen} angegeben
+werden als in den gegebenen Werten vorhanden sind:
+
+Leistung: $P=\unit[175,7]{W}$, Unsicherheit: $u(P)=\unit[0,3]{W}$
+
+\end{frame}
+
+\begin{frame}{Bericht der Messergebnisses}
+In die Mitteilung des Messergebnisses sind alle relevanten Informationen
+einzubeziehen.\medskip{}
+
+Unterschiedliche Darstellungstypen\medskip{}
+
+\begin{tabular}{|c|c|}
+\hline 
+Direkte Messung $X=$ & Indirekte Messung $Y=$\tabularnewline
+\hline 
+$M\pm u(x)$ & $M\pm u(y)$\tabularnewline
+\hline 
+$M,$$u(x)$ & $M,$$u(y)$\tabularnewline
+\hline 
+$M,$$u(x)_{rel}$ & $M,$$u(y)_{rel}$\tabularnewline
+\hline 
+$M\,(u(x))$ & $M\,(u(y))$\tabularnewline
+\hline 
+$M\cdot(1\pm u_{rel}(x))$ & $M\cdot(1\pm u_{rel}(y))$\tabularnewline
+\hline 
+\end{tabular}
+
+Mit $M=x-\Delta x=x-A_{s,b}(x)$ bzw. $M=y-\Delta y=y-A_{s,b}(y)$
+berichtigtes Messergebnis
+
+$u(x);$ $u(y)$ - Standardunsicherheit von $x$ bzw. $y$
+
+$u(x)_{rel};\,u(y)_{rel}$ - relative Standardunsicherheit von $x$
+bzw. $y$
+
+\end{frame}
+
+\begin{frame}{Beispiel Bericht Messergebnis}
+
+Im Ergebnis der Messung eines Vergleichsgewichtes liegen folgende
+Resultate vor:
+
+unberichtigtes Messergebnis: $x=\unit[1,0003]{kg}$
+
+bekannte systematische Abweichung: $A_{s,b}=\unit[-1,1]{g}=\unit[-0,0011]{kg}$
+
+Standardunsicherheit: $u(x)=\unit[0,6]{g}=\unit[0,0006]{kg}$
+
+\medskip{}
+Vollständiger Bericht des Messergebnisses:
+
+Berichtigtes Messergebnis: $M=x-A_{s,b}=\unit[1,0003]{kg}-(\unit[-0,0011]{kg})=\unit[1,0014]{kg}$
+
+Bericht z.B. in der Form: $X=\unit[1,0014]{kg}\pm\unit[0,0006]{kg}$
+
+Relative Unsicherheit:
+
+\[
+u(x)_{rel}=\frac{u(x)}{|M|}=\frac{\unit[0,0006]{kg}}{\unit[1,0014]{kg}}=6\cdot10^{-4}
+\]
+
+Bericht in einer anderen Form: $X=\unit[1,0014]{kg},\:6\cdot10^{-4}$
+
+\end{frame}
+
+\begin{frame}{Messgeräteabweichungen}
+\small
+Teil der Messabweichungen haben ihre Ursachen in Messgeräte.
+
+Die Abweichungen von Messgeräten können auch in systematische und
+zufällige Abweichungen unterschieden werden.
+
+Bei Angaben von relativen Abweichungen ist zu beachten, dass die Bezugsgröße
+eine repräsentative messgerätetypische Werte annehmen.
+
+\[
+A_{M}=A_{Ms}+A_{Mr}
+\]
+
+mit: $A_{M}$ - Messgeräteabweichung
+
+$A_{Ms}$ - systematische Messgeräteabweichung
+
+$A_{Mr}$ - zufällige Messgeräteabweichung
+
+relative Abweichung:
+
+\[
+A_{Mrel}=\frac{A_{M}}{x}
+\]
+
+mit: $x$ - gewählter Bezugswert (meistens Endwert des Messbereichs)
+
+\end{frame}
+
+\begin{frame}{Fehlergrenze}
+
+\emph{Fehlergrenze}: beschrieben durch obere Grenzabweichung $G_{o}$
+und untere Grenzabweichung $G_{u}$.
+
+
+\medskip{}
+
+
+
+Fehlergrenzen werden vom Messgeräte-Hersteller in eigener Verantwortung
+festgelegt und dokumentiert. Die Unsicherheit des Messgerätes unter
+festgelegten Betriebsbedingungen kann daraus unmittelbar abgeleitet
+werden. \medskip{}
+
+
+
+Fehlergrenzen können symmetrisch (Angabe $G$) oder unsymmetrisch
+(Angabe $G_{u}$ und $G_{o}$) sein.\\
+\medskip{}
+
+
+
+Ein Messgerät arbeitet korrekt, wenn die Abweichungen durch das Messgeräte
+innerhalb der angegebenen Grenzabweichung sind.
+
+\end{frame}
+
+\begin{frame}{Genauigkeitsklasse}
+
+Einteilung von Messgeräten in Genauigkeitsklassen ist eine einfache,
+anschauliche Methode zur Unterscheidung.\medskip{}
+
+Bezogen auf den Endwert des gewählten Messbereichs in Prozent.\\
+\medskip{}
+
+95\% statistische Sicherheit für Einhaltung der Klassengrenze gilt
+als vereinbart.\\
+\medskip{}
+
+\begin{tabular}{|>{\raggedright}p{4cm}|>{\centering}p{6cm}|}
+\hline 
+Messgerätekategorie & Genauigkeitsklassen\tabularnewline
+\hline 
+Präzisionsmessgeräte & 0,001; 0,002; 0,005; 0,01; 0,05\tabularnewline
+\hline 
+Feinmessgeräte & 0,1; 0,2; 0,5\tabularnewline
+\hline 
+Betriebsmessgeräte & 1; 1,5; 2,5; 5\tabularnewline
+\hline 
+\end{tabular}\medskip{}
+
+Messgeräte mit gesamter Abweichung $A_{Mrel}<0,001\%$ gehört zur
+Klasse 0,001. Wird $A_{Mrel}=0,0011\%$ festgestellt, ist das Messgeräte
+in die Klasse 0,002 einzuordnen.
+
+\end{frame}
+
+\begin{frame}{Abweichung von Messgeräten bei indirekten Messungen}
+
+Maximale Gesamtabweichung:
+
+\[
+A_{Mgm}=\sum_{i=1}^{n}\left|\frac{\partial y}{\partial x_{i}}A_{Mi}\right|
+\]
+
+mit:
+
+$A_{Mgm}$ - maximale Gesamtabweichung vom Messgerät
+
+$A_{Mi}$ - Abweichung verursacht vom Messgerät für die Messung von
+$x_{i}$
+
+$\frac{\partial y}{\partial x_{i}}$ - Gewichtsfaktor für die Messgröße
+$x_{i}$ im Messergebnis.\medskip{}
+
+Alle mögliche Fehlerwirkungen werden zusammen addiert.
+
+\end{frame}
+
+\begin{frame}{Mittlere Gesamtabweichung}
+
+Mittlere bzw. wahrscheinliche Gesamtabweichung:
+
+\[
+A_{Mgw}=\sqrt{\sum_{i=1}^{n}\left(\frac{\partial y}{\partial x_{i}}A_{Mi}\right)^{2}}
+\]
+
+Wesentlich realistischere Annahme. 
+
+\medskip{}
+Messergebnisse können jedoch außerhalb der Grenzen der wahrscheinlichen
+Abweichung liegen.
+
+\medskip{}
+
+Für Fehlergrenzen gilt die gleiche Überlegung.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Leistungsmessung mittels Spannung und Strom}
+
+{\footnotesize{}Zu den Messgeräten sind Fehlergrenzen bekannt:}{\footnotesize \par}
+
+{\footnotesize{}Strommesser: Fehlergrenze G(in \%)=2,5\%, Messbereichsendwert
+$M_{EA}=\unit[0,3]{A}$}{\footnotesize \par}
+
+{\footnotesize{}Spannungsmesser: Fehlergrenze G(in \%)=1,5\%, Messbereichsendwert
+$M_{EV}=\unit[1,5]{V}$}{\footnotesize \par}
+
+{\footnotesize{}Mittlere Fehlergrenze für Leistungsmessung?}{\footnotesize \par}
+
+{\scriptsize{}
+\[
+P=f(U,I)=U\cdot I
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+G_{ges}=\sqrt{\sum_{i=1}^{n}(\frac{\partial y}{\partial x_{i}}G_{i})^{2}}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+=\sqrt{(\frac{\partial P}{\partial U}\cdot G_{V})^{2}+(\frac{\partial P}{\partial I}\cdot G_{A})^{2}}=\sqrt{(I\cdot G_{V})^{2}+(U\cdot G_{A})^{2}}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+G_{V}=M_{EV}\cdot\frac{G(in\,\%)}{100\%}=\unit[1,5]{V\cdot0,015=\unit[0,0225]{V}}
+\]
+ 
+\[
+G_{A}=M_{EA}\cdot\frac{G(in\,\%)}{100\%}=\unit[0,3]{A\cdot0,025=\unit[0,0075]{A}}
+\]
+}{\scriptsize \par}
+
+{\scriptsize{}
+\[
+G_{P}=\sqrt{(0,3\cdot0,225)^{2}+(1,5\cdot0,0075)^{2}}\unit{W}=\unit[0,0131]{W}=\unit[13,1]{mW}
+\]
+}{\scriptsize \par}
+
+
+\end{frame}
+
+\begin{frame}{Additive Fehler}
+
+
+Grundsätzliche Fehlertypen von Messeinrichtungen müssen bekannt sein,
+um ihre Auswirkungen auf resultierenden Messgeräteabweichungen einschätzen
+zu können.
+\begin{columns}
+
+	\column{0.48\textwidth}
+
+		Additiver Fehler / Offset:
+
+		Übertragungsfunktion der Messeinrichtung
+
+		{\footnotesize{}
+		\[
+		x_{a}=k\cdot x_{e}
+		\]
+		}{\footnotesize \par}
+
+		Additive Auswirkung eines Fehlers $\Delta x_{a}$
+
+		{\footnotesize{}
+		\[
+		x_{a}'=(k\cdot x_{a})+\Delta x_{a}
+		\]
+		}{\footnotesize \par}
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=6cm]{Bilder/RPMT.B0701}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Multiplikativer Fehler}
+
+\begin{columns}
+
+		\column{0.48\textwidth}
+
+			Übertragungsfunktion einer Messeinrichtung:
+
+			\[
+			x_{a}=k\cdot x_{e}
+			\]
+
+			Multiplikative Auswirkung eines Fehlers:
+
+			\[
+			x_{a}'=(k+\Delta k)\cdot x_{e}
+			\]
+
+		\column{0.5\textwidth}
+
+			\includegraphics[width=6cm]{Bilder/RPMT.B0702}
+
+\end{columns}
+
+
+\medskip{}
+Additiver und multiplikativer Fehler können in der Praxis gleichzeitig
+auftreten.
+
+\end{frame}
+
+\begin{frame}{Abweichung infolge Quantisierung}
+
+Quantisierung: Analoges Signal mit unendlichem Wertevorrat wird in
+digitales Signal mit diskretem Wertevorrat umgewandelt.
+
+Informationsgehalt geht verloren.
+\begin{columns}
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=5cm]{Bilder/RPMT.B0204}
+
+		{\footnotesize{}Absolute Abweichung $A$ infolge Quantisierung wird
+		auch Quantisierungsfehler $F_{Q}$ bezeichnet.}{\footnotesize \par}
+
+	\column{0.5\textwidth}
+
+		\includegraphics[width=5cm]{Bilder/RPMT.B0703}
+
+		{\footnotesize{}$A_{max}=\pm0,5\mbox{ LSB}=|1\,\mbox{LSB}|=1\,\mbox{LSB}$}{\footnotesize \par}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Relative Abweichung}
+
+Quantisierung wird meistens mit binärem Zahlensystem dargestellt.\medskip{}
+
+Mit $n$ Stellen können $2^{n}$ Werte dargestellt werden, von 0 bis
+$2^{n}-1$. LSB=1.
+
+\[
+A_{rel}=\frac{A_{max}}{2^{n}-1}=\frac{1}{2^{n}-1}
+\]
+
+In der meisten technischen Applikationen ist $n\ge8$ ($2^{8}=256)$,
+es gilt in guter Näherung vereinfacht:
+
+\[
+A_{rel}\approx\frac{1}{2^{n}}
+\]
+
+\end{frame}
+
+\begin{frame}{Beispiel: A-D-Wandler mit 10 Bit Auflösung}
+
+Ein A-D-Wandler hat eine Wortbreite von 10 Bit. Abweichung infolge
+Quantisierung?
+
+\[
+A_{rel}\approx\frac{1}{2^{n}}=\frac{1}{2^{10}}=\frac{1}{1024}=0,001
+\]
+
+Die relative Abweichung infolge der Quantisierung beträgt 0,1\%.
+
+\end{frame}
+
+\begin{frame}{Beispiel: A-D-Wandler mit Quantisierungsfehler $<$0,02\% }
+
+Wie groß muss die Auflösung des A-D-Wandlers sein, damit die relative
+Abweichung infolge der Quantisierung kleiner als 0,02\% bleibt?
+
+{\small{}
+\[
+A_{rel}=0,02\%=0,0002
+\]
+}{\small \par}
+
+{\small{}
+\[
+A_{rel}\approx\frac{1}{2^{n}}<0,0002
+\]
+}{\small \par}
+
+{\small{}
+\[
+2^{n}>\frac{1}{0,0002}=5000
+\]
+}{\small \par}
+
+{\small{}
+\[
+\lg2^{n}=n\cdot\lg2>\lg(5\cdot10^{3})=\lg5+3=3,699
+\]
+}{\small \par}
+
+{\small{}
+\[
+n>\frac{3,699}{\lg2}=\frac{3,699}{0,301}=12,3
+\]
+}{\small \par}
+
+Der A-D-Wandler muss eine Auflösung von $\ge13$ haben.
+
+\end{frame}

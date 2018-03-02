@@ -1,0 +1,2669 @@
+% \mode
+% <all>
+\lecture{Kap 06 Messung nichtelektrischer physikalischer Größen}{K06}
+%\setcounter{framenumber}{0}
+\AtBeginLecture{\frame{\insertlecture}}
+
+
+\section{Kap 06 Messung nichtelektrischer physikalischer Größen}
+\begin{frame}{Übersicht}
+
+
+\textbf{Thema}: Messung nichtelektrischer physikalischer Größen,
+Sensorik
+
+
+\vphantom{}
+
+
+\textbf{Lernziel}: 
+\begin{itemize}
+\item Messkette 
+\item Verarbeitung und Ausgeben
+\item Sensoren
+\end{itemize}
+
+\textbf{Lesestoff:}
+
+
+RP: Kap 9
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Die Mehrzahl physikalischer Größen sind nichtelektrischer Natur.
+
+
+\medskip{}
+
+
+
+Zur Messung nichtelektrischer Größen werden meisten diese in elektrische
+Signale umgesetzt.\medskip{}
+
+
+
+In der modernen Messtechnik müssen diese für weitere Verarbeitung
+in digitale Form umgewandelt werden.
+
+\end{frame}
+
+\begin{frame}{Die Messkette}
+
+
+Messwerterfassungskette
+
+
+\begin{center}
+\includegraphics[width=8cm]{Bilder/RPMT\lyxdot B0901}
+\par\end{center}
+
+
+- Messsignalaufnahme mittels Sensoren
+
+
+- Multiplexen, Auswählen über Multiplexer (MUX)
+
+
+- Verstärken des Messsignals
+
+
+- Abtasten und Halten des Messsignals (Sample \& Hold)
+
+
+- Digitalisierung mittels Analog-Digital-Wandler (ADW)
+
+\end{frame}
+
+\begin{frame}{Messsignalaufnahme}
+
+
+Sensorik\medskip{}
+
+
+
+Nichtelektrische physikalische Größe beeinflusst elektrische Eigenschaften
+eines Sensors.\medskip{}
+
+
+
+Über den Zusammenhang beider Größen kann nichtelektrische Größe durch
+Messung von elektrischen Größen ermittelt werden.
+
+
+Der Zusammenhang soll möglichst eindeutig und stabil sein.\medskip{}
+
+
+
+Sensoren sollen nach Möglichkeiten nur ungestörtes Nutzsignal nach
+außen liefern. 
+
+\end{frame}
+
+\begin{frame}{EMV}
+
+
+Elektromagnetische Verträglichkeit (EMV) ist ein wichtiger Aspekt
+in Entwurf, Konstruktion und Betrieb elektronischen Geräte. Sie umfasst
+alle ungewollten oder gewollten Funktionsstörungen elektrischer oder
+elektronischer Betriebsmittel durch z. B. elektrische, magnetische
+oder elektromagnetische Felder und Vorgänge. 
+
+
+\emph{Leitungsgebundene Störungen}: Störquelle direkt über Versorgungs-
+und Signalleitung an Störsenke übertragen
+
+
+\emph{Feldgebundene Störung}: Kapazitive und induktive Beeinflussungen
+elektrischer bzw magnetischer Felder 
+
+
+Die Gesetzgeber schreiben in der EU, mit Directive \emph{2004/108/EC},
+den \textbf{Inverkehrbringern} von Elektrogeräten vor, entsprechende
+Schutzanforderungen einzuhalten, die durch Grenzwerte zur Störfestigkeit
+oder zur Störaussendung in einschlägigen Normen niedergelegt sind. 
+
+
+Die Geräte sind mit CE-Kennzeichnung mit Informationen zur EMV-Richtlinie
+zu versehen, die oft zusammen mit der Niederspannungsrichtlinie angewendet
+werden muss.
+
+\end{frame}
+
+\begin{frame}{Messung Ausstrahlung}
+
+
+\includegraphics[width=6cm]{Bilder/TUEV_SUED_Senton_EMV\lyxdot jpg\lyxdot 5912313}\includegraphics[width=6cm]{Bilder/emv}
+
+
+Filterung oft notwendig
+
+\end{frame}
+
+\begin{frame}{Schirmung}
+
+
+\emph{Schirmung}
+
+
+Maßnahme zur Dämpfung von elektromagnetischen Störsignalen\medskip{}
+
+
+
+Gegen elektrische Komponente im elektromagnetischen Feld:
+
+
+- Umhüllung mit elektrisch leitfähigen Materialien, wie Kupferblech
+oder -geflecht.\medskip{}
+
+
+
+Gegen magnetische Komponente im elektromagnetischen Feld:
+
+
+- hochpermeable ferromagnetische Materialien für niederfrequente Störung:
+Eisenbleche, Ferrite
+
+
+- para- bzw. diamagnetische Schirmung für hochfrequente Störfelder:
+Kupfer oder Aluminium
+
+\end{frame}
+
+\begin{frame}{Filterung}
+
+
+\emph{Filterung:}
+
+
+Maßnahme zur Unterdrückung von Störsignalen mit Frequenzen außerhalb
+des Nutzsignalbereiches.
+
+
+Vorrangig werden elektrische Filter 1. und 2. Ordnung verwendet.
+
+
+Für hohe Ansprüche werden auch Filter höherer Ordnung verwendet.
+
+
+Filter-Typen:
+
+
+- Hochpass-Filter: Unterdrückung von netzfrequenten Störspannungen,
+auch Netzbrummspannungen genannt
+
+
+- Tiefpass-Filter: Abblocken von Hochfrequenzstreuungen von Rundfunksendern
+oder Mobiltelefonen
+
+
+- Bandpass-Filter: Begrenzung der Nutzbandbreite zwecks Verbesserung
+des Signal-Rausch-Verhältnisses.
+
+
+
+
+\end{frame}
+
+\begin{frame}{Multiplexen}
+
+
+Bei Messaufgaben mit mehreren Messstellen ist es häufig die gemeinsame
+Nutzung der Messeinrichtung günstig.\medskip{}
+
+
+
+Multiplexer: zeitserielle Anbindung der Messstellen an die Messeinrichtung\medskip{}
+
+
+
+\includegraphics[angle=1,width=6cm]{Bilder/RP.Bild.Scan/RPMT\lyxdot B0902}\includegraphics[angle=1.5,width=6cm]{Bilder/RP.Bild.Scan/RPMT\lyxdot B0903}
+
+
+{\scriptsize{}Struktur eines 1-aus-8-Multiplexers\hspace{3cm}Struktur
+eines Matrix-Multiplexers}{\scriptsize \par}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Multiplexer}
+
+
+\begin{tabular}{|>{\raggedright}p{5cm}|>{\raggedright}p{5cm}|}
+\hline 
+{\footnotesize{}monolithischer Multiplexer} & {\footnotesize{}Relais-Multiplexer}\tabularnewline
+\hline 
+{\footnotesize{}keine mechanische Elemente} & {\footnotesize{}meist Reed-Relais (klimastabile Kontakte)}\tabularnewline
+\hline 
+{\footnotesize{}Signalübersprechen relativ groß (<30dB)} & {\footnotesize{}Signalübersprechen >100dB möglich}\tabularnewline
+\hline 
+{\footnotesize{}Durchlasswiderstand ($2\dots100\unit{\Omega}$)} & {\footnotesize{}Durchlasswiderstand $\ll1\unit{\Omega}$}\tabularnewline
+\hline 
+{\footnotesize{}Sperrwiderstand $>1\unit{M\Omega}$} & {\footnotesize{}Sperrwiderstand $\ge1\unit{G\Omega}$}\tabularnewline
+\hline 
+{\footnotesize{}zulässige Eingangsspannungsbereich kleiner als Betriebsspannung
+(V)} & {\footnotesize{}zulässiger Eingangsspannungsbereich durch konstruktiven
+Aufbau begrenzt (Durchschlagsspannung)}\tabularnewline
+\hline 
+{\footnotesize{}schnelle Kanalumschaltung $\le1\unit{\mu s}$} & {\footnotesize{}Kanalumschaltzeit $\ge5\unit{ms}$}\tabularnewline
+\hline 
+{\footnotesize{}geringer Platzbedarf} & {\footnotesize{}großer Platzbedarf}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Verstärken}
+
+
+Messsignale müssen häufig den Pegel am Eingangsbereich der nachfolgenden
+Baugruppe, z.B. ADW angepasst werden, i.e. verstärkt werden. 
+
+
+In der Messtechnik wird i.Allg. lineare Verstärkung gefordert.\medskip{}
+
+
+
+Rauscharme und leistungsfähige Operationsverstärker (OPV) stehen zur
+Verfügung.\medskip{}
+
+\begin{columns}
+
+
+\column{0.3\textwidth}
+
+
+{\footnotesize{}Grundschaltungen mit OPV: Invertierte und nichtinvertierte
+Schaltung}{\footnotesize \par}
+
+
+\column{0.7\textwidth}
+
+
+\begin{center}
+\includegraphics[angle=0.5,width=6cm]{Bilder/RP.Bild.Scan/RPMT\lyxdot B0904}
+\par\end{center}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Invertierte Schaltung}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0905}
+\par\end{center}
+
+
+Ausgangsspannung wird invertiert, i.e. um 180\textdegree{} phasenverschoben.
+
+
+Eingangswiderstand $\approx R_{1}$, typ. Werte $1\unit{k\Omega}\dots50\unit{k\Omega}$
+
+
+Bei vielen Messsignalquellen zu niedrig, daher nicht rückwirkungsfrei
+
+\end{frame}
+
+\begin{frame}{Nichtinvertierende Schaltung}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0904b}
+\par\end{center}
+
+
+Geeignet zur Entkopplung zwischen Sensor und Messverarbeitung.
+
+
+Hoher Eingangswiderstand $\ge1\unit{M\Omega}$
+
+
+Niedrige Ausgangswiderstand
+
+
+Bei hoher Verstärkung Neigung zu Instabilität: Kleine parasitäre Kapazität
+bildet RC-Glied mit hohem Eingangwiderstand zu Filter mit niedriger
+Grenzfrequenz. Phasenverschiebung kann Gegenkopplung zu Mitkopplung
+umkehren.
+
+\end{frame}
+
+\begin{frame}{Spannungsfolger}
+
+
+Nichtinvertierende Verstärker werden nur bei kleinen Verstärkung genutzt.
+
+
+Spannungsfolger:
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0904c}
+\par\end{center}
+
+
+$R_{2}\rightarrow0,\;R_{1}\rightarrow\infty$
+
+
+Eingangswiderstand sehr hoch, begrenzt durch OPV
+
+
+Ausgangswiderstand sehr niedrig, begrenzt durch OPV
+
+
+Geeignet für rückwirkungsfreie Trennung von Messsignalquelle und Messsignalverarbeitung
+in Messtechnik. 
+
+\end{frame}
+
+\begin{frame}{Messverstärker aus Spannungsfolger und invertierendem Verstärker}
+
+
+\begin{center}
+{\footnotesize{}Zweistufige Messverstärker: Kombination aus Spannungsfolger
+und invertierendem Verstärker}
+\par\end{center}{\footnotesize \par}
+
+
+\begin{center}
+\includegraphics[width=7cm]{Bilder/RPMT\lyxdot B0905}
+\par\end{center}
+
+
+{\footnotesize{}Stabile Arbeitsweise (ohne zu schwingen) auch bei
+hoher Verstärkung.}{\footnotesize \par}
+
+
+{\footnotesize{}Hoher Eingangswiderstand des Spannungsfolgers sichert
+die rückwirkungsfreie Kopplung an Messsignalquelle.}{\footnotesize \par}
+
+
+{\footnotesize{}Niedriger Ausgangswiderstand des Spannungsfolger erlaubt
+niedrigohmsche Eingangswiderstand des Inverters.}{\footnotesize \par}
+
+
+{\footnotesize{}Auch bei hoher Verstärkung ($10^{2}\dots10^{3})$
+bleibt Gegenkopplungswiderstand $R_{2}$ relativ niederohmig. Daher
+hohe Bandbreite für Gegenkopplung.}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Abtasten und Halten (Sample \& Hold)}
+
+
+Abtast- und Halteschaltung (Sample \& Hold):
+
+
+zeitveränderliche Signale an ihrem Ausgang für bestimmte kurze Zeit
+konstant zu halten.
+
+
+Analogwertspeicher für ADW, da Umwandlung zu digitalen Signalen Zeit
+benötigt.
+
+
+\includegraphics[angle=1,width=7cm]{Bilder/RPMT\lyxdot B0906}
+
+
+{\footnotesize{}a) Abtasten- / Sample-Mode: Schalter S geschlossen}{\footnotesize \par}
+
+
+{\footnotesize{}Schalter S geschlossen}{\footnotesize \par}
+
+
+{\footnotesize{}Verzögerungsfreies Folgen der Eingangsspannung anzustreben:$\tau_{1}=(R_{i}\parallel R_{eOPV})\cdot C\rightarrow0$}{\footnotesize \par}
+
+
+{\footnotesize{}b) Halten- / Hold-Mode: Schalter S offen}{\footnotesize \par}
+
+
+{\footnotesize{}Konstantes Halten des Spannungswertes anzustreben:
+$\tau_{2}=R_{eOPV}\cdot C\rightarrow\infty$}{\footnotesize \par}
+
+\end{frame}
+
+\begin{frame}{Analog-Digital-Wandlung und Kenngrößen}
+
+
+Analog-Digital-Wandler: Umwandlung von kontinuierlichen Signalen in
+zeit- und wertediskrete Signale für weitere digitale Verarbeitung.
+
+
+Auflösung und Abtastgeschwindigkeit sind bestimmende Kenngröße eines
+ADW.
+
+
+Auflösung: Anzahl der Bits für die Darstellung der Ausgangsinformation
+
+
+{\tiny{}}%
+\begin{tabular}{|>{\raggedright}p{2cm}|c|c|c|c|c|}
+\hline 
+{\tiny{}Wandlungsbreite} & {\tiny{}1 Bit} & {\tiny{}2 Bit} & {\tiny{}4 Bit} & {\tiny{}8 Bit} & {\tiny{}10 Bit}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Zahl der Inkremente} & {\tiny{}$2^{1}=2$} & {\tiny{}$2^{2}=4$} & {\tiny{}$2^{4}=16$} & {\tiny{}$2^{8}=256$} & {\tiny{}$2^{10}=1\,024$}\tabularnewline
+\hline 
+{\tiny{}relative Abweichung $A_{rel}$ } & {\tiny{}1} & {\tiny{}0,33} & {\tiny{}0,066} & {\tiny{}$3,9\cdot10^{-3}$} & {\tiny{}$0,98\cdot10^{-3}$}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+
+
+{\tiny{}}%
+\begin{tabular}{|>{\raggedright}p{2cm}|c|c|c|c|c|}
+\hline 
+{\tiny{}Wandlungsbreite} & {\tiny{}12 Bit} & {\tiny{}14 Bit} & {\tiny{}16 Bit} & {\tiny{}18 Bit} & {\tiny{}20 Bit}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Zahl der Inkremente} & {\tiny{}$2^{12}=4\,096$} & {\tiny{}$2^{14}=16\,384$} & {\tiny{}$2^{16}=65\,536$} & {\tiny{}$2^{18}=262\,144$} & {\tiny{}$2^{20}=1\,048\,576$ }\tabularnewline
+\hline 
+{\tiny{}relative Abweichung $A_{rel}$ } & {\tiny{}$2,44\cdot10^{-4}$} & {\tiny{}$6,1\cdot10^{-5}$} & {\tiny{}$1,5\cdot10^{-5}$} & {\tiny{}$3,8\cdot10^{-6}$} & {\tiny{}$9,5\cdot10^{-7}$}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+
+\end{frame}
+
+\begin{frame}{Genauigkeit ADW}
+
+
+Typischer Schwachpunkt eines ADW ist die Genauigkeit der Referenzspannungsquelle.\medskip{}
+
+
+
+Bei einer auf $0,1\%$ stabilisierten Referenzspannung ist eine Auflösung
+von größer als 10 Bit nicht mehr sinnvoll.\medskip{}
+
+
+
+Höhere Auflösungen sind nur mit überproportional hohen Aufwendungen
+realisierbar.
+
+
+Messtechnischer Pragmatismus: Aufwand so hoch wie nötig statt so hoch
+wie möglich.\medskip{}
+
+
+
+Rapide Technologie-Entwicklung senken ständig Bauteile-Kosten. 
+
+\end{frame}
+
+\begin{frame}{Abtastfrequenz}
+
+
+Entnahme von Samples soll schnell erfolgen.\medskip{}
+
+
+
+Nach dem Abtast-Theorem von Shannon sollen mehr als zwei Samples pro
+Periode entnommen werden.
+
+
+Bei nichtsinusförmigen Messsignalen ist die höchste Spektralfrequenz
+des Messsignals zu berücksichtigen.\medskip{}
+
+
+
+Die technische Anforderung an ADW werden durch konkrete technische
+Anforderungen an Wandlungszeiten und Auflösungen bestimmt. Unterschiedliche
+Wandlertypen sind technisch und wirtschaftlich geeignet für unterschiedliche
+Aufgaben.
+
+\end{frame}
+
+\begin{frame}{ADW: Sukzessive Approximation}
+
+
+ADW mit sukzessiver Approximation
+
+
+\begin{center}
+\includegraphics[angle=1.5,width=5cm]{Bilder/RPMT\lyxdot B0907}\includegraphics[angle=1,width=5cm]{Bilder/RPMT\lyxdot B0908}
+\par\end{center}
+
+
+
+
+
+Auch als ,,Vorgehensweise nach dem Waageprinzip`` bezeichnet.
+
+
+Weit verbreiteter Einsatz in Messtechnik wegen gutem Kompromiss zwischen
+Aufwand, Geschwindigkeit und Genauigkeit
+
+\end{frame}
+
+\begin{frame}{ADW: Dual Slope}
+
+
+Dual Slope Prinzip auch als Doppelflanken-Integrationsverfahren bekannt.
+
+
+Geeignet für hohe Auflösung mit geringem technischen Aufwand, untergeordnete
+Rolle der Wandlungszeit.
+
+
+\begin{center}
+\includegraphics[angle=1,width=6.5cm]{Bilder/RPMT\lyxdot B0909}\includegraphics[angle=1.2,width=4cm]{Bilder/RPMT\lyxdot B0910}
+\par\end{center}
+
+
+
+
+
+Spannung wird in Auf- und Enladezeit und Zeit in Anzahl von Takt umgewandelt.
+
+\end{frame}
+
+\begin{frame}{ADW: Parallel-Wandler}
+
+
+Parallel-ADW, auch Flash-Converter genannt.
+
+
+Sehr hohe Schaltungsaufwand. Für jede Schaltschwelle ($2^{n}-1$)
+eine eigene Referenzquelle und ein eigener Komparator.
+
+
+\begin{center}
+\includegraphics[angle=-0.3,width=6cm]{Bilder/RPMT\lyxdot B0911}
+\par\end{center}
+
+
+Wandlungszeit im unteren ns-Bereich realisierbar. 
+
+
+\end{frame}
+
+\begin{frame}{Vergleich ADW}
+
+
+\begin{tabular}{|c|>{\raggedright}p{8cm}|}
+\hline 
+{\tiny{}ADW-Prinzip} & {\tiny{}Merkmale}\tabularnewline
+\hline 
+\hline 
+{\tiny{}sukzessive Approximation} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{7cm}}
+{\tiny{}- Genauigkeit von Stabilität der Referenz und Genauigkeit
+des DAW ahhängig}\tabularnewline
+{\tiny{}- Mittlere Genauigkeit (Auflösung $\le12\unit{Bit}$, $A_{rel}\ge2,44\cdot10^{-4}$}\tabularnewline
+{\tiny{}- Wandlungszeit in $\mu s$-Bereich}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}Dual-Slope} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{7cm}}
+{\tiny{}- Bauteile müssen nur kurzzeitstabil in ihren Parametern sein}\tabularnewline
+{\tiny{}- Hohe Genauigkeit erreichbar (Auflösung von $14\dots16$Bit,
+$A_{rel}\approx6\cdot10^{-5}\dots1,5\cdot10^{-5}$)}\tabularnewline
+{\tiny{}- Lange Wandlungszeit ($100\dots500\unit{ms}$)}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}Parallel} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{7cm}}
+{\tiny{}- Genauigkeit von Stabilität der Referenzspannung und des
+Widerstandsnetzwerkes abhängig}\tabularnewline
+{\tiny{}- Aus Aufwandgründen nur geringe Genauigkeit erreichbar (Auflösung
+$\le10$Bit, $A_{rel}\ge1\cdot10^{-3}$}\tabularnewline
+{\tiny{}- Wandlungszeiten in ns-Bereich möglich}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Verarbeitung und Ausgeben}
+
+
+Verarbeiten in der Messtechnik:
+\begin{itemize}
+\item Komprimieren der Messinformationen
+\item Ermitteln interessierender Parameter aus den Messinformationen, z.B.
+Mittelwerte, Korrelationen
+\item Visualisieren von Messinformationen\medskip{}
+
+\end{itemize}
+
+Ausgeben von Messinformationen:
+\begin{itemize}
+\item Anzeige für Menschen
+\item Steuersignal für automatisierte Prozesse, beinhaltet
+
+\begin{itemize}
+\item Digital-Analog-Wandlung
+\item Multiplexen
+\item Verstärken
+\item Umsetzung Signal zu Wirkung auf Umwelt durch Aktoren
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Analog- und Digitalanzeige}
+
+
+\begin{tabular}{|>{\centering}p{5cm}|>{\centering}p{5cm}|}
+\hline 
+{\tiny{}analoge bzw. quasianaloge Anzeige} & {\tiny{}Digital-Anzeige}\tabularnewline
+\hline 
+\hline 
+{\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4.5cm}}
+{\tiny{}- schnelle Erfassung eines Messwertes}\tabularnewline
+{\tiny{}- Erkennen von Trends}\tabularnewline
+{\tiny{}- Auflösung auf 2 bis 3 Dezimalstellen beschränkt}\tabularnewline
+{\tiny{}- Integration schwankender Messwerte über Trägeheit}\tabularnewline
+{\tiny{}- bei mechanischen Anzeigen sind Ablesefehler (Parallaxe)
+möglich}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4.5cm}}
+{\tiny{}- Messwerterfassung für Mensch zeitaufwendig}\tabularnewline
+{\tiny{}- bei schwankender Anzeige Ablesen schwer möglich}\tabularnewline
+{\tiny{}- keine Ablesefehler}\tabularnewline
+{\tiny{}- hohe Auflösung für Mensch erfassbar}\tabularnewline
+\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Sensoren}
+
+
+Sensoren sind Bindeglieder zwischen der nichtelektrischer Umwelt und
+der elektrischen Messtechnik. Auch als Aufnehmer oder Fühler bezeichnet.\medskip{}
+
+
+
+Grundvoraussetzung für Sensor:
+
+
+bekannter und reproduzierbarer Zusammenhang zwischen interessierender
+nichtelektrischer physikalischer Größe und der beeinflusster elektrischer
+Eigenschaft.\medskip{}
+
+
+
+Eine Vielzahl von physikalischen Effekten stehen für die Anwendungen
+zu Verfügung.
+
+
+Rapide Entwicklung in Bereich MEMS (Microelectromechanical System)
+durch Vorteile der Halbleiter ähnlichen Herstellung. 
+
+\end{frame}
+
+\begin{frame}{Klassifizierung von Sensoren}
+
+
+\begin{tabular}{|>{\centering}p{5cm}|>{\centering}p{5cm}|}
+\hline 
+{\tiny{}Passive Sensoren} & {\tiny{}Aktive Sensoren}\tabularnewline
+\hline 
+{\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4.5cm}}
+{\tiny{}- Verändern ihre elektrischen Eigenschaften unter Einfluss
+einer nichtelektrischen physikalischen Größe}\tabularnewline
+{\tiny{}- benötige zur Auswertung eine Hilfsenergie}\tabularnewline
+{\tiny{}- hohe Genauigkeiten sind erreichbar}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{4.5cm}}
+{\tiny{}- Wandeln eine nichtelektrische physikalische Größe in eine
+elektrische Größe um, physikalisch gesehen ein Energieumwandler}\tabularnewline
+{\tiny{}- keine Hilfsenergie zur Auswertung erforderlich}\tabularnewline
+{\tiny{}- oft nur geringe Genauigkeit erreichbar, vor allem bzgl.
+Langzeitstabilität, häufige Kalibirierung erforderlich}\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}\medskip{}
+
+
+
+Aktiver Sensor entzieht dem Messobjekt Energie.
+
+\end{frame}
+
+\begin{frame}{Beispiele für aktive Sensoren}
+
+
+\begin{tabular}{|>{\raggedright}p{1.5cm}|>{\raggedright}p{4cm}|>{\raggedright}p{4cm}|}
+\hline 
+{\tiny{}Sensor} & {\tiny{}einwirkende nichtelektrische Größe} & {\tiny{}ausgegebene elektrische Größe}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Fotoelement} & {\tiny{}Beleuchtungsstärke} & {\tiny{}Spannung (Leerlaufbetrieb) oder Strom (Kurzschlussbetrieb)}\tabularnewline
+\hline 
+{\tiny{}Thermoelement} & {\tiny{}Temperaturdifferenz zwischen Messpunkten} & {\tiny{}Spannung}\tabularnewline
+\hline 
+{\tiny{}Piezokristall} & {\tiny{}Druck} & {\tiny{}Ladungsmenge bzw. Spannung über Kondensator}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Beispiele für passive Sensoren}
+
+
+\begin{tabular}{|>{\raggedright}p{2.5cm}|>{\raggedright}p{4cm}|>{\raggedright}p{4cm}|}
+\hline 
+{\tiny{}Sensor} & {\tiny{}einwirkende nichtelektrische Größe} & {\tiny{}beeinflusste elektrische Größe}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Potentiometer} & {\tiny{}Länge, Winkel} & {\tiny{}ohmscher Widerstand}\tabularnewline
+\hline 
+{\tiny{}Widerstandsthermometer} & {\tiny{}Temperatur} & {\tiny{}ohmscher Widerstand}\tabularnewline
+\hline 
+{\tiny{}Dehnungsmessstreifen} & {\tiny{}kleine Längenänderungen bzw. sie hervorrufende Kräfte} & {\tiny{}ohmscher Widerstand}\tabularnewline
+\hline 
+{\tiny{}Fotowiderstand, -diode} & {\tiny{}Beleuchtungsstärke} & {\tiny{}ohmscher Widerstand}\tabularnewline
+\hline 
+{\tiny{}Induktive Sensoren} & {\tiny{}Länge, Winkel} & {\tiny{}Induktivität}\tabularnewline
+\hline 
+{\tiny{}Kapazitive Sensoren} & {\tiny{}Länge, Winkel} & {\tiny{}Kapazität}\tabularnewline
+\hline 
+{\tiny{}Transformatorische Sensoren} & {\tiny{}Winkel} & {\tiny{}induzierte Spannung}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Grundstruktur: Passiver Sensor}
+
+
+\begin{center}
+\includegraphics[angle=1.5,width=8cm]{Bilder/RPMT\lyxdot B0912}\medskip{}
+
+\par\end{center}
+
+
+Unterscheidung zwischen Sensor und Sensorelement nicht immer eindeutig.\medskip{}
+
+
+
+Streng genommen beinhaltet Sensorelement nur die Umwandlung nichtelektrischer
+physikalischer Größe in elektrische Größe.
+
+\end{frame}
+
+\begin{frame}{Struktur: Sensor mit Mikrocontroller}
+
+
+\begin{center}
+\includegraphics[width=7cm]{Bilder/RPMT\lyxdot B0913}\medskip{}
+
+\par\end{center}
+
+
+Sensorbaugruppe oder ,,intelligente`` Sensoren
+
+\end{frame}
+
+\begin{frame}{Auswahl Sensoren}
+
+
+Anwendungsbereiche:
+\begin{itemize}
+\item industirelle Technik, z.B. Verfahrenstechnik, Fertigungstechnik
+\item Präzisionsanwendungen
+\item Massengüter
+\end{itemize}
+
+Anforderungen:
+\begin{itemize}
+\item Empfindlichkeit und Fehlergrenze
+\item Einflusseffekte (Temperaturdrift)
+\item dynamische Eigenschaften
+\item Signalform bei der Signalübertragung
+\item Umgebungsbedingungen
+\item Zuverlässigkeit
+\item Kosten
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sensoren zur Messung geometrischer Größen}
+
+
+Aufgabe: Erfassung der gegenseitigen Position zweier Körper bzw. zweier
+Grenzflächen in Ebene oder Raum oder Erfassung der Verlagerung eines
+Körpers bzw. Grenzfläche in der Ebene oder im Raum.
+
+
+Verlagerung:
+
+
+- translatorisch - Weg-(Längen-)Sensoren
+
+
+- rotatorisch - Winkel-Sensoren
+
+
+Vielfältige Sensorprinzipien lassen sich zur Messung von Längen und
+Winkel heranziehen.
+
+\end{frame}
+
+\begin{frame}{Resistive Weg- und Winkelaufnehmer}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/TFMT\lyxdot B0301}
+\par\end{center}
+
+
+{\scriptsize{}Widerstand verändert sich in Abhängigkeit vom Schleifer:
+a) Länge b) Winkel}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+R=\frac{x}{x_{0}}\cdot R_{0}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Querschnittsfläche A des Widerstandsdrahtes soll möglichst
+konstant und der spezifische Widerstand $\varrho$ hinreichend groß
+und temperaturunabhängig sein.}{\scriptsize \par}
+
+
+{\scriptsize{}d) Wendelung des Messdrahtes auf einem isolierenden
+Trägermaterial, mit Windungssprung}{\scriptsize \par}
+
+
+{\scriptsize{}e) Beschichtung mit leitfähigem Kunststoff eliminiert
+den Windungssprung und vermindert Abrieb.}{\scriptsize \par}
+
+
+{\scriptsize{}c) Ring-Rohr-Winkelaufnehmer mit Quecksilber als Abgriff}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Induktive Weg- und Winkelaufnehmer}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=5cm]{C:/chenjm/Messtechnik/MT_SS16/Bilder/TFMT\lyxdot B0302}
+
+
+\column{0.6\textwidth}
+
+
+{\scriptsize{}a) Induktivität des Drossels abhängig von Luftspalt
+des weichmagnetischen Kreises
+\[
+\frac{L}{L_{0}}=\frac{1}{1+\mu_{r}\frac{x}{x_{M}}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}mit $\mu_{r}$ die Permeabilitätszahl und $x_{M}$ der
+Weglänge im magnetischen Material, b) Kennlinie ohne und c) mit Streufluss}{\scriptsize \par}
+
+
+{\scriptsize{}d) Schalenkernsystem aus Ferritmaterial, Frequenz bis
+100kHz}{\scriptsize \par}
+
+
+{\scriptsize{}e) Doppeldrossel, Differenzprinzip verschafft Linearisierung
+und Kompensation des Temperatureinflusses}{\scriptsize \par}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Induktive Weg- und Winkelaufnehmer - Tauchkernsysteme}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=5cm]{C:/chenjm/Messtechnik/MT_SS16/Bilder/TFMT\lyxdot B0303}
+
+
+\column{0.6\textwidth}
+
+
+{\scriptsize{}a) Induktivität des Tauchkernaufnehmers abhängig von
+Eintauchtiefe des ferromagnetischen Tauchkerns}{\scriptsize \par}
+
+
+{\scriptsize{}b) Doppelspulen-Tauchkernsystem}{\scriptsize \par}
+
+
+{\scriptsize{}c) Differentialtransformator-Tauchkernsystem (linear
+variable differential transformer, LVDT) mit Primär-Wicklung in der
+Mitte und zwei Sekundärwicklungen}{\scriptsize \par}
+
+
+{\scriptsize{}d) Kennlinien mit besseren Linearität}{\scriptsize \par}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Wirbelstromaufnehmer}
+
+
+\includegraphics[width=5cm]{Bilder/TFMT\lyxdot B0304}
+
+
+{\scriptsize{}a) Wirbelstromaufnehmer: Wechselfeld der Spule erzeugt
+in nichtmagnetischer leitender Platte Wirbelströme. Dies führt zu
+Dämpfung und Veringerung der Induktivität. }{\scriptsize \par}
+
+
+{\scriptsize{}b) kostengünstige gedruckte spiralförmige Flachspule}{\scriptsize \par}
+
+
+{\scriptsize{}c) konische Schraubenfeder für größere Wege}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Kapazitive Weg- und Winkelaufnehmer}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/TFMT\lyxdot B0305}
+\par\end{center}
+
+
+{\scriptsize{}
+\[
+C=\varepsilon_{0}\varepsilon_{r}\frac{A}{d}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}a) Kapazität umgekehrt proportional zum Weg $x$}{\scriptsize \par}
+
+
+{\scriptsize{}b) Kapazität proportional zu A, und zum laterlan Weg
+$x$}{\scriptsize \par}
+
+
+{\scriptsize{}c) Höhenstandmessung bei isolierenden Flüssigkeiten
+}\foreignlanguage{english}{\textrm{\scriptsize{}$\varepsilon_{r}$}}{\scriptsize{}
+mit Zylinderkondensator: Höhe des Dielektrikum 
+\[
+C=C_{0}+\frac{2\pi\varepsilon_{0}}{\ln(D/d)}(x-x_{0})(\varepsilon_{r}-1)
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}d) Höhenstandmessung bei leitenden Flüssigkeiten: Höhe
+der Außenelektrode}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Magnetische Aufnehmer}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/TFMT\lyxdot B0306}
+\par\end{center}
+
+
+{\scriptsize{}a) Hall-Sensoren: Lorenzkraft bewirkt Ladungsverschiebung
+des Steuerstromes im Magnetfeld}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U_{H}=R_{H}\frac{I\cdot B}{d}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}b) Feldplatten: Gauß-Effekt oder MDR (Magnetic field
+Depending Resistor)}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+R_{B}=R_{0}(1+k\cdot B^{2})
+\]
+}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Codierte Weg- und Winkelaufnehmer}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/TFMT\lyxdot B0307}
+\par\end{center}
+
+
+{\scriptsize{}Jeder Messlänge bzw. jedem Messwinkel ist eineindeutiges,
+binär codiertes digitales Signal zugeordnet.}{\scriptsize \par}
+
+
+{\scriptsize{}Das Codemuster besteht aus Kombination}{\scriptsize \par}
+\begin{itemize}
+\item {\scriptsize{}leitender und nichtleitender Flächen}{\scriptsize \par}
+\item {\scriptsize{}lichtdurchlässiger und lichtundurchlässiger Fläche}{\scriptsize \par}
+\item {\scriptsize{}unterschiedlich magnetisierter Fläche}{\scriptsize \par}
+\end{itemize}
+
+{\scriptsize{}Auflösung zwischen 100 und 50 000 auf dem Umfang}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Inkrementale Sensoren}
+
+
+Inkrementale Sensoren gehören zu den direkt digitalen Sensoren, d.h.
+sie liefern unmittelbar digitale Werte.
+
+
+\begin{center}
+\includegraphics[width=7cm]{Bilder/RPMT\lyxdot B0914}
+\par\end{center}
+
+
+Prinzipbild des inkrementalen Sensors
+
+
+Positionsverschiebung $\Delta s$ (Inkrement) wird in Anzahl der Hell/Dunkelphasen
+(Quantisierungseinheit) umgewandelt.
+
+
+Genauigkeit vorrangig von Messlineal bestimmt.
+
+\end{frame}
+
+\begin{frame}{Bewegungsrichtung mit inkrementalen Sensoren}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[angle=-1,width=4cm]{Bilder/RPMT\lyxdot B0915}
+
+
+\column{0.6\textwidth}
+
+
+{\scriptsize{}Abtastpulsfolgen der Messlineale stellen zwei Folgen
+von 0-1 und 1-0-Flanken dar. Das Muster ist abhängig von der Bewegungsrichtung.\medskip{}
+}{\scriptsize \par}
+
+
+{\scriptsize{}Ausnutzung aller auftretenden Flanken zur Zählung ergibt
+vierfache Auflösung.}{\scriptsize \par}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Inkremetales Längenmesssystem}
+
+
+\begin{center}
+\includegraphics[width=7cm]{Bilder/TFMT\lyxdot B0308}
+\par\end{center}
+
+
+{\scriptsize{}Abtastkopf liegt weniger 1/10 mm über Maßstab, mit lichtdurchlässigen
+Strichen und durchsichtigen Lücken.}{\scriptsize \par}
+
+
+{\scriptsize{}Bewegung des Maßstabs führt zu sinusähnlichen periodischen
+Änderung der reflektierten Lichtstärke an Fotoempfänger, somit an
+dessen Ausgang zu periodischen Spannung.}{\scriptsize \par}
+
+
+{\scriptsize{}Die vier Gitterteilungen sind jeweils um eine Viertel
+Gitterperiode versetzt angeordenet. Gegentaktsignale durch Antiparallelschaltung
+liefern zwei um 90\textdegree{} verschobene Differenzsignale. Gleichspannungsanteil
+wird kompensiert. Richtungssignal herauslesbar.}{\scriptsize \par}
+
+
+
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Die Ausbildung und Ablese der Quantisierung lässt sich unterschiedlich
+realisieren mit:
+
+
+optisch: 
+
+
+lichtreflektierend, zerstreuend oder 
+
+
+lichtdurchlässig/-undurchlässig
+
+
+magnetisch:
+
+
+mit unterschiedlichen Magnetisierung (digitale Messschieber)
+
+
+Auflösung bis $10\unit{\mu m}$ erreichbar.
+
+
+Das Kodierungsverfahren kann kreisförmig angeordnet aufgebracht werden
+zur inkrementalen Winkelmessung.
+
+
+Erreichbare Auflösung unterhalb einer Bogenminute bzw. $1/60$ Grad. 
+
+\end{frame}
+
+\begin{frame}{Laserinterferometer}
+
+
+Höhere Genauigkeit ist mit Laserinterferometer erreichbar.
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0917}
+\par\end{center}
+
+
+{\scriptsize{}Das monochromatische Licht wird an einem halbdurchlässigen
+Spiegel in einen Messstrahl und einen Vergleichsstrahl aufgespalten.}{\scriptsize \par}
+
+
+\column{0.6\textwidth}
+
+
+{\scriptsize{}Die beiden reflektierenden Strahlen treffen auf den
+halbdurchlässigen Spiegel wieder zusammen. Das Überlagerungsergebnis
+hängt von der relativen Phasenlage der beiden Strahlen ab und kann
+über den Fotodetektor aufgenommen werden.}{\scriptsize \par}
+
+
+{\scriptsize{}Interferenz:}{\scriptsize \par}
+\begin{itemize}
+\item {\scriptsize{}Gleicher Phasenlage: Lichtverstärkung durch Addition
+der Momentanwerte}{\scriptsize \par}
+\item {\scriptsize{}Gegenphasenlage: Auslöschung aufgrund der Subtraktion
+der Momentanwerte.}{\scriptsize \par}
+\end{itemize}
+
+{\scriptsize{}Eine Lageveränderung von $\lambda/2$ verursacht eine
+volle Hell-Dunkel-(Hell)-Phase.}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Delta s=N\cdot\frac{\lambda}{2}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Mit einer Wellenlänge des Lichts von 650 nm kann mit
+Durchzählen von Hell-Dunkel-Streifen eine Auflösung von 325 nm realisiert
+werden.}{\scriptsize \par}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Potenziometrische Sensoren}
+
+
+{\scriptsize{}Sensoren auf Basis von Schiebe- und Drehpotentiometern,
+d.h. Widerständen mit einem veränderbaren Abgriff, dem Schleifer.}{\scriptsize \par}
+
+
+{\scriptsize{}Länge bzw. Winkel werden in Widerstandswert umgewandelt.}{\scriptsize \par}
+
+
+{\scriptsize{}Messbereiche: 1mm bis 2m bzw. 0\textdegree{} bis 350\textdegree{}}{\scriptsize \par}
+
+
+{\scriptsize{}Einsatz: Maschinentisch, Gelenkwinkel bei Roboter, Stellung
+von Klappen und Ventilen}{\scriptsize \par}
+
+
+\includegraphics[angle=1,width=8cm]{Bilder/RPMT\lyxdot B0922}
+
+
+{\scriptsize{}Messung über einen Spannungsteiler. Bei unbelasteten
+Spannungsteiler ($R_{L}\gg R$) gilt:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\frac{U_{a}}{U_{B}}=\frac{\Delta R}{R}=\frac{l_{x}}{l}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+l_{x}=\frac{U_{a}}{U_{B}}\cdot l
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Genauigkeit von <1\% des Messbereichsendwertes erreichbar.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Potenziometrische Sensoren werden vorwiegend als Drahtwiderstände
+ausgeführt. Sie sind robust und tauglich im Alltag.\medskip{}
+
+
+
+Da Quotient $\Delta R/R$ gebildet wird sind sie unempfindlich gegenüber
+Temperatur. Temperaturbeiwert von <1,5 ppm erreichbar bei 200 ppm
+für Widerstandsdraht.
+
+
+ppm = part per million, $10^{-6}$\medskip{}
+
+
+
+Mit Schichtwiderständen kann hohe Widerstandswerte kompakt hergestellt
+werden. Solche Sensoren haben kleine Verlustleistung und werden in
+abgesetzten batteriebetriebenen Sensorbaugruppen eingesetzt. Schichtwiderständen
+sind mechanisch wesentlich empfindlicher.
+
+\end{frame}
+
+\begin{frame}{Beispiel: Leistungsaufnahme}
+
+
+Drahtpotentiometer mit $R=\unit[1]{k\Omega}$
+
+
+Schichtpotentiometer mit $R=\unit[50]{k\Omega}$
+
+
+werden mit einer Spannung $U_{B}=\unit[10]{V}$ betrieben.
+
+
+Leistungsaufnahme?
+
+
+Drahtpotentiometer: 
+
+
+\[
+P=\frac{U_{B}^{2}}{R}=\frac{(\unit[10]{V})^{2}}{\unit[1\cdot10^{3}]{\Omega}}=\unit[0,1]{W}=\unit[100]{mW}
+\]
+
+
+
+Schichtpotentiometer:
+\[
+P=\frac{U_{B}^{2}}{R}=\frac{(\unit[10]{V})^{2}}{\unit[50\cdot10^{3}]{\Omega}}=\unit[0,002]{W}=\unit[2]{mW}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Induktive Sensoren}
+
+
+Prinzip: Induktivität $L$ einer Spulenanordnung ist eine Funktion
+geometrischer Größen.
+
+
+\[
+L=f(N,\,\mu_{r},\,A,\,l)
+\]
+
+
+
+mit $N$ - Anzahl der Windungen der Spule, $\mu_{r}$ - relative Permeabilität
+oder Permeabilitätszahl des Materials, $A$ -Querschnittsfläche, $l$
+- Länge der magnetischen Feldlinie
+
+
+Für eine Ringspule gilt konkret:
+
+
+\[
+L=\frac{N^{2}\cdot\mu\cdot A}{l}
+\]
+
+
+
+mit $\mu=\mu_{r}\cdot\mu_{0}$ und $\mu_{0}=\unit[4\pi\cdot10^{-7}]{Hm^{-1}}=\unit[12,5664\cdot10^{-7}]{Hm^{-1}}=\unit[12,5664\cdot10^{-7}]{NA^{-2}}$
+
+\end{frame}
+
+\begin{frame}{Berührungsloser induktiver Wegsensor }
+
+
+Prinzip: Breite des Luftspalts zwischen einem ferromagnetischen Platte
+(z.B. Stahl) und dem Spulenkörper beeinflusst die Induktivität.
+
+
+\includegraphics[width=8cm]{Bilder/RPMT\lyxdot B0923}
+
+
+{\scriptsize{}Übertragungskurve deutlich nicht linear.}{\scriptsize \par}
+
+
+{\scriptsize{}Induktivität nimmt mit zunehmendem Abstand stark ab
+und wird unempfindlich für Wegänderung und empfindlich gegen externe
+Magnetfelder.}{\scriptsize \par}
+
+
+{\scriptsize{}Übliche Messwege: 1mm.}{\scriptsize \par}
+
+
+{\scriptsize{}Anwendung: Dynamische Wegmessung von bewegten Messobjekten,
+z.B. Ermittelung der Verlagerung von Drehmaschinenspindeln bei Belastung,
+Erfassung und Analysieren von Schweißfugen beim Robotschweißen.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Induktiver Sensor als Differentialsystem}
+
+
+Differentialsystem besitzt zwei Spulen. Eine Wegänderung verursacht
+entgegengesetzte Änderungen der Induktivitäten in beiden Spulen.
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0924}\includegraphics[width=4cm]{Bilder/RPMT\lyxdot B0925}
+\par\end{center}
+
+
+{\scriptsize{}Der fett gezeichnete Teil der Kennlinie beschreibt den
+nutzbaren Aussteuerbereich. Durch Bildung von Differenz heben sich
+die Nichtlinearität weitgehend ab. Große Linearität über den Messbereich.}{\scriptsize \par}
+
+
+{\scriptsize{}}{\scriptsize \par}
+
+
+{\scriptsize{}Messbereiche $\Delta s$ Querankergeber: $\unit[\pm10]{\mu m}$
+bis $\unit[\pm1]{mm}$ }{\scriptsize \par}
+
+
+{\scriptsize{}Messbereiche $\Delta s$ Längsankergeber: $\unit[\pm1]{mm}$
+bis $\unit[\pm500]{mm}$}{\scriptsize \par}
+
+
+{\scriptsize{}Linearitätsfehler: typ. <1\% }{\scriptsize \par}
+
+
+{\scriptsize{}Anwendung: Taster für Dickenmessung, Weggeber bei Maschinentischen,
+Erfassung der Bewegung von Greifer in Robotern, Schwingungsmessung
+auf Prüfständen.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Transformatorische induktive Sensoren zur Winkelmessung}
+
+
+{\scriptsize{}Winkelabhängige Änderung von Induktivität: Messung von
+Rotationsbewegungen mit mehr als einer Vollumdrehung.}{\scriptsize \par}
+
+
+{\scriptsize{}Solcher Sensoren werden häufig als Resolver bezeichnet.}{\scriptsize \par}
+
+
+\begin{center}
+\includegraphics[width=4cm]{Bilder/RPMT\lyxdot B0926}\includegraphics[width=4cm]{Bilder/RPMT\lyxdot B0927}
+\par\end{center}
+
+
+{\scriptsize{}
+\[
+U_{2}=-N\cdot\frac{d\Phi}{dt}=-N\cdot\frac{dB}{dt}\cdot A(\alpha)=-N\cdot\frac{dB}{dt}\cdot A_{max}\cdot\cos\alpha
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}mit $B$ - magnetische Induktion}{\scriptsize \par}
+
+
+{\scriptsize{}}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U_{2}=k\cdot U_{1}\cdot\cos\alpha
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Stator- und Rotorwicklung können Primär- und Sekundärwicklung
+sein oder umgekehrt.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Winkelsensor mit mehreren Empfangswicklungen}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0928}\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0929}
+\par\end{center}
+
+
+
+
+
+{\scriptsize{}Erreichbare Winkelauflösung: 0,1\textdegree{} bzw. 6
+Bogenminuten, relative Abweichung $2,8\cdot10^{-4}$}{\scriptsize \par}
+
+
+{\scriptsize{}Anwendung: im Flugzeug zur Überwachung der Stellung
+von Landeklappen, Radaranlage, NM-Maschine, Roboter}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Kapazitive Sensoren}
+
+
+Kraftwirkung am Schieber eines potentiometrischen Sensors führt zu
+Rückwirkungen auf die Messgröße. 
+
+
+Kapazitive Sensoren sind dagegen berührungslos und weitgehend rückwirkungsfrei.
+
+
+Allgemein:
+
+
+\[
+C=f(\epsilon,A,l)\quad\mbox{mit }\epsilon=\epsilon_{0}\cdot\epsilon_{r}
+\]
+
+
+
+Dabei ist $\epsilon_{0}=\unit[8,854\cdot10^{-12}]{Fm^{-1}}=\unit[8,854\cdot10^{-12}]{\frac{As}{Vm}}$
+die absolute Dielektrizitätskonstante und $\epsilon_{r}$ die relative
+Dielektrizitätskonstante, auch Dielektrizitätszahl des Materials.
+
+
+\[
+\Delta C=\frac{\partial C}{\partial l}\Delta l+\frac{\partial C}{\partial A}\Delta A+\frac{\partial C}{\partial\epsilon_{r}}\Delta\epsilon_{r}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Ausführungsformen für kapazitive Sensoren}
+
+
+{\tiny{}}%
+\begin{tabular}{|>{\raggedright}p{2cm}|>{\raggedright}p{2.1cm}|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|}
+\hline 
+ & {\tiny{}Plattenkondensator} & {\tiny{}Zylinderkondensator } & {\tiny{}Stabkondensator}\tabularnewline
+\hline 
+ & \includegraphics[width=1.8cm]{Bilder/RPMT\lyxdot T0908a} & \includegraphics[width=2.8cm]{Bilder/RPMT\lyxdot T0908b} & \includegraphics[width=2.8cm]{Bilder/RPMT\lyxdot T0908c}\tabularnewline
+\hline 
+{\tiny{}Berechnungsformel} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}$C=\frac{\epsilon_{0}\epsilon_{r}A}{s}$}\tabularnewline
+{\tiny{}mit}\tabularnewline
+{\tiny{}$A=h\cdot l$}\tabularnewline
+\end{tabular} & {\tiny{}$C=\frac{2\pi\epsilon_{0}\epsilon_{r}l}{\ln\frac{D}{d}}$} & {\tiny{}}%
+\begin{tabular}{c}
+{\tiny{}$C=\frac{\pi\epsilon_{0}\epsilon_{r}l}{\ln\left[\frac{s}{2r_{0}}+\sqrt{\frac{s}{(2r_{0})^{2}-1}}\right]}$}\tabularnewline
+{\tiny{}$C\approx\frac{\pi\epsilon_{0}\epsilon_{r}l}{\ln\frac{s}{r_{0}}}\;\mbox{für }s\gg r_{0}$ }\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+{\tiny{}zur Kapazitätsänderung ausgenutzte Parameter} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{1.9cm}}
+{\tiny{}- Anstand $s$}\tabularnewline
+{\tiny{}- Dieelektrikum $\epsilon_{r}$}\tabularnewline
+{\tiny{}- wirksame Fläche $A$}\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{2.8cm}}
+{\tiny{}- wirksame Kondensatorlänge $l$}\tabularnewline
+{\tiny{}- Dieelektrikum $\epsilon_{r}$}\tabularnewline
+\tabularnewline
+\end{tabular} & {\tiny{}}%
+\begin{tabular}{>{\raggedright}p{2.7cm}}
+{\tiny{}- Dieelektrikum $\epsilon_{r}$}\tabularnewline
+\tabularnewline
+\tabularnewline
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+
+\end{frame}
+
+\begin{frame}{Kapazitive Füllstandmessung}
+
+
+\begin{center}
+\includegraphics[width=7cm]{Bilder/RPMT\lyxdot B0930}
+\par\end{center}
+
+
+\[
+C=C_{0}+\Delta C=k\cdot(l-\Delta l)+k\cdot\epsilon_{r}\cdot\Delta l
+\]
+
+
+
+{\scriptsize{}Die Gesamtkapazität besteht aus der Summe von der Kapazität
+mit Luft als Dielektrikum $\epsilon_{r}=1$ und der Kapazität mit
+der Flüssigkeit als Dielektrikum $\epsilon_{r>1}$}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+C=kl+(-k+k\cdot\epsilon_{r})\Delta l=C_{0}+\Delta C
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Delta C=(-k+k\cdot\epsilon_{r})\Delta l\quad C_{0}=kl
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\frac{\Delta C}{C}=(\epsilon_{r}-1)\cdot\frac{\Delta l}{l}
+\]
+}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Messschaltungen: Wechselstrommessbrücke, Strom-Spannungs-Messmethode\medskip{}
+
+
+
+Anwendung: Füllstandsmessung für nichtleitende und leitende Flüssigkeiten,
+Dickenmessung von Garnen und Folien, wegen Robustheit in rauen Bereichen
+wie Gießereien.
+
+
+Linearitätsfehler: 1\% bis 3\%.\medskip{}
+
+
+
+Konstanz der Messfrequenz und Unterdrückung der Störkopplungen beeinflussen
+die Genauigkeit.
+
+
+\end{frame}
+
+\begin{frame}{Sensoren zur Kraftmessung}
+
+
+Mechanisch:
+
+
+Kraft verursacht Verformung am Körper. Die erfahrene Dehnung kann
+gemessen werden.\medskip{}
+
+
+
+Piezoelektrisch:
+
+
+Kraft übt auf Piezokristall Ladungsverschiebung aus.
+
+\end{frame}
+
+\begin{frame}{Dehnungsmessstreifen}
+
+
+Dehnung $\varepsilon$: kleine relative Längenänderungen infolge von
+Temperatur- bzw. Krafteinwirkung.
+
+
+Bei konstanter Temperatur kann aus Dehnung auf die Krafteinwirkung
+geschlossen werden.
+
+
+Metall oder Halbleiter ändern ihre Leitfähigkeit bei Dehnung und können
+als Sensor verwendet werden.
+
+
+Dehnungsmessstreifen (DMS) bestehen aus Widerstandsmaterial (zumeist
+Konstantan oder Chrom-Nickel-Legierung).
+
+
+
+
+
+\begin{center}
+\includegraphics[width=7cm]{Bilder/RPMT\lyxdot B0932}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{}
+
+
+{\scriptsize{}Draht mit kreisförmigem Querschnitt}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+R=\varsigma\cdot\frac{l}{A}=\varsigma\cdot\frac{l\cdot4}{\pi\cdot d^{2}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}mit: $\varsigma$ (sigma) - spezifischer Widerstand
+des Drahtes}{\scriptsize \par}
+
+
+{\scriptsize{}$l$ - Länge des Drahtes}{\scriptsize \par}
+
+
+{\scriptsize{}$A$ - Querschnittfläche des Drahtes}{\scriptsize \par}
+
+
+{\scriptsize{}$d$ - Durchmesser des Drahtes }{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Delta R=\frac{\partial R}{\partial\varsigma}\Delta\varsigma+\frac{\partial R}{\partial l}\Delta l+\frac{\partial R}{\partial d}\Delta d
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+=\frac{l\cdot4}{\pi\cdot d^{2}}\Delta\varsigma+\frac{\varsigma\cdot4}{\pi\cdot d^{2}}\Delta l-2\cdot\frac{l\cdot\varsigma\cdot4}{\pi\cdot d^{3}}\Delta d
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\frac{\Delta R}{R}=\frac{\Delta\varsigma}{\varsigma}+\frac{\Delta l}{l}-2\frac{\Delta d}{d}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+=\frac{\Delta l}{l}\left(1-2\frac{\frac{\Delta d}{d}}{\frac{\Delta l}{l}}+\frac{\frac{\Delta\varsigma}{\varsigma}}{\frac{\Delta l}{l}}\right)=\varepsilon\cdot k
+\]
+ }{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+k=1-2\mu+\eta
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}mit $\mu=\frac{\Delta d}{d}/\frac{\Delta l}{l}$ - Poisson-Zahl
+(Querkontraktionszahl)}{\scriptsize \par}
+
+
+{\scriptsize{}$\eta=\frac{\Delta\varsigma}{\varsigma}/\frac{\Delta l}{l}$
+(eta) - relative Änderung des spezifischen Widerstands infolge der
+Dehnung}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Typische Parameter DMS}
+
+
+\begin{tabular}{|c|c|c|}
+\hline 
+{\scriptsize{}Kenngröße} & {\scriptsize{}Metall-DMS} & {\scriptsize{}Halbleiter-DMS}\tabularnewline
+\hline 
+\hline 
+{\scriptsize{}Nennwiderstand $R$} & {\scriptsize{}$\unit[120]{\Omega}\dots\unit[600]{\Omega}$} & {\scriptsize{}$\unit[120]{\Omega}\dots\unit[600]{\Omega}$}\tabularnewline
+\hline 
+{\scriptsize{}k-Faktor} & {\scriptsize{}2} & {\scriptsize{}$|100\dots160|$}\tabularnewline
+\hline 
+{\scriptsize{}Arbeitsbereich der Dehnung $\varepsilon$} & {\scriptsize{}$<10\cdot10^{-3}\unit{m/m}$} & \selectlanguage{english}%
+\textrm{\scriptsize{}$<1\cdot10^{-3}\unit{m/m}$}\selectlanguage{ngerman}%
+\tabularnewline
+\hline 
+{\scriptsize{}max. zulässige Dehnung $\varepsilon_{max}$} & \selectlanguage{english}%
+\textrm{\scriptsize{}$<50\cdot10^{-3}\unit{m/m}$}\selectlanguage{ngerman}%
+ & \selectlanguage{english}%
+\textrm{\scriptsize{}$<5\cdot10^{-3}\unit{m/m}$}\selectlanguage{ngerman}%
+\tabularnewline
+\hline 
+{\scriptsize{}Temperaturkoeffizient} & {\scriptsize{}$10^{-6}\unit{K^{-1}}$} & \selectlanguage{english}%
+\textrm{\scriptsize{}$10^{-4}\unit{K^{-1}}$}\selectlanguage{ngerman}%
+\tabularnewline
+\hline 
+\end{tabular}
+
+
+
+
+
+Halbleiter-DMS besitzt großen k-Faktor und hohe Temperaturabhängigkeit.
+Sie werden mit Temperaturkompensation eingesetzt.
+
+\end{frame}
+
+\begin{frame}{DMS-Viertelbrücke}
+
+
+{\scriptsize{}Relative Widerstandsänderung kann mittels Brückenschaltung
+oder Strom-/Spannungsmessung ausgewertet.}{\scriptsize \par}
+
+
+\begin{center}
+\includegraphics[width=7cm]{Bilder/RPMT\lyxdot B0933}
+\par\end{center}
+
+
+{\scriptsize{}
+\[
+U_{AB}=U_{A}-U_{B}=U_{0}\frac{R+\Delta R}{2R+\Delta R}-U_{0}\frac{R}{2R}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+=U_{0}(\frac{R+\Delta R}{2R+\Delta R}-\frac{1}{2})=U_{0}\frac{2(R+\Delta R)-(2R+\Delta R)}{2(2R+\Delta R)}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+=U_{0}\frac{\Delta R}{4R+2\Delta R}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Bei $R\gg\Delta R$ gilt: $U_{AB}=U_{0}\frac{\Delta R}{4R}=\frac{U_{0}}{4}\varepsilon\cdot k$}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Temperaturkompensation}
+
+
+\begin{center}
+\includegraphics[angle=1,width=5cm]{Bilder/RPMT\lyxdot B0934}\includegraphics[angle=0.9,width=5cm]{Bilder/RPMT\lyxdot B0935}
+\par\end{center}
+
+
+
+
+\end{frame}
+
+\begin{frame}{DMS-Halbbrücke}
+
+
+\begin{center}
+\includegraphics[angle=0.5,width=7cm]{Bilder/RPMT\lyxdot B0936}
+\par\end{center}
+
+
+\[
+U_{AB}=\frac{U_{0}}{2}\cdot\frac{\Delta R}{R}=\frac{U_{0}}{2}\varepsilon\cdot k
+\]
+
+
+\end{frame}
+
+\begin{frame}{Kraftmessaufnehmer mit Vollbrücke}
+
+
+\begin{center}
+\includegraphics[width=6cm]{Bilder/RPMT\lyxdot B0938}
+\par\end{center}
+
+
+\[
+U_{AB}=U_{0}\cdot\frac{\Delta R}{R}=U_{0}\varepsilon\cdot k
+\]
+
+
+
+Kraftmessaufnehmer werden für 10 N bis 500 MN konstruiert.
+
+
+Anwendung: Kraftmessung an Pressen und Walzen, Gewichtskraftsensor
+in elektronischen Waagen für Haushalt oder Kraftfahrzeugwaage.
+
+\end{frame}
+
+\begin{frame}{Beispiel: DMS}
+
+
+DMS mit einem $k$-Faktor von 2 wird an einem Träger befestigt. Eine
+Viertel-Brücke mit Brückenspannung $U_{0}=\unit[10]{V}$wird verwendet.
+Maximale Dehnung des Trägers beträgt $\varepsilon_{max}=0,2\%$.
+
+
+a) Maximale relative Widerstandsänderung
+
+
+\[
+(\frac{\Delta R}{R})_{max}=\varepsilon_{max}\cdot k=0,4\%
+\]
+
+
+
+b) Maximale Brückenausgangsspannung
+
+
+\[
+\left|U_{AB}\right|_{max}=\frac{U_{0}}{4}(\frac{\Delta R}{R})_{max}=\frac{\unit[10]{V}}{4}\cdot0,004=\unit[0,01]{V}=\unit[10]{mV}
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Druckmessung}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=4cm]{Bilder/TFMT\lyxdot B0316}
+
+
+\column{0.6\textwidth}
+
+
+{\scriptsize{}Druckmessung mit DMS}{\scriptsize \par}
+
+
+{\scriptsize{}a) Druck verformt Membran}{\scriptsize \par}
+
+
+{\scriptsize{}b) radialer Verlauf der tangentialen und radialen Dehnung}{\scriptsize \par}
+
+
+{\scriptsize{}c) Rosetten-DMS (Hottinger Baldwin Messtechnik)}{\scriptsize \par}
+
+
+{\scriptsize{}Dehnung der Membran:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\varepsilon_{r}=\frac{\sigma_{r}}{E}=\frac{3}{8}\left(\frac{R}{h}\right)^{2}\frac{p}{E}(1+\mu)\left[1-\frac{3+\mu}{1+\mu}\left(\frac{r}{R}\right)^{2}\right]
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\varepsilon_{t}=\frac{\sigma_{t}}{E}=\frac{3}{8}\left(\frac{R}{h}\right)^{2}\frac{p}{E}(1+\mu)\left[1-\frac{1+3\mu}{1+\mu}\left(\frac{r}{R}\right)^{2}\right]
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}mit $E$ Elastizitätsmodul, $\mu$ Poisson-Zahl, $r$
+radiale Koordinate, $R$ Membranradius, $h$ Membrandicke}{\scriptsize \par}
+
+\end{columns}
+
+
+{\scriptsize{}Die Rosetten-DMS sind so gestaltet, dass je zwei Streifen
+die große Radialdehnung im Randbereich und die Tangentialdehnung in
+der Mitte erfassen.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Drehmomentmessung}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=4cm]{Bilder/TFMT\lyxdot B0317}
+
+
+\column{0.6\textwidth}
+
+
+{\scriptsize{}Eine elastische Hohlwelle mit Radien $R_{1}$ und $R_{2}$
+und Schubmodul $G$, auf einer Länge $L$ unter Einfluss des Torsionsmomentes
+$M_{T}$ wird um den Torsionsinkel $\varphi$ verdreht:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\varphi=\frac{2}{\pi}\cdot\frac{LM_{T}}{(R_{2}^{4}-R_{1}^{4})G}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Dehnung an der Oberfläche abhängig vom Winkel $\alpha$:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\varepsilon=\frac{1}{2}\cdot\frac{R_{2}\varphi}{L}\sin2\alpha=\frac{1}{\pi}\cdot\frac{R_{2}}{(R_{2}^{4}-R_{1}^{4})}\cdot\frac{M_{t}}{G}\sin2\alpha
+\]
+}{\scriptsize \par}
+
+\end{columns}
+
+
+{\scriptsize{}\medskip{}
+Maximale Dehnung bei Aufklebewinkel 45\textdegree{} und 135\textdegree .}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Piezoelektrische Kraftsensoren}
+
+
+{\scriptsize{}Piezoelektrischer Effekt: Ladungsverschiebung in kristallinen
+Materialien infolge des Einwirkens einer Kraft.}{\scriptsize \par}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/RPMT\lyxdot B0939}
+\par\end{center}
+
+
+{\scriptsize{}Charakteristische Größe ist Verschiebeflussdicht $D$:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+D=\frac{Q}{A}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Piezoelektrischer Effekt wird beschrieben durch:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+Q=k_{p}\cdot F
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}mit $k_{p}$- piezoelektrische Konstante, auch Piezomodul
+genannt. Für Quarz/$\unit{SiO_{2}}$ ist $k_{p}=\unit[2,3\cdot10^{-12}]{As/N}$,
+für Bariumtitanat/$\unit{BaTiO_{3}}$ (Keramik) ist $k_{p}=\unit[2,5\cdot10^{-10}]{As/N}$.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Messschaltung }
+
+
+{\scriptsize{}Ladungen werden über eine Kapazität in eine proportionale
+Spannung überführt und wird damit messbar.}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+Q=C\cdot U_{q}\Rightarrow U_{q}=\frac{Q}{C}=\frac{k_{p}\cdot F}{C}
+\]
+}{\scriptsize \par}
+
+
+\begin{center}
+\includegraphics[width=6cm]{Bilder/RPMT\lyxdot B0940}
+\par\end{center}
+
+
+{\scriptsize{}Ersatzschaltbild einer Messschaltung}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U_{q}=\frac{Q}{C_{ges}}=\frac{k_{p}\cdot F}{C_{0}+C_{L}+C_{e}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Zeitkonstante für Ladungsverlust über Widerstände:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\tau=R_{ges}\cdot C_{ges}=\left(\frac{R_{e}\cdot R_{p}}{R_{e}+R_{p}}\right)\cdot(C_{0}+C_{L}+C_{e})
+\]
+}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Messung mechanischer Schwingungen}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\begin{center}
+\includegraphics[angle=0.5,width=4cm]{Bilder/RPMT\lyxdot B0943}
+\par\end{center}
+
+
+\column{0.6\textwidth}
+
+
+\begin{tabular}{|c|c|}
+\hline 
+{\tiny{}$C_{f}$} & {\tiny{}- Federkonstante / $\unit{Nm^{-1}}$ }\tabularnewline
+\hline 
+{\tiny{}$m$} & {\tiny{}Masse /$\unit{kg}$}\tabularnewline
+\hline 
+{\tiny{}$k$} & {\tiny{}Dämpfungskonstante / $\unit{Nsm^{-1}}$}\tabularnewline
+\hline 
+{\tiny{}$x_{e}$} & {\tiny{}Eingangsamplitude}\tabularnewline
+\hline 
+{\tiny{}$x_{a}$} & {\tiny{}Ausgangsamplitude}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{columns}
+
+
+{\small{}
+\[
+\ddot{x}_{a}+\frac{k}{m}\cdot\dot{x}_{a}+\frac{C_{f}}{m}\cdot x_{a}=-\ddot{x}_{e}=-a
+\]
+}{\small \par}
+
+
+{\small{}mit $\omega_{0}=\sqrt{\frac{C_{f}}{m}};\;D=\frac{k}{2\sqrt{C_{f}\cdot m}};\;\frac{k}{m}=2D\omega_{0}$}{\small \par}
+
+
+{\small{}
+\[
+\ddot{x}_{a}+2D\omega_{0}\cdot\dot{x}_{a}+\omega_{0}^{2}\cdot x_{a}=-\ddot{x}_{e}=-a
+\]
+}{\small \par}
+
+
+{\small{}Bei genügend großen $\omega_{0}$ gilt: $\omega_{0}^{2}\cdot x_{a}\approx-\ddot{x}_{e}=-a$}{\small \par}
+
+
+\end{frame}
+
+\begin{frame}{Messung mechanischer Schwingungen}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=4cm]{Bilder/TFMT\lyxdot B0313}
+
+
+\column{0.6\textwidth}
+
+
+\selectlanguage{english}%
+{\scriptsize{}$\omega_{0}=\sqrt{\frac{C_{f}}{m}}$}\foreignlanguage{ngerman}{{\scriptsize{}:
+große Federkonstante bzw. steifen Feder und kleine Masse führen zu
+großen $\omega_{0}$}}{\scriptsize \par}
+
+
+\selectlanguage{ngerman}%
+{\scriptsize{}\medskip{}
+}{\scriptsize \par}
+
+
+{\scriptsize{}\emph{{\scriptsize{}Beschleunigungssensoren}} besitzen
+sehr kleine Masse ($m=\unit[0,2]{g}\dots\unit[50]{g}$) und hohe Resonanzfrequenz
+$f_{0}=\unit[15\dots100]{kHz}$.}{\scriptsize \par}
+
+
+{\scriptsize{}Messfrequenzbereich weit unterhalb der Resonanzfrequenz:
+$f_{M}\ll0,2\,f_{0}$}{\scriptsize \par}
+
+
+{\scriptsize{}\medskip{}
+}{\scriptsize \par}
+
+
+{\scriptsize{}Wegsensoren besitzen dagegen große Masse (kg-Bereich)
+und weiche Feder (wenige Hz): 
+\[
+\ddot{x}_{a}\approx-\ddot{x}_{e}=-a
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Nach zweimaliger Integration erhält man: $x_{a}=-s$}{\scriptsize \par}
+
+
+{\scriptsize{}Messfrequenzbereich weit oberhalb der Resonanzfrequenz:
+$f_{M}\gg5\,f_{0}$.}{\scriptsize \par}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{}
+
+
+\includegraphics[angle=1,width=8cm]{Bilder/RPMT\lyxdot B0944}
+
+
+a) Beschleunigungssensor mit induktiven Wegsensor
+
+
+b) MEMS-Beschleunigungssensor mit Piezosensor
+
+\end{frame}
+
+\begin{frame}{Durchflussmessung nach Wirkdruckverfahren}
+
+
+{\scriptsize{}Auch Differenzverfahren genannt. Bei Drosselung der
+Rohrleitung entsteht Druckminderung.}{\scriptsize \par}
+
+
+{\scriptsize{}\includegraphics[width=4cm]{Bilder/TFMT\lyxdot B0323}}{\scriptsize \par}
+
+
+{\scriptsize{}Bei horizontale Rohrleitung mit inkompressiblem Messmedium
+unter Vernachlässigung von Reibungskräften:}{\scriptsize \par}
+
+
+{\scriptsize{}Bernoulli-Gesetz (Energieerhaltung): 
+\[
+p_{1}+\frac{1}{2}\varrho v_{1}^{2}=p_{2}+\frac{1}{2}\varrho v_{2}^{2}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Delta p=p_{1}-p_{2}=\frac{\varrho}{2}(v_{2}^{2}-v_{1}^{2})
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Kontinuitätsgesetz:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+Q=A_{1}v_{1}=A_{2}v_{2}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}mit $m=A_{2}/A_{1}=v_{1}/v_{2}$}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+Q=A_{1}v_{1}=mA_{1}\sqrt{\frac{2\Delta p}{\varrho}\cdot\frac{1}{1-m^{2}}}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Normung durch DIN EN ISO 5167}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Durchflussmessung über magnetische Induktion}
+
+
+\begin{center}
+\includegraphics[width=5cm]{Bilder/TFMT\lyxdot B0325}
+\par\end{center}
+
+
+{\scriptsize{}Nach dem Induktionsgesetz induziert ein senkrecht zur
+Richtung eines Magnetfeldes mit Induktion $B$ bewegender Leiter eine
+Spannung $U$:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U=\frac{d\Phi}{dt}=B\cdot\frac{dA}{dt}=BD\frac{ds}{dt}=BDv
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+Q=\frac{\pi}{4}D^{2}v=\frac{\pi}{4}\cdot\frac{D}{B}\cdot U
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Die meisten technischen Flüssigkeiten erfüllen die Anforderung
+der Mindesleitfähigkeit von $\unit[0,1]{mS/m}$, z.B. Leitungswasser
+mit 50 bis 60$\unit{mS/m}$. Destilliertes Wasser liegt mit 0,1 }\foreignlanguage{english}{\textrm{\scriptsize{}$\unit{mS/m}$}}\textrm{\scriptsize{}
+}{\scriptsize{}an der Grenze. Kohlenwasserstoffe sind ungeeignet.}{\scriptsize \par}
+
+
+{\scriptsize{}Vorteile: Lineares Verhalten. Kein Druckverlust durch
+Drosselgeräte.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Ultraschall-Durchflussmessung}
+
+\begin{columns}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=4cm]{Bilder/TFMT\lyxdot B0326}
+
+
+\column{0.6\textwidth}
+
+
+{\scriptsize{}Piezokristall-Sender S erzeugt einen kurzen Schallimpuls.
+Geschwindigkeit stromabwärts: $c_{1}=c+v\cdot\cos\varphi$, stromaufwärts:
+$c_{2}=c-v\cdot\cos\varphi$.}{\scriptsize \par}
+
+
+{\scriptsize{}Laufzeiten:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+t_{1}=\frac{L}{c_{1}}=\frac{L}{c+v\cdot\cos\varphi}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+t_{2}=\frac{L}{c_{2}}=\frac{L}{c-v\cdot\cos\varphi}
+\]
+}{\scriptsize \par}
+
+\end{columns}
+
+
+{\scriptsize{}Wird bei Ankunft des Impulses am Empfänger einen neuen
+Impuls gesendet, so entsehten zwei Impulsfolgefrequenz:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+f_{1}=\frac{1}{t_{1}}=\frac{c+v\cdot\cos\varphi}{L}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+f_{2}=\frac{1}{t_{2}}=\frac{c-v\cdot\cos\varphi}{L}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+f_{1}-f_{2}=\frac{2}{L}v\cdot\cos\varphi
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Die Diffrenzfrequenz ist unabhängig von der momentanen
+Schallgeschwindigkeit. Im Wasser $\unit[1450]{m/s}$ mit Temperaturkoeffizient
+von $\unit[3,5]{(m/s)/K}$.}{\scriptsize \par}
+
+\end{frame}
+
+\begin{frame}{Sensorenarten zur Temperaturmessung}
+
+
+\begin{tabular}{|>{\raggedright}p{4cm}|>{\raggedright}p{4cm}|}
+\hline 
+{\scriptsize{}Sensor} & {\scriptsize{}beeinflusste Größe infolge Temperaturänderung}\tabularnewline
+\hline 
+\hline 
+{\scriptsize{}Widerstanssensor} & {\scriptsize{}Widerstand}\tabularnewline
+\hline 
+{\scriptsize{}Thermoelement} & {\scriptsize{}Spannung}\tabularnewline
+\hline 
+{\scriptsize{}Sperrstrom an Halbleiterübergängen} & {\scriptsize{}Stromstärke}\tabularnewline
+\hline 
+{\scriptsize{}Strahlungspyrometer} & {\scriptsize{}Farbänderung}\tabularnewline
+\hline 
+{\scriptsize{}Schwingquarz mit bekanntem Temperaturverhalten} & {\scriptsize{}Frequenz}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}[<0| handout:0>]{Temperaturmessung mit Widerstandssensoren}
+
+
+Der relativ konstante und positive Temperaturkoeffizient von Metallen
+wird zur Temperaturmessung ausgenutzt.
+
+
+\[
+R(\vartheta)=R_{0}[1+\alpha(\vartheta-\vartheta_{0})+\beta(\vartheta-\vartheta_{0})^{2}]
+\]
+
+
+
+$\vartheta_{0}$: Bezugstemperatur; $R_{0}=R(\vartheta_{0})$: Bezugswiderstand
+
+
+In der Praxis reicht meisten die lineare Näherung mit $\alpha(\vartheta)$,
+mittleren Temperaturkoeffizient im Messbereich aus.
+
+
+\begin{tabular}{|>{\centering}p{1cm}|>{\centering}p{2.5cm}|c|c|c|c|c|>{\centering}p{1cm}|}
+\hline 
+{\tiny{}Mess\-wider\-stand} & {\tiny{}mittlere Temperatur\-koeffizient (0 - 100\textdegree C)} & \multicolumn{6}{c|}{{\tiny{}Widerstandswert in $\Omega$ bei Messtemperatur}}\tabularnewline
+\hline 
+ &  & {\tiny{}-100\textdegree C} & {\tiny{}-60\textdegree C} & {\tiny{}0\textdegree C} & {\tiny{}100\textdegree C} & {\tiny{}180\textdegree C} & {\tiny{}200\textdegree C}\tabularnewline
+\hline 
+{\tiny{}Pt-100} & {\tiny{}$\unit[0,00385]{K^{-1}}$} & {\tiny{}60,25} &  & {\tiny{}100} & {\tiny{}138,5} &  & {\tiny{}175,84}\tabularnewline
+\hline 
+{\tiny{}Ni-100} & {\tiny{}$\unit[0,00618]{K^{-1}}$} &  & {\tiny{}69,5} & {\tiny{}100} & {\tiny{}161,8} & {\tiny{}223,2} & \tabularnewline
+\hline 
+\end{tabular}
+
+
+\end{frame}
+
+\begin{frame}{Temperaturmessung mit Widerstandssensoren}
+
+\begin{columns}
+
+
+\column{0.6\textwidth}
+
+
+{\scriptsize{}Nach DIN EN 60751 wird die Temperaturabhängigkeit des
+Widerstandes eines Platin-Widerstandsthermometers im Bereich 0\textdegree C$\le\vartheta\le$850\textdegree C
+durch:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+R(\vartheta)=R_{0}[1+A\vartheta+B\vartheta^{2}]
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}beschrieben. $R_{0}=R(0\text{\textdegree C})$: Bezugswiderstand
+bei 0\textdegree C.}{\scriptsize \par}
+
+
+
+
+
+{\scriptsize{}$A=\unit[3,9083\cdot10^{-3}]{K^{-1}},$$B=\unit[-0,5775\cdot10^{-6}]{K^{-2}}$}{\scriptsize \par}
+
+
+{\scriptsize{}Linearisierung im Bereich 0 - 100\textdegree C}{\scriptsize \par}
+
+
+{\scriptsize{}$\alpha=A+\unit[100]{K}\cdot B=\unit[3,85\cdot10^{-3}]{K^{-1}}$}{\scriptsize \par}
+
+
+{\scriptsize{}Maximale Linearisierungsfehler bei $\vartheta=50\text{\textdegree C}$}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+F_{L}=1,44\cdot10^{-3}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Toleranzgrenzen der genormten Toleranzklassen A und
+B}{\scriptsize \par}
+
+
+\column{0.4\textwidth}
+
+
+\includegraphics[width=4cm]{Bilder/TFMT\lyxdot B0329}
+
+\end{columns}
+
+
+\begin{center}
+\includegraphics[angle=0.5,width=4cm]{Bilder/RPMT\lyxdot B0945}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Pt-100 und Pt-1000}
+
+
+Neben Pt-100 hat auch Pt-1000, also mit einem Widerstandswert von
+$\unit[1000]{\Omega}$, häufig verwendet. Hoher Widerstandswert führt
+bei wesentlich kleineren Strömen schon zu gut meßbaren Spannungsabfällen.
+Der geringe Leistungsumsatz führt zu kleineren Messwertverfälschung
+durch Eigenwärme.
+
+
+
+
+
+Messwertgewinnung häufig durch Zweileiter-Schaltung. Für Präzisionsmessung
+oder bei längeren Messleitungen ist die aufwändigere Vierleiter-Schaltung
+geeigneter. Die Widerstände der Messleitungen und deren Änderungen
+beeinflusst das Messergebnis nicht. 
+
+
+\medskip{}
+
+
+
+Für spezielle Mess- bzw. Überwachungsaufgaben werden NTC-Sensoren
+(negative temperature coefficient) und PTC-Sensoren (positive temperature
+coefficient) mit extrem großen Temperaturkoeffizienten eingesetzt.
+
+
+NTC-Sensoren (Heißleiter) werden aus sinterfähigen Metalloxiden hergestellt
+und besitzt ca. eine 10er Potenz höhere Temperaturkoeffizient als
+Metall, ($\unit[-0,03\dots-0,06]{K^{-1}}$). Sie werden zur Messung
+kleiner Temperaturdifferenzen genutzt.
+
+
+PTC-Widerstände aus halbleitenden polykristallinen ferroelektrischen
+Keramiken besitzen in einem schmalen Temperaturbereich extrem hohen
+Temperaturkoeffizienten, ($\unit[0,5\dots-0,6]{K^{-1}}$). Sie werden
+zur Überwachung der Temperatur z.B. bei Elektromotoren eingesetzt.
+Die Steilheit der Kennline wird zum zuverlässigen Abschalten durch
+geeignete Schaltung genutzt.
+
+
+
+
+\end{frame}
+
+\begin{frame}{Thermoelementssensoren}
+
+
+{\footnotesize{}Thermoelemente biete über weiten Temperaturbereich
+präzise Temperaturmessung. }{\footnotesize \par}
+
+
+{\footnotesize{}Bei Verbinden von zwei Metallen entsteht eine kleine
+elektrische Spannung wegen Energieunterschiede auf äußeren Elektronenschalen
+der beteiligten Metalle. }{\footnotesize \par}
+
+
+{\footnotesize{}
+\[
+U_{th}=k_{th}\cdot T
+\]
+}{\footnotesize \par}
+
+
+{\footnotesize{}mit $U_{th}$- Thermospannung, $T$ - absolute Temperatur
+in K, $k_{th}$- Thermokoeffizient.}{\footnotesize \par}
+
+
+{\tiny{}}%
+\begin{tabular}{|c|c|}
+\hline 
+{\tiny{}Metall gegen Platin} & {\tiny{}Thermokonstante ($\unit{\mu V\cdot K^{-1})}$}\tabularnewline
+\hline 
+\hline 
+{\tiny{}Wismut} & {\tiny{}-77,0}\tabularnewline
+\hline 
+{\tiny{}Konstantan} & {\tiny{}-34.7...-30,4}\tabularnewline
+\hline 
+{\tiny{}Nickel} & {\tiny{}-19,4...-12,0}\tabularnewline
+\hline 
+{\tiny{}Platin} & {\tiny{}0}\tabularnewline
+\hline 
+{\tiny{}Wolfram} & {\tiny{}6,5...9,0}\tabularnewline
+\hline 
+{\tiny{}Platin-Rhodium (10\% Rh)} & {\tiny{}6,5}\tabularnewline
+\hline 
+{\tiny{}Kupfer} & {\tiny{}7,2...7,7}\tabularnewline
+\hline 
+{\tiny{}Chromnickel} & {\tiny{}22}\tabularnewline
+\hline 
+\end{tabular}{\tiny \par}
+
+\end{frame}
+
+\begin{frame}{Messschaltung mit Thermoelement}
+
+
+\includegraphics[width=4cm]{Bilder/RPMT\lyxdot B0950}
+
+
+{\scriptsize{}Neben dem primären Thermoelement gibt es zwei parasitäre
+Thermoelemente}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U_{thg}=U_{thM}+U_{th2}+U_{th3}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U_{thg}=k_{thM}\cdot T_{M}+k_{th2}\cdot T_{2}+k_{th3}\cdot T_{2}=k_{thM}\cdot T_{M}+(k_{th2}+k_{th3})\cdot T_{2}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Bei $T_{2}=T_{M}$ gilt $U_{thg}=0$, und somit $k_{thM}=-(k_{th2}+k_{th3})$}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U_{thg}=k_{thM}(T_{M}-T_{2})
+\]
+}{\scriptsize \par}
+
+
+Vergleichsstellenproblem: $T_{2}$ muss konstant und für beide Anschlussklemmen
+identisch gehalten werden.
+
+\end{frame}
+
+\begin{frame}{Temperaturmessschaltung mit Ausgleichsdose}
+
+
+\includegraphics[width=7cm]{Bilder/RPMT\lyxdot B0951}
+
+
+Temperaturempfindliche Brückenschaltung erzeugt eine Korrekturspannung,
+welche Schwankungen der Umgebungstemperatur von $\le\unit[10]{K}$gut
+kompensiert.\medskip{}
+
+
+
+Messbereich von Thermoelementen: -200 bis 2300\textdegree C.
+
+
+Thermoelemente sind sehr kleine, massenarme Metallperlen. Reaktionszeit
+im Sekundenbereich.
+
+
+Thermospannungen betragen wenige Millivolt.
+
+\end{frame}
+
+\begin{frame}{Beispiel Thermoelement}
+
+
+{\scriptsize{}Thermoelement soll Temperaturen von 0 bis 1200\textdegree C
+messen. Vergleichsstellentemperatur ist mit 50\textdegree C festgelegt.
+Pt13 Rh - Pt-Paar kommt zum Einsatz.}{\scriptsize \par}
+
+
+{\scriptsize{}Messspannungsbereich?}{\scriptsize \par}
+
+
+{\scriptsize{}\medskip{}
+}{\scriptsize \par}
+
+
+{\scriptsize{}$k_{thM}=10\unit{\mu V\cdot K^{-1}}$}{\scriptsize \par}
+
+
+{\scriptsize{}für 0\textdegree C:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U_{M,min}=U_{thg1}=k_{thM}(\vartheta_{M,min}-\vartheta_{2})=10\unit{\mu V\cdot K^{-1}}\cdot\unit[(0-50)]{K}=\unit[-0,5]{mV}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}für 1200\textdegree C:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+U_{M,max}=U_{thg2}=k_{thM}(\vartheta_{M,max}-\vartheta_{2})=10\unit{\mu V\cdot K^{-1}}\cdot\unit[(1200-50)]{K}=\unit[11,5]{mV}
+\]
+}{\scriptsize \par}
+
+
+{\scriptsize{}Messspannungsbereich:}{\scriptsize \par}
+
+
+{\scriptsize{}
+\[
+\Delta U_{M}=U_{thg2}-U_{thg2}=\unit[12]{mV}
+\]
+}{\scriptsize \par}
+
+\end{frame}
